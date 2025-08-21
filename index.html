@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haul Bros Moving Co LLC - Professional Movers in Northern Virginia & DMV</title>
+    <meta name="description" content="Haul Bros Moving Co. LLC offers professional, reliable, and affordable local and long-distance moving services in Northern Virginia and the DMV area. Get a free quote today!">
+    <meta name="keywords" content="movers northern virginia, moving company dmv, local movers, long distance movers, haul bros moving">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f7f7; /* Light gray background */
+            color: #1a1a1a; /* Dark text color */
+        }
+        .bg-primary { background-color: #ffffff; } /* White */
+        .bg-secondary { background-color: #f0f0f0; } /* Slightly darker gray */
+        .text-accent { color: #0a0a0a; } /* Black for accents */
+        .border-accent { border-color: #cccccc; }
+        .btn-dark {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        .btn-dark:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-weight: 900;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 3.5rem;
+            }
+        }
+        .card-style {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .form-input {
+            background-color: #e9e9e9;
+            border: 1px solid #dcdcdc;
+            color: #1a1a1a;
+            transition: border-color 0.3s ease;
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #333;
+            box-shadow: 0 0 0 2px rgba(10, 10, 10, 0.2);
+        }
+        .logo-img {
+             /* No filter needed for light background */
+        }
+        .header-scrolled {
+            background-color: rgba(255, 255, 255, 0.9) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .nav-link {
+            color: #333;
+        }
+        .nav-link:hover {
+            color: #000;
+        }
+        /* Modal Styles */
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-container {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center">
+                    <img src="assets/LOGO 2.png" alt="Haul Bros Moving Co. Logo" class="h-16 w-auto logo-img">
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#services" class="nav-link transition">Services</a>
+                    <a href="#pricing" class="nav-link transition">Pricing</a>
+                    <a href="#about" class="nav-link transition">About</a>
+                    <a href="#reviews" class="nav-link transition">Reviews</a>
+                    <a href="#contact" class="nav-link transition">Contact</a>
+                </nav>
+                <a href="#quote" class="hidden md:inline-block btn-dark px-6 py-2 rounded-full">Get a Free Quote</a>
+                <button id="mobile-menu-button" class="md:hidden text-black">
+                    <i data-lucide="menu" class="h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Services</a>
+            <a href="#pricing" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Pricing</a>
+            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">About</a>
+            <a href="#reviews" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Reviews</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
+            <a href="#quote" class="block py-2 px-4 text-sm text-black font-semibold hover:bg-gray-100">Get a Free Quote</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1587582423116-ec072937a724?q=80&w=2070&auto=format&fit=crop');">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-wider leading-tight">
+                Relocating Made <span class="text-gray-200">Easy</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
+                Your trusted partner for seamless moves in Northern Virginia & the DMV area. Professional, reliable, and always on time.
+            </p>
+            <a href="#quote" class="mt-8 inline-block btn-dark text-lg px-10 py-4 rounded-full shadow-lg">
+                Get a Free Quote
+            </a>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-100 to-transparent"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 md:py-32 bg-secondary">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Our <span class="text-accent">Services</span></h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">We offer a comprehensive range of moving services tailored to your needs.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card -->
+                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="map-pin" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Local Moves</h3>
+                    <p class="text-gray-600">Efficient and stress-free moving within the DMV area. We handle your belongings with the utmost care.</p>
+                </div>
+                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="truck" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Long-Distance Moves</h3>
+                    <p class="text-gray-600">Relocating across the state or country? Our expert team ensures a smooth journey for your possessions.</p>
+                </div>
+                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="building-2" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Commercial Moves</h3>
+                    <p class="text-gray-600">Minimize downtime with our organized and efficient office and business relocation services.</p>
+                </div>
+                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="box" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Packing & Unpacking</h3>
+                    <p class="text-gray-600">Save time and protect your items. Our professional packers use high-quality materials and techniques.</p>
+                </div>
+                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="package-check" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Loading & Unloading</h3>
+                    <p class="text-gray-600">Need an extra hand? We provide expert assistance for loading and unloading your rental truck or container.</p>
+                </div>
+                 <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
+                    <i data-lucide="trash-2" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Junk Removal</h3>
+                    <p class="text-gray-600">Declutter your space before or after your move. We can haul away unwanted items responsibly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 md:py-32 bg-primary">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Transparent <span class="text-accent">Pricing</span></h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">No hidden fees. Simple, hourly rates for our local moving services.</p>
+            </div>
+            <div class="max-w-4xl mx-auto card-style rounded-lg p-4">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b border-gray-200">
+                                <th class="p-4 text-lg font-semibold text-accent">Move Size</th>
+                                <th class="p-4 text-lg font-semibold text-accent">Rate</th>
+                                <th class="p-4 text-lg font-semibold text-accent">Crew</th>
+                                <th class="p-4 text-lg font-semibold text-accent">Truck</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="p-4 font-medium text-gray-800">Studio / 1 Bedroom</td>
+                                <td class="p-4 text-gray-600">$149/hour</td>
+                                <td class="p-4 text-gray-600">2 Pro Movers</td>
+                                <td class="p-4 text-gray-600">10–15 ft</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="p-4 font-medium text-gray-800">2 Bedroom</td>
+                                <td class="p-4 text-gray-600">$159/hour</td>
+                                <td class="p-4 text-gray-600">2 Pro Movers</td>
+                                <td class="p-4 text-gray-600">15–17 ft</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-gray-800">3 Bedroom</td>
+                                <td class="p-4 text-gray-600">$180/hour</td>
+                                <td class="p-4 text-gray-600">3 Pro Movers</td>
+                                <td class="p-4 text-gray-600">20–26 ft</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="p-4 font-medium text-gray-800">4 Bedroom</td>
+                                <td class="p-4 text-gray-600">$225/hour</td>
+                                <td class="p-4 text-gray-600">4 Pro Movers</td>
+                                <td class="p-4 text-gray-600">26 ft</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-medium text-gray-800">5+ Bedroom</td>
+                                <td colspan="3" class="p-4 text-accent font-semibold">Call for a custom quote</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-center mt-6 text-gray-500 text-sm">* All local moves have a 2-hour minimum service time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instant Quote Section -->
+    <section id="quote" class="py-20 md:py-32 bg-secondary">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Get a <span class="text-accent">Quote</span></h2>
+                <p id="quote-subtitle" class="mt-4 max-w-2xl mx-auto text-gray-600">Get a personalized quote for your residential move in minutes.</p>
+            </div>
+            <div class="max-w-4xl mx-auto card-style p-8 md:p-12 rounded-lg">
+                <form id="quote-form" action="https://formspree.io/f/xpwlezrg" method="POST">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label for="move-type" class="block text-sm font-medium text-gray-700 mb-2">Move Type</label>
+                            <select id="move-type" name="move-type" class="w-full p-3 rounded-md form-input">
+                                <option value="local">Local Move</option>
+                                <option value="long-distance">Long Distance Move</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Local Move Fields -->
+                    <div id="local-move-fields" class="mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="move-size" class="block text-sm font-medium text-gray-700 mb-2">Size of Move</label>
+                                <select id="move-size" name="move-size" class="w-full p-3 rounded-md form-input">
+                                    <option value="149">Studio / 1 Bedroom</option>
+                                    <option value="159">2 Bedroom</option>
+                                    <option value="180">3 Bedroom</option>
+                                    <option value="225">4 Bedroom</option>
+                                    <option value="0">5+ Bedroom (Custom Quote)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="move-date-local" class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
+                                <input type="date" id="move-date-local" name="move-date-local" class="w-full p-3 rounded-md form-input">
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Additional Services (per hour)</label>
+                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                    <label class="flex items-center space-x-2 p-3 bg-gray-100 rounded-md cursor-pointer">
+                                        <input type="checkbox" name="services" value="packing" data-cost="50" class="form-checkbox h-5 w-5 text-black border-gray-300 focus:ring-black">
+                                        <span class="text-gray-800">Packing (+$50/hr)</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 p-3 bg-gray-100 rounded-md cursor-pointer">
+                                        <input type="checkbox" name="services" value="unpacking" data-cost="50" class="form-checkbox h-5 w-5 text-black border-gray-300 focus:ring-black">
+                                        <span class="text-gray-800">Unpacking (+$50/hr)</span>
+                                    </label>
+                                    <label class="flex items-center space-x-2 p-3 bg-gray-100 rounded-md cursor-pointer">
+                                        <input type="checkbox" name="services" value="junk-removal" data-cost="100" class="form-checkbox h-5 w-5 text-black border-gray-300 focus:ring-black">
+                                        <span class="text-gray-800">Junk Removal (+$100/hr)</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Long Distance Move Fields -->
+                    <div id="long-distance-fields" class="hidden mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" name="fullName" placeholder="Full Name" class="w-full p-3 rounded-md form-input">
+                            <input type="email" name="email" placeholder="Email Address" class="w-full p-3 rounded-md form-input">
+                            <input type="text" name="pickupAddress" placeholder="Pickup Address (City, State)" class="w-full p-3 rounded-md form-input">
+                            <input type="text" name="dropoffAddress" placeholder="Dropoff Address (City, State)" class="w-full p-3 rounded-md form-input">
+                            <div class="md:col-span-2">
+                                <textarea name="moveDetails" placeholder="Tell us about your move (e.g., size, special items)" rows="4" class="w-full p-3 rounded-md form-input"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <button id="quote-submit-btn" type="submit" class="btn-dark text-lg px-12 py-3 rounded-full">Calculate My Quote</button>
+                    </div>
+                </form>
+                <div id="quote-result" class="mt-8 text-center hidden">
+                    <h3 class="text-2xl font-bold text-gray-800">Your Estimated Hourly Rate</h3>
+                    <p class="text-4xl font-black text-accent my-4" id="quote-price"></p>
+                    <p class="text-gray-600" id="quote-details"></p>
+                    <p class="text-gray-500 text-sm mt-2">This is an hourly rate estimate based on a 2-hour minimum. Final cost depends on actual time.</p>
+                    <button id="confirm-booking-btn" class="mt-6 btn-dark text-lg px-10 py-3 rounded-full">Confirm Booking</button>
+                </div>
+                 <div id="form-success-message" class="mt-8 text-center hidden">
+                    <h3 class="text-2xl font-bold text-accent">Thank You!</h3>
+                    <p class="text-gray-700 mt-2">Your long distance move request has been sent. We will get back to you with a custom quote shortly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 md:py-32 bg-primary">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="assets/482019297_122111649332782093_1916069911646613494_n.jpg" alt="Haul Bros Moving Team" class="rounded-lg shadow-xl">
+                </div>
+                <div>
+                    <h2 class="section-title">Your Friendly Neighborhood <span class="text-accent">Movers</span></h2>
+                    <p class="mt-6 text-lg text-gray-700">
+                        Haul Bros Moving Co. LLC was founded on a simple principle: to provide a moving experience that is as stress-free and positive as possible. Serving Northern Virginia and the entire DMV area, we are a team of dedicated professionals who treat your belongings as if they were our own.
+                    </p>
+                    <p class="mt-4 text-gray-600">
+                        Our mission is to deliver exceptional service with a customer-first approach. From the moment you contact us for a quote to the final box being placed in your new home, we're with you every step of the way. We believe in transparency, reliability, and hard work.
+                    </p>
+                    <a href="#contact" class="mt-8 inline-block btn-dark px-8 py-3 rounded-full">Meet the Team</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 md:py-32 bg-secondary">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">What Our <span class="text-accent">Clients Say</span></h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">We're proud of our 5-star reputation. Here are some recent reviews from Yelp.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sample Review Card -->
+                <div class="card-style p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/LOGO 2.png" alt="Reviewer" class="h-10 w-10 rounded-full mr-4">
+                        <div>
+                            <p class="font-bold text-gray-900">Jane D.</p>
+                            <div class="flex items-center text-yellow-500">
+                                <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Absolutely phenomenal service! The Haul Bros team was punctual, professional, and incredibly efficient. They made our move across Arlington completely seamless. Highly recommend!"</p>
+                </div>
+                <div class="card-style p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/LOGO 2.png" alt="Reviewer" class="h-10 w-10 rounded-full mr-4">
+                        <div>
+                            <p class="font-bold text-gray-900">Michael S.</p>
+                             <div class="flex items-center text-yellow-500">
+                                <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"I was dreading my long-distance move, but these guys were fantastic. Communication was excellent, and all my furniture arrived without a single scratch. Worth every penny."</p>
+                </div>
+                <div class="card-style p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/LOGO 2.png" alt="Reviewer" class="h-10 w-10 rounded-full mr-4">
+                        <div>
+                            <p class="font-bold text-gray-900">Rachel B.</p>
+                             <div class="flex items-center text-yellow-500">
+                                <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Used them for a commercial move for our office. They were organized, fast, and very careful with our sensitive equipment. The best movers in the DMV, period."</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://yelp.to/g_pXemETKA" target="_blank" rel="noopener noreferrer" class="btn-dark text-lg px-10 py-3 rounded-full">
+                    Read More on Yelp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 md:py-32 bg-primary">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Get In <span class="text-accent">Touch</span></h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Ready to plan your move? Contact us today for any questions or to book our services.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="bg-secondary p-8 rounded-lg">
+                    <!-- CONTACT FORM UPDATED -->
+                    <form id="contact-form" action="https://formspree.io/f/mvgqnorp" method="POST">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                <input type="text" name="firstName" id="first-name" class="w-full p-3 rounded-md form-input" required>
+                            </div>
+                            <div>
+                                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                <input type="text" name="lastName" id="last-name" class="w-full p-3 rounded-md form-input" required>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                            <input type="email" name="email" id="email" class="w-full p-3 rounded-md form-input" required>
+                        </div>
+                        <div class="mt-6">
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                            <input type="tel" name="phone" id="phone" class="w-full p-3 rounded-md form-input">
+                        </div>
+                        <div class="mt-6">
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                            <textarea name="message" id="message" rows="4" class="w-full p-3 rounded-md form-input" required></textarea>
+                        </div>
+                        <div class="mt-8">
+                            <button type="submit" class="w-full btn-dark text-lg py-3 rounded-full">Send Message</button>
+                        </div>
+                    </form>
+                    <div id="contact-success-message" class="text-center hidden p-4">
+                        <h3 class="text-xl font-bold text-accent">Message Sent!</h3>
+                        <p class="text-gray-600 mt-2">Thank you for reaching out. We'll get back to you as soon as possible.</p>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="phone" class="h-8 w-8 text-accent mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Call Us</h3>
+                                <a href="tel:5718991919" class="text-gray-700 hover:text-black transition">571-899-1919</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="mail" class="h-8 w-8 text-accent mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Email Us</h3>
+                                <a href="mailto:relocating@haulbrosmoving.com" class="text-gray-700 hover:text-black transition">relocating@haulbrosmoving.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <i data-lucide="map" class="h-8 w-8 text-accent mt-1"></i>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900">Service Area</h3>
+                                <p class="text-gray-700">Serving Northern Virginia & the entire DMV area.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 rounded-lg overflow-hidden shadow-lg">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200366.983949315!2d-77.4427499411621!3d38.8022538183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b649936f4c6a23%3A0x70c10f36f6d4be2e!2sNorthern%20Virginia!5e0!3m2!1sen!2sus!4v1694541256789!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary border-t border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <a href="#" class="flex items-center justify-center md:justify-start">
+                         <img src="assets/LOGO 2.png" alt="Haul Bros Moving Co. Logo" class="h-20 w-auto logo-img">
+                    </a>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-accent tracking-wider uppercase">Quick Links</h4>
+                    <ul class="mt-4 space-y-2">
+                        <li><a href="#services" class="text-gray-600 hover:text-black">Services</a></li>
+                        <li><a href="#quote" class="text-gray-600 hover:text-black">Free Quote</a></li>
+                        <li><a href="#about" class="text-gray-600 hover:text-black">About Us</a></li>
+                        <li><a href="#contact" class="text-gray-600 hover:text-black">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-accent tracking-wider uppercase">Connect With Us</h4>
+                    <div class="flex justify-center md:justify-start space-x-4 mt-4">
+                        <a href="https://www.facebook.com/61573462809128/about/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i data-lucide="facebook" class="h-6 w-6"></i></a>
+                        <a href="https://www.instagram.com/haulbrosmovingco.llc" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i data-lucide="instagram" class="h-6 w-6"></i></a>
+                        <a href="https://twitter.com/HaulBroMoving" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i data-lucide="twitter" class="h-6 w-6"></i></a>
+                        <a href="https://www.linkedin.com/in/haul-bros-moving-co-llc-a11494352?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BiaXlN0WvRuGJNbqRZcL9lg%3D%3D" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i data-lucide="linkedin" class="h-6 w-6"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
+                <p>&copy; <span id="year"></span> Haul Bros Moving Co. LLC. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div id="booking-modal-overlay" class="absolute inset-0 bg-black bg-opacity-50 modal-overlay"></div>
+        <div id="booking-modal-container" class="bg-white rounded-lg shadow-xl w-full max-w-lg p-8 z-10 transform scale-95 modal-container">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-accent">Confirm Your Booking</h3>
+                <button id="close-modal-btn" class="text-gray-500 hover:text-black">&times;</button>
+            </div>
+            <div id="booking-form-content">
+                <p class="text-gray-600 mb-6">Please provide your details below to finalize your move. We'll be in touch shortly to confirm everything.</p>
+                <!-- BOOKING FORM UPDATED -->
+                <form id="booking-form" action="https://formspree.io/f/xblkejlo" method="POST">
+                    <div class="space-y-4">
+                        <input type="text" name="fullName" placeholder="Full Name" required class="w-full p-3 rounded-md form-input">
+                        <input type="text" name="pickupAddress" placeholder="Pickup Address" required class="w-full p-3 rounded-md form-input">
+                        <input type="text" name="dropoffAddress" placeholder="Dropoff Address" required class="w-full p-3 rounded-md form-input">
+                        <input type="email" name="email" placeholder="Email Address" required class="w-full p-3 rounded-md form-input">
+                        <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 rounded-md form-input">
+                    </div>
+                    <div class="mt-8">
+                        <button type="submit" class="w-full btn-dark text-lg py-3 rounded-full">Submit Booking</button>
+                    </div>
+                </form>
+            </div>
+            <div id="booking-success-message" class="text-center hidden">
+                <i data-lucide="check-circle" class="h-16 w-16 text-green-500 mx-auto mb-4"></i>
+                <h3 class="text-2xl font-bold text-accent">Booking Submitted!</h3>
+                <p class="text-gray-600 mt-2">Thank you! We've received your details and will email you a confirmation shortly.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Quote Form Logic
+        const moveTypeSelect = document.getElementById('move-type');
+        const localMoveFields = document.getElementById('local-move-fields');
+        const longDistanceFields = document.getElementById('long-distance-fields');
+        const quoteSubmitBtn = document.getElementById('quote-submit-btn');
+        const quoteSubtitle = document.getElementById('quote-subtitle');
+        const quoteForm = document.getElementById('quote-form');
+        const quoteResult = document.getElementById('quote-result');
+        const formSuccessMessage = document.getElementById('form-success-message');
+        const longDistanceInputs = document.querySelectorAll('#long-distance-fields input, #long-distance-fields textarea');
+
+        function toggleRequiredForLongDistance(isRequired) {
+            longDistanceInputs.forEach(input => input.required = isRequired);
+        }
+
+        moveTypeSelect.addEventListener('change', (e) => {
+            const selection = e.target.value;
+            quoteResult.classList.add('hidden');
+            formSuccessMessage.classList.add('hidden');
+
+            if (selection === 'long-distance') {
+                localMoveFields.classList.add('hidden');
+                longDistanceFields.classList.remove('hidden');
+                quoteSubmitBtn.textContent = 'Request Long Distance Quote';
+                quoteSubtitle.textContent = 'Fill out the form below for a custom long distance moving quote.';
+                toggleRequiredForLongDistance(true);
+            } else {
+                localMoveFields.classList.remove('hidden');
+                longDistanceFields.classList.add('hidden');
+                quoteSubmitBtn.textContent = 'Calculate My Quote';
+                quoteSubtitle.textContent = 'Get a personalized quote for your residential move in minutes.';
+                toggleRequiredForLongDistance(false);
+            }
+        });
+
+        // Set initial state on page load
+        toggleRequiredForLongDistance(false);
+
+        quoteForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            const currentMoveType = moveTypeSelect.value;
+            if (currentMoveType === 'local') {
+                const quotePrice = document.getElementById('quote-price');
+                const quoteDetails = document.getElementById('quote-details');
+                const moveSizeSelect = document.getElementById('move-size');
+                const baseRate = parseInt(moveSizeSelect.value);
+                const moveSizeText = moveSizeSelect.options[moveSizeSelect.selectedIndex].text;
+                let additionalServicesCost = 0;
+                let servicesText = [];
+                const serviceCheckboxes = document.querySelectorAll('input[name="services"]:checked');
+                serviceCheckboxes.forEach(checkbox => {
+                    additionalServicesCost += parseInt(checkbox.dataset.cost);
+                    servicesText.push(checkbox.parentElement.textContent.trim().split('(')[0].trim());
+                });
+                const totalHourlyRate = baseRate + additionalServicesCost;
+                if (baseRate === 0) {
+                    quotePrice.textContent = "Call for Quote";
+                    quoteDetails.textContent = "For 5+ bedroom moves, we provide a custom quote to best suit your needs.";
+                } else {
+                    quotePrice.textContent = `$${totalHourlyRate}/hour`;
+                    let details = `Based on a ${moveSizeText} at $${baseRate}/hr.`;
+                    if (servicesText.length > 0) {
+                        details += ` Includes ${servicesText.join(', ')}.`;
+                    }
+                    quoteDetails.textContent = details;
+                }
+                formSuccessMessage.classList.add('hidden');
+                quoteResult.classList.remove('hidden');
+                quoteResult.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                // Handle Long Distance Form Submission
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                }).then(response => {
+                    if (response.ok) {
+                        quoteResult.classList.add('hidden');
+                        formSuccessMessage.classList.remove('hidden');
+                        formSuccessMessage.scrollIntoView({ behavior: 'smooth' });
+                        form.reset();
+                        // Restore form to default state after reset
+                        moveTypeSelect.value = 'local';
+                        localMoveFields.classList.remove('hidden');
+                        longDistanceFields.classList.add('hidden');
+                        toggleRequiredForLongDistance(false);
+                        quoteSubtitle.textContent = 'Get a personalized quote for your residential move in minutes.';
+                    } else {
+                         alert('Sorry, there was an error sending your request. Please try again.');
+                    }
+                }).catch(error => {
+                    alert('Sorry, there was a network error. Please check your connection and try again.');
+                }).finally(() => {
+                    submitButton.disabled = false;
+                    quoteSubmitBtn.textContent = 'Calculate My Quote';
+                });
+            }
+        });
+
+        // Booking Modal Logic
+        const bookingModal = document.getElementById('booking-modal');
+        const bookingModalOverlay = document.getElementById('booking-modal-overlay');
+        const bookingModalContainer = document.getElementById('booking-modal-container');
+        const confirmBookingBtn = document.getElementById('confirm-booking-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const bookingForm = document.getElementById('booking-form');
+        const bookingFormContent = document.getElementById('booking-form-content');
+        const bookingSuccessMessage = document.getElementById('booking-success-message');
+
+        function openModal() {
+            bookingModal.classList.remove('hidden');
+            setTimeout(() => {
+                bookingModalOverlay.classList.remove('opacity-0');
+                bookingModalContainer.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            bookingModalOverlay.classList.add('opacity-0');
+            bookingModalContainer.classList.add('scale-95');
+            setTimeout(() => {
+                bookingModal.classList.add('hidden');
+                bookingFormContent.classList.remove('hidden');
+                bookingSuccessMessage.classList.add('hidden');
+                bookingForm.reset();
+            }, 300);
+        }
+
+        confirmBookingBtn.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+        bookingModalOverlay.addEventListener('click', closeModal);
+
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    bookingFormContent.classList.add('hidden');
+                    bookingSuccessMessage.classList.remove('hidden');
+                    lucide.createIcons();
+                    setTimeout(closeModal, 3000);
+                } else {
+                    alert('Sorry, there was an error sending your booking. Please try again.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit Booking';
+                }
+            }).catch(error => {
+                alert('Sorry, there was a network error. Please check your connection and try again.');
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit Booking';
+            });
+        });
+
+        // Contact Form Logic
+        const contactForm = document.getElementById('contact-form');
+        const contactSuccessMessage = document.getElementById('contact-success-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    form.classList.add('hidden');
+                    contactSuccessMessage.classList.remove('hidden');
+                    setTimeout(() => {
+                        contactSuccessMessage.classList.add('hidden');
+                        form.classList.remove('hidden');
+                        form.reset();
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    }, 4000); // Hide success message and show form again after 4 seconds
+                } else {
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Send Message';
+                }
+            }).catch(error => {
+                alert('Sorry, there was a network error. Please check your connection and try again.');
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            });
+        });
+
+        // Simple fade-in animation on scroll
+        const animatedElements = document.querySelectorAll('.section-title, .grid > div, form, table, #about img');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        animatedElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
