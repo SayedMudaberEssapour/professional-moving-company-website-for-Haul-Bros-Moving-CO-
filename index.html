@@ -226,6 +226,7 @@
                     </table>
                 </div>
                 <p class="text-center mt-6 text-gray-500 text-sm">* All local moves have a 2-hour minimum service time.</p>
+                <p class="text-center mt-2 text-gray-600 text-sm font-semibold">We proudly offer a 5% discount for senior citizens and veterans!</p>
             </div>
         </div>
     </section>
@@ -238,13 +239,15 @@
                 <p id="quote-subtitle" class="mt-4 max-w-2xl mx-auto text-gray-600">Get a personalized quote for your residential move in minutes.</p>
             </div>
             <div class="max-w-4xl mx-auto card-style p-8 md:p-12 rounded-lg">
-                <form id="quote-form" action="https://formspree.io/f/xpwlezrg" method="POST">
+                <form id="quote-form" action="" method="POST">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="md:col-span-2">
-                            <label for="move-type" class="block text-sm font-medium text-gray-700 mb-2">Move Type</label>
+                            <label for="move-type" class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
                             <select id="move-type" name="move-type" class="w-full p-3 rounded-md form-input">
                                 <option value="local">Local Move</option>
                                 <option value="long-distance">Long Distance Move</option>
+                                <option value="junk-removal">Junk Removal</option>
+                                <option value="commercial">Commercial Move</option>
                             </select>
                         </div>
                     </div>
@@ -298,6 +301,31 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Junk Removal Fields -->
+                    <div id="junk-removal-fields" class="hidden mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" name="junkFullName" placeholder="Full Name" class="w-full p-3 rounded-md form-input">
+                            <input type="email" name="junkEmail" placeholder="Email Address" class="w-full p-3 rounded-md form-input">
+                            <input type="tel" name="junkPhone" placeholder="Phone Number" class="w-full p-3 rounded-md form-input">
+                            <div class="md:col-span-2">
+                                <textarea name="junkDetails" placeholder="Please describe the items you need removed." rows="4" class="w-full p-3 rounded-md form-input"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Move Fields -->
+                    <div id="commercial-fields" class="hidden mt-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" name="commercialFullName" placeholder="Full Name" class="w-full p-3 rounded-md form-input">
+                            <input type="text" name="commercialCompanyName" placeholder="Company Name" class="w-full p-3 rounded-md form-input">
+                            <input type="email" name="commercialEmail" placeholder="Email Address" class="w-full p-3 rounded-md form-input">
+                            <input type="tel" name="commercialPhone" placeholder="Phone Number" class="w-full p-3 rounded-md form-input">
+                            <div class="md:col-span-2">
+                                <textarea name="commercialDetails" placeholder="Please describe your commercial moving needs." rows="4" class="w-full p-3 rounded-md form-input"></textarea>
+                            </div>
+                        </div>
+                    </div>
                     
                     <div class="mt-8 text-center">
                         <button id="quote-submit-btn" type="submit" class="btn-dark text-lg px-12 py-3 rounded-full">Calculate My Quote</button>
@@ -312,7 +340,7 @@
                 </div>
                  <div id="form-success-message" class="mt-8 text-center hidden">
                     <h3 class="text-2xl font-bold text-accent">Thank You!</h3>
-                    <p class="text-gray-700 mt-2">Your long distance move request has been sent. We will get back to you with a custom quote shortly.</p>
+                    <p id="success-text" class="text-gray-700 mt-2"></p>
                 </div>
             </div>
         </div>
@@ -350,7 +378,7 @@
                 <!-- Sample Review Card -->
                 <div class="card-style p-6 rounded-lg">
                     <div class="flex items-center mb-4">
-                        <img src="assets/LOGO 2.png" alt="Reviewer" class="h-10 w-10 rounded-full mr-4">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop" alt="Reviewer Jane D." class="h-10 w-10 rounded-full mr-4 object-cover">
                         <div>
                             <p class="font-bold text-gray-900">Jane D.</p>
                             <div class="flex items-center text-yellow-500">
@@ -362,7 +390,7 @@
                 </div>
                 <div class="card-style p-6 rounded-lg">
                     <div class="flex items-center mb-4">
-                        <img src="assets/LOGO 2.png" alt="Reviewer" class="h-10 w-10 rounded-full mr-4">
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop" alt="Reviewer Michael S." class="h-10 w-10 rounded-full mr-4 object-cover">
                         <div>
                             <p class="font-bold text-gray-900">Michael S.</p>
                              <div class="flex items-center text-yellow-500">
@@ -374,7 +402,7 @@
                 </div>
                 <div class="card-style p-6 rounded-lg">
                     <div class="flex items-center mb-4">
-                        <img src="assets/LOGO 2.png" alt="Reviewer" class="h-10 w-10 rounded-full mr-4">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop" alt="Reviewer Rachel B." class="h-10 w-10 rounded-full mr-4 object-cover">
                         <div>
                             <p class="font-bold text-gray-900">Rachel B.</p>
                              <div class="flex items-center text-yellow-500">
@@ -403,7 +431,7 @@
             <div class="grid lg:grid-cols-2 gap-12">
                 <div class="bg-secondary p-8 rounded-lg">
                     <!-- CONTACT FORM UPDATED -->
-                    <form id="contact-form" action="https://formspree.io/f/mvgqnorp" method="POST">
+                    <form id="contact-form" action="https://formspree.io/f/mvgbgagy" method="POST">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
                                 <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
@@ -462,6 +490,10 @@
                     <div class="mt-8 rounded-lg overflow-hidden shadow-lg">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200366.983949315!2d-77.4427499411621!3d38.8022538183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b649936f4c6a23%3A0x70c10f36f6d4be2e!2sNorthern%20Virginia!5e0!3m2!1sen!2sus!4v1694541256789!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+                    <div class="text-center mt-4 p-4 bg-gray-100 rounded-lg">
+                        <h4 class="font-bold text-lg text-accent">Servicing All 50 States!</h4>
+                        <p class="text-gray-600">For long-distance moves, we've got you covered nationwide.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -512,7 +544,13 @@
             <div id="booking-form-content">
                 <p class="text-gray-600 mb-6">Please provide your details below to finalize your move. We'll be in touch shortly to confirm everything.</p>
                 <!-- BOOKING FORM UPDATED -->
-                <form id="booking-form" action="https://formspree.io/f/xblkejlo" method="POST">
+                <form id="booking-form" action="https://formspree.io/f/mwpnpopj" method="POST">
+                    <!-- Hidden fields for quote details -->
+                    <input type="hidden" name="moveSize" id="hidden-move-size">
+                    <input type="hidden" name="preferredDate" id="hidden-preferred-date">
+                    <input type="hidden" name="additionalServices" id="hidden-additional-services">
+                    <input type="hidden" name="estimatedRate" id="hidden-estimated-rate">
+                    
                     <div class="space-y-4">
                         <input type="text" name="fullName" placeholder="Full Name" required class="w-full p-3 rounded-md form-input">
                         <input type="text" name="pickupAddress" placeholder="Pickup Address" required class="w-full p-3 rounded-md form-input">
@@ -558,19 +596,28 @@
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
+        // Global variable to store quote details
+        let currentQuoteDetails = {};
+
         // Quote Form Logic
         const moveTypeSelect = document.getElementById('move-type');
         const localMoveFields = document.getElementById('local-move-fields');
         const longDistanceFields = document.getElementById('long-distance-fields');
+        const junkRemovalFields = document.getElementById('junk-removal-fields');
+        const commercialFields = document.getElementById('commercial-fields');
         const quoteSubmitBtn = document.getElementById('quote-submit-btn');
         const quoteSubtitle = document.getElementById('quote-subtitle');
         const quoteForm = document.getElementById('quote-form');
         const quoteResult = document.getElementById('quote-result');
         const formSuccessMessage = document.getElementById('form-success-message');
+        const successText = document.getElementById('success-text');
+        
         const longDistanceInputs = document.querySelectorAll('#long-distance-fields input, #long-distance-fields textarea');
+        const junkRemovalInputs = document.querySelectorAll('#junk-removal-fields input, #junk-removal-fields textarea');
+        const commercialInputs = document.querySelectorAll('#commercial-fields input, #commercial-fields textarea');
 
-        function toggleRequiredForLongDistance(isRequired) {
-            longDistanceInputs.forEach(input => input.required = isRequired);
+        function toggleRequired(inputs, isRequired) {
+            inputs.forEach(input => input.required = isRequired);
         }
 
         moveTypeSelect.addEventListener('change', (e) => {
@@ -578,31 +625,55 @@
             quoteResult.classList.add('hidden');
             formSuccessMessage.classList.add('hidden');
 
+            // Hide all forms first
+            localMoveFields.classList.add('hidden');
+            longDistanceFields.classList.add('hidden');
+            junkRemovalFields.classList.add('hidden');
+            commercialFields.classList.add('hidden');
+            
+            // Disable required for all optional forms
+            toggleRequired(longDistanceInputs, false);
+            toggleRequired(junkRemovalInputs, false);
+            toggleRequired(commercialInputs, false);
+
             if (selection === 'long-distance') {
-                localMoveFields.classList.add('hidden');
                 longDistanceFields.classList.remove('hidden');
                 quoteSubmitBtn.textContent = 'Request Long Distance Quote';
                 quoteSubtitle.textContent = 'Fill out the form below for a custom long distance moving quote.';
-                toggleRequiredForLongDistance(true);
-            } else {
+                quoteForm.action = 'https://formspree.io/f/xovnvdvy';
+                toggleRequired(longDistanceInputs, true);
+            } else if (selection === 'junk-removal') {
+                junkRemovalFields.classList.remove('hidden');
+                quoteSubmitBtn.textContent = 'Request Junk Removal Quote';
+                quoteSubtitle.textContent = 'Please describe the items you need removed for a custom quote.';
+                quoteForm.action = 'https://formspree.io/f/xblaloln';
+                toggleRequired(junkRemovalInputs, true);
+            } else if (selection === 'commercial') {
+                commercialFields.classList.remove('hidden');
+                quoteSubmitBtn.textContent = 'Request Commercial Quote';
+                quoteSubtitle.textContent = 'Please provide details for your commercial move.';
+                quoteForm.action = 'https://formspree.io/f/xgvlvkkp';
+                toggleRequired(commercialInputs, true);
+            } else { // local
                 localMoveFields.classList.remove('hidden');
-                longDistanceFields.classList.add('hidden');
                 quoteSubmitBtn.textContent = 'Calculate My Quote';
                 quoteSubtitle.textContent = 'Get a personalized quote for your residential move in minutes.';
-                toggleRequiredForLongDistance(false);
+                quoteForm.action = ''; // Clear action for local calculation
             }
         });
 
         // Set initial state on page load
-        toggleRequiredForLongDistance(false);
+        toggleRequired(longDistanceInputs, false);
+        toggleRequired(junkRemovalInputs, false);
+        toggleRequired(commercialInputs, false);
 
         quoteForm.addEventListener('submit', function(e) {
             e.preventDefault();
             const form = e.target;
             const formData = new FormData(form);
             const submitButton = form.querySelector('button[type="submit"]');
-
             const currentMoveType = moveTypeSelect.value;
+
             if (currentMoveType === 'local') {
                 const quotePrice = document.getElementById('quote-price');
                 const quoteDetails = document.getElementById('quote-details');
@@ -617,10 +688,23 @@
                     servicesText.push(checkbox.parentElement.textContent.trim().split('(')[0].trim());
                 });
                 const totalHourlyRate = baseRate + additionalServicesCost;
+                
                 if (baseRate === 0) {
+                    currentQuoteDetails = {
+                        moveSize: moveSizeText,
+                        preferredDate: document.getElementById('move-date-local').value,
+                        additionalServices: servicesText.join(', ') || 'None',
+                        estimatedRate: "Call for Quote"
+                    };
                     quotePrice.textContent = "Call for Quote";
                     quoteDetails.textContent = "For 5+ bedroom moves, we provide a custom quote to best suit your needs.";
                 } else {
+                    currentQuoteDetails = {
+                        moveSize: moveSizeText,
+                        preferredDate: document.getElementById('move-date-local').value,
+                        additionalServices: servicesText.join(', ') || 'None',
+                        estimatedRate: `$${totalHourlyRate}/hour`
+                    };
                     quotePrice.textContent = `$${totalHourlyRate}/hour`;
                     let details = `Based on a ${moveSizeText} at $${baseRate}/hr.`;
                     if (servicesText.length > 0) {
@@ -632,7 +716,7 @@
                 quoteResult.classList.remove('hidden');
                 quoteResult.scrollIntoView({ behavior: 'smooth' });
             } else {
-                // Handle Long Distance Form Submission
+                // Handle Form Submissions for Long Distance, Junk Removal, Commercial
                 submitButton.disabled = true;
                 submitButton.textContent = 'Sending...';
 
@@ -643,15 +727,18 @@
                 }).then(response => {
                     if (response.ok) {
                         quoteResult.classList.add('hidden');
+                        if(currentMoveType === 'long-distance') {
+                            successText.textContent = 'Your long distance move request has been sent. We will get back to you with a custom quote shortly.';
+                        } else if (currentMoveType === 'junk-removal') {
+                            successText.textContent = 'Your junk removal request has been sent. We will get back to you with a custom quote shortly.';
+                        } else if (currentMoveType === 'commercial') {
+                             successText.textContent = 'Your commercial move request has been sent. We will get back to you with a custom quote shortly.';
+                        }
                         formSuccessMessage.classList.remove('hidden');
                         formSuccessMessage.scrollIntoView({ behavior: 'smooth' });
                         form.reset();
-                        // Restore form to default state after reset
-                        moveTypeSelect.value = 'local';
-                        localMoveFields.classList.remove('hidden');
-                        longDistanceFields.classList.add('hidden');
-                        toggleRequiredForLongDistance(false);
-                        quoteSubtitle.textContent = 'Get a personalized quote for your residential move in minutes.';
+                        // Restore form to default state
+                        moveTypeSelect.dispatchEvent(new Event('change'));
                     } else {
                          alert('Sorry, there was an error sending your request. Please try again.');
                     }
@@ -659,7 +746,7 @@
                     alert('Sorry, there was a network error. Please check your connection and try again.');
                 }).finally(() => {
                     submitButton.disabled = false;
-                    quoteSubmitBtn.textContent = 'Calculate My Quote';
+                    moveTypeSelect.dispatchEvent(new Event('change'));
                 });
             }
         });
@@ -675,6 +762,12 @@
         const bookingSuccessMessage = document.getElementById('booking-success-message');
 
         function openModal() {
+            // Populate hidden fields with stored quote data
+            document.getElementById('hidden-move-size').value = currentQuoteDetails.moveSize || 'N/A';
+            document.getElementById('hidden-preferred-date').value = currentQuoteDetails.preferredDate || 'N/A';
+            document.getElementById('hidden-additional-services').value = currentQuoteDetails.additionalServices || 'N/A';
+            document.getElementById('hidden-estimated-rate').value = currentQuoteDetails.estimatedRate || 'N/A';
+
             bookingModal.classList.remove('hidden');
             setTimeout(() => {
                 bookingModalOverlay.classList.remove('opacity-0');
