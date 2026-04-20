@@ -17,13 +17,12 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f7f7f7; /* Light gray background */
-            color: #1a1a1a; /* Dark text color */
+            background-color: #f7f7f7;
+            color: #1a1a1a;
         }
-        .bg-primary { background-color: #ffffff; } /* White */
-        .bg-secondary { background-color: #f0f0f0; } /* Slightly darker gray */
-        .text-accent { color: #0a0a0a; } /* Black for accents */
-        .border-accent { border-color: #cccccc; }
+        .bg-primary { background-color: #ffffff; }
+        .bg-secondary { background-color: #f0f0f0; }
+        .text-accent { color: #0a0a0a; }
         .btn-dark {
             background-color: #0a0a0a;
             color: #ffffff;
@@ -41,59 +40,62 @@
             line-height: 1.2;
             color: #1a1a1a;
         }
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 3.5rem;
-            }
-        }
+        @media (min-width: 768px) { .section-title { font-size: 3.5rem; } }
+        
         .card-style {
             background: #ffffff;
             border: 1px solid #e5e5e5;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         .form-input {
-            background-color: #e9e9e9;
-            border: 1px solid #dcdcdc;
+            background-color: #f3f4f6;
+            border: 1px solid #d1d5db;
             color: #1a1a1a;
             transition: border-color 0.3s ease;
         }
         .form-input:focus {
             outline: none;
-            border-color: #333;
-            box-shadow: 0 0 0 2px rgba(10, 10, 10, 0.2);
-        }
-        .logo-img {
-             /* No filter needed for light background */
+            border-color: #000;
+            box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
         }
         .header-scrolled {
-            background-color: rgba(255, 255, 255, 0.9) !important;
+            background-color: rgba(255, 255, 255, 0.95) !important;
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        .nav-link {
-            color: #333;
+        .nav-link { color: #333; font-weight: 500; }
+        .nav-link:hover { color: #000; }
+
+        /* Typewriter Cursor Animation */
+        .typewriter-cursor {
+            display: inline-block;
+            width: 3px;
+            background-color: #000;
+            margin-left: 4px;
+            animation: blink 0.8s infinite;
         }
-        .nav-link:hover {
-            color: #000;
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Custom Checkbox for Services */
+        .service-check:checked + label {
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
         }
-        /* Modal Styles */
-        .modal-overlay {
-            transition: opacity 0.3s ease;
-        }
-        .modal-container {
-            transition: transform 0.3s ease;
+
+        .modal-active {
+            overflow: hidden;
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50">
 
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#" class="flex items-center">
-                    <img src="assets/LOGO 2.png" alt="Haul Bros Moving Co. Logo" class="h-16 w-auto logo-img">
+                    <img src="assets/LOGO 2.png" alt="Haul Bros Moving Co. Logo" class="h-16 w-auto" onerror="this.src='https://ui-avatars.com/api/?name=HB&background=000&color=fff'">
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#services" class="nav-link transition">Services</a>
@@ -102,782 +104,515 @@
                     <a href="#reviews" class="nav-link transition">Reviews</a>
                     <a href="#contact" class="nav-link transition">Contact</a>
                 </nav>
-                <a href="#quote" class="hidden md:inline-block btn-dark px-6 py-2 rounded-full">Get a Free Quote</a>
+                <button onclick="openQuoteModal()" class="hidden md:inline-block btn-dark px-6 py-2 rounded-full shadow-lg">Get a Free Quote</button>
                 <button id="mobile-menu-button" class="md:hidden text-black">
                     <i data-lucide="menu" class="h-6 w-6"></i>
                 </button>
             </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <a href="#services" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Services</a>
-            <a href="#pricing" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Pricing</a>
-            <a href="#about" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">About</a>
-            <a href="#reviews" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Reviews</a>
-            <a href="#contact" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100">Contact</a>
-            <a href="#quote" class="block py-2 px-4 text-sm text-black font-semibold hover:bg-gray-100">Get a Free Quote</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-100">
+            <a href="#services" class="block py-3 px-6 text-gray-700 hover:bg-gray-50">Services</a>
+            <a href="#pricing" class="block py-3 px-6 text-gray-700 hover:bg-gray-50">Pricing</a>
+            <a href="#about" class="block py-3 px-6 text-gray-700 hover:bg-gray-50">About</a>
+            <a href="#reviews" class="block py-3 px-6 text-gray-700 hover:bg-gray-50">Reviews</a>
+            <a href="#contact" class="block py-3 px-6 text-gray-700 hover:bg-gray-50">Contact</a>
+            <button onclick="openQuoteModal()" class="w-full text-left py-3 px-6 text-black font-bold hover:bg-gray-50">Get a Free Quote</button>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1587582423116-ec072937a724?q=80&w=2070&auto=format&fit=crop');">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+        <div class="container mx-auto px-4 z-10">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-wider leading-tight">
-                Relocating Made <span class="text-gray-200">Easy</span>
+                Relocating Made <span id="typewriter-text" class="text-white border-b-4 border-white"></span><span class="typewriter-cursor h-10 md:h-16"></span>
             </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
+            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-200">
                 Your trusted partner for seamless moves in Northern Virginia & the DMV area. Professional, reliable, and always on time.
             </p>
-            <a href="#quote" class="mt-8 inline-block btn-dark text-lg px-10 py-4 rounded-full shadow-lg">
-                Get a Free Quote
-            </a>
+            <button onclick="openQuoteModal()" class="mt-10 inline-block btn-dark text-lg px-12 py-4 rounded-full shadow-2xl">
+                Get Your Instant Quote
+            </button>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-100 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent"></div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 md:py-32 bg-secondary">
+    <section id="services" class="py-20 md:py-32 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="section-title">Our <span class="text-accent">Services</span></h2>
-                <p class="mt-4 max-w-2xl mx-auto text-gray-600">We offer a comprehensive range of moving services tailored to your needs.</p>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Comprehensive relocation solutions tailored to your specific needs.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card -->
-                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="map-pin" class="h-12 w-12 text-accent mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Local Moves</h3>
-                    <p class="text-gray-600">Efficient and stress-free moving within the DMV area. We handle your belongings with the utmost care.</p>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <i data-lucide="map-pin" class="h-12 w-12 text-black mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Local Moves</h3>
+                    <p class="text-gray-600 leading-relaxed">Efficient and stress-free moving within the DMV area. We handle your life with the utmost care.</p>
                 </div>
-                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="truck" class="h-12 w-12 text-accent mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Long-Distance Moves</h3>
-                    <p class="text-gray-600">Relocating across the state or country? Our expert team ensures a smooth journey for your possessions.</p>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <i data-lucide="truck" class="h-12 w-12 text-black mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Long-Distance</h3>
+                    <p class="text-gray-600 leading-relaxed">Relocating across state lines? Our expert team ensures a smooth journey for your possessions.</p>
                 </div>
-                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="building-2" class="h-12 w-12 text-accent mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Commercial Moves</h3>
-                    <p class="text-gray-600">Minimize downtime with our organized and efficient office and business relocation services.</p>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <i data-lucide="building-2" class="h-12 w-12 text-black mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Commercial</h3>
+                    <p class="text-gray-600 leading-relaxed">Minimize downtime with our organized and efficient office and business relocation services.</p>
                 </div>
-                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="box" class="h-12 w-12 text-accent mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Packing & Unpacking</h3>
-                    <p class="text-gray-600">Save time and protect your items. Our professional packers use high-quality materials and techniques.</p>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <i data-lucide="box" class="h-12 w-12 text-black mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Packing</h3>
+                    <p class="text-gray-600 leading-relaxed">Professional packers using high-quality materials to protect your most fragile items.</p>
                 </div>
-                <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="package-check" class="h-12 w-12 text-accent mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Loading & Unloading</h3>
-                    <p class="text-gray-600">Need an extra hand? We provide expert assistance for loading and unloading your rental truck or container.</p>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <i data-lucide="package-check" class="h-12 w-12 text-black mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Loading Assistance</h3>
+                    <p class="text-gray-600 leading-relaxed">Need an extra hand? We provide expert assistance for loading your rental truck or POD.</p>
                 </div>
-                 <div class="bg-primary p-8 rounded-lg shadow-md transform hover:-translate-y-2 transition-transform duration-300">
-                    <i data-lucide="trash-2" class="h-12 w-12 text-accent mb-4"></i>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Junk Removal</h3>
-                    <p class="text-gray-600">Declutter your space before or after your move. We can haul away unwanted items responsibly.</p>
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 transition-all hover:shadow-xl hover:-translate-y-1">
+                    <i data-lucide="trash-2" class="h-12 w-12 text-black mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Junk Removal</h3>
+                    <p class="text-gray-600 leading-relaxed">Responsible disposal of unwanted items before or after your move.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-20 md:py-32 bg-primary">
+    <section id="pricing" class="py-20 md:py-32 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="section-title">Transparent <span class="text-accent">Pricing</span></h2>
-                <p class="mt-4 max-w-2xl mx-auto text-gray-600">No hidden fees. Simple, hourly rates for our local moving services.</p>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Fixed hourly rates based on inventory size and crew requirements.</p>
             </div>
-            <div class="max-w-4xl mx-auto card-style rounded-lg p-4">
+            <div class="max-w-4xl mx-auto card-style rounded-3xl overflow-hidden shadow-2xl">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left">
-                        <thead>
-                            <tr class="border-b border-gray-200">
-                                <th class="p-4 text-lg font-semibold text-accent">Move Size</th>
-                                <th class="p-4 text-lg font-semibold text-accent">Rate</th>
-                                <th class="p-4 text-lg font-semibold text-accent">Crew</th>
-                                <th class="p-4 text-lg font-semibold text-accent">Truck</th>
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-6 text-sm font-bold uppercase tracking-widest text-gray-500">Move Size</th>
+                                <th class="p-6 text-sm font-bold uppercase tracking-widest text-gray-500">Rate</th>
+                                <th class="p-6 text-sm font-bold uppercase tracking-widest text-gray-500">Crew</th>
+                                <th class="p-6 text-sm font-bold uppercase tracking-widest text-gray-500">Truck</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-200">
+                        <tbody class="divide-y divide-gray-100">
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-6 font-bold">Studio / 1 Bedroom</td>
+                                <td class="p-6">$149/hr</td>
+                                <td class="p-6">2 Pro Movers</td>
+                                <td class="p-6 text-gray-500">15 ft</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition bg-gray-50/30">
+                                <td class="p-6 font-bold">2 Bedroom</td>
+                                <td class="p-6">$159/hr</td>
+                                <td class="p-6">2 Pro Movers</td>
+                                <td class="p-6 text-gray-500">20 ft</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition">
+                                <td class="p-6 font-bold">3 Bedroom</td>
+                                <td class="p-6 text-black font-black">$189/hr</td>
+                                <td class="p-6">3 Pro Movers</td>
+                                <td class="p-6 text-gray-500">26 ft</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition bg-gray-50/30">
+                                <td class="p-6 font-bold">4 Bedroom</td>
+                                <td class="p-6">$249/hr</td>
+                                <td class="p-6">4 Pro Movers</td>
+                                <td class="p-6 text-gray-500">26 ft</td>
+                            </tr>
                             <tr>
-                                <td class="p-4 font-medium text-gray-800">Studio / 1 Bedroom</td>
-                                <td class="p-4 text-gray-600">$149/hour</td>
-                                <td class="p-4 text-gray-600">2 Pro Movers</td>
-                                <td class="p-4 text-gray-600">10–15 ft</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="p-4 font-medium text-gray-800">2 Bedroom</td>
-                                <td class="p-4 text-gray-600">$159/hour</td>
-                                <td class="p-4 text-gray-600">2 Pro Movers</td>
-                                <td class="p-4 text-gray-600">15–17 ft</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-gray-800">3 Bedroom</td>
-                                <td class="p-4 text-gray-600">$190/hour</td>
-                                <td class="p-4 text-gray-600">3 Pro Movers</td>
-                                <td class="p-4 text-gray-600">20–26 ft</td>
-                            </tr>
-                            <tr class="bg-gray-50">
-                                <td class="p-4 font-medium text-gray-800">4 Bedroom</td>
-                                <td class="p-4 text-gray-600">$249/hour</td>
-                                <td class="p-4 text-gray-600">4 Pro Movers</td>
-                                <td class="p-4 text-gray-600">26 ft</td>
-                            </tr>
-                            <tr>
-                                <td class="p-4 font-medium text-gray-800">5+ Bedroom</td>
-                                <td colspan="3" class="p-4 text-accent font-semibold">Call for a custom quote</td>
+                                <td class="p-6 font-bold text-gray-400 italic">5+ Bedroom</td>
+                                <td colspan="3" class="p-6 text-black font-bold">Call for custom walkthrough</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <p class="text-center mt-6 text-gray-500 text-sm">* All local moves have a 2-hour minimum service time.</p>
-                <p class="text-center mt-2 text-gray-600 text-sm font-semibold">We proudly offer a 5% discount for senior citizens and veterans!</p>
+                <div class="p-6 bg-black text-white text-center">
+                    <p class="text-sm font-medium">All local moves have a 2-hour minimum service time.</p>
+                </div>
             </div>
+            <p class="text-center mt-8 text-black font-bold flex items-center justify-center gap-2 uppercase tracking-widest text-xs">
+                <i data-lucide="shield-check" class="w-4 h-4"></i> 5% Discount for Seniors & Veterans
+            </p>
         </div>
     </section>
 
-    <!-- Instant Quote Section -->
-    <section id="quote" class="py-20 md:py-32 bg-secondary">
+    <!-- About Section -->
+    <section id="about" class="py-20 md:py-32 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Get a <span class="text-accent">Quote</span></h2>
-                <p id="quote-subtitle" class="mt-4 max-w-2xl mx-auto text-gray-600">Get a personalized quote for your residential move in minutes.</p>
-            </div>
-            <div class="max-w-4xl mx-auto card-style p-8 md:p-12 rounded-lg">
-                <form id="quote-form" action="" method="POST">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="md:col-span-2">
-                            <label for="move-type" class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
-                            <select id="move-type" name="move-type" class="w-full p-3 rounded-md form-input">
-                                <option value="local">Local Move</option>
-                                <option value="long-distance">Long Distance Move</option>
-                                <option value="junk-removal">Junk Removal</option>
-                                <option value="commercial">Commercial Move</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Local Move Fields -->
-                    <div id="local-move-fields" class="mt-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="move-size" class="block text-sm font-medium text-gray-700 mb-2">Size of Move</label>
-                                <select id="move-size" name="move-size" class="w-full p-3 rounded-md form-input">
-                                    <option value="149">Studio / 1 Bedroom</option>
-                                    <option value="159">2 Bedroom</option>
-                                    <option value="180">3 Bedroom</option>
-                                    <option value="225">4 Bedroom</option>
-                                    <option value="0">5+ Bedroom (Custom Quote)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="move-date-local" class="block text-sm font-medium text-gray-700 mb-2">Preferred Date</label>
-                                <input type="date" id="move-date-local" name="move-date-local" class="w-full p-3 rounded-md form-input">
-                            </div>
-                            <div class="md:col-span-2">
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Additional Services (per hour)</label>
-                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                    <label class="flex items-center space-x-2 p-3 bg-gray-100 rounded-md cursor-pointer">
-                                        <input type="checkbox" name="services" value="packing" data-cost="50" class="form-checkbox h-5 w-5 text-black border-gray-300 focus:ring-black">
-                                        <span class="text-gray-800">Packing (+$50/hr)</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 p-3 bg-gray-100 rounded-md cursor-pointer">
-                                        <input type="checkbox" name="services" value="unpacking" data-cost="50" class="form-checkbox h-5 w-5 text-black border-gray-300 focus:ring-black">
-                                        <span class="text-gray-800">Unpacking (+$50/hr)</span>
-                                    </label>
-                                    <label class="flex items-center space-x-2 p-3 bg-gray-100 rounded-md cursor-pointer">
-                                        <input type="checkbox" name="services" value="junk-removal" data-cost="100" class="form-checkbox h-5 w-5 text-black border-gray-300 focus:ring-black">
-                                        <span class="text-gray-800">Junk Removal (+$100/hr)</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Long Distance Move Fields -->
-                    <div id="long-distance-fields" class="hidden mt-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="fullName" placeholder="Full Name" class="w-full p-3 rounded-md form-input">
-                            <input type="email" name="email" placeholder="Email Address" class="w-full p-3 rounded-md form-input">
-                            <input type="text" name="pickupAddress" placeholder="Pickup Address (City, State)" class="w-full p-3 rounded-md form-input">
-                            <input type="text" name="dropoffAddress" placeholder="Dropoff Address (City, State)" class="w-full p-3 rounded-md form-input">
-                            <div class="md:col-span-2">
-                                <textarea name="moveDetails" placeholder="Tell us about your move (e.g., size, special items)" rows="4" class="w-full p-3 rounded-md form-input"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Junk Removal Fields -->
-                    <div id="junk-removal-fields" class="hidden mt-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="junkFullName" placeholder="Full Name" class="w-full p-3 rounded-md form-input">
-                            <input type="email" name="junkEmail" placeholder="Email Address" class="w-full p-3 rounded-md form-input">
-                            <input type="tel" name="junkPhone" placeholder="Phone Number" class="w-full p-3 rounded-md form-input">
-                            <div class="md:col-span-2">
-                                <textarea name="junkDetails" placeholder="Please describe the items you need removed." rows="4" class="w-full p-3 rounded-md form-input"></textarea>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Commercial Move Fields -->
-                    <div id="commercial-fields" class="hidden mt-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <input type="text" name="commercialFullName" placeholder="Full Name" class="w-full p-3 rounded-md form-input">
-                            <input type="text" name="commercialCompanyName" placeholder="Company Name" class="w-full p-3 rounded-md form-input">
-                            <input type="email" name="commercialEmail" placeholder="Email Address" class="w-full p-3 rounded-md form-input">
-                            <input type="tel" name="commercialPhone" placeholder="Phone Number" class="w-full p-3 rounded-md form-input">
-                            <div class="md:col-span-2">
-                                <textarea name="commercialDetails" placeholder="Please describe your commercial moving needs." rows="4" class="w-full p-3 rounded-md form-input"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8 text-center">
-                        <button id="quote-submit-btn" type="submit" class="btn-dark text-lg px-12 py-3 rounded-full">Calculate My Quote</button>
-                    </div>
-                </form>
-                <div id="quote-result" class="mt-8 text-center hidden">
-                    <h3 class="text-2xl font-bold text-gray-800">Your Estimated Hourly Rate</h3>
-                    <p class="text-4xl font-black text-accent my-4" id="quote-price"></p>
-                    <p class="text-gray-600" id="quote-details"></p>
-                    <p class="text-gray-500 text-sm mt-2">This is an hourly rate estimate based on a 2-hour minimum. Final cost depends on actual time.</p>
-                    <button id="confirm-booking-btn" class="mt-6 btn-dark text-lg px-10 py-3 rounded-full">Confirm Booking</button>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-black rounded-3xl translate-x-4 translate-y-4 -z-10 transition-transform group-hover:translate-x-2 group-hover:translate-y-2"></div>
+                    <img src="assets/482019297_122111649332782093_1916069911646613494_n.jpg" alt="Haul Bros Moving Team" class="rounded-3xl shadow-xl w-full object-cover h-[500px]" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070'">
                 </div>
-                 <div id="form-success-message" class="mt-8 text-center hidden">
-                    <h3 class="text-2xl font-bold text-accent">Thank You!</h3>
-                    <p id="success-text" class="text-gray-700 mt-2"></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about" class="py-20 md:py-32 bg-primary">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="assets/482019297_122111649332782093_1916069911646613494_n.jpg" alt="Haul Bros Moving Team" class="rounded-lg shadow-xl">
-                </div>
-                <div>
-                    <h2 class="section-title">Your Friendly Neighborhood <span class="text-accent">Movers</span></h2>
-                    <p class="mt-6 text-lg text-gray-700">
-                        Haul Bros Moving Co. LLC was founded on a simple principle: to provide a moving experience that is as stress-free and positive as possible. Serving Northern Virginia and the entire DMV area, we are a team of dedicated professionals who treat your belongings as if they were our own.
+                <div class="space-y-6">
+                    <h2 class="section-title">Your Friendly <span class="text-zinc-500">Neighborhood</span> Movers</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Haul Bros Moving Co. LLC was founded on a simple principle: to provide a moving experience that is as stress-free and positive as possible. Serving Northern Virginia and the entire DMV area, we treat your belongings like our own.
                     </p>
-                    <p class="mt-4 text-gray-600">
-                        Our mission is to deliver exceptional service with a customer-first approach. From the moment you contact us for a quote to the final box being placed in your new home, we're with you every step of the way. We believe in transparency, reliability, and hard work.
-                    </p>
-                    <a href="#contact" class="mt-8 inline-block btn-dark px-8 py-3 rounded-full">Meet the Team</a>
+                    <div class="grid grid-cols-2 gap-6 pt-4">
+                        <div class="p-4 bg-white rounded-2xl shadow-sm border border-gray-100">
+                            <p class="text-3xl font-black mb-1">500+</p>
+                            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Moves Completed</p>
+                        </div>
+                        <div class="p-4 bg-white rounded-2xl shadow-sm border border-gray-100">
+                            <p class="text-3xl font-black mb-1">4.9/5</p>
+                            <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Google Rating</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
-    <section id="reviews" class="py-20 md:py-32 bg-secondary">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-title">What Our <span class="text-accent">Clients Say</span></h2>
-                <p class="mt-4 max-w-2xl mx-auto text-gray-600">We're proud of our 5-star reputation. Here are some recent reviews from Google.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Sample Review Card -->
-                <div class="card-style p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop" alt="Reviewer Jane D." class="h-10 w-10 rounded-full mr-4 object-cover">
-                        <div>
-                            <p class="font-bold text-gray-900">Jane D.</p>
-                            <div class="flex items-center text-yellow-500">
-                                <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Absolutely phenomenal service! The Haul Bros team was punctual, professional, and incredibly efficient. They made our move across Arlington completely seamless. Highly recommend!"</p>
+    <!-- Review / Trust Section -->
+    <section id="reviews" class="py-20 md:py-32 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="section-title mb-16">Trusted by <span class="text-gray-400">Thousands</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-style p-8 rounded-3xl text-left">
+                    <div class="flex gap-1 text-yellow-400 mb-4"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+                    <p class="text-gray-700 mb-6 italic">"Absolutely phenomenal service! Punctual, professional, and incredibly efficient. Worth every penny!"</p>
+                    <p class="font-bold">Jane D.</p>
                 </div>
-                <div class="card-style p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop" alt="Reviewer Michael S." class="h-10 w-10 rounded-full mr-4 object-cover">
-                        <div>
-                            <p class="font-bold text-gray-900">Michael S.</p>
-                             <div class="flex items-center text-yellow-500">
-                                <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"I was dreading my long-distance move, but these guys were fantastic. Communication was excellent, and all my furniture arrived without a single scratch. Worth every penny."</p>
+                <div class="card-style p-8 rounded-3xl text-left border-black border-2">
+                    <div class="flex gap-1 text-yellow-400 mb-4"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+                    <p class="text-gray-700 mb-6 italic">"Organized and fast. They managed a 26ft truck like absolute pros. The best movers in Northern VA."</p>
+                    <p class="font-bold">Michael S.</p>
                 </div>
-                <div class="card-style p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1976&auto=format&fit=crop" alt="Reviewer Rachel B." class="h-10 w-10 rounded-full mr-4 object-cover">
-                        <div>
-                            <p class="font-bold text-gray-900">Rachel B.</p>
-                             <div class="flex items-center text-yellow-500">
-                                <i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Used them for a commercial move for our office. They were organized, fast, and very careful with our sensitive equipment. The best movers in the DMV, period."</p>
+                <div class="card-style p-8 rounded-3xl text-left">
+                    <div class="flex gap-1 text-yellow-400 mb-4"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+                    <p class="text-gray-700 mb-6 italic">"Elite communication. I knew exactly where the truck was every step of the journey."</p>
+                    <p class="font-bold">Rachel B.</p>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <a href="https://g.page/r/CX_xSav49wWlEAE/review" target="_blank" rel="noopener noreferrer" class="btn-dark text-lg px-10 py-3 rounded-full">
-                    Read More on Google Reviews
-                </a>
-            </div>
+            <a href="https://g.page/r/CX_xSav49wWlEAE/review" target="_blank" class="mt-12 inline-block font-bold underline underline-offset-8 uppercase tracking-widest text-xs">See More Google Reviews</a>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 md:py-32 bg-primary">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="section-title">Get In <span class="text-accent">Touch</span></h2>
-                <p class="mt-4 max-w-2xl mx-auto text-gray-600">Ready to plan your move? Contact us today for any questions or to book our services.</p>
-            </div>
+    <!-- Contact & Area Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
             <div class="grid lg:grid-cols-2 gap-12">
-                <div class="bg-secondary p-8 rounded-lg">
-                    <!-- CONTACT FORM UPDATED -->
-                    <form id="contact-form" action="https://formspree.io/f/mvgbgagy" method="POST">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="space-y-8">
+                    <h2 class="section-title">Direct <span class="text-zinc-400">Channel</span></h2>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center"><i data-lucide="phone" class="w-5 h-5"></i></div>
                             <div>
-                                <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
-                                <input type="text" name="firstName" id="first-name" class="w-full p-3 rounded-md form-input" required>
-                            </div>
-                            <div>
-                                <label for="last-name" class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
-                                <input type="text" name="lastName" id="last-name" class="w-full p-3 rounded-md form-input" required>
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Call HQ</p>
+                                <a href="tel:5718991919" class="text-xl font-bold">571-899-1919</a>
                             </div>
                         </div>
-                        <div class="mt-6">
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
-                            <input type="email" name="email" id="email" class="w-full p-3 rounded-md form-input" required>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center"><i data-lucide="mail" class="w-5 h-5"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Email Logistics</p>
+                                <a href="mailto:relocating@haulbrosmoving.com" class="text-xl font-bold">relocating@haulbrosmoving.com</a>
+                            </div>
                         </div>
-                        <div class="mt-6">
-                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Phone</label>
-                            <input type="tel" name="phone" id="phone" class="w-full p-3 rounded-md form-input">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center"><i data-lucide="globe" class="w-5 h-5"></i></div>
+                            <div>
+                                <p class="text-xs font-bold text-gray-400 uppercase tracking-widest">Compliance</p>
+                                <p class="text-xl font-bold">US DOT #4497497</p>
+                            </div>
                         </div>
-                        <div class="mt-6">
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                            <textarea name="message" id="message" rows="4" class="w-full p-3 rounded-md form-input" required></textarea>
-                        </div>
-                        <div class="mt-8">
-                            <button type="submit" class="w-full btn-dark text-lg py-3 rounded-full">Send Message</button>
-                        </div>
-                    </form>
-                    <div id="contact-success-message" class="text-center hidden p-4">
-                        <h3 class="text-xl font-bold text-accent">Message Sent!</h3>
-                        <p class="text-gray-600 mt-2">Thank you for reaching out. We'll get back to you as soon as possible.</p>
                     </div>
                 </div>
-                <div class="flex flex-col justify-center">
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <i data-lucide="phone" class="h-8 w-8 text-accent mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900">Call Us</h3>
-                                <a href="tel:5718991919" class="text-gray-700 hover:text-black transition">571-899-1919</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <i data-lucide="mail" class="h-8 w-8 text-accent mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900">Email Us</h3>
-                                <a href="mailto:relocating@haulbrosmoving.com" class="text-gray-700 hover:text-black transition">relocating@haulbrosmoving.com</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <i data-lucide="map" class="h-8 w-8 text-accent mt-1"></i>
-                            <div>
-                                <h3 class="text-xl font-semibold text-gray-900">Service Area</h3>
-                                <p class="text-gray-700">Serving Northern Virginia & the entire DMV area.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-8 rounded-lg overflow-hidden shadow-lg">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200366.983949315!2d-77.4427499411621!3d38.8022538183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b649936f4c6a23%3A0x70c10f36f6d4be2e!2sNorthern%20Virginia!5e0!3m2!1sen!2sus!4v1694541256789!5m2!1sen!2sus" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="text-center mt-4 p-4 bg-gray-100 rounded-lg">
-                        <h4 class="font-bold text-lg text-accent">Servicing All 50 States!</h4>
-                        <p class="text-gray-600">For long-distance moves, we've got you covered nationwide.</p>
-                    </div>
+                <div class="rounded-3xl overflow-hidden shadow-2xl h-[400px]">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200366.983949315!2d-77.4427499411621!3d38.8022538183141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b649936f4c6a23%3A0x70c10f36f6d4be2e!2sNorthern%20Virginia!5e0!3m2!1sen!2sus!4v1694541256789!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-secondary border-t border-gray-200">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
-                    <a href="#" class="flex items-center justify-center md:justify-start">
-                         <img src="assets/LOGO 2.png" alt="Haul Bros Moving Co. Logo" class="h-20 w-auto logo-img">
-                    </a>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold text-accent tracking-wider uppercase">Quick Links</h4>
-                    <ul class="mt-4 space-y-2">
-                        <li><a href="#services" class="text-gray-600 hover:text-black">Services</a></li>
-                        <li><a href="#quote" class="text-gray-600 hover:text-black">Free Quote</a></li>
-                        <li><a href="#about" class="text-gray-600 hover:text-black">About Us</a></li>
-                        <li><a href="#contact" class="text-gray-600 hover:text-black">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-lg font-semibold text-accent tracking-wider uppercase">Connect With Us</h4>
-                    <div class="flex justify-center md:justify-start space-x-4 mt-4">
-                        <a href="https://www.facebook.com/61573462809128/about/" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i data-lucide="facebook" class="h-6 w-6"></i></a>
-                        <a href="https://www.instagram.com/haulbrosmovingco.llc" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i data-lucide="instagram" class="h-6 w-6"></i></a>
-                        <a href="https://twitter.com/HaulBroMoving" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i data-lucide="twitter" class="h-6 w-6"></i></a>
-                        <a href="https://www.linkedin.com/in/haul-bros-moving-co-llc-a11494352?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BiaXlN0WvRuGJNbqRZcL9lg%3D%3D" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black"><i data-lucide="linkedin" class="h-6 w-6"></i></a>
-                    </div>
-                </div>
+    <!-- Professional Footer -->
+    <footer class="bg-white py-16 border-t border-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <img src="assets/LOGO 2.png" alt="Haul Bros Logo" class="h-12 mx-auto mb-8 grayscale opacity-50" onerror="this.src='https://ui-avatars.com/api/?name=HB&background=000&color=fff'">
+            <div class="flex flex-wrap justify-center gap-8 mb-8 text-xs font-bold uppercase tracking-widest text-gray-500">
+                <a href="#services" class="hover:text-black transition">Services</a>
+                <a href="#pricing" class="hover:text-black transition">Pricing</a>
+                <button onclick="openPolicy('terms')" class="hover:text-black transition">Terms of Use</button>
+                <button onclick="openPolicy('privacy')" class="hover:text-black transition">Privacy Policy</button>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
-                <p>&copy; <span id="year"></span> Haul Bros Moving Co. LLC. All Rights Reserved.</p>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="https://www.facebook.com/61573462809128" target="_blank" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                <a href="https://www.instagram.com/haulbrosmovingco.llc" target="_blank" class="w-10 h-10 border border-gray-200 rounded-full flex items-center justify-center hover:bg-black hover:text-white transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
             </div>
+            <p class="text-[10px] text-gray-400 font-bold uppercase tracking-[0.3em]">
+                &copy; <span id="year"></span> Haul Bros Moving Co. LLC. All Rights Reserved. US DOT #4497497
+            </p>
         </div>
     </footer>
 
-    <!-- Booking Modal -->
-    <div id="booking-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-        <div id="booking-modal-overlay" class="absolute inset-0 bg-black bg-opacity-50 modal-overlay"></div>
-        <div id="booking-modal-container" class="bg-white rounded-lg shadow-xl w-full max-w-lg p-8 z-10 transform scale-95 modal-container">
-            <div class="flex justify-between items-center mb-6">
-                <h3 class="text-2xl font-bold text-accent">Confirm Your Booking</h3>
-                <button id="close-modal-btn" class="text-gray-500 hover:text-black">&times;</button>
+    <!-- MULTI-STEP QUOTE MODAL -->
+    <div id="quote-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm modal-overlay" onclick="closeQuoteModal()"></div>
+        <div class="relative bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden transform scale-95 transition-all duration-300">
+            
+            <!-- Progress Bar Container -->
+            <div id="quote-progress-container" class="h-2 bg-gray-100 w-full">
+                <div id="quote-progress" class="h-full bg-black transition-all duration-500" style="width: 20%;"></div>
             </div>
-            <div id="booking-form-content">
-                <p class="text-gray-600 mb-6">Please provide your details below to finalize your move. We'll be in touch shortly to confirm everything.</p>
-                <!-- BOOKING FORM UPDATED -->
-                <form id="booking-form" action="https://formspree.io/f/mwpnpopj" method="POST">
-                    <!-- Hidden fields for quote details -->
-                    <input type="hidden" name="moveSize" id="hidden-move-size">
-                    <input type="hidden" name="preferredDate" id="hidden-preferred-date">
-                    <input type="hidden" name="additionalServices" id="hidden-additional-services">
-                    <input type="hidden" name="estimatedRate" id="hidden-estimated-rate">
+
+            <div class="p-8 md:p-12">
+                <!-- FORM VIEW -->
+                <form id="multi-quote-form" action="https://formspree.io/f/mvgbgagy" method="POST">
                     
-                    <div class="space-y-4">
-                        <input type="text" name="fullName" placeholder="Full Name" required class="w-full p-3 rounded-md form-input">
-                        <input type="text" name="pickupAddress" placeholder="Pickup Address" required class="w-full p-3 rounded-md form-input">
-                        <input type="text" name="dropoffAddress" placeholder="Dropoff Address" required class="w-full p-3 rounded-md form-input">
-                        <input type="email" name="email" placeholder="Email Address" required class="w-full p-3 rounded-md form-input">
-                        <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-3 rounded-md form-input">
+                    <!-- STEP 1: Service Type -->
+                    <div id="q-step-1" class="quote-step space-y-6">
+                        <h3 class="text-3xl font-black tracking-tight mb-2">Select Service</h3>
+                        <p class="text-gray-500 text-sm mb-8">What kind of move are we planning?</p>
+                        <div class="grid gap-3">
+                            <label class="p-4 border-2 border-gray-100 rounded-2xl flex items-center gap-4 cursor-pointer hover:border-black transition">
+                                <input type="radio" name="service_type" value="Local Move" class="w-5 h-5 accent-black" checked>
+                                <span class="font-bold">Local Move (DMV)</span>
+                            </label>
+                            <label class="p-4 border-2 border-gray-100 rounded-2xl flex items-center gap-4 cursor-pointer hover:border-black transition">
+                                <input type="radio" name="service_type" value="Long Distance" class="w-5 h-5 accent-black">
+                                <span class="font-bold">Long Distance Move</span>
+                            </label>
+                            <label class="p-4 border-2 border-gray-100 rounded-2xl flex items-center gap-4 cursor-pointer hover:border-black transition">
+                                <input type="radio" name="service_type" value="Commercial" class="w-5 h-5 accent-black">
+                                <span class="font-bold">Commercial Move</span>
+                            </label>
+                        </div>
                     </div>
-                    <div class="mt-8">
-                        <button type="submit" class="w-full btn-dark text-lg py-3 rounded-full">Submit Booking</button>
+
+                    <!-- STEP 2: Size of Move -->
+                    <div id="q-step-2" class="quote-step hidden space-y-6">
+                        <h3 class="text-3xl font-black tracking-tight mb-2">Inventory Size</h3>
+                        <p class="text-gray-500 text-sm mb-8">Select the size of your current home.</p>
+                        <select id="q-size" name="move_size" class="w-full p-5 rounded-2xl bg-gray-50 font-bold border-none">
+                            <option value="149" data-name="Studio / 1 Bedroom">Studio / 1 Bedroom</option>
+                            <option value="159" data-name="2 Bedroom">2 Bedroom</option>
+                            <option value="189" data-name="3 Bedroom">3 Bedroom</option>
+                            <option value="249" data-name="4 Bedroom">4 Bedroom</option>
+                            <option value="0" data-name="5+ Bedroom">Estate (5+ Bedroom)</option>
+                        </select>
+                    </div>
+
+                    <!-- STEP 3: Date -->
+                    <div id="q-step-3" class="quote-step hidden space-y-6">
+                        <h3 class="text-3xl font-black tracking-tight mb-2">Preferred Date</h3>
+                        <p class="text-gray-500 text-sm mb-8">When would you like to relocate?</p>
+                        <input type="date" name="move_date" required class="w-full p-5 rounded-2xl bg-gray-50 font-bold border-none">
+                    </div>
+
+                    <!-- STEP 4: Additional Services -->
+                    <div id="q-step-4" class="quote-step hidden space-y-6">
+                        <h3 class="text-3xl font-black tracking-tight mb-2">Premium Add-ons</h3>
+                        <p class="text-gray-500 text-sm mb-8">Select any additional services required.</p>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="relative">
+                                <input type="checkbox" id="q-packing" name="add_packing" value="Yes" data-cost="50" class="hidden service-check">
+                                <label for="q-packing" class="flex justify-between items-center p-5 rounded-2xl border-2 border-gray-100 cursor-pointer transition font-bold">
+                                    <span>Packing</span>
+                                    <span class="text-xs text-gray-400">+$50/hr</span>
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="checkbox" id="q-unpacking" name="add_unpacking" value="Yes" data-cost="50" class="hidden service-check">
+                                <label for="q-unpacking" class="flex justify-between items-center p-5 rounded-2xl border-2 border-gray-100 cursor-pointer transition font-bold">
+                                    <span>Unpacking</span>
+                                    <span class="text-xs text-gray-400">+$50/hr</span>
+                                </label>
+                            </div>
+                            <div class="relative">
+                                <input type="checkbox" id="q-junk" name="add_junk" value="Yes" data-cost="100" class="hidden service-check">
+                                <label for="q-junk" class="flex justify-between items-center p-5 rounded-2xl border-2 border-gray-100 cursor-pointer transition font-bold">
+                                    <span>Junk Removal</span>
+                                    <span class="text-xs text-gray-400">+$100/hr</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- STEP 5: Contact & Submit -->
+                    <div id="q-step-5" class="quote-step hidden space-y-4">
+                        <h3 class="text-3xl font-black tracking-tight mb-2">Final Details</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" name="name" placeholder="Full Name" required class="w-full p-4 rounded-xl bg-gray-50 font-bold border-none">
+                            <input type="tel" name="phone" placeholder="Phone Number" required class="w-full p-4 rounded-xl bg-gray-50 font-bold border-none">
+                        </div>
+                        <input type="email" name="email" placeholder="Email Address" required class="w-full p-4 rounded-xl bg-gray-50 font-bold border-none">
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" name="pickup" placeholder="Pickup Zip" required class="w-full p-4 rounded-xl bg-gray-50 font-bold border-none">
+                            <input type="text" name="destination" placeholder="Dropoff Zip" required class="w-full p-4 rounded-xl bg-gray-50 font-bold border-none">
+                        </div>
+
+                        <div id="price-reveal" class="p-6 bg-black text-white rounded-2xl text-center">
+                            <p class="text-[10px] uppercase font-bold tracking-[0.2em] opacity-60 mb-1">Projected Hourly Rate</p>
+                            <p id="total-rate-text" class="text-4xl font-black">$0/hr</p>
+                        </div>
+
+                        <div class="flex items-center gap-3 px-2 py-4">
+                            <input type="checkbox" id="agree-terms" required class="w-5 h-5 accent-black">
+                            <label for="agree-terms" class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">I agree to the <button type="button" onclick="openPolicy('terms')" class="text-black underline">Terms & Conditions</button></label>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div id="quote-nav" class="flex gap-4 mt-10">
+                        <button type="button" id="prev-btn" class="hidden flex-1 py-4 font-bold border-2 border-gray-100 rounded-2xl hover:bg-gray-50 transition">Previous</button>
+                        <button type="button" id="next-btn" class="flex-1 btn-dark py-4 rounded-2xl shadow-xl">Next Step</button>
+                        <button type="submit" id="submit-btn" class="hidden flex-1 btn-dark py-4 rounded-2xl shadow-xl">Complete Quote</button>
                     </div>
                 </form>
-            </div>
-            <div id="booking-success-message" class="text-center hidden">
-                <i data-lucide="check-circle" class="h-16 w-16 text-green-500 mx-auto mb-4"></i>
-                <h3 class="text-2xl font-bold text-accent">Booking Submitted!</h3>
-                <p class="text-gray-600 mt-2">Thank you! We've received your details and will email you a confirmation shortly.</p>
+
+                <!-- SUCCESS VIEW -->
+                <div id="quote-success" class="hidden text-center py-10 space-y-6">
+                    <div class="w-20 h-20 bg-black text-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <i data-lucide="check" class="w-10 h-10"></i>
+                    </div>
+                    <h3 class="text-4xl font-black uppercase tracking-tighter">Thanks!</h3>
+                    <p class="text-gray-500 font-bold text-lg">The form was submitted successfully.</p>
+                    <button onclick="resetQuoteModal()" class="inline-block font-black underline underline-offset-8 uppercase tracking-widest text-xs hover:text-zinc-400 transition-colors">Go back</button>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- LEGAL MODALS -->
+    <div id="policy-modal" class="fixed inset-0 z-[110] flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closePolicy()"></div>
+        <div class="relative bg-white w-full max-w-3xl max-h-[80vh] overflow-y-auto rounded-[2rem] p-10 shadow-2xl">
+            <button onclick="closePolicy()" class="absolute top-6 right-6 text-gray-300 hover:text-black"><i data-lucide="x"></i></button>
+            <div id="policy-content" class="prose prose-zinc max-w-none">
+                <!-- Content Injected via JS -->
+            </div>
+        </div>
+    </div>
 
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('header-scrolled');
-            } else {
-                header.classList.remove('header-scrolled');
-            }
-        });
-
-        // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Global variable to store quote details
-        let currentQuoteDetails = {};
+        // --- TYPEWRITER CAROUSEL ---
+        const words = ["Easy", "Seamless", "Stress-Free", "Professional", "Reliable"];
+        let wordIdx = 0, charIdx = 0, isDeleting = false;
+        const typewriterEl = document.getElementById('typewriter-text');
 
-        // Quote Form Logic
-        const moveTypeSelect = document.getElementById('move-type');
-        const localMoveFields = document.getElementById('local-move-fields');
-        const longDistanceFields = document.getElementById('long-distance-fields');
-        const junkRemovalFields = document.getElementById('junk-removal-fields');
-        const commercialFields = document.getElementById('commercial-fields');
-        const quoteSubmitBtn = document.getElementById('quote-submit-btn');
-        const quoteSubtitle = document.getElementById('quote-subtitle');
-        const quoteForm = document.getElementById('quote-form');
-        const quoteResult = document.getElementById('quote-result');
-        const formSuccessMessage = document.getElementById('form-success-message');
-        const successText = document.getElementById('success-text');
-        
-        const longDistanceInputs = document.querySelectorAll('#long-distance-fields input, #long-distance-fields textarea');
-        const junkRemovalInputs = document.querySelectorAll('#junk-removal-fields input, #junk-removal-fields textarea');
-        const commercialInputs = document.querySelectorAll('#commercial-fields input, #commercial-fields textarea');
-
-        function toggleRequired(inputs, isRequired) {
-            inputs.forEach(input => input.required = isRequired);
+        function type() {
+            const current = words[wordIdx];
+            typewriterEl.textContent = isDeleting ? current.substring(0, charIdx - 1) : current.substring(0, charIdx + 1);
+            charIdx = isDeleting ? charIdx - 1 : charIdx + 1;
+            let speed = isDeleting ? 70 : 150;
+            if (!isDeleting && charIdx === current.length) { isDeleting = true; speed = 2000; }
+            else if (isDeleting && charIdx === 0) { isDeleting = false; wordIdx = (wordIdx + 1) % words.length; speed = 500; }
+            setTimeout(type, speed);
         }
+        type();
 
-        moveTypeSelect.addEventListener('change', (e) => {
-            const selection = e.target.value;
-            quoteResult.classList.add('hidden');
-            formSuccessMessage.classList.add('hidden');
+        // --- MULTI-STEP QUOTE ---
+        let currentStep = 1;
+        const totalSteps = 5;
+        const nextBtn = document.getElementById('next-btn');
+        const prevBtn = document.getElementById('prev-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const progress = document.getElementById('quote-progress');
+        const progressContainer = document.getElementById('quote-progress-container');
+        const quoteForm = document.getElementById('multi-quote-form');
+        const successView = document.getElementById('quote-success');
 
-            // Hide all forms first
-            localMoveFields.classList.add('hidden');
-            longDistanceFields.classList.add('hidden');
-            junkRemovalFields.classList.add('hidden');
-            commercialFields.classList.add('hidden');
+        function updateStep() {
+            document.querySelectorAll('.quote-step').forEach(s => s.classList.add('hidden'));
+            document.getElementById(`q-step-${currentStep}`).classList.remove('hidden');
+            progress.style.width = `${(currentStep / totalSteps) * 100}%`;
             
-            // Disable required for all optional forms
-            toggleRequired(longDistanceInputs, false);
-            toggleRequired(junkRemovalInputs, false);
-            toggleRequired(commercialInputs, false);
+            prevBtn.classList.toggle('hidden', currentStep === 1);
+            nextBtn.classList.toggle('hidden', currentStep === totalSteps);
+            submitBtn.classList.toggle('hidden', currentStep !== totalSteps);
 
-            if (selection === 'long-distance') {
-                longDistanceFields.classList.remove('hidden');
-                quoteSubmitBtn.textContent = 'Request Long Distance Quote';
-                quoteSubtitle.textContent = 'Fill out the form below for a custom long distance moving quote.';
-                quoteForm.action = 'https://formspree.io/f/xovnvdvy';
-                toggleRequired(longDistanceInputs, true);
-            } else if (selection === 'junk-removal') {
-                junkRemovalFields.classList.remove('hidden');
-                quoteSubmitBtn.textContent = 'Request Junk Removal Quote';
-                quoteSubtitle.textContent = 'Please describe the items you need removed for a custom quote.';
-                quoteForm.action = 'https://formspree.io/f/xblaloln';
-                toggleRequired(junkRemovalInputs, true);
-            } else if (selection === 'commercial') {
-                commercialFields.classList.remove('hidden');
-                quoteSubmitBtn.textContent = 'Request Commercial Quote';
-                quoteSubtitle.textContent = 'Please provide details for your commercial move.';
-                quoteForm.action = 'https://formspree.io/f/xgvlvkkp';
-                toggleRequired(commercialInputs, true);
-            } else { // local
-                localMoveFields.classList.remove('hidden');
-                quoteSubmitBtn.textContent = 'Calculate My Quote';
-                quoteSubtitle.textContent = 'Get a personalized quote for your residential move in minutes.';
-                quoteForm.action = ''; // Clear action for local calculation
-            }
+            if (currentStep === 5) calculatePrice();
+        }
+
+        nextBtn.onclick = () => { if(currentStep < totalSteps) currentStep++; updateStep(); };
+        prevBtn.onclick = () => { if(currentStep > 1) currentStep--; updateStep(); };
+
+        function calculatePrice() {
+            const base = parseInt(document.getElementById('q-size').value);
+            let addon = 0;
+            document.querySelectorAll('.service-check:checked').forEach(c => addon += parseInt(c.dataset.cost));
+            document.getElementById('total-rate-text').innerText = base === 0 ? "Custom Bid" : `$${base + addon}/hr`;
+        }
+
+        function openQuoteModal() {
+            document.getElementById('quote-modal').classList.remove('hidden');
+            document.body.classList.add('modal-active');
+        }
+        function closeQuoteModal() {
+            document.getElementById('quote-modal').classList.add('hidden');
+            document.body.classList.remove('modal-active');
+        }
+
+        // RESET MODAL
+        function resetQuoteModal() {
+            currentStep = 1;
+            quoteForm.reset();
+            quoteForm.classList.remove('hidden');
+            successView.classList.add('hidden');
+            progressContainer.classList.remove('hidden');
+            updateStep();
+            closeQuoteModal();
+        }
+
+        // --- LEGAL MODALS ---
+        const policies = {
+            terms: `<h1 class="text-3xl font-black uppercase mb-6">Terms & Conditions</h1><p class="text-gray-400 font-bold mb-4 uppercase tracking-widest text-xs">Effective Date: February 28, 2025</p><p>By using our services, you agree to these terms. All quotes are estimates. Final charges are determined by actual labor time. Haul Bros Moving Co LLC operates under US DOT #4497497. Virginia Governing Law applies.</p><h3>Junk Removal</h3><p>All items removed become the property of the company unless otherwise stated.</p>`,
+            privacy: `<h1 class="text-3xl font-black uppercase mb-6">Privacy Policy</h1><p>We respect your data. Information collected via our quote tool is used strictly for relocation logistics and communication. We never sell your personal information to third parties.</p>`
+        };
+
+        function openPolicy(type) {
+            document.getElementById('policy-content').innerHTML = policies[type];
+            document.getElementById('policy-modal').classList.remove('hidden');
+        }
+        function closePolicy() { document.getElementById('policy-modal').classList.add('hidden'); }
+
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('header-scrolled', window.scrollY > 50);
         });
 
-        // Set initial state on page load
-        toggleRequired(longDistanceInputs, false);
-        toggleRequired(junkRemovalInputs, false);
-        toggleRequired(commercialInputs, false);
-
-        quoteForm.addEventListener('submit', function(e) {
+        // ASYNC FORM SUBMISSION
+        quoteForm.onsubmit = async (e) => {
             e.preventDefault();
             const form = e.target;
-            const formData = new FormData(form);
-            const submitButton = form.querySelector('button[type="submit"]');
-            const currentMoveType = moveTypeSelect.value;
+            
+            submitBtn.innerText = "Processing...";
+            submitBtn.disabled = true;
 
-            if (currentMoveType === 'local') {
-                const quotePrice = document.getElementById('quote-price');
-                const quoteDetails = document.getElementById('quote-details');
-                const moveSizeSelect = document.getElementById('move-size');
-                const baseRate = parseInt(moveSizeSelect.value);
-                const moveSizeText = moveSizeSelect.options[moveSizeSelect.selectedIndex].text;
-                let additionalServicesCost = 0;
-                let servicesText = [];
-                const serviceCheckboxes = document.querySelectorAll('input[name="services"]:checked');
-                serviceCheckboxes.forEach(checkbox => {
-                    additionalServicesCost += parseInt(checkbox.dataset.cost);
-                    servicesText.push(checkbox.parentElement.textContent.trim().split('(')[0].trim());
-                });
-                const totalHourlyRate = baseRate + additionalServicesCost;
-                
-                if (baseRate === 0) {
-                    currentQuoteDetails = {
-                        moveSize: moveSizeText,
-                        preferredDate: document.getElementById('move-date-local').value,
-                        additionalServices: servicesText.join(', ') || 'None',
-                        estimatedRate: "Call for Quote"
-                    };
-                    quotePrice.textContent = "Call for Quote";
-                    quoteDetails.textContent = "For 5+ bedroom moves, we provide a custom quote to best suit your needs.";
-                } else {
-                    currentQuoteDetails = {
-                        moveSize: moveSizeText,
-                        preferredDate: document.getElementById('move-date-local').value,
-                        additionalServices: servicesText.join(', ') || 'None',
-                        estimatedRate: `$${totalHourlyRate}/hour`
-                    };
-                    quotePrice.textContent = `$${totalHourlyRate}/hour`;
-                    let details = `Based on a ${moveSizeText} at $${baseRate}/hr.`;
-                    if (servicesText.length > 0) {
-                        details += ` Includes ${servicesText.join(', ')}.`;
-                    }
-                    quoteDetails.textContent = details;
-                }
-                formSuccessMessage.classList.add('hidden');
-                quoteResult.classList.remove('hidden');
-                quoteResult.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                // Handle Form Submissions for Long Distance, Junk Removal, Commercial
-                submitButton.disabled = true;
-                submitButton.textContent = 'Sending...';
-
-                fetch(form.action, {
-                    method: form.method,
-                    body: formData,
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
                     headers: { 'Accept': 'application/json' }
-                }).then(response => {
-                    if (response.ok) {
-                        quoteResult.classList.add('hidden');
-                        if(currentMoveType === 'long-distance') {
-                            successText.textContent = 'Your long distance move request has been sent. We will get back to you with a custom quote shortly.';
-                        } else if (currentMoveType === 'junk-removal') {
-                            successText.textContent = 'Your junk removal request has been sent. We will get back to you with a custom quote shortly.';
-                        } else if (currentMoveType === 'commercial') {
-                             successText.textContent = 'Your commercial move request has been sent. We will get back to you with a custom quote shortly.';
-                        }
-                        formSuccessMessage.classList.remove('hidden');
-                        formSuccessMessage.scrollIntoView({ behavior: 'smooth' });
-                        form.reset();
-                        // Restore form to default state
-                        moveTypeSelect.dispatchEvent(new Event('change'));
-                    } else {
-                         alert('Sorry, there was an error sending your request. Please try again.');
-                    }
-                }).catch(error => {
-                    alert('Sorry, there was a network error. Please check your connection and try again.');
-                }).finally(() => {
-                    submitButton.disabled = false;
-                    moveTypeSelect.dispatchEvent(new Event('change'));
                 });
+
+                if (response.ok) {
+                    // Hide Form and Progress
+                    quoteForm.classList.add('hidden');
+                    progressContainer.classList.add('hidden');
+                    // Show Success View
+                    successView.classList.remove('hidden');
+                    lucide.createIcons(); // Ensure check icon renders
+                } else {
+                    alert("Oops! There was a problem submitting your form. Please try again.");
+                    submitBtn.innerText = "Complete Quote";
+                    submitBtn.disabled = false;
+                }
+            } catch (error) {
+                alert("Oops! There was a problem submitting your form. Please try again.");
+                submitBtn.innerText = "Complete Quote";
+                submitBtn.disabled = false;
             }
-        });
+        };
 
-        // Booking Modal Logic
-        const bookingModal = document.getElementById('booking-modal');
-        const bookingModalOverlay = document.getElementById('booking-modal-overlay');
-        const bookingModalContainer = document.getElementById('booking-modal-container');
-        const confirmBookingBtn = document.getElementById('confirm-booking-btn');
-        const closeModalBtn = document.getElementById('close-modal-btn');
-        const bookingForm = document.getElementById('booking-form');
-        const bookingFormContent = document.getElementById('booking-form-content');
-        const bookingSuccessMessage = document.getElementById('booking-success-message');
-
-        function openModal() {
-            // Populate hidden fields with stored quote data
-            document.getElementById('hidden-move-size').value = currentQuoteDetails.moveSize || 'N/A';
-            document.getElementById('hidden-preferred-date').value = currentQuoteDetails.preferredDate || 'N/A';
-            document.getElementById('hidden-additional-services').value = currentQuoteDetails.additionalServices || 'N/A';
-            document.getElementById('hidden-estimated-rate').value = currentQuoteDetails.estimatedRate || 'N/A';
-
-            bookingModal.classList.remove('hidden');
-            setTimeout(() => {
-                bookingModalOverlay.classList.remove('opacity-0');
-                bookingModalContainer.classList.remove('scale-95');
-            }, 10);
-        }
-
-        function closeModal() {
-            bookingModalOverlay.classList.add('opacity-0');
-            bookingModalContainer.classList.add('scale-95');
-            setTimeout(() => {
-                bookingModal.classList.add('hidden');
-                bookingFormContent.classList.remove('hidden');
-                bookingSuccessMessage.classList.add('hidden');
-                bookingForm.reset();
-            }, 300);
-        }
-
-        confirmBookingBtn.addEventListener('click', openModal);
-        closeModalBtn.addEventListener('click', closeModal);
-        bookingModalOverlay.addEventListener('click', closeModal);
-
-        bookingForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-            const submitButton = form.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting...';
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    bookingFormContent.classList.add('hidden');
-                    bookingSuccessMessage.classList.remove('hidden');
-                    lucide.createIcons();
-                    setTimeout(closeModal, 3000);
-                } else {
-                    alert('Sorry, there was an error sending your booking. Please try again.');
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Submit Booking';
-                }
-            }).catch(error => {
-                alert('Sorry, there was a network error. Please check your connection and try again.');
-                submitButton.disabled = false;
-                submitButton.textContent = 'Submit Booking';
-            });
-        });
-
-        // Contact Form Logic
-        const contactForm = document.getElementById('contact-form');
-        const contactSuccessMessage = document.getElementById('contact-success-message');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const form = e.target;
-            const formData = new FormData(form);
-            const submitButton = form.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            }).then(response => {
-                if (response.ok) {
-                    form.classList.add('hidden');
-                    contactSuccessMessage.classList.remove('hidden');
-                    setTimeout(() => {
-                        contactSuccessMessage.classList.add('hidden');
-                        form.classList.remove('hidden');
-                        form.reset();
-                        submitButton.disabled = false;
-                        submitButton.textContent = 'Send Message';
-                    }, 4000); // Hide success message and show form again after 4 seconds
-                } else {
-                    alert('Sorry, there was an error sending your message. Please try again.');
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Send Message';
-                }
-            }).catch(error => {
-                alert('Sorry, there was a network error. Please check your connection and try again.');
-                submitButton.disabled = false;
-                submitButton.textContent = 'Send Message';
-            });
-        });
-
-        // Simple fade-in animation on scroll
-        const animatedElements = document.querySelectorAll('.section-title, .grid > div, form, table, #about img');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        animatedElements.forEach(el => {
-            el.style.opacity = 0;
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(el);
-        });
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
     </script>
 </body>
 </html>
