@@ -95,7 +95,14 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="#" class="flex items-center">
-                    <img src="assets/LOGO 2.png" alt="Haul Bros Moving Co. Logo" class="h-16 w-auto" onerror="this.src='https://ui-avatars.com/api/?name=HB&background=000&color=fff'">
+                    <!-- Fixed Video Logo Integration -->
+                    <div class="h-16 flex items-center overflow-hidden">
+                        <video autoplay loop muted playsinline poster="assets/LOGO 2.png" class="h-full w-auto object-contain mix-blend-multiply">
+                            <source src="assets/Firefly animate This logo with looping animation - give it an athletic animation _ 405204.mov" type="video/quicktime">
+                            <source src="assets/Firefly animate This logo with looping animation - give it an athletic animation _ 405204.mov" type="video/mp4">
+                            <img src="assets/LOGO 2.png" alt="Haul Bros Moving Co. Logo" class="h-full w-auto">
+                        </video>
+                    </div>
                 </a>
                 <nav class="hidden md:flex items-center space-x-8">
                     <a href="#services" class="nav-link transition">Services</a>
@@ -331,7 +338,13 @@
     <!-- Professional Footer -->
     <footer class="bg-white py-16 border-t border-gray-100">
         <div class="container mx-auto px-4 text-center">
-            <img src="assets/LOGO 2.png" alt="Haul Bros Logo" class="h-12 mx-auto mb-8 grayscale opacity-50" onerror="this.src='https://ui-avatars.com/api/?name=HB&background=000&color=fff'">
+            <!-- Footer Video Logo -->
+            <div class="h-12 mb-8 flex justify-center items-center grayscale opacity-50 overflow-hidden">
+                <video autoplay loop muted playsinline poster="assets/LOGO 2.png" class="h-full w-auto object-contain mix-blend-multiply">
+                    <source src="assets/Firefly animate This logo with looping animation - give it an athletic animation _ 405204.mov" type="video/quicktime">
+                    <img src="assets/LOGO 2.png" alt="Haul Bros Logo" class="h-full w-auto">
+                </video>
+            </div>
             <div class="flex flex-wrap justify-center gap-8 mb-8 text-xs font-bold uppercase tracking-widest text-gray-500">
                 <a href="#services" class="hover:text-black transition">Services</a>
                 <a href="#pricing" class="hover:text-black transition">Pricing</a>
