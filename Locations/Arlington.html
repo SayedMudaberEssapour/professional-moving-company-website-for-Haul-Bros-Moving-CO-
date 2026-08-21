@@ -101,35 +101,109 @@
                     <h2 class="text-2xl font-black text-slate-900 mt-2">Get Your Arlington Quote</h2>
                     <p class="text-xs text-slate-600 mt-1">Fast response within 15–30 minutes.</p>
                 </div>
-                <form action="/thank-you/" method="POST" class="space-y-4">
-                    <div>
-                        <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">Full Name *</label>
-                        <input type="text" name="fullName" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-black outline-none bg-white text-slate-900" placeholder="John Smith">
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">Phone *</label>
-                            <input type="tel" name="phone" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-black outline-none bg-white text-slate-900" placeholder="571-000-0000">
-                        </div>
-                        <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">Moving Date *</label>
-                            <input type="date" name="movingDate" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-black outline-none bg-white text-slate-900">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">From (Zip/City) *</label>
-                            <input type="text" name="origin" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-black outline-none bg-white text-slate-900" placeholder="Arlington 22201">
-                        </div>
-                        <div>
-                            <label class="block text-[11px] font-bold uppercase tracking-wider text-slate-700 mb-1">To (Zip/City) *</label>
-                            <input type="text" name="destination" required class="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-black outline-none bg-white text-slate-900" placeholder="Fairfax 22030">
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full bg-black text-white font-bold py-3.5 rounded-xl text-sm shadow-xl hover:bg-zinc-800 transition uppercase tracking-wider">
-                        Request Free Estimate Now →
-                    </button>
-                </form>
+
+
+                <div class="bg-white p-8 md:p-10 rounded-[2.5rem] shadow-2xl max-w-2xl mx-auto border border-zinc-100">
+    <!-- Header Section -->
+    <div class="text-center mb-8">
+        <span class="bg-black text-white px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider mb-4 inline-block">
+            Instant Estimate
+        </span>
+        <h2 class="text-3xl md:text-4xl font-black text-zinc-900 tracking-tight mb-2">
+            Get Your Quote
+        </h2>
+        <p class="text-zinc-500 text-sm font-medium">
+            Fast response within 15–30 minutes.
+        </p>
+    </div>
+
+    <!-- Form -->
+    <form action="https://formspree.io/f/xovnvdvy" method="POST" class="space-y-5">
+        <!-- Hidden Subject for Formspree (Optional) -->
+        <input type="hidden" name="_subject" value="New Estimate Request">
+
+        <!-- Full Name -->
+        <div>
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                Full Name *
+            </label>
+            <input type="text" name="name" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="John Smith">
+        </div>
+
+        <!-- Phone & Moving Date -->
+        <div class="grid md:grid-cols-2 gap-5">
+            <div>
+                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                    Phone *
+                </label>
+                <input type="tel" name="phone" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="571-000-0000">
+            </div>
+            <div>
+                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                    Moving Date *
+                </label>
+                <input type="date" name="moving_date" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition">
+            </div>
+        </div>
+
+        <!-- From & To Locations -->
+        <div class="grid md:grid-cols-2 gap-5">
+            <div>
+                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                    From (Zip/City) *
+                </label>
+                <input type="text" name="moving_from" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Woodbridge, VA 22191">
+            </div>
+            <div>
+                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                    To (Zip/City) *
+                </label>
+                <input type="text" name="moving_to" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Fairfax, VA 22030">
+            </div>
+        </div>
+
+        <!-- Service Type & Home Size -->
+        <div class="grid md:grid-cols-2 gap-5">
+            <div>
+                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                    Service Type
+                </label>
+                <select name="service_type" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer">
+                    <option value="Local Moving">Local Moving</option>
+                    <option value="Long-Distance Moving">Long-Distance Moving</option>
+                    <option value="Packing Services">Packing Services</option>
+                    <option value="Commercial Moving">Commercial Moving</option>
+                    <option value="Junk Removal">Junk Removal</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                    Home Size
+                </label>
+                <select name="home_size" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer">
+                    <option value="Studio / 1 Bedroom">Studio / 1 Bedroom</option>
+                    <option value="2 Bedrooms">2 Bedrooms</option>
+                    <option value="3 Bedrooms">3 Bedrooms</option>
+                    <option value="4+ Bedrooms / Office">4+ Bedrooms / Office</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Additional Details -->
+        <div>
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                Additional Details / Discount Notes
+            </label>
+            <textarea name="message" rows="3" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Tell us about stairs, elevators, or discount eligibility..."></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="w-full bg-black text-white font-black py-4 rounded-2xl text-sm uppercase tracking-wider hover:bg-zinc-800 transition shadow-lg flex items-center justify-center space-x-2 cursor-pointer mt-4">
+            <span>Request Free Estimate Now</span>
+            <span>&rarr;</span>
+        </button>
+    </form>
+</div>
             </div>
 
         </div>
