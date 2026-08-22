@@ -120,91 +120,184 @@
     </div>
 
     <!-- Form -->
-    <form action="https://formspree.io/f/xovnvdvy" method="POST" class="space-y-5">
-        <!-- Hidden Subject for Formspree (Optional) -->
-        <input type="hidden" name="_subject" value="New Estimate Request">
+    <!-- Form -->
+<form id="quote-form" action="https://formspree.io/f/xovnvdvy" method="POST" class="space-y-5">
+    <!-- Hidden Subject for Formspree (Optional) -->
+    <input type="hidden" name="_subject" value="New Estimate Request">
 
-        <!-- Full Name -->
+    <!-- Full Name -->
+    <div>
+        <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+            Full Name *
+        </label>
+        <input type="text" name="name" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="John Smith">
+    </div>
+
+    <!-- Phone & Moving Date -->
+    <div class="grid md:grid-cols-2 gap-5">
         <div>
             <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
-                Full Name *
+                Phone *
             </label>
-            <input type="text" name="name" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="John Smith">
+            <input type="tel" name="phone" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="571-000-0000">
         </div>
-
-        <!-- Phone & Moving Date -->
-        <div class="grid md:grid-cols-2 gap-5">
-            <div>
-                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
-                    Phone *
-                </label>
-                <input type="tel" name="phone" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="571-000-0000">
-            </div>
-            <div>
-                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
-                    Moving Date *
-                </label>
-                <input type="date" name="moving_date" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition">
-            </div>
-        </div>
-
-        <!-- From & To Locations -->
-        <div class="grid md:grid-cols-2 gap-5">
-            <div>
-                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
-                    From (Zip/City) *
-                </label>
-                <input type="text" name="moving_from" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Woodbridge, VA 22191">
-            </div>
-            <div>
-                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
-                    To (Zip/City) *
-                </label>
-                <input type="text" name="moving_to" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Fairfax, VA 22030">
-            </div>
-        </div>
-
-        <!-- Service Type & Home Size -->
-        <div class="grid md:grid-cols-2 gap-5">
-            <div>
-                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
-                    Service Type
-                </label>
-                <select name="service_type" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer">
-                    <option value="Local Moving">Local Moving</option>
-                    <option value="Long-Distance Moving">Long-Distance Moving</option>
-                    <option value="Packing Services">Packing Services</option>
-                    <option value="Commercial Moving">Commercial Moving</option>
-                    <option value="Junk Removal">Junk Removal</option>
-                </select>
-            </div>
-            <div>
-                <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
-                    Home Size
-                </label>
-                <select name="home_size" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer">
-                    <option value="Studio / 1 Bedroom">Studio / 1 Bedroom</option>
-                    <option value="2 Bedrooms">2 Bedrooms</option>
-                    <option value="3 Bedrooms">3 Bedrooms</option>
-                    <option value="4+ Bedrooms / Office">4+ Bedrooms / Office</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Additional Details -->
         <div>
             <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
-                Additional Details / Discount Notes
+                Moving Date *
             </label>
-            <textarea name="message" rows="3" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Tell us about stairs, elevators, or discount eligibility..."></textarea>
+            <input type="date" name="moving_date" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition">
+        </div>
+    </div>
+
+    <!-- From & To Locations -->
+    <div class="grid md:grid-cols-2 gap-5">
+        <div>
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                From (Zip/City) *
+            </label>
+            <input type="text" name="moving_from" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Woodbridge, VA 22191">
+        </div>
+        <div>
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                To (Zip/City) *
+            </label>
+            <input type="text" name="moving_to" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Fairfax, VA 22030">
+        </div>
+    </div>
+
+    <!-- Service Type & Home Size -->
+    <div class="grid md:grid-cols-2 gap-5">
+        <div>
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                Service Type
+            </label>
+            <select name="service_type" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer">
+                <option value="Local Moving">Local Moving</option>
+                <option value="Long-Distance Moving">Long-Distance Moving</option>
+                <option value="Packing Services">Packing Services</option>
+                <option value="Commercial Moving">Commercial Moving</option>
+                <option value="Junk Removal">Junk Removal</option>
+            </select>
+        </div>
+        <div>
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+                Home Size
+            </label>
+            <select name="home_size" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer">
+                <option value="Studio / 1 Bedroom">Studio / 1 Bedroom</option>
+                <option value="2 Bedrooms">2 Bedrooms</option>
+                <option value="3 Bedrooms">3 Bedrooms</option>
+                <option value="4+ Bedrooms / Office">4+ Bedrooms / Office</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Additional Details -->
+    <div>
+        <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+            Additional Details / Discount Notes
+        </label>
+        <textarea name="message" rows="3" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Tell us about stairs, elevators, or discount eligibility..."></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" id="submit-btn" class="w-full bg-black text-white font-black py-4 rounded-2xl text-sm uppercase tracking-wider hover:bg-zinc-800 transition shadow-lg flex items-center justify-center space-x-2 cursor-pointer mt-4">
+        <span>Request Free Estimate Now</span>
+        <span>&rarr;</span>
+    </button>
+</form>
+
+<!-- Custom Success Modal Popup -->
+<div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm hidden px-4">
+    <div class="bg-white border border-zinc-200 text-zinc-900 rounded-3xl max-w-lg w-full p-8 md:p-10 text-center shadow-2xl relative transform transition-all scale-95 opacity-0 duration-300" id="modal-content">
+        
+        <!-- Icon Badge -->
+        <div class="w-16 h-16 bg-zinc-100 text-black rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-inner">
+            <i data-lucide="check-circle" class="w-8 h-8 text-emerald-600"></i>
         </div>
 
-        <!-- Submit Button -->
-        <button type="submit" class="w-full bg-black text-white font-black py-4 rounded-2xl text-sm uppercase tracking-wider hover:bg-zinc-800 transition shadow-lg flex items-center justify-center space-x-2 cursor-pointer mt-4">
-            <span>Request Free Estimate Now</span>
-            <span>&rarr;</span>
+        <span class="bg-zinc-100 text-zinc-800 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider border border-zinc-200 inline-block mb-3">
+            US DOT #4497497 • Verified Request
+        </span>
+
+        <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-3 text-zinc-900">
+            Thank You for Doing Business with Haul Bros Moving Co!
+        </h3>
+
+        <p class="text-zinc-600 text-sm leading-relaxed mb-6">
+            We have safely received your moving estimate request. Our team is already looking over the details you provided and we will reach out to you soon to ensure your upcoming move is completely seamless and stress-free!
+        </p>
+
+        <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-4 text-xs text-zinc-600 mb-8">
+            <p class="font-semibold text-zinc-900 mb-1">Need immediate assistance or adjustments?</p>
+            <p>Call our dispatch team directly at <a href="tel:5718991919" class="text-black underline font-bold">571-899-1919</a></p>
+        </div>
+
+        <button type="button" id="close-modal-btn" class="w-full bg-black text-white font-black py-3.5 rounded-2xl text-sm uppercase tracking-wider hover:bg-zinc-800 transition shadow-lg cursor-pointer">
+            Back to Website
         </button>
-    </form>
+    </div>
+</div>
+
+<!-- Form AJAX Handling Script -->
+<script>
+    document.getElementById('quote-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const form = e.target;
+        const submitBtn = document.getElementById('submit-btn');
+        const originalBtnText = submitBtn.innerHTML;
+        
+        // Show loading state on button
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span>Submitting Request...</span>`;
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Show Success Modal
+                const modal = document.getElementById('success-modal');
+                const modalContent = document.getElementById('modal-content');
+                
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modalContent.classList.remove('scale-95', 'opacity-0');
+                    modalContent.classList.add('scale-100', 'opacity-100');
+                }, 10);
+
+                // Reset form fields
+                form.reset();
+            } else {
+                alert('Oops! There was a problem submitting your form. Please call us directly at 571-899-1919.');
+            }
+        } catch (error) {
+            alert('Network error. Please check your connection or call us directly at 571-899-1919.');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
+    });
+
+    // Close Modal Event
+    document.getElementById('close-modal-btn').addEventListener('click', function() {
+        const modal = document.getElementById('success-modal');
+        const modalContent = document.getElementById('modal-content');
+        
+        modalContent.classList.remove('scale-100', 'opacity-100');
+        modalContent.classList.add('scale-95', 'opacity-0');
+        
+        setTimeout(() => {
+            modal.classList.add('hidden');
+        }, 300);
+    });
+</script>
 </div>
             </div>
 
