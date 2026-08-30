@@ -16,61 +16,147 @@
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
         html { scroll-behavior: smooth; }
+
+
+        /* Responsive compatibility additions — visual design intentionally preserved. */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { max-width: 100%; overflow-x: hidden; }
+        body { max-width: 100%; overflow-x: hidden; }
+        img, video, svg { max-width: 100%; }
+        input, select, textarea, button { max-width: 100%; }
+        a, button { -webkit-tap-highlight-color: transparent; }
+        h1, h2, h3, h4, h5, h6, p, a, span { overflow-wrap: break-word; }
+
+        #mobile-menu {
+            max-height: calc(100dvh - 5rem);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+
+        .header-quick-nav {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .header-quick-nav::-webkit-scrollbar { display: none; }
+
+        @media (max-width: 767px) {
+            input, select, textarea { font-size: 16px !important; }
+            .page-hero { padding-top: 3.5rem !important; padding-bottom: 3rem !important; }
+            .page-hero h1 { font-size: clamp(1.9rem, 9vw, 2.5rem) !important; line-height: 1.12 !important; }
+            .page-hero p { font-size: 1rem !important; }
+        }
+
+        @media (max-width: 639px) {
+            .mobile-full-button { width: 100%; justify-content: center; text-align: center; }
+            .mobile-card-padding { padding: 1.5rem !important; }
+        }
+
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
 
-    <div class="bg-zinc-800 text-zinc-300 text-xs py-2 px-4 text-center font-semibold tracking-wide flex items-center justify-center gap-2 border-b border-zinc-700">
+    <div class="bg-zinc-800 text-zinc-300 text-xs py-2 px-3 sm:px-4 text-center font-semibold tracking-wide flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-2 gap-y-1 border-b border-zinc-700 leading-relaxed">
         <span class="bg-white text-zinc-900 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">Discount Notice</span>
         <span>Senior Citizen, Veteran, Military & First Responder Discounts Available • US DOT #4497497</span>
         <a href="contact.html" class="underline hover:text-white ml-2 hidden sm:inline">Claim Yours →</a>
     </div>
 
     <header class="sticky top-0 left-0 right-0 z-50 bg-[#5A5E63]/95 backdrop-blur-md border-b border-zinc-600 shadow-md">
-        <div class="container mx-auto px-6 h-24 flex items-center justify-between">
-            <a href="../index.html" class="flex items-center gap-3">
+        <div class="container mx-auto px-4 sm:px-6 h-20 xl:h-24 flex items-center justify-between gap-3">
+            <a href="../index.html" class="flex items-center gap-3 shrink-0" aria-label="Haul Bros Moving home">
                 <div class="bg-white p-1 rounded-md shadow-sm">
-                    <img src="../assets/LOGO 2.png" alt="Haul Bros Logo" width="56" height="56" class="h-12 w-auto object-contain">
+                    <img src="../assets/LOGO 2.png" alt="Haul Bros Logo" width="56" height="56" class="h-10 sm:h-12 w-auto object-contain">
                 </div>
             </a>
-            <nav>
-                <ul class="flex items-center gap-6 font-semibold text-sm text-white">
-                    <li><a href="../index.html" class="hover:text-zinc-300 transition">Home</a></li>
-                    <li><a href="about.html" class="hover:text-zinc-300 transition">About</a></li>
-                    <li><a href="pricing.html" class="hover:text-zinc-300 transition">Pricing</a></li>
-                    <li><a href="service.html" class="text-zinc-300 transition">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-zinc-300 transition">Contact</a></li>
-                    <li><a href="FAQ.html" class="hover:text-zinc-300 transition">FAQ</a></li>
-                    <li><a href="review.html" class="hover:text-zinc-300 transition">Reviews</a></li>
+
+            <nav class="hidden lg:block flex-1" aria-label="Primary navigation">
+                <ul class="flex flex-row items-center justify-center gap-4 xl:gap-6 font-semibold text-xs xl:text-sm text-white whitespace-nowrap">
+                        <li><a href="../index.html" class="hover:text-zinc-300 transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-zinc-300 transition">About</a></li>
+                        <li><a href="pricing.html" class="hover:text-zinc-300 transition">Pricing</a></li>
+                        <li><a href="service.html" class="text-zinc-300 transition">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-zinc-300 transition">Contact</a></li>
+                        <li><a href="FAQ.html" class="hover:text-zinc-300 transition">FAQ</a></li>
+                        <li><a href="review.html" class="hover:text-zinc-300 transition">Reviews</a></li>
                     <li class="relative group">
-                            <button class="flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none py-2">
-                                More <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                            </button>
-                            
-                            <div class="absolute left-0 mt-0 w-48 bg-[#5A5E63] border border-zinc-600 rounded-xl shadow-xl py-2 hidden group-hover:block z-50">
-                                <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-400">Locations</div>
-                                <ul class="space-y-1">
-                                    <li>
-                                        <a href="../Locations/woodbridge-movers.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Woodbridge</a>
+                        <button type="button" class="flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none py-2" aria-haspopup="true">
+                            More <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+                        <div class="absolute left-0 mt-0 w-48 bg-[#5A5E63] border border-zinc-600 rounded-xl shadow-xl py-2 hidden group-hover:block group-focus-within:block z-50">
+                            <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-400">Locations</div>
+                            <ul class="space-y-1">
+                                <li>
+                                        <a href="../Locations/woodbridge-movers.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Woodbridge</a>
                                         <a href="../Locations/Arlington.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Arlington</a>
                                         <a href="../Locations/Culpeper.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Culpeper</a>
                                         <a href="../Locations/Fredericksburg.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Fredericksburg</a>
-                                    </li>
-                                </ul>
-                            </div>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
             </nav>
-            <div class="flex items-center gap-4">
-                <a href="tel:5718991919" class="hidden sm:flex items-center gap-2 font-bold text-sm text-white bg-zinc-700/60 px-4 py-2.5 rounded-xl hover:bg-zinc-700 transition border border-zinc-600">
+
+            <div class="flex items-center justify-end gap-2 sm:gap-3 shrink-0">
+                <a href="tel:5718991919" class="hidden 2xl:flex items-center gap-2 font-bold text-sm text-white bg-zinc-700/60 px-4 py-2.5 rounded-xl hover:bg-zinc-700 transition border border-zinc-600">
                     <i data-lucide="phone" class="w-4 h-4 text-zinc-300"></i> 571-899-1919
                 </a>
-                <a href="contact.html" class="bg-black text-white px-6 py-3 rounded-full font-bold text-sm shadow-xl hover:bg-zinc-900 transition border border-zinc-800">Get a Free Quote</a>
+                <a href="contact.html" class="hidden sm:inline-flex bg-black text-white px-4 lg:px-6 py-3 rounded-full font-bold text-sm shadow-xl hover:bg-zinc-900 transition border border-zinc-800 whitespace-nowrap">Get a Free Quote</a>
+                <button type="button" id="mobile-menu-button" class="lg:hidden w-11 h-11 inline-flex items-center justify-center rounded-xl text-white bg-zinc-700/60 border border-zinc-600 hover:bg-zinc-700 transition" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <i data-lucide="menu" id="mobile-menu-open-icon" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="mobile-menu-close-icon" class="w-5 h-5 hidden"></i>
+                </button>
             </div>
         </div>
+
+        <nav class="lg:hidden border-t border-zinc-600/80 bg-[#5A5E63]/95" aria-label="Header navigation">
+            <div class="container mx-auto px-2 sm:px-4">
+                <div class="header-quick-nav flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-3 sm:gap-x-5 gap-y-0.5 py-2 text-[11px] sm:text-sm font-semibold text-white whitespace-nowrap">
+                        <a href="../index.html" class="py-1.5 hover:text-zinc-300 transition">Home</a>
+                        <a href="about.html" class="py-1.5 hover:text-zinc-300 transition">About</a>
+                        <a href="pricing.html" class="py-1.5 hover:text-zinc-300 transition">Pricing</a>
+                        <a href="service.html" class="py-1.5 text-zinc-300 transition">Services</a>
+                        <a href="contact.html" class="py-1.5 hover:text-zinc-300 transition">Contact</a>
+                        <a href="FAQ.html" class="py-1.5 hover:text-zinc-300 transition">FAQ</a>
+                        <a href="review.html" class="py-1.5 hover:text-zinc-300 transition">Reviews</a>
+                    <button type="button" id="quick-more-button" class="py-1.5 flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        More <i data-lucide="chevron-down" id="quick-more-icon" class="w-3.5 h-3.5 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <nav id="mobile-menu" class="hidden lg:hidden border-t border-zinc-600 bg-[#5A5E63] shadow-xl" aria-label="Mobile navigation">
+            <div class="container mx-auto px-4 sm:px-6 py-4">
+                <ul class="font-semibold text-sm text-white divide-y divide-zinc-600/70">
+                        <li><a href="../index.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Home</a></li>
+                        <li><a href="about.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">About</a></li>
+                        <li><a href="pricing.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Pricing</a></li>
+                        <li><a href="service.html" class="mobile-nav-link block py-3 text-zinc-300 transition">Services</a></li>
+                        <li><a href="contact.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Contact</a></li>
+                        <li><a href="FAQ.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">FAQ</a></li>
+                        <li><a href="review.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Reviews</a></li>
+                </ul>
+                <div class="pt-4">
+                    <p class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Locations</p>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                            <a href="../Locations/woodbridge-movers.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Woodbridge</a>
+                            <a href="../Locations/Arlington.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Arlington</a>
+                            <a href="../Locations/Culpeper.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Culpeper</a>
+                            <a href="../Locations/Fredericksburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fredericksburg</a>
+                    </div>
+                </div>
+                <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <a href="tel:5718991919" class="mobile-nav-link flex items-center justify-center gap-2 text-white bg-zinc-700/50 border border-zinc-600 px-4 py-3 rounded-xl font-bold text-sm">
+                        <i data-lucide="phone" class="w-4 h-4"></i> 571-899-1919
+                    </a>
+                    <a href="contact.html" class="mobile-nav-link bg-black text-white px-4 py-3 rounded-xl font-bold text-sm text-center border border-zinc-800">Get a Free Quote</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section class="relative pt-20 pb-16 bg-[#5A5E63] text-white border-b border-zinc-700">
+    <section class="page-hero relative pt-20 pb-16 bg-[#5A5E63] text-white border-b border-zinc-700">
         <div class="container mx-auto px-4 max-w-4xl text-center">
             <span class="bg-zinc-700/80 text-zinc-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block border border-zinc-600">
                 Full-Service Solutions • US DOT #4497497
@@ -104,7 +190,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Local Moving -->
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between mobile-card-padding">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md"><i data-lucide="truck" class="w-6 h-6"></i></div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Local Moving</h3>
@@ -119,7 +205,7 @@
                 </div>
 
                 <!-- Packing & Unpacking -->
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between mobile-card-padding">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md"><i data-lucide="package" class="w-6 h-6"></i></div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Packing & Unpacking</h3>
@@ -134,7 +220,7 @@
                 </div>
 
                 <!-- Long-Distance Moving -->
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between mobile-card-padding">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md"><i data-lucide="navigation" class="w-6 h-6"></i></div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Long-Distance Moving</h3>
@@ -149,7 +235,7 @@
                 </div>
 
                 <!-- Assembly & Disassembly -->
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between mobile-card-padding">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md"><i data-lucide="wrench" class="w-6 h-6"></i></div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Assembly & Disassembly</h3>
@@ -164,7 +250,7 @@
                 </div>
 
                 <!-- Commercial Moves -->
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between mobile-card-padding">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Commercial Moves</h3>
@@ -179,7 +265,7 @@
                 </div>
 
                 <!-- Junk Removal & Cleanouts -->
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between mobile-card-padding">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md"><i data-lucide="trash-2" class="w-6 h-6"></i></div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Junk Removal Services</h3>
@@ -206,8 +292,8 @@
                 Contact our friendly team today to book your service or get a transparent, free quote tailored to your exact needs.
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-                <a href="contact.html" class="bg-white text-zinc-900 px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-zinc-200 transition shadow-xl">Get a Free Quote</a>
-                <a href="tel:5718991919" class="bg-zinc-800 text-white border border-zinc-700 px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-zinc-700 transition shadow-xl flex items-center gap-2">
+                <a href="contact.html" class="bg-white text-zinc-900 px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-zinc-200 transition shadow-xl mobile-full-button">Get a Free Quote</a>
+                <a href="tel:5718991919" class="bg-zinc-800 text-white border border-zinc-700 px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-zinc-700 transition shadow-xl flex items-center gap-2 mobile-full-button">
                     <i data-lucide="phone" class="w-4 h-4"></i> Call 571-899-1919
                 </a>
             </div>
@@ -221,5 +307,38 @@
         </div>
     </footer>
     <script>lucide.createIcons();</script>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuOpenIcon = document.getElementById('mobile-menu-open-icon');
+    const mobileMenuCloseIcon = document.getElementById('mobile-menu-close-icon');
+    const quickMoreButton = document.getElementById('quick-more-button');
+    const quickMoreIcon = document.getElementById('quick-more-icon');
+
+    function setMobileMenu(open) {
+        if (!mobileMenuButton || !mobileMenu) return;
+        mobileMenu.classList.toggle('hidden', !open);
+        mobileMenuButton.setAttribute('aria-expanded', String(open));
+        mobileMenuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+        mobileMenuOpenIcon?.classList.toggle('hidden', open);
+        mobileMenuCloseIcon?.classList.toggle('hidden', !open);
+        quickMoreButton?.setAttribute('aria-expanded', String(open));
+        quickMoreIcon?.classList.toggle('rotate-180', open);
+    }
+
+    mobileMenuButton?.addEventListener('click', () => {
+        const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+        setMobileMenu(!isOpen);
+    });
+    quickMoreButton?.addEventListener('click', () => {
+        const isOpen = quickMoreButton.getAttribute('aria-expanded') === 'true';
+        setMobileMenu(!isOpen);
+    });
+    document.querySelectorAll('.mobile-nav-link').forEach((link) => link.addEventListener('click', () => setMobileMenu(false)));
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMobileMenu(false); });
+    window.addEventListener('resize', () => { if (window.innerWidth >= 1024) setMobileMenu(false); });
+</script>
+
 </body>
 </html>

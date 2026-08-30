@@ -91,75 +91,153 @@
     }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; max-width: 100%; overflow-x: hidden; }
         h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
-        html { scroll-behavior: smooth; }
+        img, video, svg { max-width: 100%; }
+        input, select, textarea, button { max-width: 100%; }
+        a, button { -webkit-tap-highlight-color: transparent; }
+        section[id] { scroll-margin-top: 7rem; }
+
+        /* Prevent iOS Safari from zooming the viewport when form fields receive focus. */
+        @media (max-width: 767px) {
+            input, select, textarea { font-size: 16px !important; }
+        }
+
+        /* Keep the mobile navigation usable on short landscape screens. */
+        #mobile-menu {
+            max-height: calc(100dvh - 5rem);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+
+        /* Keep the main navigation visible on phones/tablets without creating horizontal overflow. */
+        .header-quick-nav {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .header-quick-nav::-webkit-scrollbar { display: none; }
     </style>
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
 
-    <div class="bg-zinc-800 text-zinc-300 text-xs py-2 px-4 text-center font-semibold tracking-wide flex items-center justify-center gap-2 border-b border-zinc-700">
-        <span class="bg-white text-zinc-900 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">Discount Notice</span>
+    <div class="bg-zinc-800 text-zinc-300 text-xs py-2 px-3 sm:px-4 text-center font-semibold tracking-wide flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-2 gap-y-1 border-b border-zinc-700 leading-relaxed">
+        <span class="bg-white text-zinc-900 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider shrink-0">Discount Notice</span>
         <span>Senior Citizen, Veteran & Military Discounts Available • US DOT #4497497</span>
         <a href="#estimate" class="underline hover:text-white ml-2 hidden sm:inline">Claim Yours →</a>
     </div>
 
     <header class="sticky top-0 left-0 right-0 z-50 bg-[#5A5E63]/95 backdrop-blur-md border-b border-zinc-600 shadow-md">
-        <div class="container mx-auto px-6 h-24 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
+        <div class="container mx-auto px-4 sm:px-6 h-20 xl:h-24 flex items-center justify-between gap-3">
+            <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Haul Bros Moving home">
                 <div class="bg-white p-1 rounded-md shadow-sm">
-                    <img src="./assets/LOGO 2.png" alt="Haul Bros Logo" width="56" height="56" class="h-12 w-auto object-contain">
+                    <img src="./assets/LOGO 2.png" alt="Haul Bros Logo" width="56" height="56" class="h-10 sm:h-12 w-auto object-contain">
                 </div>
             </a>
-           
 
-                <nav>
-                    <ul class="flex flex-row items-center gap-6 font-semibold text-sm text-white">
-                        <li><a href="index.html" class="hover:text-zinc-300 transition">Home</a></li>
-                        <li><a href="Navbars/about.html" class="hover:text-zinc-300 transition">About</a></li>
-                        <li><a href="Navbars/pricing.html" class="hover:text-zinc-300 transition">Pricing</a></li>
-                        <li><a href="Navbars/service.html" class="hover:text-zinc-300 transition">Services</a></li>
-                        <li><a href="Navbars/contact.html" class="hover:text-zinc-300 transition">Contact</a></li>
-                        <li><a href="Navbars/FAQ.html" class="hover:text-zinc-300 transition">FAQ</a></li>
-                        <li><a href="Navbars/review.html" class="hover:text-zinc-300 transition">Reviews</a></li>
+            <nav class="hidden lg:block flex-1" aria-label="Primary navigation">
+                <ul class="flex flex-row items-center justify-center gap-4 xl:gap-6 font-semibold text-xs xl:text-sm text-white whitespace-nowrap">
+                    <li><a href="index.html" class="hover:text-zinc-300 transition">Home</a></li>
+                    <li><a href="Navbars/about.html" class="hover:text-zinc-300 transition">About</a></li>
+                    <li><a href="Navbars/pricing.html" class="hover:text-zinc-300 transition">Pricing</a></li>
+                    <li><a href="Navbars/service.html" class="hover:text-zinc-300 transition">Services</a></li>
+                    <li><a href="Navbars/contact.html" class="hover:text-zinc-300 transition">Contact</a></li>
+                    <li><a href="Navbars/FAQ.html" class="hover:text-zinc-300 transition">FAQ</a></li>
+                    <li><a href="Navbars/review.html" class="hover:text-zinc-300 transition">Reviews</a></li>
 
-                        <li class="relative group">
-                            <button class="flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none py-2">
-                                More <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                            </button>
-                            
-                            <div class="absolute left-0 mt-0 w-48 bg-[#5A5E63] border border-zinc-600 rounded-xl shadow-xl py-2 hidden group-hover:block z-50">
-                                <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-400">Locations</div>
-                                <ul class="space-y-1">
-                                    <li>
-                                        <a href="Locations/woodbridge-movers.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">
-                                            Woodbridge
-                                        </a>
-                                        <a href="Locations/Arlington.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">
-                                            Arlington
-                                        </a>
-                                        <a href="Locations/Culpeper.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">
-                                            Culpeper
-                                        </a>
-                                        <a href="Locations/Fredericksburg.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">
-                                            Fredericksburg
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-</nav>
-            <div class="flex items-center gap-4">
-                <a href="tel:5718991919" class="hidden sm:flex items-center gap-2 font-bold text-sm text-white bg-zinc-700/60 px-4 py-2.5 rounded-xl hover:bg-zinc-700 transition border border-zinc-600">
+                    <li class="relative group">
+                        <button type="button" class="flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none py-2" aria-haspopup="true">
+                            More <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </button>
+
+                        <div class="absolute left-0 mt-0 w-48 bg-[#5A5E63] border border-zinc-600 rounded-xl shadow-xl py-2 hidden group-hover:block group-focus-within:block z-50">
+                            <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-400">Locations</div>
+                            <ul class="space-y-1">
+                                <li>
+                                    <a href="Locations/woodbridge-movers.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Woodbridge</a>
+                                    <a href="Locations/Arlington.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Arlington</a>
+                                    <a href="Locations/Culpeper.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Culpeper</a>
+                                    <a href="Locations/Fredericksburg.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Fredericksburg</a>
+                                    <a href="Locations/Fairfax.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Fairfax</a>
+                                    <a href ="Locations/Fallschurch.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Falls Church</a>
+                                    <a href="Locations/Manassas.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Manassas</a>
+                                    <a href="Locations/Springfield.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Springfield</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="flex items-center justify-end gap-2 sm:gap-3 shrink-0">
+                <a href="tel:5718991919" class="hidden 2xl:flex items-center gap-2 font-bold text-sm text-white bg-zinc-700/60 px-4 py-2.5 rounded-xl hover:bg-zinc-700 transition border border-zinc-600">
                     <i data-lucide="phone" class="w-4 h-4 text-zinc-300"></i> 571-899-1919
                 </a>
-                <a href="#estimate" class="bg-black text-white px-6 py-3 rounded-full font-bold text-sm shadow-xl hover:bg-zinc-900 transition border border-zinc-800">Get a Free Quote</a>
+                <a href="#estimate" class="hidden sm:inline-flex bg-black text-white px-4 lg:px-6 py-3 rounded-full font-bold text-sm shadow-xl hover:bg-zinc-900 transition border border-zinc-800 whitespace-nowrap">Get a Free Quote</a>
+                <button type="button" id="mobile-menu-button" class="lg:hidden w-11 h-11 inline-flex items-center justify-center rounded-xl text-white bg-zinc-700/60 border border-zinc-600 hover:bg-zinc-700 transition" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                    <i data-lucide="menu" id="mobile-menu-open-icon" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="mobile-menu-close-icon" class="w-5 h-5 hidden"></i>
+                </button>
             </div>
         </div>
+
+        <!-- Visible navigation for phones and tablets. On narrow phones it wraps neatly;
+             the hamburger remains available for the full menu and location links. -->
+        <nav class="lg:hidden border-t border-zinc-600/80 bg-[#5A5E63]/95" aria-label="Header navigation">
+            <div class="container mx-auto px-2 sm:px-4">
+                <div class="header-quick-nav flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-3 sm:gap-x-5 gap-y-0.5 py-2 text-[11px] sm:text-sm font-semibold text-white whitespace-nowrap">
+                    <a href="index.html" class="py-1.5 hover:text-zinc-300 transition">Home</a>
+                    <a href="Navbars/about.html" class="py-1.5 hover:text-zinc-300 transition">About</a>
+                    <a href="Navbars/pricing.html" class="py-1.5 hover:text-zinc-300 transition">Pricing</a>
+                    <a href="Navbars/service.html" class="py-1.5 hover:text-zinc-300 transition">Services</a>
+                    <a href="Navbars/contact.html" class="py-1.5 hover:text-zinc-300 transition">Contact</a>
+                    <a href="Navbars/FAQ.html" class="py-1.5 hover:text-zinc-300 transition">FAQ</a>
+                    <a href="Navbars/review.html" class="py-1.5 hover:text-zinc-300 transition">Reviews</a>
+                    <button type="button" id="quick-more-button" class="py-1.5 flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        More <i data-lucide="chevron-down" id="quick-more-icon" class="w-3.5 h-3.5 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <nav id="mobile-menu" class="hidden lg:hidden border-t border-zinc-600 bg-[#5A5E63] shadow-xl" aria-label="Mobile navigation">
+            <div class="container mx-auto px-4 sm:px-6 py-4">
+                <ul class="font-semibold text-sm text-white divide-y divide-zinc-600/70">
+                    <li><a href="index.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Home</a></li>
+                    <li><a href="Navbars/about.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">About</a></li>
+                    <li><a href="Navbars/pricing.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Pricing</a></li>
+                    <li><a href="Navbars/service.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Services</a></li>
+                    <li><a href="Navbars/contact.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Contact</a></li>
+                    <li><a href="Navbars/FAQ.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">FAQ</a></li>
+                    <li><a href="Navbars/review.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Reviews</a></li>
+                </ul>
+
+                <div class="pt-4">
+                    <p class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Locations</p>
+                    <div class="grid grid-cols-2 gap-2 text-sm">
+                        <a href="Locations/woodbridge-movers.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Woodbridge</a>
+                        <a href="Locations/Arlington.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Arlington</a>
+                        <a href="Locations/Culpeper.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Culpeper</a>
+                        <a href="Locations/Fredericksburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fredericksburg</a>
+                        <a href="Locations/Fairfax.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fairfax</a>
+                        <a href="Locations/Fallschurch.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Falls Church</a>
+                        <a href="Locations/Manassas.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Manassas</a>
+                        <a href="Locations/Springfield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Springfield</a>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-3 pt-4 mt-4 border-t border-zinc-600">
+                    <a href="tel:5718991919" class="mobile-nav-link flex items-center justify-center gap-2 font-bold text-sm text-white bg-zinc-700/60 px-4 py-3 rounded-xl hover:bg-zinc-700 transition border border-zinc-600">
+                        <i data-lucide="phone" class="w-4 h-4 text-zinc-300"></i> 571-899-1919
+                    </a>
+                    <a href="#estimate" class="mobile-nav-link flex items-center justify-center bg-black text-white px-4 py-3 rounded-xl font-bold text-sm shadow-xl hover:bg-zinc-900 transition border border-zinc-800">Get a Free Quote</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <section class="relative pt-24 pb-32 bg-[#5A5E63] text-white overflow-hidden border-b border-zinc-700">
+    <section class="relative pt-16 sm:pt-24 pb-24 sm:pb-32 bg-[#5A5E63] text-white overflow-hidden border-b border-zinc-700">
         <div class="container mx-auto px-4 max-w-5xl text-center relative z-10">
             <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[1.1] mb-6">
                 Relocating Made Easy!
@@ -177,9 +255,9 @@
         <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-zinc-800/80 to-transparent pointer-events-none"></div>
     </section>
 
-    <section id="why-us" class="py-20 bg-white border-b border-slate-200">
+    <section id="why-us" class="py-16 sm:py-20 bg-white border-b border-slate-200">
         <div class="container mx-auto px-4 max-w-7xl">
-            <div class="text-center max-w-2xl mx-auto mb-16">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
                 <span class="bg-zinc-100 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block border border-zinc-200">
                     Verified Local Reputation
                 </span>
@@ -191,8 +269,8 @@
                 </p>
             </div>
 
-            <div id="reviews" class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+            <div id="reviews" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 sm:mb-16">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                     <div>
                         <div class="flex gap-1 text-amber-500 mb-4">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -201,7 +279,7 @@
                             "Haul Bros moved our 4-bedroom home in Lake Ridge without a single scratch. They showed up right on time at 8 AM and worked tirelessly through tight stairwells and heavy furniture!"
                         </p>
                     </div>
-                    <div class="border-t border-slate-200 pt-4 flex items-center justify-between">
+                    <div class="border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                         <div>
                             <p class="font-bold text-sm text-slate-900">David R.</p>
                             <p class="text-xs text-slate-500">Woodbridge VA • Local Move</p>
@@ -211,7 +289,7 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                     <div>
                         <div class="flex gap-1 text-amber-500 mb-4">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -220,7 +298,7 @@
                             "Fantastic service in Fairfax! They packed our kitchen in half the time it would have taken us and moved our 3-bedroom house smoothly. Very polite and professional team."
                         </p>
                     </div>
-                    <div class="border-t border-slate-200 pt-4 flex items-center justify-between">
+                    <div class="border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                         <div>
                             <p class="font-bold text-sm text-slate-900">Sarah K.</p>
                             <p class="text-xs text-slate-500">Fairfax VA • Packing & Moving</p>
@@ -230,7 +308,7 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
                     <div>
                         <div class="flex gap-1 text-amber-500 mb-4">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -239,7 +317,7 @@
                             "Organized and fast. They managed a 26ft truck like absolute pros. Best local movers in Northern Virginia with zero hidden fees and incredible work ethic!"
                         </p>
                     </div>
-                    <div class="border-t border-slate-200 pt-4 flex items-center justify-between">
+                    <div class="border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                         <div>
                             <p class="font-bold text-sm text-slate-900">Michael S.</p>
                             <p class="text-xs text-slate-500">Arlington VA • Local Move</p>
@@ -250,38 +328,38 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center bg-zinc-900 text-white p-8 rounded-3xl shadow-xl border border-zinc-800">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center bg-zinc-900 text-white p-5 sm:p-8 rounded-3xl shadow-xl border border-zinc-800">
                 <div class="p-4 border-r border-zinc-800 last:border-0">
-                    <p class="text-2xl font-black uppercase tracking-tight text-zinc-200">US DOT 4497497</p>
+                    <p class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-200">US DOT 4497497</p>
                     <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Active Authority</p>
                 </div>
                 <div class="p-4 border-r border-zinc-800 last:border-0">
-                    <p class="text-2xl font-black uppercase tracking-tight text-zinc-200">Fully Insured</p>
+                    <p class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-200">Fully Insured</p>
                     <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Cargo & Liability</p>
                 </div>
                 <div class="p-4 border-r border-zinc-800 last:border-0">
-                    <p class="text-2xl font-black uppercase tracking-tight text-zinc-200">500+ Moves</p>
+                    <p class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-200">500+ Moves</p>
                     <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Completed Safely</p>
                 </div>
                 <div class="p-4">
-                    <p class="text-2xl font-black uppercase tracking-tight text-zinc-200">5.0 Star</p>
+                    <p class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-200">5.0 Star</p>
                     <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Google Rating</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="services" class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
         <div class="container mx-auto px-4 max-w-7xl">
-            <div class="text-center max-w-2xl mx-auto mb-16">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
                 <span class="bg-zinc-200 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">
                     Comprehensive Solutions
                 </span>
                 <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3">Our Moving Services</h2>
                 <p class="text-slate-600 text-sm">Full-service residential and commercial moving solutions tailored across Northern Virginia and Washington D.C.</p>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">01</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Local Moving</h3>
@@ -295,7 +373,7 @@
                     <span class="text-xs font-bold text-zinc-800 pt-4 block">Included in Local Moves</span>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">02</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Packing Services</h3>
@@ -309,7 +387,7 @@
                     <span class="text-xs font-bold text-zinc-800 pt-4 block">Available on Request</span>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">03</div>
                         <h3 class="text-xl font-bold text-slate-900 mb-3">Long-Distance Moving</h3>
@@ -326,20 +404,20 @@
         </div>
     </section>
 
-    <section id="commercial" class="py-20 bg-white border-t border-slate-200">
+    <section id="commercial" class="py-16 sm:py-20 bg-white border-t border-slate-200">
         <div class="container mx-auto px-4 max-w-7xl">
-            <div class="text-center max-w-2xl mx-auto mb-16">
+            <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
                 <span class="bg-zinc-200 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">
                     Specialized Solutions
                 </span>
                 <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3">Commercial Moving & Junk Removal</h2>
                 <p class="text-slate-600 text-sm">Professional office relocations and eco-friendly junk removal services throughout Northern Virginia.</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6 flex flex-col justify-between">
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="bg-slate-50 p-6 sm:p-8 md:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center shadow-md"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-12 h-12 shrink-0 bg-zinc-900 text-white rounded-2xl flex items-center justify-center shadow-md"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
                             <h3 class="text-2xl font-bold text-slate-900">Commercial & Office Relocations</h3>
                         </div>
                         <p class="text-sm text-slate-600 leading-relaxed">
@@ -354,10 +432,10 @@
                     <a href="#estimate" class="inline-block bg-zinc-900 text-white px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-black transition text-center shadow-md">Get Commercial Quote</a>
                 </div>
 
-                <div class="bg-slate-50 p-8 md:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6 flex flex-col justify-between">
+                <div class="bg-slate-50 p-6 sm:p-8 md:p-10 rounded-3xl border border-slate-200 shadow-sm space-y-6 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center shadow-md"><i data-lucide="trash-2" class="w-6 h-6"></i></div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-12 h-12 shrink-0 bg-zinc-900 text-white rounded-2xl flex items-center justify-center shadow-md"><i data-lucide="trash-2" class="w-6 h-6"></i></div>
                             <h3 class="text-2xl font-bold text-slate-900">Junk Removal & Property Cleanouts</h3>
                         </div>
                         <p class="text-sm text-slate-600 leading-relaxed">
@@ -373,7 +451,7 @@
                 </div>
             </div>
 
-            <div class="mt-12 bg-emerald-50 border border-emerald-200 p-6 md:p-8 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
+            <div class="mt-12 bg-emerald-50 border border-emerald-200 p-6 md:p-8 rounded-3xl flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-6 shadow-sm">
                 <div class="flex items-center gap-4">
                     <div class="w-14 h-14 bg-emerald-600 text-white rounded-2xl flex items-center justify-center shrink-0 shadow-md"><i data-lucide="award" class="w-7 h-7"></i></div>
                     <div>
@@ -381,14 +459,14 @@
                         <p class="text-xs text-emerald-700 mt-0.5">We offer special reduced rates for veterans, active-duty military, first responders, and senior citizens across NoVA.</p>
                     </div>
                 </div>
-                <a href="#estimate" class="bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-xl text-xs uppercase tracking-wider hover:bg-emerald-700 transition shrink-0 shadow-md">Claim Discount</a>
+                <a href="#estimate" class="bg-emerald-600 text-white font-bold px-8 py-3.5 rounded-xl text-xs uppercase tracking-wider hover:bg-emerald-700 transition shrink-0 shadow-md text-center">Claim Discount</a>
             </div>
         </div>
     </section>
 
-    <section id="faq-section" class="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="faq-section" class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
         <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-16">
+            <div class="text-center mb-12 sm:mb-16">
                 <span class="bg-zinc-200 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">
                     Knowledge Base
                 </span>
@@ -398,373 +476,373 @@
 
             <div class="space-y-4" id="faq-container">
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(1)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(1)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>1. Are your movers licensed and insured in Virginia?</span>
                         <i data-lucide="chevron-down" id="icon-1" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-1" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-1" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         Yes, Haul Bros Moving Co LLC is fully licensed and insured with active US DOT #4497497, carrying comprehensive general liability and cargo insurance to protect your belongings throughout Northern Virginia.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(2)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(2)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>2. What areas do you serve in Northern Virginia?</span>
                         <i data-lucide="chevron-down" id="icon-2" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-2" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-2" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         We proudly serve Woodbridge, Fairfax, Arlington, Alexandria, Manassas, Stafford, Springfield, Burke, Centreville, Fredericksburg, and the greater Washington D.C. metropolitan region.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(3)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(3)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>3. Do you offer senior citizen and military discounts?</span>
                         <i data-lucide="chevron-down" id="icon-3" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-3" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-3" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         Yes! We proudly offer special discounts for senior citizens, military service members, veterans, and first responders across all our local moving and packing services.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(4)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(4)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>4. How are your local moving rates calculated?</span>
                         <i data-lucide="chevron-down" id="icon-4" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-4" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-4" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         Our local moves are billed at clear, transparent hourly rates determined by the size of your crew (2 to 4+ professional movers) and truck requirements, with no hidden fees or surprise fuel surcharges.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(5)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(5)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>5. What is included in your standard local moving service?</span>
                         <i data-lucide="chevron-down" id="icon-5" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-5" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-5" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         Our standard local moving service includes the professional moving truck, furniture blanketing and shrink-wrapping, basic disassembly and reassembly of bed frames and tables, and careful placement of items in your new home.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(6)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(6)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>6. Do you charge extra for stairs, long carries, or heavy items?</span>
                         <i data-lucide="chevron-down" id="icon-6" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-6" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-6" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         We believe in complete transparency. Standard flights of stairs and normal heavy items are factored directly into your upfront quote. For extreme specialty items like commercial safes or grand pianos, we provide specific details beforehand.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(7)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(7)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>7. Should I tip my movers, and how much is customary?</span>
                         <i data-lucide="chevron-down" id="icon-7" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-7" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-7" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         Tipping is completely optional but greatly appreciated for hard work. A standard guideline is about $5 to $10 per mover per hour, or $20 to $50 per mover for a standard local move depending on job complexity.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(8)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(8)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>8. Do you provide full-service packing and moving supplies?</span>
                         <i data-lucide="chevron-down" id="icon-8" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-8" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-8" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         Yes, we offer full-service or partial packing options as well as high-quality moving boxes, packing tape, bubble wrap, paper, and specialty wardrobe cartons delivered prior to your move.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(9)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(9)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>9. Can you handle commercial and office relocations in Northern Virginia?</span>
                         <i data-lucide="chevron-down" id="icon-9" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-9" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-9" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         Yes, we assist local businesses, offices, and retail stores throughout Northern Virginia with efficient commercial moving solutions, cubicle breakdown, and weekend scheduling to minimize operational downtime.
                     </div>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(10)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                    <button onclick="toggleFaq(10)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                         <span>10. What items are prohibited from being transported on your trucks?</span>
                         <i data-lucide="chevron-down" id="icon-10" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                     </button>
-                    <div id="ans-10" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                    <div id="ans-10" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                         For safety reasons and legal compliance, we cannot transport hazardous materials, explosives, flammable liquids, propane tanks, perishable food in long transit, or illegal substances.
                     </div>
                 </div>
 
                 <div id="more-faqs" class="hidden space-y-4 pt-4">
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(11)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(11)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>11. Should You Empty Drawers and Dressers Before Movers Arrive?</span>
                             <i data-lucide="chevron-down" id="icon-11" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-11" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-11" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Remove breakables, valuables, books, and heavy items from all drawers to protect furniture frames and reduce weight during transit.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(12)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(12)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>12. Moving from Woodbridge to Ashburn: What to Expect?</span>
                             <i data-lucide="chevron-down" id="icon-12" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-12" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-12" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             This regional move crosses Northern Virginia via I-95, I-495, or Route 28. Proper traffic scheduling ensures timely arrival.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(13)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(13)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>13. How Long Does a Local Move in Woodbridge Typically Take?</span>
                             <i data-lucide="chevron-down" id="icon-13" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-13" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-13" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             A typical 1-bedroom apartment takes 2–4 hours, while larger 3-bedroom homes generally range from 5–8 hours depending on inventory and stairs.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(14)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(14)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>14. Best Time to Move in Woodbridge to Save Money?</span>
                             <i data-lucide="chevron-down" id="icon-14" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-14" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-14" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Mid-month and weekday moves typically offer greater schedule flexibility and availability compared to month-end weekend rushes.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(15)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(15)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>15. Do Professional Movers Disassemble and Reassemble Furniture?</span>
                             <i data-lucide="chevron-down" id="icon-15" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-15" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-15" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Yes, our crew brings standard tools to safely take apart and set back up bed frames, tables, and standard furniture pieces.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(16)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(16)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>16. How to Avoid Hidden Fees from Moving Companies?</span>
                             <i data-lucide="chevron-down" id="icon-16" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-16" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-16" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Always secure an itemized written estimate detailing travel time, hourly minimums, and equipment charges upfront.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(17)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(17)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>17. Apartment-to-Apartment Moves in Woodbridge: What Is Included?</span>
                             <i data-lucide="chevron-down" id="icon-17" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-17" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-17" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Includes careful navigation of apartment complexes, stairwells, and elevators along with complete loading and unloading.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(18)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(18)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>18. Moving Company Insurance: What Is Really Covered?</span>
                             <i data-lucide="chevron-down" id="icon-18" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-18" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-18" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Basic cargo liability and valuation coverage protect your items according to state guidelines and your signed contract terms.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(19)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(19)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>19. How to Check Reviews and Ratings for Woodbridge Movers?</span>
                             <i data-lucide="chevron-down" id="icon-19" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-19" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-19" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Look at verified Google Business reviews and look for customer feedback detailing punctuality and safe furniture handling.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(20)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(20)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>20. Can You Book Movers on Short Notice in Northern Virginia?</span>
                             <i data-lucide="chevron-down" id="icon-20" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-20" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-20" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Yes, subject to truck and crew availability, we accommodate last-minute and emergency moves across Northern Virginia.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(21)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(21)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>21. What to Expect on Moving Day with Haul Bros?</span>
                             <i data-lucide="chevron-down" id="icon-21" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-21" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-21" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Our crew arrives on time, reviews the inventory, protects your home, and executes a smooth and efficient relocation.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(22)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(22)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>22. Small Move Cost: How Much for a One-Bedroom Apartment?</span>
                             <i data-lucide="chevron-down" id="icon-22" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-22" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-22" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Costs vary based on hourly packages and travel distance. Contact us for a fast, tailored quote for your apartment size.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(23)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(23)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>23. Do Movers Handle Fragile Items Like Books and Glassware?</span>
                             <i data-lucide="chevron-down" id="icon-23" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-23" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-23" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Yes, when packed in appropriate boxes, we safely load and transport fragile kitchenware, electronics, and books.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(24)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(24)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>24. Moving from McLean to Chantilly: Local Route Planning</span>
                             <i data-lucide="chevron-down" id="icon-24" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-24" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-24" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             We map out optimal routes using major NoVA arteries to ensure safe transit between suburban residential areas.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(25)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(25)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>25. How to Tip Movers: Cash, Card, or Percentage?</span>
                             <i data-lucide="chevron-down" id="icon-25" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-25" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-25" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Cash is preferred by crew members at the end of the job, though digital tipping options can be arranged with team leads.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(26)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(26)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>26. What Makes a Moving Company Reliable and Trustworthy?</span>
                             <i data-lucide="chevron-down" id="icon-26" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-26" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-26" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Clear licensing, transparent pricing policies, verifiable local reviews, and professional equipment define reliable movers.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(27)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(27)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>27. How Early Should You Book Movers in Woodbridge?</span>
                             <i data-lucide="chevron-down" id="icon-27" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-27" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-27" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             We recommend booking 2 to 4 weeks in advance (or 4 to 6 weeks during peak summer moving season) to secure your preferred date.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(28)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(28)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>28. Moving Company Red Flags: Quotes That Seem Too Good to Be True</span>
                             <i data-lucide="chevron-down" id="icon-28" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-28" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-28" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Watch out for extremely low binding estimates that lack written terms or omit truck fees, travel time, and labor minimums.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(29)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(29)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>29. Should You Use a Well-Known National Mover or a Local Company?</span>
                             <i data-lucide="chevron-down" id="icon-29" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-29" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-29" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Local movers know neighborhood layouts, traffic patterns, and community regulations much better than national chains.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(30)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(30)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>30. How to Pack Dishes and Fragile Items for Movers?</span>
                             <i data-lucide="chevron-down" id="icon-30" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-30" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-30" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Wrap plates individually in packing paper, pack them vertically like records in sturdy dish boxes, and cushion all gaps.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(31)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(31)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>31. What Is the Difference Between Full-Service and Labor-Only Moves?</span>
                             <i data-lucide="chevron-down" id="icon-31" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-31" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-31" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Full-service includes our truck and transport; labor-only provides professional muscle to load your rental truck or container.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(32)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(32)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>32. Do Professional Movers Take Everything or Can You Be Selective?</span>
                             <i data-lucide="chevron-down" id="icon-32" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-32" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-32" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             You have total control over what is moved by establishing an exact inventory list and pointing out items to exclude.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(33)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(33)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>33. Moving from Fairfax to Woodbridge: Finding the Right Movers</span>
                             <i data-lucide="chevron-down" id="icon-33" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-33" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-33" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             We handle cross-city relocations between Fairfax and Woodbridge seamlessly with professional equipment and experienced crews.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(34)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(34)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>34. How to Handle Moving-Day Logistics with Professional Movers?</span>
                             <i data-lucide="chevron-down" id="icon-34" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-34" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-34" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Keep parking clear, reserve elevators if needed, and have one point-of-contact on site to guide the loading team.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(35)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(35)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>35. Condo-to-Condo Moves in Woodbridge: Special Considerations</span>
                             <i data-lucide="chevron-down" id="icon-35" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-35" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-35" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Ensure you obtain any required certificates of insurance (COI) and reserve loading docks with your condo association.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(36)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(36)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>36. What Not to Pack When Hiring Professional Movers?</span>
                             <i data-lucide="chevron-down" id="icon-36" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-36" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-36" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Avoid packing hazardous chemicals, gasoline, paint thinners, or personal valuables like passports and cash.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(37)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(37)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>37. Moving Company Complaints: How to File and Resolve Issues?</span>
                             <i data-lucide="chevron-down" id="icon-37" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-37" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-37" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Contact our support team directly with your invoice details and documentation so we can promptly address and resolve any concerns.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(38)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(38)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>38. Reasonable Moving Costs: What Is Fair in Northern Virginia?</span>
                             <i data-lucide="chevron-down" id="icon-38" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-38" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-38" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Fair rates reflect insured operations, experienced personnel, and well-maintained equipment rather than rock-bottom hidden pricing.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(39)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(39)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>39. How to Compare Moving Quotes from Multiple Companies?</span>
                             <i data-lucide="chevron-down" id="icon-39" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-39" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-39" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Check that each quote includes identical crew sizes, estimated hours, travel fees, and valuation coverages.
                         </div>
                     </div>
                     <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(40)" class="w-full p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
+                        <button onclick="toggleFaq(40)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
                             <span>40. Emergency or Last-Minute Moving Solutions in Woodbridge</span>
                             <i data-lucide="chevron-down" id="icon-40" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
                         </button>
-                        <div id="ans-40" class="hidden px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
+                        <div id="ans-40" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
                             Call us right away when unexpected moving needs arise so we can check our schedule and accommodate your urgent relocation.
                         </div>
                     </div>
@@ -779,9 +857,9 @@
         </div>
     </section>
 
-    <section id="estimate" class="py-20 bg-zinc-900 text-white border-t border-zinc-800">
+    <section id="estimate" class="py-16 sm:py-20 bg-zinc-900 text-white border-t border-zinc-800">
     <div class="container mx-auto px-4 max-w-4xl">
-        <div class="text-center mb-12">
+        <div class="text-center mb-10 sm:mb-12">
             <span class="bg-zinc-800 text-zinc-300 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block border border-zinc-700">
                 Fast Response
             </span>
@@ -789,16 +867,16 @@
             <p class="text-zinc-400 text-sm">Fill out the quick form below or call <a href="tel:5718991919" class="underline text-white font-bold">571-899-1919</a> for an instant quote.</p>
         </div>
 
-        <<!-- Estimate Form -->
-<form id="quote-form" action="https://formspree.io/f/xovnvdvy" method="POST" class="bg-zinc-800/80 border border-zinc-700 p-8 md:p-10 rounded-3xl shadow-2xl space-y-6 relative">
+        <!-- Estimate Form -->
+<form id="quote-form" action="https://formspree.io/f/xovnvdvy" method="POST" class="bg-zinc-800/80 border border-zinc-700 p-5 sm:p-8 md:p-10 rounded-3xl shadow-2xl space-y-6 relative">
     <div class="grid md:grid-cols-2 gap-6">
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Full Name</label>
-            <input type="text" name="name" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="John Doe">
+            <input type="text" name="name" autocomplete="name" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="John Doe">
         </div>
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Phone Number</label>
-            <input type="tel" name="phone" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="(571) 000-0000">
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="(571) 000-0000">
         </div>
     </div>
     <div class="grid md:grid-cols-2 gap-6">
@@ -842,8 +920,8 @@
 </form>
 
 <!-- Custom Success Modal Popup -->
-<div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden px-4">
-    <div class="bg-zinc-900 border border-zinc-700 text-white rounded-3xl max-w-lg w-full p-8 md:p-10 text-center shadow-2xl relative transform transition-all scale-95 opacity-0 duration-300" id="modal-content">
+<div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden px-4 py-6">
+    <div class="bg-zinc-900 border border-zinc-700 text-white rounded-3xl max-w-lg w-full p-6 sm:p-8 md:p-10 text-center max-h-[90vh] overflow-y-auto shadow-2xl relative transform transition-all scale-95 opacity-0 duration-300" id="modal-content">
         
         <!-- Icon Badge -->
         <div class="w-16 h-16 bg-white text-zinc-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
@@ -935,8 +1013,8 @@
     </div>
 </section>
 
-    <footer class="bg-black text-zinc-400 py-16 border-t border-zinc-800 text-sm">
-        <div class="container mx-auto px-4 max-w-7xl grid md:grid-cols-4 gap-12 mb-12">
+    <footer class="bg-black text-zinc-400 py-12 sm:py-16 border-t border-zinc-800 text-sm">
+        <div class="container mx-auto px-4 max-w-7xl grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
             <div class="space-y-4">
                 <div class="bg-white p-1 rounded-md inline-block">
                     <img src="./assets/LOGO 2.png" alt="Haul Bros Logo" width="48" height="48" class="h-10 w-auto object-contain">
@@ -975,9 +1053,9 @@
                 </ul>
             </div>
         </div>
-        <div class="container mx-auto px-4 max-w-7xl border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500">
+        <div class="container mx-auto px-4 max-w-7xl border-t border-zinc-900 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs text-zinc-500">
             <p>© 2026 Haul Bros Moving Co LLC. All Rights Reserved.</p>
-            <div class="flex gap-6 mt-4 sm:mt-0">
+            <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 sm:mt-0">
                 <a href="#" class="hover:text-white transition">Privacy Policy</a>
                 <a href="#" class="hover:text-white transition">Terms of Service</a>
             </div>
@@ -986,6 +1064,47 @@
 
     <script>
         lucide.createIcons();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOpenIcon = document.getElementById('mobile-menu-open-icon');
+        const mobileMenuCloseIcon = document.getElementById('mobile-menu-close-icon');
+        const quickMoreButton = document.getElementById('quick-more-button');
+        const quickMoreIcon = document.getElementById('quick-more-icon');
+
+        function setMobileMenu(open) {
+            if (!mobileMenuButton || !mobileMenu) return;
+
+            mobileMenu.classList.toggle('hidden', !open);
+            mobileMenuButton.setAttribute('aria-expanded', String(open));
+            mobileMenuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+            mobileMenuOpenIcon?.classList.toggle('hidden', open);
+            mobileMenuCloseIcon?.classList.toggle('hidden', !open);
+            quickMoreButton?.setAttribute('aria-expanded', String(open));
+            quickMoreIcon?.classList.toggle('rotate-180', open);
+        }
+
+        mobileMenuButton?.addEventListener('click', () => {
+            const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            setMobileMenu(!isOpen);
+        });
+
+        quickMoreButton?.addEventListener('click', () => {
+            const isOpen = quickMoreButton.getAttribute('aria-expanded') === 'true';
+            setMobileMenu(!isOpen);
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach((link) => {
+            link.addEventListener('click', () => setMobileMenu(false));
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') setMobileMenu(false);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) setMobileMenu(false);
+        });
 
         function toggleFaq(id) {
             const ans = document.getElementById('ans-' + id);
