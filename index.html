@@ -174,6 +174,8 @@
     <link rel="stylesheet" href="assets/brand.css">
     <link rel="stylesheet" href="assets/review-carousel.css">
     <script src="assets/review-carousel.js" defer></script>
+
+    <script>if (location.protocol === 'http:' || location.protocol === 'https:') { if (location.pathname.endsWith('/index.html')) location.replace('/' + location.search + location.hash); }</script>
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
 
@@ -185,7 +187,7 @@
 
     <header class="sticky top-0 left-0 right-0 z-50 bg-[#5A5E63]/95 backdrop-blur-md border-b border-zinc-600 shadow-md">
         <div class="container mx-auto px-4 sm:px-6 h-20 xl:h-24 flex items-center justify-between gap-3">
-            <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Haul Bros Moving home">
+            <a href="./" class="flex items-center gap-3 shrink-0" aria-label="Haul Bros Moving home">
                 <div class="bg-white p-1 rounded-md shadow-sm brand-logo-frame">
                     <img src="assets/haul-bros-black-gold.png" alt="Haul Bros Logo" width="56" height="56" class="h-10 sm:h-12 w-auto object-contain">
                 </div>
@@ -193,14 +195,14 @@
 
             <nav class="hidden lg:block flex-1" aria-label="Primary navigation">
                 <ul class="flex flex-row items-center justify-center gap-4 xl:gap-6 font-semibold text-xs xl:text-sm text-white whitespace-nowrap">
-                    <li><a href="index.html" class="hover:text-zinc-300 transition">Home</a></li>
-                    <li><a href="Navbars/about.html" class="hover:text-zinc-300 transition">About</a></li>
-                    <li><a href="Navbars/pricing.html" class="hover:text-zinc-300 transition">Pricing</a></li>
-                    <li><a href="Navbars/service.html" class="hover:text-zinc-300 transition">Services</a></li>
-                    <li><a href="Navbars/contact.html" class="hover:text-zinc-300 transition">Contact</a></li>
-                    <li><a href="Navbars/FAQ.html" class="hover:text-zinc-300 transition">FAQ</a></li>
-                    <li><a href="Navbars/review.html" class="hover:text-zinc-300 transition">Reviews</a></li>
-                    <li><a href="Navbars/Blog.html" class="hover:text-zinc-300 transition">Blog</a></li>
+                    <li><a href="./" class="hover:text-zinc-300 transition">Home</a></li>
+                    <li><a href="about/" class="hover:text-zinc-300 transition">About</a></li>
+                    <li><a href="pricing/" class="hover:text-zinc-300 transition">Pricing</a></li>
+                    <li><a href="services/" class="hover:text-zinc-300 transition">Services</a></li>
+                    <li><a href="contact/" class="hover:text-zinc-300 transition">Contact</a></li>
+                    <li><a href="faq/" class="hover:text-zinc-300 transition">FAQ</a></li>
+                    <li><a href="reviews/" class="hover:text-zinc-300 transition">Reviews</a></li>
+                    <li><a href="blog/" class="hover:text-zinc-300 transition">Blog</a></li>
 
 
                     <li class="relative group">
@@ -294,14 +296,14 @@
         <nav class="lg:hidden border-t border-zinc-600/80 bg-[#5A5E63]/95" aria-label="Header navigation">
             <div class="container mx-auto px-2 sm:px-4">
                 <div class="header-quick-nav flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-3 sm:gap-x-5 gap-y-0.5 py-2 text-[11px] sm:text-sm font-semibold text-white whitespace-nowrap">
-                    <a href="index.html" class="py-1.5 hover:text-zinc-300 transition">Home</a>
-                    <a href="Navbars/about.html" class="py-1.5 hover:text-zinc-300 transition">About</a>
-                    <a href="Navbars/pricing.html" class="py-1.5 hover:text-zinc-300 transition">Pricing</a>
-                    <a href="Navbars/service.html" class="py-1.5 hover:text-zinc-300 transition">Services</a>
-                    <a href="Navbars/contact.html" class="py-1.5 hover:text-zinc-300 transition">Contact</a>
-                    <a href="Navbars/Blog.html" class="py-1.5 hover:text-zinc-300 transition">Blog</a>
-                    <a href="Navbars/FAQ.html" class="py-1.5 hover:text-zinc-300 transition">FAQ</a>
-                    <a href="Navbars/review.html" class="py-1.5 hover:text-zinc-300 transition">Reviews</a>
+                    <a href="./" class="py-1.5 hover:text-zinc-300 transition">Home</a>
+                    <a href="about/" class="py-1.5 hover:text-zinc-300 transition">About</a>
+                    <a href="pricing/" class="py-1.5 hover:text-zinc-300 transition">Pricing</a>
+                    <a href="services/" class="py-1.5 hover:text-zinc-300 transition">Services</a>
+                    <a href="contact/" class="py-1.5 hover:text-zinc-300 transition">Contact</a>
+                    <a href="blog/" class="py-1.5 hover:text-zinc-300 transition">Blog</a>
+                    <a href="faq/" class="py-1.5 hover:text-zinc-300 transition">FAQ</a>
+                    <a href="reviews/" class="py-1.5 hover:text-zinc-300 transition">Reviews</a>
                     <button type="button" id="quick-more-button" class="py-1.5 flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
                         More <i data-lucide="chevron-down" id="quick-more-icon" class="w-3.5 h-3.5 transition-transform"></i>
                     </button>
@@ -312,14 +314,14 @@
         <nav id="mobile-menu" class="hidden lg:hidden border-t border-zinc-600 bg-[#5A5E63] shadow-xl" aria-label="Mobile navigation">
             <div class="container mx-auto px-4 sm:px-6 py-4">
                 <ul class="font-semibold text-sm text-white divide-y divide-zinc-600/70">
-                    <li><a href="index.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Home</a></li>
-                    <li><a href="Navbars/about.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">About</a></li>
-                    <li><a href="Navbars/pricing.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Pricing</a></li>
-                    <li><a href="Navbars/service.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Services</a></li>
-                    <li><a href="Navbars/contact.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Contact</a></li>
-                    <li><a href="Navbars/Blog.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Blog</a></li>
-                    <li><a href="Navbars/FAQ.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">FAQ</a></li>
-                    <li><a href="Navbars/review.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Reviews</a></li>
+                    <li><a href="./" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Home</a></li>
+                    <li><a href="about/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">About</a></li>
+                    <li><a href="pricing/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Pricing</a></li>
+                    <li><a href="services/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Services</a></li>
+                    <li><a href="contact/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Contact</a></li>
+                    <li><a href="blog/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Blog</a></li>
+                    <li><a href="faq/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">FAQ</a></li>
+                    <li><a href="reviews/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Reviews</a></li>
                 </ul>
 
                 <div class="pt-4">
@@ -540,14 +542,14 @@
                 <span class="bg-zinc-200 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">
                     Comprehensive Solutions
                 </span>
-                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3"><a href="Navbars/service.html" class="hover:underline focus-visible:underline">Our Moving Services</a></h2>
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3"><a href="services/" class="hover:underline focus-visible:underline">Our Moving Services</a></h2>
                 <p class="text-slate-600 text-sm">Full-service residential and commercial moving solutions tailored across Northern Virginia and Washington D.C.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">01</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#local-moving" class="hover:underline focus-visible:underline">Local Moving</a></h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="services/#local-moving" class="hover:underline focus-visible:underline">Local Moving</a></h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">Move your home across Northern Virginia with furniture protection, loading, transportation, unloading, and standard furniture disassembly and reassembly.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
                             <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> 26-foot moving truck with dollies and straps</li>
@@ -555,13 +557,13 @@
 <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Loading, transportation &amp; unloading</li>
                         </ul>
                     </div>
-                    <a href="Navbars/service.html#local-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Local Moving details">View Service Details →</a>
+                    <a href="services/#local-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Local Moving details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">02</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#apartment-moving" class="hover:underline focus-visible:underline">Apartment Moving</a></h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="services/#apartment-moving" class="hover:underline focus-visible:underline">Apartment Moving</a></h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">Moving a studio, apartment, or condo? We plan around stairs, elevator reservations, hallway distances, and parking at both buildings.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
                             <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Studio, apartment &amp; condo relocations</li>
@@ -569,13 +571,13 @@
 <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Furniture blankets, shrink wrap &amp; floor protection</li>
                         </ul>
                     </div>
-                    <a href="Navbars/service.html#apartment-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Apartment Moving details">View Service Details →</a>
+                    <a href="services/#apartment-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Apartment Moving details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">03</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#packing-unpacking" class="hover:underline focus-visible:underline">Packing &amp; Unpacking</a></h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="services/#packing-unpacking" class="hover:underline focus-visible:underline">Packing &amp; Unpacking</a></h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">Choose full-home, partial, or fragile-only packing, with room labels and supplies planned for your inventory. Unpacking is available by arrangement.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
                             <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Full-home, partial &amp; fragile-only packing</li>
@@ -583,13 +585,13 @@
 <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Room and contents labels for packed boxes</li>
                         </ul>
                     </div>
-                    <a href="Navbars/service.html#packing-unpacking" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Packing &amp; Unpacking details">View Service Details →</a>
+                    <a href="services/#packing-unpacking" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Packing &amp; Unpacking details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">04</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#long-distance-moving" class="hover:underline focus-visible:underline">Long-Distance Moving</a></h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="services/#long-distance-moving" class="hover:underline focus-visible:underline">Long-Distance Moving</a></h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">Plan your inventory, pickup, route, and delivery from Northern Virginia. Availability depends on your destination and the operating authority required.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
                             <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Detailed inventory and access review</li>
@@ -597,13 +599,13 @@
 <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Furniture protection and secure truck loading</li>
                         </ul>
                     </div>
-                    <a href="Navbars/service.html#long-distance-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Long-Distance Moving details">View Service Details →</a>
+                    <a href="services/#long-distance-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Long-Distance Moving details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">05</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#assembly-disassembly" class="hover:underline focus-visible:underline">Assembly &amp; Disassembly</a></h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="services/#assembly-disassembly" class="hover:underline focus-visible:underline">Assembly &amp; Disassembly</a></h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">We take apart and reassemble standard furniture when needed for your move, keeping hardware organized and placing pieces in your chosen rooms.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
                             <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Standard bed-frame disassembly &amp; reassembly</li>
@@ -611,13 +613,13 @@
 <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Organized hardware kept with matching furniture</li>
                         </ul>
                     </div>
-                    <a href="Navbars/service.html#assembly-disassembly" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Assembly &amp; Disassembly details">View Service Details →</a>
+                    <a href="services/#assembly-disassembly" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Assembly &amp; Disassembly details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">06</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#commercial-moving" class="hover:underline focus-visible:underline">Commercial Moves</a></h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="services/#commercial-moving" class="hover:underline focus-visible:underline">Commercial Moves</a></h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">Relocate office furniture, filing cabinets, packed supplies, and standard equipment with coordinated building access and placement by room or department.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
                             <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Office furniture, filing cabinets &amp; boxed supplies</li>
@@ -625,13 +627,13 @@
 <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Protected loading, transport &amp; unloading</li>
                         </ul>
                     </div>
-                    <a href="Navbars/service.html#commercial-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Commercial Moves details">View Service Details →</a>
+                    <a href="services/#commercial-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Commercial Moves details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">07</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#junk-removal" class="hover:underline focus-visible:underline">Junk Removal Services</a></h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="services/#junk-removal" class="hover:underline focus-visible:underline">Junk Removal Services</a></h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">Clear unwanted furniture and accepted appliances, or arrange a garage, basement, attic, or estate cleanout. Moving and removal can be planned together.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
                             <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Unwanted furniture and accepted appliance removal</li>
@@ -639,13 +641,13 @@
 <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Carrying, loading &amp; hauling of agreed items</li>
                         </ul>
                     </div>
-                    <a href="Navbars/service.html#junk-removal" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Junk Removal Services details">View Service Details →</a>
+                    <a href="services/#junk-removal" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Junk Removal Services details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">08</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#storage-solutions" class="hover:underline focus-visible:underline">Storage Solutions</a></h3>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="services/#storage-solutions" class="hover:underline focus-visible:underline">Storage Solutions</a></h3>
                         <p class="text-sm text-slate-600 leading-relaxed mb-4">Get help coordinating temporary storage and moving belongings into or out of a storage unit. Confirm facility terms, rental fees, and delivery separately.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
                             <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Temporary storage coordination between moves</li>
@@ -653,7 +655,7 @@
 <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Furniture protection and organized loading</li>
                         </ul>
                     </div>
-                    <a href="Navbars/service.html#storage-solutions" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Storage Solutions details">View Service Details →</a>
+                    <a href="services/#storage-solutions" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Storage Solutions details">View Service Details →</a>
                 </div>
             </div>
         </div>
@@ -878,7 +880,7 @@
         <div class="container mx-auto px-4 max-w-4xl text-center">
             <span class="bg-zinc-200 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">Knowledge Base</span>
             <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3">
-                <a href="Navbars/FAQ.html" class="underline underline-offset-4 decoration-2 hover:text-slate-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Frequently Asked Questions</a>
+                <a href="faq/" class="underline underline-offset-4 decoration-2 hover:text-slate-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Frequently Asked Questions</a>
             </h2>
             <p class="text-slate-600 text-sm">Visit our FAQ page for answers about moving services, estimates, packing, and service areas across Northern Virginia.</p>
         </div>
@@ -1107,7 +1109,7 @@
                 </li>
 
                 <li>
-                    <a href="Navbars/FAQ.html" class="hover:text-white transition">
+                    <a href="faq/" class="hover:text-white transition">
                         FAQ Knowledge Base
                     </a>
                 </li>

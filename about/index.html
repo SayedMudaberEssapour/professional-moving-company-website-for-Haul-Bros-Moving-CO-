@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Haul Bros Moving Co LLC - Trusted NoVA Movers</title>
+    <meta name="description" content="Learn about Haul Bros Moving Co LLC. Licensed & insured local movers (US DOT #4497497) offering transparent hourly rates, furniture wrapping, and military discounts across Woodbridge, Fairfax, Arlington, and Northern Virginia.">
+    <link rel="canonical" href="https://www.haulbrosmoving.com/about/">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="icon" type="image/png" href="../assets/haul-bros-black-gold.png">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+        html { scroll-behavior: smooth; }
+
+
+        /* Responsive compatibility additions — visual design intentionally preserved. */
+        *, *::before, *::after { box-sizing: border-box; }
+        html { max-width: 100%; overflow-x: hidden; }
+        body { max-width: 100%; overflow-x: hidden; }
+        img, video, svg { max-width: 100%; }
+        input, select, textarea, button { max-width: 100%; }
+        a, button { -webkit-tap-highlight-color: transparent; }
+        h1, h2, h3, h4, h5, h6, p, a, span { overflow-wrap: break-word; }
+
+        #mobile-menu {
+            max-height: calc(100dvh - 5rem);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+
+        .header-quick-nav {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .header-quick-nav::-webkit-scrollbar { display: none; }
+
+        @media (max-width: 767px) {
+            input, select, textarea { font-size: 16px !important; }
+            .page-hero { padding-top: 3.5rem !important; padding-bottom: 3rem !important; }
+            .page-hero h1 { font-size: clamp(1.9rem, 9vw, 2.5rem) !important; line-height: 1.12 !important; }
+            .page-hero p { font-size: 1rem !important; }
+        }
+
+        @media (max-width: 639px) {
+            #faq-container button { padding: 1rem !important; align-items: flex-start !important; font-size: 0.875rem; line-height: 1.35rem; }
+            #faq-container [id^="ans-"] { padding-left: 1rem !important; padding-right: 1rem !important; }
+            #success-modal { align-items: flex-start !important; overflow-y: auto; padding-top: 1rem; padding-bottom: 1rem; }
+            #modal-content { margin-top: auto; margin-bottom: auto; padding: 1.5rem !important; max-height: calc(100dvh - 2rem); overflow-y: auto; }
+        }
+
+    </style>
+    <link rel="stylesheet" href="../assets/brand.css">
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
+
+    <div class="bg-zinc-800 text-zinc-300 text-xs py-2 px-3 sm:px-4 text-center font-semibold tracking-wide flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-2 gap-y-1 border-b border-zinc-700 leading-relaxed">
+        <span class="bg-white text-zinc-900 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider">Discount Notice</span>
+        <span>Senior Citizen, Veteran, Military & First Responder Discounts Available • US DOT #4497497</span>
+        <a href="../contact/" class="underline hover:text-white ml-2 hidden sm:inline">Claim Yours →</a>
+    </div>
+
+    <header class="sticky top-0 left-0 right-0 z-50 bg-[#5A5E63]/95 backdrop-blur-md border-b border-zinc-600 shadow-md">
+            <div class="container mx-auto px-4 sm:px-6 h-20 xl:h-24 flex items-center justify-between gap-3">
+                <a href="../" class="flex items-center gap-3 shrink-0" aria-label="Haul Bros Moving home">
+                    <div class="bg-white p-1 rounded-md shadow-sm brand-logo-frame">
+                        <img src="../assets/haul-bros-black-gold.png" alt="Haul Bros Logo" width="56" height="56" class="h-10 sm:h-12 w-auto object-contain">
+                    </div>
+                </a>
+
+                <nav class="hidden lg:block flex-1" aria-label="Primary navigation">
+                    <ul class="flex flex-row items-center justify-center gap-4 xl:gap-6 font-semibold text-xs xl:text-sm text-white whitespace-nowrap">
+                        <li><a href="../" class="hover:text-zinc-300 transition">Home</a></li>
+                        <li><a href="./" class="text-zinc-300 transition">About</a></li>
+                        <li><a href="../pricing/" class="hover:text-zinc-300 transition">Pricing</a></li>
+                        <li><a href="../services/" class="hover:text-zinc-300 transition">Services</a></li>
+                        <li><a href="../contact/" class="hover:text-zinc-300 transition">Contact</a></li>
+                    <li><a href="../blog/" class="hover:text-zinc-300 transition">Blog</a></li>
+                        <li><a href="../faq/" class="hover:text-zinc-300 transition">FAQ</a></li>
+                        <li><a href="../reviews/" class="hover:text-zinc-300 transition">Reviews</a></li>
+                        <li class="relative group">
+                            <button type="button" class="flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none py-2" aria-haspopup="true">
+                                More <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                            </button>
+                            <div class="absolute left-0 mt-0 w-48 bg-[#5A5E63] border border-zinc-600 rounded-xl shadow-xl py-2 hidden group-hover:block group-focus-within:block z-50">
+                                <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-400">Locations</div>
+                                <ul class="space-y-1">
+                                    <li>
+                                        <a href="../Locations/woodbridge-movers.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Woodbridge</a>
+                                        <a href="../Locations/Arlington.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Arlington</a>
+                                        <a href="../Locations/Culpeper.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Culpeper</a>
+                                        <a href="../Locations/Fredericksburg.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Fredericksburg</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="flex items-center justify-end gap-2 sm:gap-3 shrink-0">
+                    <a href="tel:5718991919" class="flex items-center gap-1.5 font-bold text-xs xl:text-sm whitespace-nowrap text-white bg-zinc-700/60 px-2 xl:px-4 py-2.5 rounded-xl hover:bg-zinc-700 transition border border-zinc-600">
+                        <i data-lucide="phone" class="w-4 h-4 text-zinc-300"></i> 571-899-1919
+                    </a>
+                    <a href="../contact/" class="hidden sm:inline-flex bg-black text-white px-4 lg:px-6 py-3 rounded-full font-bold text-sm shadow-xl hover:bg-zinc-900 transition border border-zinc-800 whitespace-nowrap">Get a Free Quote</a>
+                    <button type="button" id="mobile-menu-button" class="lg:hidden w-11 h-11 inline-flex items-center justify-center rounded-xl text-white bg-zinc-700/60 border border-zinc-600 hover:bg-zinc-700 transition" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                        <i data-lucide="menu" id="mobile-menu-open-icon" class="w-5 h-5"></i>
+                        <i data-lucide="x" id="mobile-menu-close-icon" class="w-5 h-5 hidden"></i>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="lg:hidden border-t border-zinc-600/80 bg-[#5A5E63]/95" aria-label="Header navigation">
+                <div class="container mx-auto px-2 sm:px-4">
+                    <div class="header-quick-nav flex flex-wrap sm:flex-nowrap items-center justify-center gap-x-3 sm:gap-x-5 gap-y-0.5 py-2 text-[11px] sm:text-sm font-semibold text-white whitespace-nowrap">
+                        <a href="../" class="py-1.5 hover:text-zinc-300 transition">Home</a>
+                        <a href="./" class="py-1.5 text-zinc-300 transition">About</a>
+                        <a href="../pricing/" class="py-1.5 hover:text-zinc-300 transition">Pricing</a>
+                        <a href="../services/" class="py-1.5 hover:text-zinc-300 transition">Services</a>
+                        <a href="../contact/" class="py-1.5 hover:text-zinc-300 transition">Contact</a>
+                    <a href="../blog/" class="py-1.5 hover:text-zinc-300 transition">Blog</a>
+                        <a href="../faq/" class="py-1.5 hover:text-zinc-300 transition">FAQ</a>
+                        <a href="../reviews/" class="py-1.5 hover:text-zinc-300 transition">Reviews</a>
+                        <button type="button" id="quick-more-button" class="py-1.5 flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                            More <i data-lucide="chevron-down" id="quick-more-icon" class="w-3.5 h-3.5 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <nav id="mobile-menu" class="hidden lg:hidden border-t border-zinc-600 bg-[#5A5E63] shadow-xl" aria-label="Mobile navigation">
+                <div class="container mx-auto px-4 sm:px-6 py-4">
+                    <ul class="font-semibold text-sm text-white divide-y divide-zinc-600/70">
+                        <li><a href="../" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Home</a></li>
+                        <li><a href="./" class="mobile-nav-link block py-3 text-zinc-300 transition">About</a></li>
+                        <li><a href="../pricing/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Pricing</a></li>
+                        <li><a href="../services/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Services</a></li>
+                        <li><a href="../contact/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Contact</a></li>
+                    <li><a href="../blog/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Blog</a></li>
+                        <li><a href="../faq/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">FAQ</a></li>
+                        <li><a href="../reviews/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Reviews</a></li>
+                    </ul>
+                    <div class="pt-4">
+                        <p class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Locations</p>
+                        <div class="grid grid-cols-2 gap-2 text-sm">
+                        <a href="../Locations/Aldie.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Aldie</a>
+                        <a href="../Locations/Alexandria.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Alexandria</a>
+                        <a href="../Locations/Annandale.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Annandale</a>
+                        <a href="../Locations/Arlington.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Arlington</a>
+                        <a href="../Locations/Ashburn.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Ashburn</a>
+                        <a href="../Locations/Beleaton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Bealeton</a>
+                        <a href="../Locations/Brambleton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Brambleton</a>
+                        <a href="../Locations/Broadlands.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Broadlands</a>
+                        <a href="../Locations/Burke.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Burke</a>
+                        <a href="../Locations/Cascades.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Cascades</a>
+                        <a href="../Locations/Centreville.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Centreville</a>
+                        <a href="../Locations/Chantilly.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Chantilly</a>
+                        <a href="../Locations/Clifton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Clifton</a>
+                        <a href="../Locations/Countryside.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Countryside</a>
+                        <a href="../Locations/Culpeper.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Culpeper</a>
+                        <a href="../Locations/Dale_City.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Dale City</a>
+                        <a href="../Locations/Dumfries_VA.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Dumfries</a>
+                        <a href="../Locations/Dunn_Loring.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Dunn Loring</a>
+                        <a href="../Locations/Fairfax.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fairfax</a>
+                        <a href="../Locations/Fairfax_Station.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fairfax Station</a>
+                        <a href="../Locations/Fallschurch.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Falls Church</a>
+                        <a href="../Locations/Fort_Hunt.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fort Hunt</a>
+                        <a href="../Locations/Franconia.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Franconia</a>
+                        <a href="../Locations/Fredericksburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fredericksburg</a>
+                        <a href="../Locations/Gainesville.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Gainesville</a>
+                        <a href="../Locations/GreatFalls.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Great Falls</a>
+                        <a href="../Locations/Hamilton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Hamilton</a>
+                        <a href="../Locations/Haymarket.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Haymarket</a>
+                        <a href="../Locations/Herndon.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Herndon</a>
+                        <a href="../Locations/Hillsboro.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Hillsboro</a>
+                        <a href="../Locations/Huntington.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Huntington</a>
+                        <a href="../Locations/Kingstowne.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Kingstowne</a>
+                        <a href="../Locations/Lake_ridge.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Lake Ridge</a>
+                        <a href="../Locations/Lansdowne.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Lansdowne</a>
+                        <a href="../Locations/Leesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Leesburg</a>
+                        <a href="../Locations/Lorton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Lorton</a>
+                        <a href="../Locations/Lovettsville.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Lovettsville</a>
+                        <a href="../Locations/Manassas.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Manassas</a>
+                        <a href="../Locations/McLean.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">McLean</a>
+                        <a href="../Locations/Merrifield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Merrifield</a>
+                        <a href="../Locations/Middleburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Middleburg</a>
+                        <a href="../Locations/Mount_Vernon.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Mount Vernon</a>
+                        <a href="../Locations/Newington.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Newington</a>
+                        <a href="../Locations/North_Springfield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">North Springfield</a>
+                        <a href="../Locations/Oakton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Oakton</a>
+                        <a href="../Locations/Occoquan.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Occoquan</a>
+                        <a href="../Locations/Purcellville.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Purcellville</a>
+                        <a href="../Locations/Reston.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Reston</a>
+                        <a href="../Locations/Round_Hill.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Round Hill</a>
+                        <a href="../Locations/South_Riding.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">South Riding</a>
+                        <a href="../Locations/Springfield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Springfield</a>
+                        <a href="../Locations/Sterling.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Sterling</a>
+                        <a href="../Locations/Stone_Ridge.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Stone Ridge</a>
+                        <a href="../Locations/Triangle.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Triangle</a>
+                        <a href="../Locations/Tysons.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Tysons</a>
+                        <a href="../Locations/Vienna.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Vienna</a>
+                        <a href="../Locations/West_Springfield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">West Springfield</a>
+                        <a href="../Locations/woodbridge-movers.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Woodbridge</a>
+                        </div>
+                    </div>
+                    <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <a href="tel:5718991919" class="mobile-nav-link flex items-center justify-center gap-2 text-white bg-zinc-700/50 border border-zinc-600 px-4 py-3 rounded-xl font-bold text-sm">
+                            <i data-lucide="phone" class="w-4 h-4"></i> 571-899-1919
+                        </a>
+                        <a href="../contact/" class="mobile-nav-link bg-black text-white px-4 py-3 rounded-xl font-bold text-sm text-center border border-zinc-800">Get a Free Quote</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+    <section class="page-hero relative pt-20 pb-16 bg-[#5A5E63] text-white border-b border-zinc-700">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <span class="bg-zinc-700/80 text-zinc-200 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block border border-zinc-600">
+                Licensed & Insured Local Movers • US DOT #4497497
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-black uppercase tracking-tight mb-4">About Haul Bros Moving Co LLC</h1>
+            <p class="text-zinc-200 text-lg">Dependable, reliable, and always on time. Providing premier local moving and packing services throughout Northern Virginia and the DMV.</p>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl space-y-12">
+            <div class="text-center max-w-2xl mx-auto">
+                <span class="bg-zinc-100 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block border border-zinc-200">
+                    Our Story & Standards
+                </span>
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900">
+                    Committed to Excellence Across Northern Virginia
+                </h2>
+            </div>
+
+            <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-6 text-base sm:text-lg">
+                <p>
+                    Founded with a straightforward mission—to make local and long-distance relocating entirely stress-free and transparent—<strong>Haul Bros Moving Co LLC</strong> has quickly become one of Northern Virginia's most trusted moving teams. We are fully licensed and insured with active federal authority under <strong>US DOT #4497497</strong>, carrying comprehensive general liability and cargo insurance to safeguard your household and commercial belongings every step of the way.
+                </p>
+                <p>
+                    Whether you are moving a cozy 1-bedroom apartment, a multi-story family estate, or relocating your company offices, our professional crews bring top-tier equipment, meticulous protection protocols, and an uncompromising work ethic to every project.
+                </p>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center bg-zinc-900 text-white p-8 rounded-3xl shadow-xl border border-zinc-800">
+                <div class="p-4 border-r border-zinc-800 last:border-0">
+                    <p class="text-2xl font-black uppercase tracking-tight text-zinc-200">US DOT 4497497</p>
+                    <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Active Authority</p>
+                </div>
+                <div class="p-4 border-r border-zinc-800 last:border-0">
+                    <p class="text-2xl font-black uppercase tracking-tight text-zinc-200">Fully Insured</p>
+                    <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Cargo & Liability</p>
+                </div>
+                <div class="p-4 border-r border-zinc-800 last:border-0">
+                    <p class="text-2xl font-black uppercase tracking-tight text-zinc-200">1000+ Moves</p>
+                    <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Completed Safely</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-2xl font-black uppercase tracking-tight text-zinc-200">5.0 Star</p>
+                    <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Google Rating</p>
+                </div>
+            </div>
+
+            <!-- New Value Props / Detailed SEO Content Blocks -->
+            <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-slate-100">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 space-y-4">
+                    <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight text-slate-900">Areas We Proudly Serve</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        We provide prompt, reliable local moving services across <strong>Woodbridge, Fairfax, Arlington, Alexandria, Manassas, Stafford, Springfield, Burke, Centreville, Fredericksburg</strong>, and the greater Washington D.C. metropolitan region.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 space-y-4">
+                    <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold uppercase tracking-tight text-slate-900">Transparent Rates & Inclusion</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Our local moves are billed at clear, transparent hourly rates based on your crew size (2 to 4+ professional movers) and truck requirements with <strong>no hidden fees or surprise fuel surcharges</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Standard Service Breakdown & Discounts -->
+            <div class="bg-zinc-900 text-white p-8 md:p-12 rounded-3xl space-y-8 shadow-2xl border border-zinc-800">
+                <div class="max-w-2xl">
+                    <span class="text-xs font-bold uppercase tracking-widest text-zinc-400 block mb-2">The Haul Bros Standard</span>
+                    <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight">What’s Included on Every Move</h3>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-white text-zinc-900 flex items-center justify-center font-bold shrink-0 mt-1">✓</div>
+                        <p class="text-sm text-zinc-300 leading-relaxed">Fully equipped professional moving truck supplied for your scheduled day (If a truck is needed in your move).</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-white text-zinc-900 flex items-center justify-center font-bold shrink-0 mt-1">✓</div>
+                        <p class="text-sm text-zinc-300 leading-relaxed">Professional furniture blanketing and high-grade shrink-wrapping.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-white text-zinc-900 flex items-center justify-center font-bold shrink-0 mt-1">✓</div>
+                        <p class="text-sm text-zinc-300 leading-relaxed">Basic disassembly and reassembly of bed frames, tables, and standard furniture.</p>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-8 h-8 rounded-full bg-white text-zinc-900 flex items-center justify-center font-bold shrink-0 mt-1">✓</div>
+                        <p class="text-sm text-zinc-300 leading-relaxed">Careful placement of all boxes and furniture items directly in your new home.</p>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h4 class="font-bold text-white text-lg">Honoring Our Community</h4>
+                        <p class="text-sm text-zinc-400">Special rate reductions for senior citizens, military service members, veterans, and first responders.</p>
+                    </div>
+                    <a href="../contact/" class="bg-white text-zinc-900 px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider hover:bg-zinc-200 transition shrink-0">
+                        Claim Your Discount
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-zinc-900 text-zinc-400 py-12 border-t border-zinc-800">
+        <div class="container mx-auto px-4 max-w-7xl text-center text-xs space-y-3">
+            <p>&copy; 2026 Haul Bros Moving Co LLC. All rights reserved. US DOT #4497497</p>
+            <p><a href="../" class="underline hover:text-white">Return to Homepage</a></p>
+        </div>
+
+        <section aria-label="Social Media" class="container mx-auto px-4 mt-8 pt-8 border-t border-zinc-800 text-center">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Social Media</h2>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <a href="https://www.facebook.com/profile.php?id=61581927868435" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on Facebook (opens in a new tab)">Facebook</a>
+                <a href="https://www.instagram.com/haulbrosmovingco.llc/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on Instagram (opens in a new tab)">Instagram</a>
+                <a href="https://www.linkedin.com/in/haul-bros-moving-co-llc-a11494352/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on LinkedIn (opens in a new tab)">LinkedIn</a>
+                <a href="https://nextdoor.com/page/haul-bros-moving-co-llc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on Nextdoor (opens in a new tab)">Nextdoor</a>
+                <a href="https://www.youtube.com/@HaulbrosmovingcoLLC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on YouTube (opens in a new tab)">YouTube</a>
+                <a href="https://www.pinterest.com/Haulbrosmoving/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on Pinterest (opens in a new tab)">Pinterest</a>
+            </div>
+        </section>
+    </footer>
+    <script>lucide.createIcons();</script>
+<script>
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOpenIcon = document.getElementById('mobile-menu-open-icon');
+        const mobileMenuCloseIcon = document.getElementById('mobile-menu-close-icon');
+        const quickMoreButton = document.getElementById('quick-more-button');
+        const quickMoreIcon = document.getElementById('quick-more-icon');
+
+        function setMobileMenu(open) {
+            if (!mobileMenuButton || !mobileMenu) return;
+            mobileMenu.classList.toggle('hidden', !open);
+            mobileMenuButton.setAttribute('aria-expanded', String(open));
+            mobileMenuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+            mobileMenuOpenIcon?.classList.toggle('hidden', open);
+            mobileMenuCloseIcon?.classList.toggle('hidden', !open);
+            quickMoreButton?.setAttribute('aria-expanded', String(open));
+            quickMoreIcon?.classList.toggle('rotate-180', open);
+        }
+
+        mobileMenuButton?.addEventListener('click', () => {
+            const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            setMobileMenu(!isOpen);
+        });
+        quickMoreButton?.addEventListener('click', () => {
+            const isOpen = quickMoreButton.getAttribute('aria-expanded') === 'true';
+            setMobileMenu(!isOpen);
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach((link) => link.addEventListener('click', () => setMobileMenu(false)));
+        document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMobileMenu(false); });
+        window.addEventListener('resize', () => { if (window.innerWidth >= 1024) setMobileMenu(false); });
+
+    </script>
+</body>
+</html>
