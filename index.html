@@ -26,8 +26,8 @@
 
 
     <!-- Add your favicon/logo link here -->
-    <link rel="icon" href="../assets/LOGO 2.png" type="image/png">
-    
+    <link rel="icon" type="image/png" href="assets/haul-bros-black-gold.png">
+
     <!-- Rest of your meta tags and styles -->
 
     <script type="application/ld+json">
@@ -68,6 +68,7 @@
       "areaServed": [
         {"@type": "AdministrativeArea", "name": "Woodbridge, VA"},
         {"@type": "AdministrativeArea", "name": "Fairfax, VA"},
+        {"@type": "AdministrativeArea", "name": "Dumfries, VA"},
         {"@type": "AdministrativeArea", "name": "Manassas, VA"},
         {"@type": "AdministrativeArea", "name": "Arlington, VA"},
         {"@type": "AdministrativeArea", "name": "Alexandria, VA"},
@@ -75,7 +76,55 @@
         {"@type": "AdministrativeArea", "name": "Springfield, VA"},
         {"@type": "AdministrativeArea", "name": "Burke, VA"},
         {"@type": "AdministrativeArea", "name": "Centreville, VA"},
-        {"@type": "AdministrativeArea", "name": "Fredericksburg, VA"}
+        {"@type": "AdministrativeArea", "name": "Fredericksburg, VA"},
+        {"@type": "Place", "name": "Annandale, VA"},
+        {"@type": "Place", "name": "Ashburn, VA"},
+        {"@type": "Place", "name": "Bealeton, VA"},
+        {"@type": "Place", "name": "Chantilly, VA"},
+        {"@type": "Place", "name": "Clifton, VA"},
+        {"@type": "Place", "name": "Culpeper, VA"},
+        {"@type": "Place", "name": "Fairfax Station, VA"},
+        {"@type": "Place", "name": "Falls Church, VA"},
+        {"@type": "Place", "name": "Gainesville, VA"},
+        {"@type": "Place", "name": "Great Falls, VA"},
+        {"@type": "Place", "name": "Hamilton, VA"},
+        {"@type": "Place", "name": "Haymarket, VA"},
+        {"@type": "Place", "name": "Herndon, VA"},
+        {"@type": "Place", "name": "Lake Ridge, VA"},
+        {"@type": "Place", "name": "Leesburg, VA"},
+        {"@type": "Place", "name": "Lorton, VA"},
+        {"@type": "Place", "name": "Lovettsville, VA"},
+        {"@type": "Place", "name": "McLean, VA"},
+        {"@type": "Place", "name": "Middleburg, VA"},
+        {"@type": "Place", "name": "Oakton, VA"},
+        {"@type": "Place", "name": "Occoquan, VA"},
+        {"@type": "Place", "name": "Purcellville, VA"},
+        {"@type": "Place", "name": "Reston, VA"},
+        {"@type": "Place", "name": "Round Hill, VA"},
+        {"@type": "Place", "name": "South Riding, VA"},
+        {"@type": "Place", "name": "Sterling, VA"},
+        {"@type": "Place", "name": "Tysons, VA"},
+        {"@type": "Place", "name": "Vienna, VA"},
+        {"@type": "Place", "name": "Aldie, VA"},
+        {"@type": "Place", "name": "Brambleton, VA"},
+        {"@type": "Place", "name": "Broadlands, VA"},
+        {"@type": "Place", "name": "Cascades, VA"},
+        {"@type": "Place", "name": "Countryside, VA"},
+        {"@type": "Place", "name": "Dale City, VA"},
+        {"@type": "Place", "name": "Dunn Loring, VA"},
+        {"@type": "Place", "name": "Fort Hunt, VA"},
+        {"@type": "Place", "name": "Franconia, VA"},
+        {"@type": "Place", "name": "Hillsboro, VA"},
+        {"@type": "Place", "name": "Huntington, VA"},
+        {"@type": "Place", "name": "Kingstowne, VA"},
+        {"@type": "Place", "name": "Lansdowne, VA"},
+        {"@type": "Place", "name": "Merrifield, VA"},
+        {"@type": "Place", "name": "Mount Vernon, VA"},
+        {"@type": "Place", "name": "Newington, VA"},
+        {"@type": "Place", "name": "North Springfield, VA"},
+        {"@type": "Place", "name": "Stone Ridge, VA"},
+        {"@type": "Place", "name": "Triangle, VA"},
+        {"@type": "Place", "name": "West Springfield, VA"}
       ],
       "sameAs": [
         "https://g.page/r/haul-bros-woodbridge",
@@ -122,6 +171,9 @@
         }
         .header-quick-nav::-webkit-scrollbar { display: none; }
     </style>
+    <link rel="stylesheet" href="assets/brand.css">
+    <link rel="stylesheet" href="assets/review-carousel.css">
+    <script src="assets/review-carousel.js" defer></script>
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
 
@@ -134,8 +186,8 @@
     <header class="sticky top-0 left-0 right-0 z-50 bg-[#5A5E63]/95 backdrop-blur-md border-b border-zinc-600 shadow-md">
         <div class="container mx-auto px-4 sm:px-6 h-20 xl:h-24 flex items-center justify-between gap-3">
             <a href="index.html" class="flex items-center gap-3 shrink-0" aria-label="Haul Bros Moving home">
-                <div class="bg-white p-1 rounded-md shadow-sm">
-                    <img src="./assets/LOGO 2.png" alt="Haul Bros Logo" width="56" height="56" class="h-10 sm:h-12 w-auto object-contain">
+                <div class="bg-white p-1 rounded-md shadow-sm brand-logo-frame">
+                    <img src="assets/haul-bros-black-gold.png" alt="Haul Bros Logo" width="56" height="56" class="h-10 sm:h-12 w-auto object-contain">
                 </div>
             </a>
 
@@ -148,24 +200,76 @@
                     <li><a href="Navbars/contact.html" class="hover:text-zinc-300 transition">Contact</a></li>
                     <li><a href="Navbars/FAQ.html" class="hover:text-zinc-300 transition">FAQ</a></li>
                     <li><a href="Navbars/review.html" class="hover:text-zinc-300 transition">Reviews</a></li>
+                    <li><a href="Navbars/Blog.html" class="hover:text-zinc-300 transition">Blog</a></li>
+
 
                     <li class="relative group">
                         <button type="button" class="flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none py-2" aria-haspopup="true">
                             More <i data-lucide="chevron-down" class="w-4 h-4"></i>
                         </button>
 
-                        <div class="absolute left-0 mt-0 w-48 bg-[#5A5E63] border border-zinc-600 rounded-xl shadow-xl py-2 hidden group-hover:block group-focus-within:block z-50">
+                        <div class="absolute left-0 mt-0 w-48 max-h-[65vh] overflow-y-auto bg-[#5A5E63] border border-zinc-600 rounded-xl shadow-xl py-2 hidden group-hover:block group-focus-within:block z-50">
                             <div class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-zinc-400">Locations</div>
                             <ul class="space-y-1">
                                 <li>
+                                    <a href="Locations/Aldie.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Aldie</a>
+                                    <a href="Locations/Alexandria.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Alexandria</a>
+                                    <a href="Locations/Annandale.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Annandale</a>
+                                    <a href="Locations/Arlington.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Arlington</a>
+                                    <a href="Locations/Ashburn.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Ashburn</a>
+                                    <a href="Locations/Beleaton.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Bealeton</a>
+                                    <a href="Locations/Brambleton.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Brambleton</a>
+                                    <a href="Locations/Broadlands.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Broadlands</a>
+                                    <a href="Locations/Burke.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Burke</a>
+                                    <a href="Locations/Cascades.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Cascades</a>
+                                    <a href="Locations/Centreville.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Centreville</a>
+                                    <a href="Locations/Chantilly.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Chantilly</a>
+                                    <a href="Locations/Clifton.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Clifton</a>
+                                    <a href="Locations/Countryside.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Countryside</a>
+                                    <a href="Locations/Culpeper.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Culpeper</a>
+                                    <a href="Locations/Dale_City.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Dale City</a>
+                                    <a href="Locations/Dumfries_VA.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Dumfries</a>
+                                    <a href="Locations/Dunn_Loring.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Dunn Loring</a>
+                                    <a href="Locations/Fairfax.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Fairfax</a>
+                                    <a href="Locations/Fairfax_Station.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Fairfax Station</a>
+                                    <a href="Locations/Fallschurch.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Falls Church</a>
+                                    <a href="Locations/Fort_Hunt.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Fort Hunt</a>
+                                    <a href="Locations/Franconia.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Franconia</a>
+                                    <a href="Locations/Fredericksburg.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Fredericksburg</a>
+                                    <a href="Locations/Gainesville.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Gainesville</a>
+                                    <a href="Locations/GreatFalls.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Great Falls</a>
+                                    <a href="Locations/Hamilton.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Hamilton</a>
+                                    <a href="Locations/Haymarket.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Haymarket</a>
+                                    <a href="Locations/Herndon.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Herndon</a>
+                                    <a href="Locations/Hillsboro.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Hillsboro</a>
+                                    <a href="Locations/Huntington.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Huntington</a>
+                                    <a href="Locations/Kingstowne.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Kingstowne</a>
+                                    <a href="Locations/Lake_ridge.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Lake Ridge</a>
+                                    <a href="Locations/Lansdowne.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Lansdowne</a>
+                                    <a href="Locations/Leesburg.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Leesburg</a>
+                                    <a href="Locations/Lorton.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Lorton</a>
+                                    <a href="Locations/Lovettsville.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Lovettsville</a>
+                                    <a href="Locations/Manassas.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Manassas</a>
+                                    <a href="Locations/McLean.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">McLean</a>
+                                    <a href="Locations/Merrifield.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Merrifield</a>
+                                    <a href="Locations/Middleburg.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Middleburg</a>
+                                    <a href="Locations/Mount_Vernon.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Mount Vernon</a>
+                                    <a href="Locations/Newington.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Newington</a>
+                                    <a href="Locations/North_Springfield.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">North Springfield</a>
+                                    <a href="Locations/Oakton.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Oakton</a>
+                                    <a href="Locations/Occoquan.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Occoquan</a>
+                                    <a href="Locations/Purcellville.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Purcellville</a>
+                                    <a href="Locations/Reston.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Reston</a>
+                                    <a href="Locations/Round_Hill.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Round Hill</a>
+                                    <a href="Locations/South_Riding.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">South Riding</a>
+                                    <a href="Locations/Springfield.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Springfield</a>
+                                    <a href="Locations/Sterling.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Sterling</a>
+                                    <a href="Locations/Stone_Ridge.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Stone Ridge</a>
+                                    <a href="Locations/Triangle.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Triangle</a>
+                                    <a href="Locations/Tysons.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Tysons</a>
+                                    <a href="Locations/Vienna.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Vienna</a>
+                                    <a href="Locations/West_Springfield.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">West Springfield</a>
                                     <a href="Locations/woodbridge-movers.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700/60 transition">Woodbridge</a>
-                                    <a href="Locations/Arlington.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Arlington</a>
-                                    <a href="Locations/Culpeper.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Culpeper</a>
-                                    <a href="Locations/Fredericksburg.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Fredericksburg</a>
-                                    <a href="Locations/Fairfax.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Fairfax</a>
-                                    <a href ="Locations/Fallschurch.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Falls Church</a>
-                                    <a href="Locations/Manassas.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Manassas</a>
-                                    <a href="Locations/Springfield.html" class="block px-4 py-2 text-sm text-white hover:bg-zinc-700 transition">Springfield</a>
                                 </li>
                             </ul>
                         </div>
@@ -174,7 +278,7 @@
             </nav>
 
             <div class="flex items-center justify-end gap-2 sm:gap-3 shrink-0">
-                <a href="tel:5718991919" class="hidden 2xl:flex items-center gap-2 font-bold text-sm text-white bg-zinc-700/60 px-4 py-2.5 rounded-xl hover:bg-zinc-700 transition border border-zinc-600">
+                <a href="tel:5718991919" class="flex items-center gap-1.5 font-bold text-xs xl:text-sm whitespace-nowrap text-white bg-zinc-700/60 px-2 xl:px-4 py-2.5 rounded-xl hover:bg-zinc-700 transition border border-zinc-600">
                     <i data-lucide="phone" class="w-4 h-4 text-zinc-300"></i> 571-899-1919
                 </a>
                 <a href="#estimate" class="hidden sm:inline-flex bg-black text-white px-4 lg:px-6 py-3 rounded-full font-bold text-sm shadow-xl hover:bg-zinc-900 transition border border-zinc-800 whitespace-nowrap">Get a Free Quote</a>
@@ -195,6 +299,7 @@
                     <a href="Navbars/pricing.html" class="py-1.5 hover:text-zinc-300 transition">Pricing</a>
                     <a href="Navbars/service.html" class="py-1.5 hover:text-zinc-300 transition">Services</a>
                     <a href="Navbars/contact.html" class="py-1.5 hover:text-zinc-300 transition">Contact</a>
+                    <a href="Navbars/Blog.html" class="py-1.5 hover:text-zinc-300 transition">Blog</a>
                     <a href="Navbars/FAQ.html" class="py-1.5 hover:text-zinc-300 transition">FAQ</a>
                     <a href="Navbars/review.html" class="py-1.5 hover:text-zinc-300 transition">Reviews</a>
                     <button type="button" id="quick-more-button" class="py-1.5 flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
@@ -212,6 +317,7 @@
                     <li><a href="Navbars/pricing.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Pricing</a></li>
                     <li><a href="Navbars/service.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Services</a></li>
                     <li><a href="Navbars/contact.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Contact</a></li>
+                    <li><a href="Navbars/Blog.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Blog</a></li>
                     <li><a href="Navbars/FAQ.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">FAQ</a></li>
                     <li><a href="Navbars/review.html" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Reviews</a></li>
                 </ul>
@@ -219,14 +325,64 @@
                 <div class="pt-4">
                     <p class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Locations</p>
                     <div class="grid grid-cols-2 gap-2 text-sm">
-                        <a href="Locations/woodbridge-movers.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Woodbridge</a>
+                        <a href="Locations/Aldie.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Aldie</a>
+                        <a href="Locations/Alexandria.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Alexandria</a>
+                        <a href="Locations/Annandale.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Annandale</a>
                         <a href="Locations/Arlington.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Arlington</a>
+                        <a href="Locations/Ashburn.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Ashburn</a>
+                        <a href="Locations/Beleaton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Bealeton</a>
+                        <a href="Locations/Brambleton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Brambleton</a>
+                        <a href="Locations/Broadlands.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Broadlands</a>
+                        <a href="Locations/Burke.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Burke</a>
+                        <a href="Locations/Cascades.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Cascades</a>
+                        <a href="Locations/Centreville.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Centreville</a>
+                        <a href="Locations/Chantilly.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Chantilly</a>
+                        <a href="Locations/Clifton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Clifton</a>
+                        <a href="Locations/Countryside.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Countryside</a>
                         <a href="Locations/Culpeper.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Culpeper</a>
-                        <a href="Locations/Fredericksburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fredericksburg</a>
+                        <a href="Locations/Dale_City.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Dale City</a>
+                        <a href="Locations/Dumfries_VA.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Dumfries</a>
+                        <a href="Locations/Dunn_Loring.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Dunn Loring</a>
                         <a href="Locations/Fairfax.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fairfax</a>
+                        <a href="Locations/Fairfax_Station.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fairfax Station</a>
                         <a href="Locations/Fallschurch.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Falls Church</a>
+                        <a href="Locations/Fort_Hunt.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fort Hunt</a>
+                        <a href="Locations/Franconia.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Franconia</a>
+                        <a href="Locations/Fredericksburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Fredericksburg</a>
+                        <a href="Locations/Gainesville.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Gainesville</a>
+                        <a href="Locations/GreatFalls.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Great Falls</a>
+                        <a href="Locations/Hamilton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Hamilton</a>
+                        <a href="Locations/Haymarket.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Haymarket</a>
+                        <a href="Locations/Herndon.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Herndon</a>
+                        <a href="Locations/Hillsboro.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Hillsboro</a>
+                        <a href="Locations/Huntington.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Huntington</a>
+                        <a href="Locations/Kingstowne.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Kingstowne</a>
+                        <a href="Locations/Lake_ridge.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Lake Ridge</a>
+                        <a href="Locations/Lansdowne.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Lansdowne</a>
+                        <a href="Locations/Leesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Leesburg</a>
+                        <a href="Locations/Lorton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Lorton</a>
+                        <a href="Locations/Lovettsville.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Lovettsville</a>
                         <a href="Locations/Manassas.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Manassas</a>
+                        <a href="Locations/McLean.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">McLean</a>
+                        <a href="Locations/Merrifield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Merrifield</a>
+                        <a href="Locations/Middleburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Middleburg</a>
+                        <a href="Locations/Mount_Vernon.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Mount Vernon</a>
+                        <a href="Locations/Newington.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Newington</a>
+                        <a href="Locations/North_Springfield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">North Springfield</a>
+                        <a href="Locations/Oakton.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Oakton</a>
+                        <a href="Locations/Occoquan.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Occoquan</a>
+                        <a href="Locations/Purcellville.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Purcellville</a>
+                        <a href="Locations/Reston.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Reston</a>
+                        <a href="Locations/Round_Hill.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Round Hill</a>
+                        <a href="Locations/South_Riding.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">South Riding</a>
                         <a href="Locations/Springfield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Springfield</a>
+                        <a href="Locations/Sterling.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Sterling</a>
+                        <a href="Locations/Stone_Ridge.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Stone Ridge</a>
+                        <a href="Locations/Triangle.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Triangle</a>
+                        <a href="Locations/Tysons.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Tysons</a>
+                        <a href="Locations/Vienna.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Vienna</a>
+                        <a href="Locations/West_Springfield.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">West Springfield</a>
+                        <a href="Locations/woodbridge-movers.html" class="mobile-nav-link block px-3 py-2.5 rounded-xl text-white bg-zinc-700/40 hover:bg-zinc-700 transition">Woodbridge</a>
                     </div>
                 </div>
 
@@ -265,71 +421,97 @@
                     Verified Local Reputation
                 </span>
                 <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900">
-                    Trusted by Northern Virginia Homeowners
+                    Rated 5 Stars Across Northern Virginia, Washington, D.C., and Maryland
                 </h2>
                 <p class="text-slate-600 text-sm mt-3">
-                    159+ Five-Star Google Reviews • US DOT #4497497 • Serving the DMV Since 2025
+                    Read reviews from customers who trusted Haul Bros Moving Co LLC for professional moving and storage services throughout the DMV region.
                 </p>
             </div>
 
-            <div id="reviews" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12 sm:mb-16">
-                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex gap-1 text-amber-500 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                        <p class="text-sm text-slate-700 italic mb-6 leading-relaxed">
-                            "Haul Bros moved our 4-bedroom home in Lake Ridge without a single scratch. They showed up right on time at 8 AM and worked tirelessly through tight stairwells and heavy furniture!"
-                        </p>
-                    </div>
-                    <div class="border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                        <div>
-                            <p class="font-bold text-sm text-slate-900">David R.</p>
-                            <p class="text-xs text-slate-500">Woodbridge VA • Local Move</p>
-                            <p class="text-[10px] text-slate-400 mt-0.5">June 2026</p>
-                        </div>
-                        <a href="https://g.page/r/haul-bros-woodbridge" target="_blank" rel="noopener" class="text-xs font-bold underline text-zinc-700 hover:text-black">Google Review</a>
-                    </div>
-                </div>
-
-                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex gap-1 text-amber-500 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                        <p class="text-sm text-slate-700 italic mb-6 leading-relaxed">
-                            "Fantastic service in Fairfax! They packed our kitchen in half the time it would have taken us and moved our 3-bedroom house smoothly. Very polite and professional team."
-                        </p>
-                    </div>
-                    <div class="border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                        <div>
-                            <p class="font-bold text-sm text-slate-900">Sarah K.</p>
-                            <p class="text-xs text-slate-500">Fairfax VA • Packing & Moving</p>
-                            <p class="text-[10px] text-slate-400 mt-0.5">May 2026</p>
-                        </div>
-                        <a href="https://g.page/r/haul-bros-fairfax" target="_blank" rel="noopener" class="text-xs font-bold underline text-zinc-700 hover:text-black">Google Review</a>
-                    </div>
-                </div>
-
-                <div class="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <div class="flex gap-1 text-amber-500 mb-4">
-                            <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                        </div>
-                        <p class="text-sm text-slate-700 italic mb-6 leading-relaxed">
-                            "Organized and fast. They managed a 26ft truck like absolute pros. Best local movers in Northern Virginia with zero hidden fees and incredible work ethic!"
-                        </p>
-                    </div>
-                    <div class="border-t border-slate-200 pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-                        <div>
-                            <p class="font-bold text-sm text-slate-900">Michael S.</p>
-                            <p class="text-xs text-slate-500">Arlington VA • Local Move</p>
-                            <p class="text-[10px] text-slate-400 mt-0.5">April 2026</p>
-                        </div>
-                        <a href="https://g.page/r/haul-bros-arlington" target="_blank" rel="noopener" class="text-xs font-bold underline text-zinc-700 hover:text-black">Google Review</a>
-                    </div>
-                </div>
-            </div>
+<section id="reviews" class="review-widget" aria-label="Customer review carousel" aria-roledescription="carousel">
+  <div class="review-toolbar"><a href="https://www.google.com/search?q=Haul+Bros+Moving+Co+LLC" target="_blank" rel="noopener noreferrer">5.0 on Google · 183 reviews</a>
+    <div class="review-controls"><button type="button" id="reviews-prev" aria-label="Previous review" aria-controls="review-viewport">←</button><button type="button" id="reviews-pause" aria-label="Pause automatic review scrolling" aria-pressed="false" aria-controls="review-viewport">Pause</button><button type="button" id="reviews-next" aria-label="Next review" aria-controls="review-viewport">→</button></div>
+  </div>
+  <div id="review-viewport" class="review-viewport" tabindex="0" aria-label="Customer reviews. Swipe or use the arrow buttons to browse."><div class="review-track"><article class="review-card" aria-label="Review 1 of 13: ann miller">
+  <span class="review-source">Google review highlights</span>
+  <h3>An organized moving day</h3>
+  <p class="review-summary">Ann describes a crew that arrived punctually, kept her informed, and handled her belongings carefully. She especially appreciated their efficient pace, positive attitude, and willingness to put everything exactly where she wanted it.</p>
+  <div class="review-attribution"><strong>ann miller</strong><a href="https://www.google.com/maps/contrib/110851288684271098881/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read ann miller's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 2 of 13: Tonia Tonia">
+  <span class="review-source">Google review highlights</span>
+  <h3>Packing and furniture assembly</h3>
+  <p class="review-summary">Tonia highlights protective wrapping for delicate furniture and help taking apart and rebuilding larger pieces. Her review also describes a courteous team, efficient work, and a final price without unexpected fees.</p>
+  <div class="review-attribution"><strong>Tonia Tonia</strong><a href="https://www.google.com/maps/contrib/116551556805684586852/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Tonia Tonia's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 3 of 13: John Kojo Acquah">
+  <span class="review-source">Google review highlights</span>
+  <h3>Clear communication throughout</h3>
+  <p class="review-summary">John reports that his belongings reached their destination safely. He praises the movers for being on time, working hard, and communicating clearly, and says the service and fair pricing exceeded his expectations.</p>
+  <div class="review-attribution"><strong>John Kojo Acquah</strong><a href="https://www.google.com/maps/contrib/110825148576925148489/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read John Kojo Acquah's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 4 of 13: Edward morgan">
+  <span class="review-source">Google review highlights</span>
+  <h3>Careful furniture protection</h3>
+  <p class="review-summary">Edward describes furniture being wrapped and protected before transport. He appreciated a crew that worked efficiently without rushing, stayed positive, and communicated throughout the job, helping the day feel organized and manageable.</p>
+  <div class="review-attribution"><strong>Edward morgan</strong><a href="https://www.google.com/maps/contrib/100001138505026679535/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Edward morgan's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 5 of 13: Charg Yl">
+  <span class="review-source">Google review highlights</span>
+  <h3>A clear estimate and final price</h3>
+  <p class="review-summary">Charg chose the company partly because of its pricing. The review says the estimate matched the work without surprise charges and describes punctual movers who worked efficiently while taking care of the belongings.</p>
+  <div class="review-attribution"><strong>Charg Yl</strong><a href="https://www.google.com/maps/contrib/105352124544783547657/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Charg Yl's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 6 of 13: Augustine Danquah">
+  <span class="review-source">Google review highlights</span>
+  <h3>Placement with attention to detail</h3>
+  <p class="review-summary">Augustine praises the team for careful handling, a respectful approach, and placing belongings where requested. The review describes a smooth moving day and says the customer would use the service again and recommend it to family and friends.</p>
+  <div class="review-attribution"><strong>Augustine Danquah</strong><a href="https://www.google.com/maps/contrib/117061679903754712143/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Augustine Danquah's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 7 of 13: Charlie Parker">
+  <span class="review-source">Google review highlights</span>
+  <h3>Extra help with heavy furniture</h3>
+  <p class="review-summary">Charlie describes an on-time arrival and efficient work with careful handling throughout. The detail that stood out was the team offering extra help rearranging heavy furniture, making the overall move easier.</p>
+  <div class="review-attribution"><strong>Charlie Parker</strong><a href="https://www.google.com/maps/contrib/108078594914154539613/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Charlie Parker's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 8 of 13: Naa Tetteh">
+  <span class="review-source">Google review highlights</span>
+  <h3>Care from packing to unloading</h3>
+  <p class="review-summary">Naa reports that the belongings were packed, transported, and unloaded without damage. The review highlights punctuality, attention to detail, and a friendly team that stayed in communication throughout the move.</p>
+  <div class="review-attribution"><strong>Naa Tetteh</strong><a href="https://www.google.com/maps/contrib/111841886626983294938/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Naa Tetteh's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 9 of 13: Cecilia Anum">
+  <span class="review-source">Google review highlights</span>
+  <h3>Friendly and approachable movers</h3>
+  <p class="review-summary">Cecilia appreciated the balance of professional work and a personal approach. The review describes punctual movers who handled belongings carefully, answered questions, and made sure items were placed where requested without making the work feel rushed.</p>
+  <div class="review-attribution"><strong>Cecilia Anum</strong><a href="https://www.google.com/maps/contrib/104729647201288820229/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Cecilia Anum's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 10 of 13: Tony Chang">
+  <span class="review-source">Google review highlights</span>
+  <h3>A move, cleanout, and storage</h3>
+  <p class="review-summary">Tony thanks Sayed, Sam, and Zo for helping with a move and a cleanout involving 37 years of accumulated items. He describes careful packing, moving belongings into storage, and the crew staying late to finish the job.</p>
+  <div class="review-attribution"><strong>Tony Chang</strong><a href="https://www.google.com/maps/contrib/109527263098078441450/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Tony Chang's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 11 of 13: Parker House">
+  <span class="review-source">Google review highlights</span>
+  <h3>Helpful packing advice</h3>
+  <p class="review-summary">Parker describes a friendly crew that combined speed with careful handling. Beyond moving the belongings, the team offered useful packing tips, and the reviewer says the experience made them want to hire the company again.</p>
+  <div class="review-attribution"><strong>Parker House</strong><a href="https://www.google.com/maps/contrib/100407311003144821934/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Parker House's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 12 of 13: Amilcar Hernandez">
+  <span class="review-source">Google review highlights</span>
+  <h3>Protected fragile items</h3>
+  <p class="review-summary">Amilcar highlights secure wrapping for fragile belongings, protection for furniture, and delivery without damage. The review also describes an on-time, well-prepared crew, approachable communication, and pricing that did not bring surprises at the end.</p>
+  <div class="review-attribution"><strong>Amilcar Hernandez</strong><a href="https://www.google.com/maps/contrib/100079629470766385833/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Amilcar Hernandez's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article>
+<article class="review-card" aria-label="Review 13 of 13: Eva Menjivar">
+  <span class="review-source">Google review highlights</span>
+  <h3>A three-bedroom home move</h3>
+  <p class="review-summary">Eva describes moving a three-bedroom home with Sayed and his crew. The review reports an on-time arrival, quick work, careful treatment of furniture, and no damage, with a friendly and respectful team throughout.</p>
+  <div class="review-attribution"><strong>Eva Menjivar</strong><a href="https://www.google.com/maps/contrib/111157946599803366761/reviews" target="_blank" rel="noopener noreferrer" aria-label="Read Eva Menjivar's reviews on Google (opens in a new tab)">Read on Google</a></div>
+</article></div></div>
+  <p class="review-note">Selected Google reviews, summarized for readability. Checked September 11, 2026. Read the original reviews on Google.</p>
+</section>
 
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center bg-zinc-900 text-white p-5 sm:p-8 rounded-3xl shadow-xl border border-zinc-800">
                 <div class="p-4 border-r border-zinc-800 last:border-0">
@@ -341,7 +523,7 @@
                     <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Cargo & Liability</p>
                 </div>
                 <div class="p-4 border-r border-zinc-800 last:border-0">
-                    <p class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-200">500+ Moves</p>
+                    <p class="text-xl sm:text-2xl font-black uppercase tracking-tight text-zinc-200">1000+ Moves</p>
                     <p class="text-xs text-zinc-400 uppercase tracking-widest font-bold mt-2">Completed Safely</p>
                 </div>
                 <div class="p-4">
@@ -358,50 +540,120 @@
                 <span class="bg-zinc-200 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">
                     Comprehensive Solutions
                 </span>
-                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3">Our Moving Services</h2>
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3"><a href="Navbars/service.html" class="hover:underline focus-visible:underline">Our Moving Services</a></h2>
                 <p class="text-slate-600 text-sm">Full-service residential and commercial moving solutions tailored across Northern Virginia and Washington D.C.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">01</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Local Moving</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Professional local moving services across Woodbridge, Fairfax, Arlington, and Alexandria with transparent hourly rates and expert handling.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#local-moving" class="hover:underline focus-visible:underline">Local Moving</a></h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Move your home across Northern Virginia with furniture protection, loading, transportation, unloading, and standard furniture disassembly and reassembly.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Disassembly & reassembly included</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Blankets & shrink-wrapping</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Wardrobe boxes available</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> 26-foot moving truck with dollies and straps</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Furniture blankets, shrink wrap &amp; floor protection</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Loading, transportation &amp; unloading</li>
                         </ul>
                     </div>
-                    <span class="text-xs font-bold text-zinc-800 pt-4 block">Included in Local Moves</span>
+                    <a href="Navbars/service.html#local-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Local Moving details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">02</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Packing Services</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Full and partial packing services with professional boxes, bubble wrap, custom crating, and meticulous fragile item care.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#apartment-moving" class="hover:underline focus-visible:underline">Apartment Moving</a></h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Moving a studio, apartment, or condo? We plan around stairs, elevator reservations, hallway distances, and parking at both buildings.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Kitchenware & china packing</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Custom crating for artwork</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Labeled box inventory</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Studio, apartment &amp; condo relocations</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Elevator, stair and loading-access planning</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Furniture blankets, shrink wrap &amp; floor protection</li>
                         </ul>
                     </div>
-                    <span class="text-xs font-bold text-zinc-800 pt-4 block">Available on Request</span>
+                    <a href="Navbars/service.html#apartment-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Apartment Moving details">View Service Details →</a>
                 </div>
 
                 <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
                     <div>
                         <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">03</div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Long-Distance Moving</h3>
-                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Secure regional transport across Virginia and neighboring states with dedicated trucks, direct schedules, and experienced drivers.</p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#packing-unpacking" class="hover:underline focus-visible:underline">Packing &amp; Unpacking</a></h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Choose full-home, partial, or fragile-only packing, with room labels and supplies planned for your inventory. Unpacking is available by arrangement.</p>
                         <ul class="space-y-2 text-xs text-slate-700">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Direct door-to-door delivery</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Dedicated trucks (no commingling)</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800"></i> Real-time dispatch updates</li>
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Full-home, partial &amp; fragile-only packing</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Careful wrapping for dishes, glassware &amp; decor</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Room and contents labels for packed boxes</li>
                         </ul>
                     </div>
-                    <span class="text-xs font-bold text-zinc-800 pt-4 block">Statewide Coverage</span>
+                    <a href="Navbars/service.html#packing-unpacking" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Packing &amp; Unpacking details">View Service Details →</a>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">04</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#long-distance-moving" class="hover:underline focus-visible:underline">Long-Distance Moving</a></h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Plan your inventory, pickup, route, and delivery from Northern Virginia. Availability depends on your destination and the operating authority required.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Detailed inventory and access review</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Pickup, route &amp; delivery coordination</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Furniture protection and secure truck loading</li>
+                        </ul>
+                    </div>
+                    <a href="Navbars/service.html#long-distance-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Long-Distance Moving details">View Service Details →</a>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">05</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#assembly-disassembly" class="hover:underline focus-visible:underline">Assembly &amp; Disassembly</a></h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">We take apart and reassemble standard furniture when needed for your move, keeping hardware organized and placing pieces in your chosen rooms.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Standard bed-frame disassembly &amp; reassembly</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Tables and desks prepared for transport</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Organized hardware kept with matching furniture</li>
+                        </ul>
+                    </div>
+                    <a href="Navbars/service.html#assembly-disassembly" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Assembly &amp; Disassembly details">View Service Details →</a>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">06</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#commercial-moving" class="hover:underline focus-visible:underline">Commercial Moves</a></h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Relocate office furniture, filing cabinets, packed supplies, and standard equipment with coordinated building access and placement by room or department.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Office furniture, filing cabinets &amp; boxed supplies</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Standard furniture disassembly &amp; reassembly</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Protected loading, transport &amp; unloading</li>
+                        </ul>
+                    </div>
+                    <a href="Navbars/service.html#commercial-moving" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Commercial Moves details">View Service Details →</a>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">07</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#junk-removal" class="hover:underline focus-visible:underline">Junk Removal Services</a></h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Clear unwanted furniture and accepted appliances, or arrange a garage, basement, attic, or estate cleanout. Moving and removal can be planned together.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Unwanted furniture and accepted appliance removal</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Garage, basement, attic &amp; estate cleanouts</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Carrying, loading &amp; hauling of agreed items</li>
+                        </ul>
+                    </div>
+                    <a href="Navbars/service.html#junk-removal" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Junk Removal Services details">View Service Details →</a>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm hover:shadow-lg transition space-y-4 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-zinc-900 text-white rounded-2xl flex items-center justify-center font-bold text-lg mb-6 shadow-md">08</div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3"><a href="Navbars/service.html#storage-solutions" class="hover:underline focus-visible:underline">Storage Solutions</a></h3>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-4">Get help coordinating temporary storage and moving belongings into or out of a storage unit. Confirm facility terms, rental fees, and delivery separately.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Temporary storage coordination between moves</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Moving into or out of a storage unit</li>
+<li class="flex items-start gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-zinc-800 shrink-0 mt-0.5"></i> Furniture protection and organized loading</li>
+                        </ul>
+                    </div>
+                    <a href="Navbars/service.html#storage-solutions" class="text-xs font-bold text-zinc-800 uppercase tracking-wider pt-4 block hover:underline focus-visible:underline" aria-label="View Storage Solutions details">View Service Details →</a>
                 </div>
             </div>
         </div>
@@ -623,395 +875,12 @@
 </section>
 
     <section id="faq-section" class="py-16 sm:py-20 bg-slate-50 border-t border-slate-200">
-        <div class="container mx-auto px-4 max-w-4xl">
-            <div class="text-center mb-12 sm:mb-16">
-                <span class="bg-zinc-200 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">
-                    Knowledge Base
-                </span>
-                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3">Frequently Asked Questions</h2>
-                <p class="text-slate-600 text-sm">Everything you need to know about our moving services, licensing, hourly rates, packing protocols, and service areas across Northern Virginia.</p>
-            </div>
-
-            <div class="space-y-4" id="faq-container">
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(1)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>1. Are your movers licensed and insured in Virginia?</span>
-                        <i data-lucide="chevron-down" id="icon-1" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-1" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        Yes, Haul Bros Moving Co LLC is fully licensed and insured with active US DOT #4497497, carrying comprehensive general liability and cargo insurance to protect your belongings throughout Northern Virginia.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(2)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>2. What areas do you serve in Northern Virginia?</span>
-                        <i data-lucide="chevron-down" id="icon-2" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-2" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        We proudly serve Woodbridge, Fairfax, Arlington, Alexandria, Manassas, Stafford, Springfield, Burke, Centreville, Fredericksburg, and the greater Washington D.C. metropolitan region.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(3)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>3. Do you offer senior citizen and military discounts?</span>
-                        <i data-lucide="chevron-down" id="icon-3" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-3" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        Yes! We proudly offer special discounts for senior citizens, military service members, veterans, and first responders across all our local moving and packing services.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(4)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>4. How are your local moving rates calculated?</span>
-                        <i data-lucide="chevron-down" id="icon-4" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-4" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        Our local moves are billed at clear, transparent hourly rates determined by the size of your crew (2 to 4+ professional movers) and truck requirements, with no hidden fees or surprise fuel surcharges.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(5)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>5. What is included in your standard local moving service?</span>
-                        <i data-lucide="chevron-down" id="icon-5" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-5" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        Our standard local moving service includes the professional moving truck, furniture blanketing and shrink-wrapping, basic disassembly and reassembly of bed frames and tables, and careful placement of items in your new home.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(6)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>6. Do you charge extra for stairs, long carries, or heavy items?</span>
-                        <i data-lucide="chevron-down" id="icon-6" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-6" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        We believe in complete transparency. Standard flights of stairs and normal heavy items are factored directly into your upfront quote. For extreme specialty items like commercial safes or grand pianos, we provide specific details beforehand.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(7)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>7. Should I tip my movers, and how much is customary?</span>
-                        <i data-lucide="chevron-down" id="icon-7" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-7" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        Tipping is completely optional but greatly appreciated for hard work. A standard guideline is about $5 to $10 per mover per hour, or $20 to $50 per mover for a standard local move depending on job complexity.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(8)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>8. Do you provide full-service packing and moving supplies?</span>
-                        <i data-lucide="chevron-down" id="icon-8" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-8" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        Yes, we offer full-service or partial packing options as well as high-quality moving boxes, packing tape, bubble wrap, paper, and specialty wardrobe cartons delivered prior to your move.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(9)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>9. Can you handle commercial and office relocations in Northern Virginia?</span>
-                        <i data-lucide="chevron-down" id="icon-9" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-9" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        Yes, we assist local businesses, offices, and retail stores throughout Northern Virginia with efficient commercial moving solutions, cubicle breakdown, and weekend scheduling to minimize operational downtime.
-                    </div>
-                </div>
-
-                <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                    <button onclick="toggleFaq(10)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                        <span>10. What items are prohibited from being transported on your trucks?</span>
-                        <i data-lucide="chevron-down" id="icon-10" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                    </button>
-                    <div id="ans-10" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                        For safety reasons and legal compliance, we cannot transport hazardous materials, explosives, flammable liquids, propane tanks, perishable food in long transit, or illegal substances.
-                    </div>
-                </div>
-
-                <div id="more-faqs" class="hidden space-y-4 pt-4">
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(11)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>11. Should You Empty Drawers and Dressers Before Movers Arrive?</span>
-                            <i data-lucide="chevron-down" id="icon-11" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-11" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Remove breakables, valuables, books, and heavy items from all drawers to protect furniture frames and reduce weight during transit.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(12)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>12. Moving from Woodbridge to Ashburn: What to Expect?</span>
-                            <i data-lucide="chevron-down" id="icon-12" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-12" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            This regional move crosses Northern Virginia via I-95, I-495, or Route 28. Proper traffic scheduling ensures timely arrival.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(13)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>13. How Long Does a Local Move in Woodbridge Typically Take?</span>
-                            <i data-lucide="chevron-down" id="icon-13" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-13" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            A typical 1-bedroom apartment takes 2–4 hours, while larger 3-bedroom homes generally range from 5–8 hours depending on inventory and stairs.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(14)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>14. Best Time to Move in Woodbridge to Save Money?</span>
-                            <i data-lucide="chevron-down" id="icon-14" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-14" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Mid-month and weekday moves typically offer greater schedule flexibility and availability compared to month-end weekend rushes.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(15)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>15. Do Professional Movers Disassemble and Reassemble Furniture?</span>
-                            <i data-lucide="chevron-down" id="icon-15" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-15" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Yes, our crew brings standard tools to safely take apart and set back up bed frames, tables, and standard furniture pieces.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(16)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>16. How to Avoid Hidden Fees from Moving Companies?</span>
-                            <i data-lucide="chevron-down" id="icon-16" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-16" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Always secure an itemized written estimate detailing travel time, hourly minimums, and equipment charges upfront.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(17)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>17. Apartment-to-Apartment Moves in Woodbridge: What Is Included?</span>
-                            <i data-lucide="chevron-down" id="icon-17" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-17" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Includes careful navigation of apartment complexes, stairwells, and elevators along with complete loading and unloading.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(18)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>18. Moving Company Insurance: What Is Really Covered?</span>
-                            <i data-lucide="chevron-down" id="icon-18" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-18" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Basic cargo liability and valuation coverage protect your items according to state guidelines and your signed contract terms.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(19)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>19. How to Check Reviews and Ratings for Woodbridge Movers?</span>
-                            <i data-lucide="chevron-down" id="icon-19" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-19" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Look at verified Google Business reviews and look for customer feedback detailing punctuality and safe furniture handling.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(20)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>20. Can You Book Movers on Short Notice in Northern Virginia?</span>
-                            <i data-lucide="chevron-down" id="icon-20" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-20" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Yes, subject to truck and crew availability, we accommodate last-minute and emergency moves across Northern Virginia.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(21)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>21. What to Expect on Moving Day with Haul Bros?</span>
-                            <i data-lucide="chevron-down" id="icon-21" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-21" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Our crew arrives on time, reviews the inventory, protects your home, and executes a smooth and efficient relocation.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(22)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>22. Small Move Cost: How Much for a One-Bedroom Apartment?</span>
-                            <i data-lucide="chevron-down" id="icon-22" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-22" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Costs vary based on hourly packages and travel distance. Contact us for a fast, tailored quote for your apartment size.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(23)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>23. Do Movers Handle Fragile Items Like Books and Glassware?</span>
-                            <i data-lucide="chevron-down" id="icon-23" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-23" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Yes, when packed in appropriate boxes, we safely load and transport fragile kitchenware, electronics, and books.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(24)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>24. Moving from McLean to Chantilly: Local Route Planning</span>
-                            <i data-lucide="chevron-down" id="icon-24" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-24" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            We map out optimal routes using major NoVA arteries to ensure safe transit between suburban residential areas.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(25)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>25. How to Tip Movers: Cash, Card, or Percentage?</span>
-                            <i data-lucide="chevron-down" id="icon-25" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-25" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Cash is preferred by crew members at the end of the job, though digital tipping options can be arranged with team leads.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(26)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>26. What Makes a Moving Company Reliable and Trustworthy?</span>
-                            <i data-lucide="chevron-down" id="icon-26" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-26" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Clear licensing, transparent pricing policies, verifiable local reviews, and professional equipment define reliable movers.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(27)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>27. How Early Should You Book Movers in Woodbridge?</span>
-                            <i data-lucide="chevron-down" id="icon-27" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-27" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            We recommend booking 2 to 4 weeks in advance (or 4 to 6 weeks during peak summer moving season) to secure your preferred date.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(28)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>28. Moving Company Red Flags: Quotes That Seem Too Good to Be True</span>
-                            <i data-lucide="chevron-down" id="icon-28" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-28" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Watch out for extremely low binding estimates that lack written terms or omit truck fees, travel time, and labor minimums.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(29)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>29. Should You Use a Well-Known National Mover or a Local Company?</span>
-                            <i data-lucide="chevron-down" id="icon-29" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-29" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Local movers know neighborhood layouts, traffic patterns, and community regulations much better than national chains.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(30)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>30. How to Pack Dishes and Fragile Items for Movers?</span>
-                            <i data-lucide="chevron-down" id="icon-30" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-30" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Wrap plates individually in packing paper, pack them vertically like records in sturdy dish boxes, and cushion all gaps.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(31)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>31. What Is the Difference Between Full-Service and Labor-Only Moves?</span>
-                            <i data-lucide="chevron-down" id="icon-31" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-31" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Full-service includes our truck and transport; labor-only provides professional muscle to load your rental truck or container.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(32)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>32. Do Professional Movers Take Everything or Can You Be Selective?</span>
-                            <i data-lucide="chevron-down" id="icon-32" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-32" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            You have total control over what is moved by establishing an exact inventory list and pointing out items to exclude.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(33)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>33. Moving from Fairfax to Woodbridge: Finding the Right Movers</span>
-                            <i data-lucide="chevron-down" id="icon-33" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-33" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            We handle cross-city relocations between Fairfax and Woodbridge seamlessly with professional equipment and experienced crews.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(34)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>34. How to Handle Moving-Day Logistics with Professional Movers?</span>
-                            <i data-lucide="chevron-down" id="icon-34" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-34" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Keep parking clear, reserve elevators if needed, and have one point-of-contact on site to guide the loading team.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(35)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>35. Condo-to-Condo Moves in Woodbridge: Special Considerations</span>
-                            <i data-lucide="chevron-down" id="icon-35" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-35" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Ensure you obtain any required certificates of insurance (COI) and reserve loading docks with your condo association.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(36)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>36. What Not to Pack When Hiring Professional Movers?</span>
-                            <i data-lucide="chevron-down" id="icon-36" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-36" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Avoid packing hazardous chemicals, gasoline, paint thinners, or personal valuables like passports and cash.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(37)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>37. Moving Company Complaints: How to File and Resolve Issues?</span>
-                            <i data-lucide="chevron-down" id="icon-37" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-37" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Contact our support team directly with your invoice details and documentation so we can promptly address and resolve any concerns.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(38)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>38. Reasonable Moving Costs: What Is Fair in Northern Virginia?</span>
-                            <i data-lucide="chevron-down" id="icon-38" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-38" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Fair rates reflect insured operations, experienced personnel, and well-maintained equipment rather than rock-bottom hidden pricing.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(39)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>39. How to Compare Moving Quotes from Multiple Companies?</span>
-                            <i data-lucide="chevron-down" id="icon-39" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-39" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Check that each quote includes identical crew sizes, estimated hours, travel fees, and valuation coverages.
-                        </div>
-                    </div>
-                    <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm transition">
-                        <button onclick="toggleFaq(40)" class="w-full p-5 sm:p-6 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition">
-                            <span>40. Emergency or Last-Minute Moving Solutions in Woodbridge</span>
-                            <i data-lucide="chevron-down" id="icon-40" class="w-5 h-5 text-slate-500 shrink-0 transition-transform"></i>
-                        </button>
-                        <div id="ans-40" class="hidden px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-200 pt-4">
-                            Call us right away when unexpected moving needs arise so we can check our schedule and accommodate your urgent relocation.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center pt-6">
-                    <button id="toggle-more-btn" onclick="toggleMoreFaqs()" class="bg-zinc-900 text-white font-bold px-8 py-3.5 rounded-xl text-xs uppercase tracking-wider hover:bg-black transition shadow-md">
-                        Load More Questions (11-40)
-                    </button>
-                </div>
-            </div>
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <span class="bg-zinc-200 text-zinc-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">Knowledge Base</span>
+            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight text-slate-900 mb-3">
+                <a href="Navbars/FAQ.html" class="underline underline-offset-4 decoration-2 hover:text-slate-600 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Frequently Asked Questions</a>
+            </h2>
+            <p class="text-slate-600 text-sm">Visit our FAQ page for answers about moving services, estimates, packing, and service areas across Northern Virginia.</p>
         </div>
     </section>
 
@@ -1080,7 +949,7 @@
 <!-- Custom Success Modal Popup -->
 <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden px-4 py-6">
     <div class="bg-zinc-900 border border-zinc-700 text-white rounded-3xl max-w-lg w-full p-6 sm:p-8 md:p-10 text-center max-h-[90vh] overflow-y-auto shadow-2xl relative transform transition-all scale-95 opacity-0 duration-300" id="modal-content">
-        
+
         <!-- Icon Badge -->
         <div class="w-16 h-16 bg-white text-zinc-900 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
             <i data-lucide="check-circle" class="w-8 h-8 text-emerald-600"></i>
@@ -1113,11 +982,11 @@
 <script>
     document.getElementById('quote-form').addEventListener('submit', async function(e) {
         e.preventDefault();
-        
+
         const form = e.target;
         const submitBtn = document.getElementById('submit-btn');
         const originalBtnText = submitBtn.innerHTML;
-        
+
         // Show loading state on button
         submitBtn.disabled = true;
         submitBtn.innerHTML = `<span>Submitting Request...</span>`;
@@ -1135,7 +1004,7 @@
                 // Show Success Modal
                 const modal = document.getElementById('success-modal');
                 const modalContent = document.getElementById('modal-content');
-                
+
                 modal.classList.remove('hidden');
                 setTimeout(() => {
                     modalContent.classList.remove('scale-95', 'opacity-0');
@@ -1159,10 +1028,10 @@
     document.getElementById('close-modal-btn').addEventListener('click', function() {
         const modal = document.getElementById('success-modal');
         const modalContent = document.getElementById('modal-content');
-        
+
         modalContent.classList.remove('scale-100', 'opacity-100');
         modalContent.classList.add('scale-95', 'opacity-0');
-        
+
         setTimeout(() => {
             modal.classList.add('hidden');
         }, 300);
@@ -1185,9 +1054,9 @@
         <!-- COMPANY INFO -->
         <div class="space-y-4">
 
-            <div class="bg-white p-1 rounded-md inline-block">
+            <div class="bg-white p-1 rounded-md inline-block brand-logo-frame">
                 <img
-                    src="./assets/LOGO 2.png"
+                    src="assets/haul-bros-black-gold.png"
                     alt="Haul Bros Logo"
                     width="48"
                     height="48"
@@ -1238,7 +1107,7 @@
                 </li>
 
                 <li>
-                    <a href="#faq-section" class="hover:text-white transition">
+                    <a href="Navbars/FAQ.html" class="hover:text-white transition">
                         FAQ Knowledge Base
                     </a>
                 </li>
@@ -1312,6 +1181,17 @@
                     </a>
                 </li>
 
+                <li>
+                    <a
+                        href="https://reviews.birdeye.com/haul-bros-moving-co-llc-178071463543937"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-white transition"
+                    >
+                        Birdeye
+                    </a>
+                </li>
+
             </ul>
 
         </div>
@@ -1319,21 +1199,69 @@
 
         <!-- SERVICE AREAS -->
         <div>
-
-            <p class="font-bold text-white text-xs uppercase tracking-wider mb-4">
-                Service Areas
-            </p>
-
-            <ul class="space-y-2 text-xs">
-
-                <li>Woodbridge, VA</li>
-                <li>Fairfax, VA</li>
-                <li>Arlington, VA & Alexandria, VA</li>
-                <li>Manassas, VA & Stafford, VA</li>
-                <li>Springfield, Burke & Centreville</li>
-
-            </ul>
-
+            <details id="footer-service-areas">
+                <summary class="font-bold text-white text-xs uppercase tracking-wider cursor-pointer hover:text-zinc-300 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">Service Areas</summary>
+                <ul class="space-y-2 text-xs mt-4 max-h-80 overflow-y-auto pr-2">
+                    <li><a href="Locations/Aldie.html" class="block py-1 hover:text-white transition">Aldie, VA</a></li>
+                    <li><a href="Locations/Alexandria.html" class="block py-1 hover:text-white transition">Alexandria, VA</a></li>
+                    <li><a href="Locations/Annandale.html" class="block py-1 hover:text-white transition">Annandale, VA</a></li>
+                    <li><a href="Locations/Arlington.html" class="block py-1 hover:text-white transition">Arlington, VA</a></li>
+                    <li><a href="Locations/Ashburn.html" class="block py-1 hover:text-white transition">Ashburn, VA</a></li>
+                    <li><a href="Locations/Beleaton.html" class="block py-1 hover:text-white transition">Bealeton, VA</a></li>
+                    <li><a href="Locations/Brambleton.html" class="block py-1 hover:text-white transition">Brambleton, VA</a></li>
+                    <li><a href="Locations/Broadlands.html" class="block py-1 hover:text-white transition">Broadlands, VA</a></li>
+                    <li><a href="Locations/Burke.html" class="block py-1 hover:text-white transition">Burke, VA</a></li>
+                    <li><a href="Locations/Cascades.html" class="block py-1 hover:text-white transition">Cascades, VA</a></li>
+                    <li><a href="Locations/Centreville.html" class="block py-1 hover:text-white transition">Centreville, VA</a></li>
+                    <li><a href="Locations/Chantilly.html" class="block py-1 hover:text-white transition">Chantilly, VA</a></li>
+                    <li><a href="Locations/Clifton.html" class="block py-1 hover:text-white transition">Clifton, VA</a></li>
+                    <li><a href="Locations/Countryside.html" class="block py-1 hover:text-white transition">Countryside, VA</a></li>
+                    <li><a href="Locations/Culpeper.html" class="block py-1 hover:text-white transition">Culpeper, VA</a></li>
+                    <li><a href="Locations/Dale_City.html" class="block py-1 hover:text-white transition">Dale City, VA</a></li>
+                    <li><a href="Locations/Dumfries_VA.html" class="block py-1 hover:text-white transition">Dumfries, VA</a></li>
+                    <li><a href="Locations/Dunn_Loring.html" class="block py-1 hover:text-white transition">Dunn Loring, VA</a></li>
+                    <li><a href="Locations/Fairfax.html" class="block py-1 hover:text-white transition">Fairfax, VA</a></li>
+                    <li><a href="Locations/Fairfax_Station.html" class="block py-1 hover:text-white transition">Fairfax Station, VA</a></li>
+                    <li><a href="Locations/Fallschurch.html" class="block py-1 hover:text-white transition">Falls Church, VA</a></li>
+                    <li><a href="Locations/Fort_Hunt.html" class="block py-1 hover:text-white transition">Fort Hunt, VA</a></li>
+                    <li><a href="Locations/Franconia.html" class="block py-1 hover:text-white transition">Franconia, VA</a></li>
+                    <li><a href="Locations/Fredericksburg.html" class="block py-1 hover:text-white transition">Fredericksburg, VA</a></li>
+                    <li><a href="Locations/Gainesville.html" class="block py-1 hover:text-white transition">Gainesville, VA</a></li>
+                    <li><a href="Locations/GreatFalls.html" class="block py-1 hover:text-white transition">Great Falls, VA</a></li>
+                    <li><a href="Locations/Hamilton.html" class="block py-1 hover:text-white transition">Hamilton, VA</a></li>
+                    <li><a href="Locations/Haymarket.html" class="block py-1 hover:text-white transition">Haymarket, VA</a></li>
+                    <li><a href="Locations/Herndon.html" class="block py-1 hover:text-white transition">Herndon, VA</a></li>
+                    <li><a href="Locations/Hillsboro.html" class="block py-1 hover:text-white transition">Hillsboro, VA</a></li>
+                    <li><a href="Locations/Huntington.html" class="block py-1 hover:text-white transition">Huntington, VA</a></li>
+                    <li><a href="Locations/Kingstowne.html" class="block py-1 hover:text-white transition">Kingstowne, VA</a></li>
+                    <li><a href="Locations/Lake_ridge.html" class="block py-1 hover:text-white transition">Lake Ridge, VA</a></li>
+                    <li><a href="Locations/Lansdowne.html" class="block py-1 hover:text-white transition">Lansdowne, VA</a></li>
+                    <li><a href="Locations/Leesburg.html" class="block py-1 hover:text-white transition">Leesburg, VA</a></li>
+                    <li><a href="Locations/Lorton.html" class="block py-1 hover:text-white transition">Lorton, VA</a></li>
+                    <li><a href="Locations/Lovettsville.html" class="block py-1 hover:text-white transition">Lovettsville, VA</a></li>
+                    <li><a href="Locations/Manassas.html" class="block py-1 hover:text-white transition">Manassas, VA</a></li>
+                    <li><a href="Locations/McLean.html" class="block py-1 hover:text-white transition">McLean, VA</a></li>
+                    <li><a href="Locations/Merrifield.html" class="block py-1 hover:text-white transition">Merrifield, VA</a></li>
+                    <li><a href="Locations/Middleburg.html" class="block py-1 hover:text-white transition">Middleburg, VA</a></li>
+                    <li><a href="Locations/Mount_Vernon.html" class="block py-1 hover:text-white transition">Mount Vernon, VA</a></li>
+                    <li><a href="Locations/Newington.html" class="block py-1 hover:text-white transition">Newington, VA</a></li>
+                    <li><a href="Locations/North_Springfield.html" class="block py-1 hover:text-white transition">North Springfield, VA</a></li>
+                    <li><a href="Locations/Oakton.html" class="block py-1 hover:text-white transition">Oakton, VA</a></li>
+                    <li><a href="Locations/Occoquan.html" class="block py-1 hover:text-white transition">Occoquan, VA</a></li>
+                    <li><a href="Locations/Purcellville.html" class="block py-1 hover:text-white transition">Purcellville, VA</a></li>
+                    <li><a href="Locations/Reston.html" class="block py-1 hover:text-white transition">Reston, VA</a></li>
+                    <li><a href="Locations/Round_Hill.html" class="block py-1 hover:text-white transition">Round Hill, VA</a></li>
+                    <li><a href="Locations/South_Riding.html" class="block py-1 hover:text-white transition">South Riding, VA</a></li>
+                    <li><a href="Locations/Springfield.html" class="block py-1 hover:text-white transition">Springfield, VA</a></li>
+                    <li><a href="Locations/Sterling.html" class="block py-1 hover:text-white transition">Sterling, VA</a></li>
+                    <li><a href="Locations/Stone_Ridge.html" class="block py-1 hover:text-white transition">Stone Ridge, VA</a></li>
+                    <li><a href="Locations/Triangle.html" class="block py-1 hover:text-white transition">Triangle, VA</a></li>
+                    <li><a href="Locations/Tysons.html" class="block py-1 hover:text-white transition">Tysons, VA</a></li>
+                    <li><a href="Locations/Vienna.html" class="block py-1 hover:text-white transition">Vienna, VA</a></li>
+                    <li><a href="Locations/West_Springfield.html" class="block py-1 hover:text-white transition">West Springfield, VA</a></li>
+                    <li><a href="Locations/woodbridge-movers.html" class="block py-1 hover:text-white transition">Woodbridge, VA</a></li>
+                </ul>
+            </details>
         </div>
 
 
@@ -1410,7 +1338,19 @@
 
     </div>
 
-</footer>
+
+        <section aria-label="Social Media" class="container mx-auto px-4 mt-8 pt-8 border-t border-zinc-800 text-center">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-white mb-4">Social Media</h2>
+            <div class="flex flex-wrap items-center justify-center gap-3">
+                <a href="https://www.facebook.com/profile.php?id=61581927868435" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on Facebook (opens in a new tab)">Facebook</a>
+                <a href="https://www.instagram.com/haulbrosmovingco.llc/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on Instagram (opens in a new tab)">Instagram</a>
+                <a href="https://www.linkedin.com/in/haul-bros-moving-co-llc-a11494352/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on LinkedIn (opens in a new tab)">LinkedIn</a>
+                <a href="https://nextdoor.com/page/haul-bros-moving-co-llc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on Nextdoor (opens in a new tab)">Nextdoor</a>
+                <a href="https://www.youtube.com/@HaulbrosmovingcoLLC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on YouTube (opens in a new tab)">YouTube</a>
+                <a href="https://www.pinterest.com/Haulbrosmoving/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-zinc-600 text-sm font-semibold text-white hover:bg-zinc-800 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4" aria-label="Haul Bros on Pinterest (opens in a new tab)">Pinterest</a>
+            </div>
+        </section>
+    </footer>
 
     <script>
         lucide.createIcons();
@@ -1456,29 +1396,7 @@
             if (window.innerWidth >= 1024) setMobileMenu(false);
         });
 
-        function toggleFaq(id) {
-            const ans = document.getElementById('ans-' + id);
-            const icon = document.getElementById('icon-' + id);
-            if (ans.classList.contains('hidden')) {
-                ans.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                ans.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
 
-        function toggleMoreFaqs() {
-            const moreFaqs = document.getElementById('more-faqs');
-            const btn = document.getElementById('toggle-more-btn');
-            if (moreFaqs.classList.contains('hidden')) {
-                moreFaqs.classList.remove('hidden');
-                btn.textContent = 'Hide Additional Questions';
-            } else {
-                moreFaqs.classList.add('hidden');
-                btn.textContent = 'Load More Questions (11-40)';
-            }
-        }
     </script>
 </body>
 </html>

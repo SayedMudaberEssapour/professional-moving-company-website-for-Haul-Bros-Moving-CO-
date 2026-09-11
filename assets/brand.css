@@ -1,0 +1,31 @@
+/* Shared Haul Bros black-and-gold brand, using the supplied original logo. */
+:root { --brand-gold: #e9c366; --brand-gold-light: #f8dfa0; --brand-black: #090909; }
+body { accent-color: var(--brand-gold); }
+header, header nav, header #mobile-menu, header #location-mobile-menu { background-color: #090909 !important; border-color: #584725 !important; }
+header { backdrop-filter: none !important; }
+header > .container { height: auto !important; min-height: 6.5rem; flex-wrap: wrap; padding-top: .4rem; padding-bottom: .4rem; }
+header a:hover, footer a:hover { color: var(--brand-gold-light); }
+header nav a:hover { color: var(--brand-gold-light) !important; }
+.brand-logo-frame { display: inline-block !important; position: relative; width: 116px; height: 88px; overflow: hidden; background: #000 !important; padding: 0 !important; border-radius: 0 !important; box-shadow: none !important; flex-shrink: 0; }
+.brand-logo-frame img { position: absolute !important; width: 196px !important; height: auto !important; max-width: none !important; left: -40px; top: -36px; object-fit: contain; }
+footer .brand-logo-frame { width: 174px; height: 132px; }
+footer .brand-logo-frame img { width: 294px !important; left: -60px; top: -54px; }
+section[class*="bg-[#5A5E63]"] { background: radial-gradient(ellipse at 50% 0%, #382a12 0%, #13110c 40%, #090909 80%) !important; border-color: #584725 !important; }
+section[class*="bg-[#5A5E63]"] h1 { color: var(--brand-gold-light) !important; }
+section[class*="bg-[#5A5E63]"] [class*="bg-gradient-to"] { background-image: linear-gradient(to top, #090909, transparent) !important; }
+.bg-zinc-900, .bg-black { background-color: var(--brand-black) !important; }
+.bg-zinc-200 { background-color: #f2dfad !important; color: #493512 !important; }
+.bg-zinc-900 > i, .bg-black > i { color: var(--brand-gold); }
+a.bg-black, a.bg-zinc-900, button.bg-black, button.bg-zinc-900,
+button[type="submit"], a.bg-amber-500 { background: linear-gradient(135deg, #f4d991, #d4a640) !important; color: #151008 !important; border-color: #e9c366 !important; }
+a.bg-black:hover, a.bg-zinc-900:hover, button[type="submit"]:hover { background: #f8dfa0 !important; color: #090909 !important; }
+header a[href^="tel:"], footer section[aria-label="Social Media"] a { border-color: #806631 !important; background-color: #19150d !important; color: var(--brand-gold-light) !important; }
+footer { background-color: #090909 !important; border-color: #584725 !important; }
+footer h2, footer p.uppercase, footer summary { color: var(--brand-gold) !important; }
+.text-amber-500 { color: #b88622 !important; }
+:focus-visible { outline-color: #ad7d20; }
+@media(max-width:639px) {
+ header > .container { min-height: 5rem; gap: .5rem; }
+ header .brand-logo-frame { width: 88px; height: 66px; }
+ header .brand-logo-frame img { width: 148px !important; left: -30px; top: -27px; }
+}
