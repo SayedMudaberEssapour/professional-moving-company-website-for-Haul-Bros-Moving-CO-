@@ -908,6 +908,10 @@
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Phone Number</label>
             <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="(571) 000-0000">
         </div>
+        <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Email Address</label>
+            <input type="email" name="email" autocomplete="email" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="you@example.com">
+        </div>
     </div>
     <div class="grid md:grid-cols-2 gap-6">
         <div>
@@ -945,6 +949,10 @@
             </select>
         </div>
     </div>
+    <div>
+        <div id="service-specific-questions" class="space-y-4" aria-live="polite"></div>
+    </div>
+
     <div>
         <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Additional Details or Discount Notes (Military/Senior)</label>
         <textarea name="message" rows="4" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="Tell us about stairs, elevators, or discount eligibility..."></textarea>
@@ -1427,6 +1435,24 @@
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 1024) setMobileMenu(false);
         });
+
+        const serviceType = document.querySelector('select[name="service_type"]');
+        const specificQuestions = document.getElementById('service-specific-questions');
+        function updateServiceQuestions() {
+            if (!serviceType || !specificQuestions) return;
+            const service = serviceType.value;
+            const field = (label, name, placeholder, type = 'text') => `<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">${label}</label><input type="${type}" name="${name}" placeholder="${placeholder}" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500"></div>`;
+            let html = '';
+            if (service === 'Local Moving' || service === 'Long-Distance Moving' || service === 'Senior Moving' || service === 'Student Moving') html = field('Number of Rooms', 'number_of_rooms', 'Example: 3 rooms');
+            if (service === 'Local Moving' || service === 'Long-Distance Moving' || service === 'Senior Moving' || service === 'Student Moving') html += field('Stairs or Access Details', 'stairs_access', 'Stairs, elevators, parking, or long walks');
+            if (service === 'Apartment Moving') html = `<div class="grid md:grid-cols-2 gap-4">${field('Floor Level', 'apartment_floor', 'Example: 4th floor')}<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Access Type</label><select name="apartment_access" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500"><option value="">Choose access</option><option>Stairs</option><option>Elevator</option><option>Long walk</option><option>Stairs and elevator</option></select></div></div>`;
+            if (service === 'Commercial Moving') html = field('Approximate Square Footage', 'commercial_square_feet', 'Example: 2,500 sq. ft.');
+            if (service === 'Junk Removal') html = field('Estimated Pickup-Truck Loads', 'junk_truck_loads', 'Example: 2 pickup-truck loads');
+            if (service === 'Storage Solutions') html = `<div class="grid md:grid-cols-2 gap-4">${field('How Long Will You Need Storage?', 'storage_duration', 'Example: 3 months')}${field('How Much Storage Space?', 'storage_space', 'Example: 10 boxes and a sofa')}</div>`;
+            specificQuestions.innerHTML = html;
+        }
+        serviceType?.addEventListener('change', updateServiceQuestions);
+        updateServiceQuestions();
 
 
     </script>
