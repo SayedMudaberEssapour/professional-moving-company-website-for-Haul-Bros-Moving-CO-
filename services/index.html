@@ -53,6 +53,7 @@
 
     </style>
     <link rel="stylesheet" href="../assets/brand.css">
+    <script src="../assets/resources-menu.js" defer></script>
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
 
@@ -77,9 +78,9 @@
                         <li><a href="../pricing/" class="hover:text-zinc-300 transition">Pricing</a></li>
                         <li><a href="./" class="text-zinc-300 transition">Services</a></li>
                         <li><a href="../contact/" class="hover:text-zinc-300 transition">Contact</a></li>
-                    <li><a href="../blog/" class="hover:text-zinc-300 transition">Blog</a></li>
-                        <li><a href="../faq/" class="hover:text-zinc-300 transition">FAQ</a></li>
-                        <li><a href="../reviews/" class="hover:text-zinc-300 transition">Reviews</a></li>
+                    <li><details class="resources-menu"><summary>Resources <span aria-hidden="true">⌄</span></summary><div class="resources-options"><a href="../blog/" class="mobile-nav-link">Blog</a><a href="../faq/" class="mobile-nav-link">FAQ</a><a href="../reviews/" class="mobile-nav-link">Reviews</a></div></details></li>
+
+
                     <li class="relative group">
                         <button type="button" class="flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none py-2" aria-haspopup="true">
                             More <i data-lucide="chevron-down" class="w-4 h-4"></i>
@@ -119,9 +120,9 @@
                         <a href="../pricing/" class="py-1.5 hover:text-zinc-300 transition">Pricing</a>
                         <a href="./" class="py-1.5 text-zinc-300 transition">Services</a>
                         <a href="../contact/" class="py-1.5 hover:text-zinc-300 transition">Contact</a>
-                    <a href="../blog/" class="py-1.5 hover:text-zinc-300 transition">Blog</a>
-                        <a href="../faq/" class="py-1.5 hover:text-zinc-300 transition">FAQ</a>
-                        <a href="../reviews/" class="py-1.5 hover:text-zinc-300 transition">Reviews</a>
+                    <details class="resources-menu"><summary>Resources <span aria-hidden="true">⌄</span></summary><div class="resources-options"><a href="../blog/" class="mobile-nav-link">Blog</a><a href="../faq/" class="mobile-nav-link">FAQ</a><a href="../reviews/" class="mobile-nav-link">Reviews</a></div></details>
+
+
                     <button type="button" id="quick-more-button" class="py-1.5 flex items-center gap-1 hover:text-zinc-300 transition focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
                         More <i data-lucide="chevron-down" id="quick-more-icon" class="w-3.5 h-3.5 transition-transform"></i>
                     </button>
@@ -137,9 +138,9 @@
                         <li><a href="../pricing/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Pricing</a></li>
                         <li><a href="./" class="mobile-nav-link block py-3 text-zinc-300 transition">Services</a></li>
                         <li><a href="../contact/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Contact</a></li>
-                    <li><a href="../blog/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Blog</a></li>
-                        <li><a href="../faq/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">FAQ</a></li>
-                        <li><a href="../reviews/" class="mobile-nav-link block py-3 hover:text-zinc-300 transition">Reviews</a></li>
+                    <li><details class="resources-menu"><summary>Resources <span aria-hidden="true">⌄</span></summary><div class="resources-options"><a href="../blog/" class="mobile-nav-link">Blog</a><a href="../faq/" class="mobile-nav-link">FAQ</a><a href="../reviews/" class="mobile-nav-link">Reviews</a></div></details></li>
+
+
                 </ul>
                 <div class="pt-4">
                     <p class="text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Locations</p>

@@ -1,5 +1,15 @@
 /* Shared Haul Bros black-and-gold brand, using the supplied original logo. */
 :root { --brand-gold: #e9c366; --brand-gold-light: #f8dfa0; --brand-black: #090909; }
+.resources-menu { position:relative; color:inherit; }
+.resources-menu > summary { display:flex; align-items:center; gap:.35rem; cursor:pointer; list-style:none; padding:.5rem 0; font:inherit; }
+.resources-menu > summary::-webkit-details-marker { display:none; }
+.resources-menu > summary:hover { color:var(--brand-gold-light); }
+.resources-menu > summary:focus-visible { outline:2px solid var(--brand-gold); outline-offset:4px; }
+.resources-options { position:absolute; top:100%; right:0; min-width:180px; padding:.5rem; z-index:60; background:#090909; border:1px solid #584725; border-radius:12px; box-shadow:0 12px 28px #0005; }
+.resources-options a { display:block; padding:.65rem .85rem; border-radius:8px; font-size:.875rem; color:#fff; }
+.resources-options a:hover, .resources-options a:focus-visible { background:#272217; color:var(--brand-gold-light); }
+.header-quick-nav:has(.resources-menu) { overflow:visible; }
+nav[aria-label="Mobile navigation"] .resources-options { position:static; margin-bottom:.5rem; }
 body { accent-color: var(--brand-gold); }
 header, header nav, header #mobile-menu, header #location-mobile-menu { background-color: #090909 !important; border-color: #584725 !important; }
 header { backdrop-filter: none !important; }
