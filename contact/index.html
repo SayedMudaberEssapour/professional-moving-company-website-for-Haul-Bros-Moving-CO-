@@ -498,6 +498,15 @@
         const serviceType = document.querySelector('select[name="service_type"]');
         const dwellingType = document.getElementById('dwelling-type');
         const specificQuestions = document.getElementById('service-specific-questions');
+        function updateHomeSizeOptions() {
+            if (!dwellingType || !serviceType) return;
+            const choices = serviceType.value === 'Commercial Moving'
+                ? [['House', 'House'], ['Apartment', 'Apartment'], ['Office', 'Office'], ['Warehouse', 'Warehouse']]
+                : [['House', 'House'], ['Townhome', 'Townhome'], ['Condo', 'Condo'], ['Apartment', 'Apartment']];
+            const current = dwellingType.value;
+            dwellingType.innerHTML = choices.map(([value, label]) => `<option value="${value}">${label}</option>`).join('');
+            dwellingType.value = choices.some(([value]) => value === current) ? current : choices[0][0];
+        }
         function updateServiceQuestions() {
             if (!serviceType || !specificQuestions) return;
             const service = serviceType.value;
@@ -519,7 +528,9 @@
             specificQuestions.innerHTML = html;
         }
         serviceType?.addEventListener('change', updateServiceQuestions);
+        serviceType?.addEventListener('change', updateHomeSizeOptions);
         dwellingType?.addEventListener('change', updateServiceQuestions);
+        updateHomeSizeOptions();
         updateServiceQuestions();
     </script>
 </body>
