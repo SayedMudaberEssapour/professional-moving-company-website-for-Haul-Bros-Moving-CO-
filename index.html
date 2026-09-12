@@ -941,11 +941,11 @@
         </div>
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Home Size</label>
-            <select name="home_size" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
-                <option value="Studio / 1 Bedroom">Studio / 1 Bedroom</option>
-                <option value="2 Bedrooms">2 Bedrooms</option>
-                <option value="3 Bedrooms">3 Bedrooms</option>
-                <option value="4+ Bedrooms / Office">4+ Bedrooms / Office</option>
+            <select name="home_size" id="dwelling-type" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
+                <option value="House">House</option>
+                <option value="Townhome">Townhome</option>
+                <option value="Condo">Condo</option>
+                <option value="Apartment">Apartment</option>
             </select>
         </div>
     </div>
@@ -1437,13 +1437,18 @@
         });
 
         const serviceType = document.querySelector('select[name="service_type"]');
+        const dwellingType = document.getElementById('dwelling-type');
         const specificQuestions = document.getElementById('service-specific-questions');
         function updateServiceQuestions() {
             if (!serviceType || !specificQuestions) return;
             const service = serviceType.value;
             const field = (label, name, placeholder, type = 'text') => `<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">${label}</label><input type="${type}" name="${name}" placeholder="${placeholder}" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500"></div>`;
             let html = '';
-            if (service === 'Local Moving' || service === 'Long-Distance Moving' || service === 'Senior Moving' || service === 'Student Moving') html = field('Number of Rooms', 'number_of_rooms', 'Example: 3 rooms');
+            if (service === 'Local Moving') {
+                const accessOptions = (dwellingType?.value === 'Condo' || dwellingType?.value === 'Apartment') ? '<option value="">Choose access</option><option>Elevator</option><option>Stairs</option><option>Flat</option>' : '<option value="">Choose stairs</option><option>1 flight</option><option>2 flights</option><option>3 flights</option>';
+                html = `<div class="grid md:grid-cols-2 gap-4"><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Number of Rooms</label><select name="number_of_rooms" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white"><option value="">Choose bedrooms</option><option>1 bedroom</option><option>2 bedrooms</option><option>3 bedrooms</option><option>4 bedrooms</option><option>5+ bedrooms</option></select></div><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">${(dwellingType?.value === 'Condo' || dwellingType?.value === 'Apartment') ? 'Access Type' : 'Flight of Stairs'}</label><select name="stairs_access" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white">${accessOptions}</select></div></div>`;
+            }
+            if (service === 'Long-Distance Moving' || service === 'Senior Moving' || service === 'Student Moving') html = field('Number of Rooms', 'number_of_rooms', 'Example: 3 rooms');
             if (service === 'Local Moving' || service === 'Long-Distance Moving' || service === 'Senior Moving' || service === 'Student Moving') html += field('Stairs or Access Details', 'stairs_access', 'Stairs, elevators, parking, or long walks');
             if (service === 'Apartment Moving') html = `<div class="grid md:grid-cols-2 gap-4">${field('Floor Level', 'apartment_floor', 'Example: 4th floor')}<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Access Type</label><select name="apartment_access" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500"><option value="">Choose access</option><option>Stairs</option><option>Elevator</option><option>Long walk</option><option>Stairs and elevator</option></select></div></div>`;
             if (service === 'Commercial Moving') html = field('Approximate Square Footage', 'commercial_square_feet', 'Example: 2,500 sq. ft.');
@@ -1452,6 +1457,7 @@
             specificQuestions.innerHTML = html;
         }
         serviceType?.addEventListener('change', updateServiceQuestions);
+        dwellingType?.addEventListener('change', updateServiceQuestions);
         updateServiceQuestions();
 
 
