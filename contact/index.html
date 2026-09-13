@@ -267,31 +267,36 @@
     <div class="grid md:grid-cols-2 gap-6">
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Full Name</label>
-            <input type="text" name="name" autocomplete="name" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="John Doe">
+            <input type="text" name="name" autocomplete="name" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
         </div>
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Phone Number</label>
-            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="(571) 000-0000">
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
         </div>
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Email Address</label>
-            <input type="email" name="email" autocomplete="email" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="you@example.com">
+            <input type="email" name="email" autocomplete="email" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
+        </div>
+        <div>
+            <label for="service-date" class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">What Date Do You Need the Service?</label>
+            <input type="date" id="service-date" name="service_date" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" style="color-scheme: dark;">
         </div>
     </div>
     <div class="grid md:grid-cols-2 gap-6">
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Moving From (City or Zip)</label>
-            <input type="text" name="moving_from" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="Woodbridge, VA 22191">
+            <input type="text" name="moving_from" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
         </div>
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Moving To (City or Zip)</label>
-            <input type="text" name="moving_to" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="Fairfax, VA 22030">
+            <input type="text" name="moving_to" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
         </div>
     </div>
     <div class="grid md:grid-cols-2 gap-6">
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Service Type</label>
             <select name="service_type" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
+                <option value="" selected disabled>Choose Service Type</option>
                 <option value="Local Moving">Local Moving</option>
                 <option value="Long-Distance Moving">Long-Distance Moving</option>
                 <option value="Packing Services">Packing Services</option>
@@ -306,6 +311,7 @@
         <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Home Size</label>
             <select name="home_size" id="dwelling-type" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
+                <option value="" selected disabled>Choose the Size of Your Move</option>
                 <option value="House">House</option>
                 <option value="Townhome">Townhome</option>
                 <option value="Condo">Condo</option>
@@ -319,7 +325,7 @@
 
     <div>
         <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Additional Details or Discount Notes (Military/Senior)</label>
-        <textarea name="message" rows="4" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" placeholder="Tell us about stairs, elevators, or discount eligibility..."></textarea>
+        <textarea name="message" rows="4" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500"></textarea>
     </div>
 
     <div>
@@ -504,13 +510,13 @@
                 ? [['House', 'House'], ['Apartment', 'Apartment'], ['Office', 'Office'], ['Warehouse', 'Warehouse']]
                 : [['House', 'House'], ['Townhome', 'Townhome'], ['Condo', 'Condo'], ['Apartment', 'Apartment']];
             const current = dwellingType.value;
-            dwellingType.innerHTML = choices.map(([value, label]) => `<option value="${value}">${label}</option>`).join('');
-            dwellingType.value = choices.some(([value]) => value === current) ? current : choices[0][0];
+            dwellingType.innerHTML = '<option value="" disabled>Choose the Size of Your Move</option>' + choices.map(([value, label]) => `<option value="${value}">${label}</option>`).join('');
+            dwellingType.value = choices.some(([value]) => value === current) ? current : '';
         }
         function updateServiceQuestions() {
             if (!serviceType || !specificQuestions) return;
             const service = serviceType.value;
-            const field = (label, name, placeholder, type = 'text') => `<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">${label}</label><input type="${type}" name="${name}" placeholder="${placeholder}" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500"></div>`;
+            const field = (label, name, placeholder, type = 'text') => `<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">${label}</label><input type="${type}" name="${name}" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500"></div>`;
             let html = '';
             if (service === 'Local Moving') {
                 const apartment = dwellingType?.value === 'Condo' || dwellingType?.value === 'Apartment';
@@ -521,7 +527,6 @@
             if (service === 'Student Moving') html = '<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Number of Rooms</label><select name="number_of_rooms" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white"><option value="">Choose bedrooms</option><option>1 bedroom</option><option>2 bedrooms</option><option>3 bedrooms</option><option>4 bedrooms</option><option>5+ bedrooms</option></select></div>';
             if (service === 'Senior Moving') html = '<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2">Number of Rooms</label><select name="number_of_rooms" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white"><option value="">Choose bedrooms</option><option>1 bedroom</option><option>2 bedrooms</option><option>3 bedrooms</option><option>4 bedrooms</option><option>5+ bedrooms</option></select></div>';
             if (service === 'Long-Distance Moving') html = field('Number of Rooms', 'number_of_rooms', 'Example: 3 rooms');
-            if (service === 'Local Moving' || service === 'Long-Distance Moving' || service === 'Senior Moving' || service === 'Student Moving') html += field('Stairs or Access Details', 'stairs_access', 'Stairs, elevators, parking, or long walks');
             if (service === 'Commercial Moving') html = field('Approximate Square Footage', 'commercial_square_feet', 'Example: 2,500 sq. ft.');
             if (service === 'Junk Removal') html = field('Estimated Pickup-Truck Loads', 'junk_truck_loads', 'Example: 2 pickup-truck loads');
             if (service === 'Storage Solutions') html = `<div class="grid md:grid-cols-2 gap-4">${field('How Long Will You Need Storage?', 'storage_duration', 'Example: 3 months')}${field('How Much Storage Space?', 'storage_space', 'Example: 10 boxes and a sofa')}</div>`;
