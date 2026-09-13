@@ -85,7 +85,7 @@
         <div class="container mx-auto px-4 sm:px-6 h-20 xl:h-24 flex items-center justify-between gap-3">
             <a href="../" class="flex items-center gap-3 shrink-0" aria-label="Haul Bros Moving home">
                 <div class="bg-white p-1 rounded-md shadow-sm brand-logo-frame">
-                    <img src="../assets/haul-bros-black-gold.png" alt="Haul Bros Logo" class="h-10 sm:h-12 w-auto object-contain">
+                    <img src="../assets/haul-bros-black-gold.webp" alt="Haul Bros Logo" class="h-10 sm:h-12 w-auto object-contain" decoding="async">
                 </div>
             </a>
 
@@ -330,51 +330,51 @@
 
     <!-- Full Name -->
     <div>
-        <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+        <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2" for="quote-name">
             Full Name *
         </label>
-        <input type="text" name="name" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="John Smith">
+        <input type="text" name="name" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="John Smith" id="quote-name">
     </div>
 
     <!-- Phone & Moving Date -->
     <div class="grid md:grid-cols-2 gap-5">
         <div>
-            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2" for="quote-phone">
                 Phone *
             </label>
-            <input type="tel" name="phone" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="571-000-0000">
+            <input type="tel" name="phone" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="571-000-0000" id="quote-phone">
         </div>
         <div>
-            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2" for="quote-moving_date">
                 Moving Date *
             </label>
-            <input type="date" name="moving_date" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition">
+            <input type="date" name="moving_date" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" id="quote-moving_date">
         </div>
     </div>
 
     <!-- From & To Locations -->
     <div class="grid md:grid-cols-2 gap-5">
         <div>
-            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2" for="quote-moving_from">
                 From (Zip/City) *
             </label>
-            <input type="text" name="moving_from" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Woodbridge, VA 22191">
+            <input type="text" name="moving_from" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Woodbridge, VA 22191" id="quote-moving_from">
         </div>
         <div>
-            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2" for="quote-moving_to">
                 To (Zip/City) *
             </label>
-            <input type="text" name="moving_to" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Lorton, VA">
+            <input type="text" name="moving_to" required class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Lorton, VA" id="quote-moving_to">
         </div>
     </div>
 
     <!-- Service Type & Home Size -->
     <div class="grid md:grid-cols-2 gap-5">
         <div>
-            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2" for="quote-service_type">
                 Service Type
             </label>
-            <select name="service_type" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer">
+            <select name="service_type" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer" id="quote-service_type">
                 <option value="Local Moving">Local Moving</option>
                 <option value="Long-Distance Moving">Long-Distance Moving</option>
                 <option value="Packing Services">Packing Services</option>
@@ -388,10 +388,10 @@
             </select>
         </div>
         <div>
-            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+            <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2" for="quote-home_size">
                 Home Size
             </label>
-            <select name="home_size" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer">
+            <select name="home_size" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 focus:outline-none focus:border-black transition cursor-pointer" id="quote-home_size">
                 <option value="Studio / 1 Bedroom">Studio / 1 Bedroom</option>
                 <option value="2 Bedrooms">2 Bedrooms</option>
                 <option value="3 Bedrooms">3 Bedrooms</option>
@@ -402,10 +402,10 @@
 
     <!-- Additional Details -->
     <div>
-        <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2">
+        <label class="block text-xs font-black uppercase tracking-wider text-zinc-800 mb-2" for="quote-message">
             Additional Details / Discount Notes
         </label>
-        <textarea name="message" rows="3" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Tell us about stairs, elevators, or discount eligibility..."></textarea>
+        <textarea name="message" rows="3" class="w-full bg-white border border-zinc-200 rounded-2xl px-4 py-3.5 text-sm text-zinc-900 placeholder-zinc-400 focus:outline-none focus:border-black transition" placeholder="Tell us about stairs, elevators, or discount eligibility..." id="quote-message"></textarea>
     </div>
 
     <!-- Submit Button -->
