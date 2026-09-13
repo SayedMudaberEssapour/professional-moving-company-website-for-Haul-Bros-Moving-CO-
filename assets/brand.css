@@ -34,6 +34,20 @@ footer { background-color: #090909 !important; border-color: #584725 !important;
 footer h2, footer p.uppercase, footer summary { color: var(--brand-gold) !important; }
 .text-amber-500 { color: #b88622 !important; }
 :focus-visible { outline-color: #ad7d20; }
+/* Keep long service names and expanded navigation inside phone screens. */
+@media (max-width:1023px) {
+ header .resources-options { min-width:0; width:min(20rem, calc(100vw - 2rem)); max-height:60dvh; overflow-y:auto; }
+ header .resources-options a { white-space:normal; overflow-wrap:anywhere; min-height:44px; }
+ #mobile-menu .resources-options, #location-mobile-menu .resources-options { position:static; width:100%; box-sizing:border-box; margin-bottom:.5rem; }
+}
+@media (max-width:767px) {
+ #services > .container > .grid { grid-template-columns:minmax(0, 1fr); gap:1rem; }
+ #services > .container > .grid > div { min-width:0; padding:1.25rem; }
+ #services h2 { font-size:1.75rem; line-height:1.2; }
+ #services p, #services li { font-size:.9375rem; line-height:1.6; overflow-wrap:break-word; }
+ #services li svg { flex-shrink:0; }
+ #services > .container > .grid > div > a { min-height:44px; display:flex; align-items:center; white-space:normal; }
+}
 @media(max-width:639px) {
  header > .container { min-height: 5rem; gap: .5rem; }
  header .brand-logo-frame { width: 88px; height: 66px; }
