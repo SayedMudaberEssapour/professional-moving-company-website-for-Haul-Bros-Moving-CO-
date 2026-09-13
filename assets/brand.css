@@ -36,6 +36,13 @@ footer h2, footer p.uppercase, footer summary { color: var(--brand-gold) !import
 :focus-visible { outline-color: #ad7d20; }
 /* Keep long service names and expanded navigation inside phone screens. */
 @media (max-width:1023px) {
+ .header-quick-nav, .location-header-quick-nav { position:relative; overflow:visible !important; }
+ .header-quick-nav > .resources-menu, .location-header-quick-nav > .resources-menu { position:static; }
+ .header-quick-nav > .resources-menu > .resources-options,
+ .location-header-quick-nav > .resources-menu > .resources-options {
+  left:0; right:0; top:100%; width:100%; max-width:100%; box-sizing:border-box;
+  max-height:55dvh; overflow-y:auto; overscroll-behavior:contain;
+ }
  header .resources-options { min-width:0; width:min(20rem, calc(100vw - 2rem)); max-height:60dvh; overflow-y:auto; }
  header .resources-options a { white-space:normal; overflow-wrap:anywhere; min-height:44px; }
  #mobile-menu .resources-options, #location-mobile-menu .resources-options { position:static; width:100%; box-sizing:border-box; margin-bottom:.5rem; }
