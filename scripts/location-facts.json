@@ -1,0 +1,1938 @@
+[
+  {
+    "stem": "Aldie",
+    "name": "Aldie",
+    "state": "VA",
+    "areas": "Historic Aldie is a small village along the Little River. The mill area and Little River Turnpike form its historic center. An Aldie mailing address can also describe homes well outside that village, including the separate Stone Ridge community.",
+    "roads": "US 50 runs through the village; US 15 meets it to the east at Gilberts Corner. These are regional through routes, while the final approach to a home may be a smaller local road.",
+    "advice": "For a village property, send photos of the entrance and the available loading space. For an outlying property, describe the driveway surface, gate width and turning space; an Aldie ZIP code alone does not identify those conditions.",
+    "census_name": "Aldie census-designated place",
+    "population": 70,
+    "land_sq_miles": 0.24211462496584568,
+    "density": 289,
+    "latitude": 38.9761161,
+    "longitude": -77.6449988,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.sheriff.loudoun.gov/HistoricDistricts"
+      ]
+    ]
+  },
+  {
+    "stem": "Alexandria",
+    "name": "Alexandria",
+    "state": "VA",
+    "areas": "Old Town, Del Ray, Rosemont and the West End have different moving settings within the independent City of Alexandria. Alexandria mailing addresses also extend into Fairfax County, including communities outside the city boundary.",
+    "roads": "King Street, Duke Street and US 1 serve different parts of the city; I-395 is on the west side and I-95/I-495 provides regional access to the south.",
+    "advice": "Old Town's street grid calls for an agreed loading position, while a West End apartment may need a reserved elevator. In Del Ray or Rosemont, identify front steps, driveway access and any furniture that must turn through an older entryway.",
+    "census_name": "Alexandria city",
+    "population": 159467,
+    "land_sq_miles": 14.935331496553367,
+    "density": 10677,
+    "latitude": 38.8184547,
+    "longitude": -77.0862029,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/travel-traffic/maps/"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.alexandriava.gov/MasterPlan"
+      ]
+    ]
+  },
+  {
+    "stem": "Annandale",
+    "name": "Annandale",
+    "state": "VA",
+    "areas": "Central Annandale is organized around Little River Turnpike, Columbia Pike and Annandale Road. Residential streets branch away from that commercial center. An Annandale mailing address can extend beyond the census-designated community.",
+    "roads": "Little River Turnpike (VA 236) connects with I-495 west of central Annandale. Columbia Pike and Backlick Road are other important local approaches.",
+    "advice": "Tell us whether the entrance is on a main road, a residential side street or inside an apartment complex. A nearby highway does not provide loading space: confirm the actual curb, driveway or building entrance and the distance to your door.",
+    "census_name": "Annandale census-designated place",
+    "population": 43363,
+    "land_sq_miles": 7.848258422067808,
+    "density": 5525,
+    "latitude": 38.8323863,
+    "longitude": -77.1960016,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Arlington",
+    "name": "Arlington",
+    "state": "VA",
+    "areas": "Arlington is a county, not an incorporated city. Rosslyn, Courthouse, Clarendon, Virginia Square and Ballston form a connected urban corridor; Crystal City and Pentagon City are distinct areas farther south.",
+    "roads": "I-66, I-395 and US 50 provide regional connections. Wilson Boulevard and Clarendon Boulevard serve the Rosslyn-Ballston corridor, while Richmond Highway serves the Crystal City area.",
+    "advice": "For a tower move, confirm the loading-dock entrance rather than using the public lobby address. For a residential side street, check curb availability and front steps. Tell us the neighborhood as well as the full address so the crew can plan the correct approach.",
+    "census_name": "Arlington census-designated place",
+    "population": 238643,
+    "land_sq_miles": 25.997416255036345,
+    "density": 9179,
+    "latitude": 38.8785809,
+    "longitude": -77.100961,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/travel-traffic/maps/"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.arlingtonva.us/Government/Projects/Neighborhoods"
+      ]
+    ]
+  },
+  {
+    "stem": "Ashburn",
+    "name": "Ashburn",
+    "state": "VA",
+    "areas": "Ashburn Farm, Ashburn Village and the historic Ashburn Road area are useful reference points for local moves. Broadlands, Brambleton and other communities may use Ashburn mailing addresses but have their own local identity and census boundaries.",
+    "roads": "Ashburn Road, Ashburn Village Boulevard and Waxpool Road link residential areas with larger routes. VA 7 and the Dulles Greenway (VA 267) are regional connections around the wider Ashburn area.",
+    "advice": "A move from an Ashburn Village townhouse needs a different loading plan from an Ashburn Farm detached house. Include garage access, reserved spaces, stairs and the specific community name; do not rely on the mailing city to identify the neighborhood.",
+    "census_name": "Ashburn census-designated place",
+    "population": 46349,
+    "land_sq_miles": 15.295387589582699,
+    "density": 3030,
+    "latitude": 39.0277227,
+    "longitude": -77.4714168,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/roads"
+      ]
+    ]
+  },
+  {
+    "stem": "Beleaton",
+    "name": "Bealeton",
+    "state": "VA",
+    "areas": "Bealeton is a Fauquier County community around the US 17 and VA 28 junction. The Station Drive area and residential streets off the main corridors provide more useful address context than the broader rural mailing area alone.",
+    "roads": "US 17 and VA 28 are the principal regional roads. US 29 is reached farther west rather than being a downtown street in Bealeton.",
+    "advice": "For homes reached from the main highways, specify the driveway entrance and safe loading position. For properties outside the built-up center, confirm turn-around space and whether outbuildings, sheds or a long driveway add to the inventory and carrying distance.",
+    "census_name": "Bealeton census-designated place",
+    "population": 5882,
+    "land_sq_miles": 5.510504061019983,
+    "density": 1067,
+    "latitude": 38.5821502,
+    "longitude": -77.7781598,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/30_Fauquier_acc052323_PM.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fauquiercounty.gov/government/departments-a-g/community-development/planning/long-range-planning/transportation-documents"
+      ],
+      [
+        "Bealeton road-corridor study",
+        "https://vaprojectpipeline.virginia.gov/studies/culpeper/cu04/"
+      ]
+    ]
+  },
+  {
+    "stem": "Bethesda",
+    "name": "Bethesda",
+    "state": "MD",
+    "areas": "Downtown Bethesda includes Woodmont Triangle and the Bethesda Avenue/Woodmont Avenue area. Nearby residential blocks have a different setting from the downtown commercial core. North Bethesda is a separate census-designated community, despite the similar name.",
+    "roads": "Wisconsin Avenue (MD 355), Old Georgetown Road (MD 187) and East-West Highway (MD 410) serve central Bethesda. I-495 provides regional access to the north.",
+    "advice": "For downtown apartments and offices, ask which entrance accepts moving trucks and whether an elevator reservation is needed. On residential streets, send driveway and entryway details. A garage advertised for passenger cars should not be assumed to accommodate a moving truck.",
+    "census_name": "Bethesda census-designated place",
+    "population": 68056,
+    "land_sq_miles": 13.265885222748247,
+    "density": 5130,
+    "latitude": 38.9865792,
+    "longitude": -77.1187521,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://montgomeryplanning.org/planning/communities/west-county/bethesda-downtown-plan/"
+      ]
+    ]
+  },
+  {
+    "stem": "Bowie",
+    "name": "Bowie",
+    "state": "MD",
+    "areas": "Old Town Bowie, Belair neighborhoods and the Bowie Town Center area represent different parts of the city. Bowie postal addresses can also fall outside the municipal boundary, so the street address matters when confirming local requirements.",
+    "roads": "US 50 provides regional access; MD 197, MD 450 and MD 3 serve different approaches around Bowie. Neighborhood streets connect these corridors with residential sections.",
+    "advice": "Identify the neighborhood or section along with the address. A Belair house may require a driveway-based load, while a townhome or apartment near the Town Center needs a plan for shared parking, stairs and the carrying route from the truck.",
+    "census_name": "Bowie city",
+    "population": 58329,
+    "land_sq_miles": 20.43758687105825,
+    "density": 2854,
+    "latitude": -76.7405508,
+    "longitude": 38.9547033,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.cityofbowie.org/2814/Neighborhoods"
+      ]
+    ]
+  },
+  {
+    "stem": "Brambleton",
+    "name": "Brambleton",
+    "state": "VA",
+    "areas": "Brambleton is a planned community in Loudoun County. The Town Center, Ryan Road corridor and residential areas along Northstar Boulevard are useful local reference points; many addresses use Ashburn as their mailing city.",
+    "roads": "Ryan Road, Northstar Boulevard and Belmont Ridge Road connect the community with surrounding Loudoun routes. The Dulles Greenway (VA 267) is a regional connection to the north.",
+    "advice": "Give the crew the street entrance and community parking instructions, particularly for townhouses with rear garages. Separate garage, upper-floor and storage items in your inventory so loading time reflects the layout of the home rather than just its bedroom count.",
+    "census_name": "Brambleton census-designated place",
+    "population": 23486,
+    "land_sq_miles": 5.75484610933846,
+    "density": 4081,
+    "latitude": 38.9802324,
+    "longitude": -77.5323043,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/DocumentCenter/View/174805"
+      ]
+    ]
+  },
+  {
+    "stem": "Broadlands",
+    "name": "Broadlands",
+    "state": "VA",
+    "areas": "Broadlands is a distinct planned community, even though many homes have Ashburn mailing addresses. Claiborne Parkway, Broadlands Boulevard and residential streets around the community's southern section help locate a move within it.",
+    "roads": "Claiborne Parkway and Waxpool Road are local connections; the Dulles Greenway (VA 267) runs along the wider community's northern side.",
+    "advice": "Confirm whether the moving entrance is at the front of the house or near a garage. For a townhouse court, provide shared-parking instructions before the appointment. Include outdoor furniture and basement items in the room-by-room inventory.",
+    "census_name": "Broadlands census-designated place",
+    "population": 14021,
+    "land_sq_miles": 3.23312449450344,
+    "density": 4337,
+    "latitude": 39.0168119,
+    "longitude": -77.516681,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/DocumentCenter/View/123593"
+      ]
+    ]
+  },
+  {
+    "stem": "Burke",
+    "name": "Burke",
+    "state": "VA",
+    "areas": "Burke includes residential areas around Burke Road and Rolling Road. Burke Centre is a neighboring planned community with its own census designation, although it commonly uses a Burke mailing address.",
+    "roads": "Burke Road, Burke Lake Road and Rolling Road connect local neighborhoods. Braddock Road and Fairfax County Parkway provide wider connections; I-495 is reached beyond the neighborhood streets.",
+    "advice": "For a court or cul-de-sac, identify where the truck can stand without blocking neighboring driveways. If the home has a walkout basement, tell us whether the outside path is usable for loading or whether items must come up interior stairs.",
+    "census_name": "Burke census-designated place",
+    "population": 42312,
+    "land_sq_miles": 8.607800132761142,
+    "density": 4916,
+    "latitude": 38.7772478,
+    "longitude": -77.2632758,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Cascades",
+    "name": "Cascades",
+    "state": "VA",
+    "areas": "Cascades is part of eastern Loudoun's Potomac Falls/Sterling mailing area. Cascades Parkway and the Potomac Lakes area are useful reference points. A Sterling address does not mean the property is in Sterling Park.",
+    "roads": "Cascades Parkway, Algonkian Parkway and Potomac View Road connect the area with VA 7 to the south.",
+    "advice": "For a townhouse or condominium, confirm the approved loading entrance and parking spaces. For a detached home, include deck furniture and any basement access. Share the subdivision name to avoid confusing similarly addressed communities in the wider Sterling area.",
+    "census_name": "Cascades census-designated place",
+    "population": 12366,
+    "land_sq_miles": 3.685872132734056,
+    "density": 3355,
+    "latitude": 39.0465147,
+    "longitude": -77.3872972,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/roads"
+      ]
+    ]
+  },
+  {
+    "stem": "Centreville",
+    "name": "Centreville",
+    "state": "VA",
+    "areas": "Historic Centreville, the Stone Road corridor and the Sully Station area are local reference points. Clifton and Chantilly are neighboring communities rather than interchangeable names for Centreville.",
+    "roads": "I-66, US 29 and VA 28 meet in the Centreville area. Stone Road and Braddock Road provide local approaches away from those larger routes.",
+    "advice": "The highway interchange is only part of the journey: townhouse courts and apartment entrances need their own loading plan. Provide the community entrance, parking rules and any split-level stairs so the estimate reflects access at the actual home.",
+    "census_name": "Centreville census-designated place",
+    "population": 73518,
+    "land_sq_miles": 11.936537421397398,
+    "density": 6159,
+    "latitude": 38.8390581,
+    "longitude": -77.4388291,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Chantilly",
+    "name": "Chantilly",
+    "state": "VA",
+    "areas": "The Walney Road and Westfields areas are useful Chantilly reference points. South Riding is a separate Loudoun community that may use a Chantilly postal address; the mailing name alone does not establish the county.",
+    "roads": "US 50 and VA 28 are the major connections. Walney Road, Centreville Road and Westfields Boulevard serve local residential and business areas.",
+    "advice": "For a business move near Westfields, identify the loading door and any dock appointment. For a residential move, confirm the neighborhood entrance and garage access. Tell us whether the address is in Fairfax or Loudoun County when sharing building instructions.",
+    "census_name": "Chantilly census-designated place",
+    "population": 24301,
+    "land_sq_miles": 12.00171494067879,
+    "density": 2025,
+    "latitude": 38.8867911,
+    "longitude": -77.4452437,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Clifton",
+    "name": "Clifton",
+    "state": "VA",
+    "areas": "The incorporated Town of Clifton centers on Main Street and the railroad area. Many properties with Clifton mailing addresses are outside the small town, in surrounding Fairfax County.",
+    "roads": "Clifton Road and Chapel Road serve the town area. Access to I-66 or VA 123 requires travel beyond the town on connecting roads.",
+    "advice": "A historic-town move should identify the usable loading space near the building. For an outlying house, send driveway photos and details of grades, gates and turning space. The town's small population does not describe every property in the Clifton ZIP area.",
+    "census_name": "Clifton town",
+    "population": 243,
+    "land_sq_miles": 0.24486791945841185,
+    "density": 992,
+    "latitude": 38.7802274,
+    "longitude": -77.3865562,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Countryside",
+    "name": "Countryside",
+    "state": "VA",
+    "areas": "Countryside is a Loudoun planned community with Sterling/Potomac Falls mailing addresses. Its residential sections connect through CountrySide Boulevard and intersecting neighborhood streets; Cascades is a neighboring community.",
+    "roads": "CountrySide Boulevard connects local streets with VA 7. Algonkian Parkway and nearby VA 28 support travel around the wider area.",
+    "advice": "Specify the section and street entrance, especially for townhouse courts. Confirm which spaces can be used for loading and how far the front door is from them. For a house, identify garage items and any stairs between the driveway and main living floor.",
+    "census_name": "Countryside census-designated place",
+    "population": 10418,
+    "land_sq_miles": 2.5673619787920052,
+    "density": 4058,
+    "latitude": 39.0516701,
+    "longitude": -77.4123735,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/Blog.aspx?IID=1549"
+      ]
+    ]
+  },
+  {
+    "stem": "Culpeper",
+    "name": "Culpeper",
+    "state": "VA",
+    "areas": "Downtown Culpeper centers on Davis Street and Main Street. Homes elsewhere in the town and properties in the wider Culpeper County mailing area require different access planning.",
+    "roads": "US 15/29 provides bypass access, while VA 3 and US 522 connect with the town. Main Street and Davis Street form part of the downtown street network.",
+    "advice": "For a downtown building, confirm the entrance used for deliveries and whether loading must happen away from the storefront. For a property outside town, include driveway length and outbuilding contents; a Culpeper address alone does not indicate a compact downtown move.",
+    "census_name": "Culpeper town",
+    "population": 20062,
+    "land_sq_miles": 7.2787921013098105,
+    "density": 2756,
+    "latitude": 38.4703674,
+    "longitude": -78.0001626,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/travel-traffic/maps/"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.culpeperva.gov/Culpeper%202030%20Plan.pdf"
+      ]
+    ]
+  },
+  {
+    "stem": "Dale_City",
+    "name": "Dale City",
+    "state": "VA",
+    "areas": "Dale City is an unincorporated Prince William community. Birchdale, Hillendale and Mapledale are familiar local sections along the Dale Boulevard area; many residents use Woodbridge as their mailing address.",
+    "roads": "Dale Boulevard is the central local corridor. Minnieville Road and Prince William Parkway serve surrounding connections, with I-95 to the east.",
+    "advice": "Give the section or nearest cross street when describing access. For a split-level home, count the interior stair flights separately from entry steps. On a residential court, confirm space for the truck before assuming it can park directly in front of the house.",
+    "census_name": "Dale City census-designated place",
+    "population": 72088,
+    "land_sq_miles": 14.239624441834014,
+    "density": 5062,
+    "latitude": 38.6473107,
+    "longitude": -77.3459197,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/76_PrinceWilliam_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.pwcva.gov/assets/2021-04/dale_city_sdat_report.pdf"
+      ]
+    ]
+  },
+  {
+    "stem": "Dumfries_VA",
+    "name": "Dumfries",
+    "state": "VA",
+    "areas": "The Town of Dumfries includes its historic Main Street area and neighborhoods around Quantico Creek. The Dumfries mailing area extends beyond town limits; Montclair and Potomac Shores are separate surrounding communities.",
+    "roads": "Main Street and Fraley Boulevard form the US 1 corridor through town. VA 234 connects toward nearby I-95.",
+    "advice": "Share the exact entrance rather than only the name of the highway. For a property near the historic center, confirm loading space and doorway dimensions. For an address outside town limits, provide the community name and any association access instructions.",
+    "census_name": "Dumfries town",
+    "population": 5679,
+    "land_sq_miles": 1.5349958496466771,
+    "density": 3700,
+    "latitude": 38.5669839,
+    "longitude": -77.3233536,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/76_PrinceWilliam_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.pwcva.gov/gis"
+      ]
+    ]
+  },
+  {
+    "stem": "Dunn_Loring",
+    "name": "Dunn Loring",
+    "state": "VA",
+    "areas": "Dunn Loring's residential area includes streets around Cottage Street and Idylwood Road. The Dunn Loring Metro station area is associated with nearby Merrifield; a station name is not a precise neighborhood boundary.",
+    "roads": "Gallows Road and Idylwood Road provide local connections, with I-66 and I-495 nearby for regional travel.",
+    "advice": "Tell us whether the move is from a house in the residential community or an apartment near the station. House moves need driveway and stair details; station-area buildings may require a separate loading entrance and scheduled elevator access.",
+    "census_name": "Dunn Loring census-designated place",
+    "population": 9464,
+    "land_sq_miles": 2.365789238779592,
+    "density": 4000,
+    "latitude": 38.8944637,
+    "longitude": -77.2315321,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Fairfax",
+    "name": "Fairfax",
+    "state": "VA",
+    "areas": "The independent City of Fairfax includes Old Town and the Fairfax Boulevard corridor. A Fairfax mailing address can also refer to a property outside the city in Fairfax County.",
+    "roads": "Main Street (VA 236), Chain Bridge Road (VA 123) and Fairfax Boulevard (US 29/50) are key city roads. I-66 lies to the north.",
+    "advice": "For an Old Town property, identify the delivery entrance and loading space rather than assuming curb access at the main door. For a residential side street, provide driveway and stair details. Confirm city-versus-county location when sharing property rules.",
+    "census_name": "Fairfax city",
+    "population": 24146,
+    "land_sq_miles": 6.240925560813887,
+    "density": 3869,
+    "latitude": 38.8530981,
+    "longitude": -77.2997904,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxva.gov/Property-Business/Development/City-Plans/Small-Area-Plans/Old-Town-Fairfax-Small-Area-Plan"
+      ]
+    ]
+  },
+  {
+    "stem": "Fairfax_Station",
+    "name": "Fairfax Station",
+    "state": "VA",
+    "areas": "Historic Fairfax Station is centered near Fairfax Station Road and the railroad. The larger Fairfax Station mailing area includes outlying residential properties, so it should not be treated as a single compact town.",
+    "roads": "Ox Road (VA 123), Fairfax Station Road and nearby Fairfax County Parkway connect the area with surrounding communities.",
+    "advice": "For a house set back from the road, show the driveway's length, slope and turning area. Include basement, garage and outdoor items in the inventory. Knowing the route to the front door is more useful for the estimate than the mailing name alone.",
+    "census_name": "Fairfax Station census-designated place",
+    "population": 12420,
+    "land_sq_miles": 9.080852111305187,
+    "density": 1368,
+    "latitude": 38.7941837,
+    "longitude": -77.3357854,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Fallschurch",
+    "name": "Falls Church",
+    "state": "VA",
+    "areas": "The independent City of Falls Church includes its downtown Broad/Washington Street area and residential side streets. Seven Corners and other Fairfax County places can have Falls Church mailing addresses without being inside the city.",
+    "roads": "Broad Street is VA 7 and Washington Street is US 29. I-66 is nearby to the north; Hillwood Avenue is another local connection.",
+    "advice": "For a Broad Street apartment, confirm the designated loading entrance. For a house on a side street, note driveway availability and entry steps. State whether the address is in the city or Fairfax County so building and parking instructions are tied to the right location.",
+    "census_name": "Falls Church city",
+    "population": 14658,
+    "land_sq_miles": 2.0464414407340255,
+    "density": 7163,
+    "latitude": 38.8847268,
+    "longitude": -77.1751627,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fallschurchva.gov/197/Paving"
+      ]
+    ]
+  },
+  {
+    "stem": "Fort_Hunt",
+    "name": "Fort Hunt",
+    "state": "VA",
+    "areas": "Fort Hunt is a Fairfax County community in the Alexandria mailing area. Fort Hunt Road and the Collingwood Road area are useful local reference points; Fort Hunt is outside the independent City of Alexandria.",
+    "roads": "Fort Hunt Road and Collingwood Road serve local homes. Richmond Highway (US 1) is a regional connection to the west.",
+    "advice": "Provide the residential street entrance, driveway length and any steps from the driveway to the door. Do not assume a scenic or passenger-car route is suitable for the moving truck; the crew must confirm the commercial-vehicle approach to the property.",
+    "census_name": "Fort Hunt census-designated place",
+    "population": 17231,
+    "land_sq_miles": 5.850809870333392,
+    "density": 2945,
+    "latitude": 38.7361277,
+    "longitude": -77.0589118,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/connector/schedules/101"
+      ]
+    ]
+  },
+  {
+    "stem": "Franconia",
+    "name": "Franconia",
+    "state": "VA",
+    "areas": "Franconia is a Fairfax County community associated with the Franconia Road corridor. The surrounding Alexandria and Springfield mailing areas overlap everyday place names, while Kingstowne has a separate census identity.",
+    "roads": "Franconia Road, Van Dorn Street and nearby Franconia-Springfield Parkway connect the area with the I-95/I-395/I-495 network.",
+    "advice": "Give the actual community and entrance name rather than relying on an Alexandria or Springfield mailing label. For a townhouse or apartment, confirm shared parking, stairs and elevator arrangements; for a house, identify driveway access and basement items.",
+    "census_name": "Franconia census-designated place",
+    "population": 18943,
+    "land_sq_miles": 3.478819830887608,
+    "density": 5445,
+    "latitude": 38.7682753,
+    "longitude": -77.1586175,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Fredericksburg",
+    "name": "Fredericksburg",
+    "state": "VA",
+    "areas": "The independent city includes Downtown, the Plank Road area and Central Park/Celebrate Virginia. Fredericksburg mailing addresses also extend into Stafford and Spotsylvania counties beyond the city boundary.",
+    "roads": "I-95, US 1 and VA 3 serve regional travel. Caroline Street and Princess Anne Street are downtown reference points, while Plank Road serves the western corridor.",
+    "advice": "Downtown moves need a specific loading position and attention to the building entrance. A home outside city limits may have very different driveway conditions. Include the county and neighborhood so the route and carrying distance are estimated for the right property.",
+    "census_name": "Fredericksburg city",
+    "population": 27982,
+    "land_sq_miles": 10.450433688086951,
+    "density": 2678,
+    "latitude": 38.2991916,
+    "longitude": -77.4871474,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/travel-traffic/maps/"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fredericksburgva.gov/1266/Small-Area-Plans"
+      ]
+    ]
+  },
+  {
+    "stem": "Gainesville",
+    "name": "Gainesville",
+    "state": "VA",
+    "areas": "Gainesville's US 29/Linton Hall Road area and the Virginia Gateway commercial area are local reference points. Haymarket and the broader Linton Hall community have separate boundaries, even when nearby addresses are described as Gainesville.",
+    "roads": "I-66 and US 29 are regional connections; Linton Hall Road and Wellington Road connect nearby residential and business areas.",
+    "advice": "For a neighborhood home, send the entrance and driveway details rather than a shopping-center landmark alone. For a business relocation, confirm loading-door access and delivery hours. Identify whether basement or garage items require a separate carry route.",
+    "census_name": "Gainesville census-designated place",
+    "population": 18112,
+    "land_sq_miles": 10.113234456741175,
+    "density": 1791,
+    "latitude": 38.7930989,
+    "longitude": -77.6347793,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/76_PrinceWilliam_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.pwcva.gov/gis"
+      ]
+    ]
+  },
+  {
+    "stem": "Gaithersburg",
+    "name": "Gaithersburg",
+    "state": "MD",
+    "areas": "Olde Towne, Kentlands, Quince Orchard Park and Washingtonian Woods are distinct city neighborhoods. Some Gaithersburg mailing addresses are outside the incorporated city, so confirm the street location.",
+    "roads": "I-270 supports regional travel; MD 355 and Quince Orchard Road (MD 124) connect different parts of the city.",
+    "advice": "An Olde Towne address and a Kentlands townhome do not have identical loading access. Confirm front-versus-rear entry, available curb space and stairs. For an office or apartment, identify the loading entrance and any elevator booking before moving day.",
+    "census_name": "Gaithersburg city",
+    "population": 69657,
+    "land_sq_miles": 10.320428844181967,
+    "density": 6749,
+    "latitude": -77.2132004,
+    "longitude": 39.148601,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.gaithersburgmd.gov/about-us/maps-gis"
+      ]
+    ]
+  },
+  {
+    "stem": "Germantown",
+    "name": "Germantown",
+    "state": "MD",
+    "areas": "Germantown is an unincorporated Montgomery County community. The Town Center, Churchill Village area and Gunners Lake area provide useful local references for residential moves.",
+    "roads": "I-270 runs through the wider Germantown area. Germantown Road (MD 118), Clopper Road (MD 117) and Father Hurley Boulevard connect local destinations.",
+    "advice": "For a townhouse court, confirm the permitted loading spaces and walking distance. For an apartment near the Town Center, provide the building's delivery entrance and elevator instructions. Include the community name because the Germantown mailing area covers many different housing layouts.",
+    "census_name": "Germantown census-designated place",
+    "population": 91249,
+    "land_sq_miles": 17.033217961095904,
+    "density": 5357,
+    "latitude": 39.1755369,
+    "longitude": -77.2643575,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://montgomeryplanning.org/planning/communities/upcounty/germantown/germantown-1989/"
+      ]
+    ]
+  },
+  {
+    "stem": "GreatFalls",
+    "name": "Great Falls",
+    "state": "VA",
+    "areas": "Great Falls is an unincorporated Fairfax County community. The village center around Georgetown Pike and Walker Road contrasts with properties reached by smaller roads and private drives beyond it.",
+    "roads": "Georgetown Pike (VA 193) and Walker Road are local reference routes. VA 7 lies to the south and I-495 farther east.",
+    "advice": "For a property with a long or gated driveway, provide clearance, slope and turning details before choosing the truck plan. Inventory garage and outbuilding contents separately. A less densely settled community can still have a difficult final approach for a large vehicle.",
+    "census_name": "Great Falls census-designated place",
+    "population": 15953,
+    "land_sq_miles": 25.357543433463817,
+    "density": 629,
+    "latitude": 39.0110162,
+    "longitude": -77.3013158,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/transportation/projects/georgetown-pike-pedestrian-improvements"
+      ]
+    ]
+  },
+  {
+    "stem": "Hamilton",
+    "name": "Hamilton",
+    "state": "VA",
+    "areas": "Hamilton is a small incorporated Loudoun town centered on Colonial Highway. The town core and streets around Kerr Street should be distinguished from rural properties using Hamilton postal addresses.",
+    "roads": "Colonial Highway (VA 7 Business) passes through town; the VA 7 bypass is a regional connection nearby.",
+    "advice": "For a town-center house, confirm the driveway or curb position and front steps. For an outlying property, describe the access lane and turning area. The same postal name can mean a compact town lot or a much longer carry from the truck.",
+    "census_name": "Hamilton town",
+    "population": 619,
+    "land_sq_miles": 0.20906003307086835,
+    "density": 2961,
+    "latitude": 39.1348768,
+    "longitude": -77.6641236,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/roads"
+      ]
+    ]
+  },
+  {
+    "stem": "Haymarket",
+    "name": "Haymarket",
+    "state": "VA",
+    "areas": "Historic Haymarket centers on Washington Street in the incorporated town. Larger communities with Haymarket mailing addresses can lie outside town limits, so a subdivision name is important.",
+    "roads": "Washington Street is VA 55. US 15 and I-66 provide nearby regional access.",
+    "advice": "For a Washington Street property, confirm a loading location that suits the building entrance. For a subdivision outside town, share any gated-entry or shared-parking instructions. Keep garage, basement and patio items on the inventory rather than estimating solely by the number of bedrooms.",
+    "census_name": "Haymarket town",
+    "population": 1545,
+    "land_sq_miles": 0.5742929838419364,
+    "density": 2690,
+    "latitude": 38.8121691,
+    "longitude": -77.6363314,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/76_PrinceWilliam_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.pwcva.gov/gis"
+      ]
+    ]
+  },
+  {
+    "stem": "Herndon",
+    "name": "Herndon",
+    "state": "VA",
+    "areas": "The Town of Herndon's historic downtown includes the Elden and Lynn Street area. Herndon mailing addresses also extend beyond the incorporated town, including parts of the wider Dulles-area community.",
+    "roads": "Elden Street and Herndon Parkway serve the town. VA 267 lies to the south, with VA 28 and Fairfax County Parkway providing nearby regional connections.",
+    "advice": "Downtown and residential side-street moves need a confirmed loading position. For a larger apartment building, ask for the truck entrance rather than the lobby location. Identify whether the address is inside town limits when passing on parking instructions.",
+    "census_name": "Herndon town",
+    "population": 24655,
+    "land_sq_miles": 4.28644091287344,
+    "density": 5752,
+    "latitude": 38.9699223,
+    "longitude": -77.3867246,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.herndon-va.gov/businesses/business-resources/economic-development/downtown-herndon"
+      ]
+    ]
+  },
+  {
+    "stem": "Hillsboro",
+    "name": "Hillsboro",
+    "state": "VA",
+    "areas": "Hillsboro is a small Loudoun town along Charles Town Pike. Its historic center and properties around the Old Stone School are distinct from the broader rural Hillsboro mailing area.",
+    "roads": "Charles Town Pike (VA 9) runs through the town. VA 7 is reached farther southeast, not by a freeway running through the town center.",
+    "advice": "For a historic property, send photos of the entrance and available loading space. For a rural address, confirm driveway width and turning room. Small population does not mean an unrestricted place to stop on a through road.",
+    "census_name": "Hillsboro town",
+    "population": 114,
+    "land_sq_miles": 0.26521550321359877,
+    "density": 430,
+    "latitude": 39.1988136,
+    "longitude": -77.7237708,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/roads"
+      ]
+    ]
+  },
+  {
+    "stem": "Huntington",
+    "name": "Huntington",
+    "state": "VA",
+    "areas": "Huntington is a Fairfax County community outside the City of Alexandria. Huntington Avenue and the North Kings Highway/Metro area are useful local reference points.",
+    "roads": "Huntington Avenue, North Kings Highway and Richmond Highway (US 1) connect the community. I-95/I-495 provides nearby regional access.",
+    "advice": "For an apartment near Metro, confirm the correct loading entrance and elevator arrangements. For a house or attached home, identify entry steps and curb space. Include the building name because an Alexandria postal address does not identify Huntington by itself.",
+    "census_name": "Huntington census-designated place",
+    "population": 13749,
+    "land_sq_miles": 1.1293090452143242,
+    "density": 12175,
+    "latitude": 38.7916307,
+    "longitude": -77.0739717,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/planning-development/plan-amendments/huntington-ave-intersection-study"
+      ]
+    ]
+  },
+  {
+    "stem": "Kingstowne",
+    "name": "Kingstowne",
+    "state": "VA",
+    "areas": "Kingstowne is a Fairfax County planned community with Alexandria mailing addresses. The Town Center and residential areas along Kingstowne Village Parkway and Kingstowne Boulevard are useful local reference points.",
+    "roads": "Van Dorn Street and nearby Franconia-Springfield Parkway connect the community with the regional interstate network.",
+    "advice": "Townhouse parking courts and condominium entrances need precise instructions. Tell us whether the truck can load from the front or rear, how many stair flights connect the living levels, and whether a reserved space or elevator is required for the building.",
+    "census_name": "Kingstowne census-designated place",
+    "population": 16825,
+    "land_sq_miles": 2.867806215155334,
+    "density": 5867,
+    "latitude": 38.7623969,
+    "longitude": -77.1444604,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/planning-development/node/173"
+      ]
+    ]
+  },
+  {
+    "stem": "Lake_ridge",
+    "name": "Lake Ridge",
+    "state": "VA",
+    "areas": "Lake Ridge is a Prince William County community commonly using Woodbridge mailing addresses. The Tackett's Mill area and residential streets along Old Bridge Road help locate a move within it.",
+    "roads": "Old Bridge Road is the main local corridor; Minnieville Road and VA 123 provide surrounding connections, with I-95 nearby to the east.",
+    "advice": "For a court or sloping driveway, provide photos of the truck-to-door route. Identify walkout-basement access separately from interior stairs. The Lake Ridge community name helps distinguish the move from a property elsewhere in the Woodbridge postal area.",
+    "census_name": "Lake Ridge census-designated place",
+    "population": 46162,
+    "land_sq_miles": 9.116682005515768,
+    "density": 5063,
+    "latitude": 38.6847095,
+    "longitude": -77.3065396,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/76_PrinceWilliam_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.pwcva.gov/news/new-sidewalk-along-old-bridge-road-completed-lake-ridge-0"
+      ]
+    ]
+  },
+  {
+    "stem": "Lansdowne",
+    "name": "Lansdowne",
+    "state": "VA",
+    "areas": "Lansdowne is a Loudoun community often using Leesburg mailing addresses. The Lansdowne Boulevard and Riverside Parkway areas include different residential and business settings.",
+    "roads": "Lansdowne Boulevard and Belmont Ridge Road connect the area with VA 7 to the south; Riverside Parkway serves local destinations.",
+    "advice": "For a condominium or senior residence, confirm the loading entrance, elevator and approved moving hours with management. For a house, include driveway and basement details. A Leesburg mailing address does not automatically place the property inside the Town of Leesburg.",
+    "census_name": "Lansdowne census-designated place",
+    "population": 12427,
+    "land_sq_miles": 4.043054081295197,
+    "density": 3074,
+    "latitude": 39.0844062,
+    "longitude": -77.4836941,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/calendar.aspx?EID=2304&PREVIEW=YES"
+      ]
+    ]
+  },
+  {
+    "stem": "Leesburg",
+    "name": "Leesburg",
+    "state": "VA",
+    "areas": "The Old and Historic District, King Street/Market Street area and Edwards Ferry Road corridor are distinct local reference points. Leesburg postal addresses also extend beyond the incorporated town.",
+    "roads": "US 15, VA 7 and the Dulles Greenway (VA 267) support regional travel. King Street and Market Street pass through the historic core.",
+    "advice": "An older downtown property may need a different loading location from its front door. Confirm parking and entrance dimensions. For a home beyond town limits, provide driveway details and the actual community name rather than relying on the Leesburg mailing label.",
+    "census_name": "Leesburg town",
+    "population": 48250,
+    "land_sq_miles": 12.396044550117617,
+    "density": 3892,
+    "latitude": 39.1056907,
+    "longitude": -77.5544584,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.leesburgva.gov/departments/community-development/historic-preservation/gateway-district"
+      ]
+    ]
+  },
+  {
+    "stem": "Lorton",
+    "name": "Lorton",
+    "state": "VA",
+    "areas": "Lorton is a southern Fairfax County community. The Lorton Road corridor and Lorton Station area are local reference points. Nearby Laurel Hill and Mason Neck should not be confused with the Lorton census boundary.",
+    "roads": "I-95 and Richmond Highway (US 1) provide regional connections. Lorton Road and nearby Fairfax County Parkway serve local approaches.",
+    "advice": "For a Lorton Station apartment or townhouse, confirm shared parking and the approved loading entrance. For a larger property in the wider postal area, include driveway length and turning space. Identify storage, garage and outdoor items before the crew plan is finalized.",
+    "census_name": "Lorton census-designated place",
+    "population": 20072,
+    "land_sq_miles": 5.326725611188316,
+    "density": 3768,
+    "latitude": 38.6983638,
+    "longitude": -77.2164137,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Lovettsville",
+    "name": "Lovettsville",
+    "state": "VA",
+    "areas": "Lovettsville's Old Town, Broad Way corridor and Town Center provide distinct reference points within the incorporated town. Rural properties with Lovettsville postal addresses extend beyond it.",
+    "roads": "Berlin Turnpike (VA 287) connects the town with regional routes. Broad Way and Loudoun Street serve the local street network.",
+    "advice": "For an Old Town property, confirm the permitted approach and loading location. For an outlying address, describe the driveway and any gates. Share the complete street address and avoid assuming a rural mailing address has the same access as a Town Center home.",
+    "census_name": "Lovettsville town",
+    "population": 2694,
+    "land_sq_miles": 0.8443536830430843,
+    "density": 3191,
+    "latitude": 39.2731579,
+    "longitude": -77.6399005,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.lovettsvilleva.gov/projects"
+      ]
+    ]
+  },
+  {
+    "stem": "Manassas",
+    "name": "Manassas",
+    "state": "VA",
+    "areas": "Historic Downtown, the Grant Avenue area and Wellington neighborhoods are inside the independent City of Manassas. Manassas Park is a separate city, and many Manassas postal addresses are in Prince William County.",
+    "roads": "VA 28 and Sudley Road connect the city with surrounding roads. I-66 is reached to the north, while Wellington Road serves local destinations.",
+    "advice": "For a downtown business or residence, confirm loading access away from the customer entrance if needed. For a house, identify garage and basement items. Specify city-versus-county location so the crew does not rely on the postal name alone.",
+    "census_name": "Manassas city",
+    "population": 42772,
+    "land_sq_miles": 9.84299769495573,
+    "density": 4345,
+    "latitude": 38.7478604,
+    "longitude": -77.4838217,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/travel-traffic/maps/"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.manassasva.gov/Community%20Development/Downtown%20South%20Housing%20Study.pdf"
+      ]
+    ]
+  },
+  {
+    "stem": "McLean",
+    "name": "McLean",
+    "state": "VA",
+    "areas": "Central McLean around Chain Bridge Road and Old Dominion Drive, and the Lewinsville Road area, offer useful local references. Tysons is a separate census-designated community, although some nearby addresses use McLean.",
+    "roads": "Chain Bridge Road/Dolley Madison Boulevard (VA 123), Old Dominion Drive and nearby I-495 connect the area. Georgetown Pike serves the northern side of the wider community.",
+    "advice": "For a larger home, inventory each level and share driveway turning space. For a condominium, identify the loading entrance and elevator. Include the actual neighborhood or building name to distinguish a central McLean house move from a Tysons-area tower move.",
+    "census_name": "McLean census-designated place",
+    "population": 50773,
+    "land_sq_miles": 24.797287193595693,
+    "density": 2048,
+    "latitude": 38.9435788,
+    "longitude": -77.1942981,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Merrifield",
+    "name": "Merrifield",
+    "state": "VA",
+    "areas": "Merrifield includes the Mosaic District and the Gallows Road/US 29 area. The Dunn Loring Metro vicinity is another local reference; Vienna or Fairfax mailing labels can describe properties in this area.",
+    "roads": "Gallows Road, US 29 and US 50 connect Merrifield with nearby I-66 and I-495.",
+    "advice": "For a Mosaic-area apartment or business, confirm the loading dock or service entrance with management. A short distance on a map can still include a long hallway or elevator trip. Give the building name, reserved moving time and parking instructions with the estimate request.",
+    "census_name": "Merrifield census-designated place",
+    "population": 20488,
+    "land_sq_miles": 2.698606210625912,
+    "density": 7592,
+    "latitude": 38.8730551,
+    "longitude": -77.2425795,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Middleburg",
+    "name": "Middleburg",
+    "state": "VA",
+    "areas": "Middleburg's historic center is organized around Washington Street and Madison Street. Country properties with Middleburg mailing addresses extend beyond the incorporated town.",
+    "roads": "Washington Street carries US 50 through town. Madison Street and smaller connecting roads serve local properties.",
+    "advice": "For a downtown home or business, agree on a loading position before arrival. For a country property, describe gates, driveway surface and turning space, and list outbuilding contents. Through traffic on US 50 and a quiet private lane create different loading considerations.",
+    "census_name": "Middleburg town",
+    "population": 669,
+    "land_sq_miles": 1.0371155717975589,
+    "density": 645,
+    "latitude": 38.9715033,
+    "longitude": -77.7428655,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://middleburgva.gov/229/Parking"
+      ]
+    ]
+  },
+  {
+    "stem": "Mount_Vernon",
+    "name": "Mount Vernon",
+    "state": "VA",
+    "areas": "Mount Vernon is a Fairfax County community associated with the Mount Vernon Highway area and residential streets near the historic estate. Alexandria postal addresses here are outside the independent city.",
+    "roads": "Mount Vernon Highway and Richmond Highway (US 1) are key local references. The suitable truck approach must be checked for the particular address.",
+    "advice": "Tell us whether loading is from a driveway, curb or shared parking area, and identify basement access and entry steps. Do not use a visitor route to the historic estate as automatic truck directions to a home; provide the actual residential entrance.",
+    "census_name": "Mount Vernon census-designated place",
+    "population": 12914,
+    "land_sq_miles": 5.224513172859532,
+    "density": 2472,
+    "latitude": 38.7138673,
+    "longitude": -77.1043868,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "National_Harbor",
+    "name": "National Harbor",
+    "state": "MD",
+    "areas": "National Harbor is a Prince George's County waterfront community, separate from the Oxon Hill census area even though Oxon Hill appears in many mailing addresses. Waterfront Street and National Harbor Boulevard are local reference points.",
+    "roads": "I-95/I-495 near the Woodrow Wilson Bridge and MD 210 provide regional connections. National Harbor Boulevard serves the local approach.",
+    "advice": "For a condominium or mixed-use building, obtain the service entrance, elevator reservation and loading instructions from management. Public parking or a hotel entrance is not a substitute for an approved moving space. Include the building name in the quote request.",
+    "census_name": "National Harbor census-designated place",
+    "population": 5509,
+    "land_sq_miles": 1.273307775753522,
+    "density": 4327,
+    "latitude": 38.7875588,
+    "longitude": -77.0112761,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://princegeorgescountymd.legistar.com/LegislationDetail.aspx?GUID=6C8BDD98-F692-4BEF-BD8F-866A22C5A254&ID=6637548"
+      ]
+    ]
+  },
+  {
+    "stem": "Newington",
+    "name": "Newington",
+    "state": "VA",
+    "areas": "Newington is a Fairfax County community in the broader Springfield/Lorton mailing area. Newington Road and the Fullerton Road area are useful local references. Newington Forest is a separate census-designated community.",
+    "roads": "I-95, Fairfax County Parkway and Newington Road serve regional and local connections around Newington.",
+    "advice": "For a warehouse or business, identify dock height and delivery hours. For a residential move, confirm the driveway or shared-parking arrangement and stairs. State the actual community name so Newington and Newington Forest access instructions are not mixed up.",
+    "census_name": "Newington census-designated place",
+    "population": 13223,
+    "land_sq_miles": 4.5816469012518235,
+    "density": 2886,
+    "latitude": 38.7358099,
+    "longitude": -77.1992002,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "North_Springfield",
+    "name": "North Springfield",
+    "state": "VA",
+    "areas": "North Springfield is a separate Fairfax County census community near the Braddock Road and Backlick Road area. It is not the same census area as Springfield or West Springfield, although postal addresses may say Springfield.",
+    "roads": "Braddock Road and Backlick Road are local reference routes, with I-495 nearby.",
+    "advice": "For a residential side-street move, confirm driveway availability and any curb restrictions. Split-level layouts require a clear count of stairs between rooms as well as entry steps. Include garage and lower-level contents when describing the size of the move.",
+    "census_name": "North Springfield census-designated place",
+    "population": 7430,
+    "land_sq_miles": 1.5261544963182136,
+    "density": 4868,
+    "latitude": 38.8023377,
+    "longitude": -77.2026923,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Oakton",
+    "name": "Oakton",
+    "state": "VA",
+    "areas": "Oakton is an unincorporated Fairfax County community. Chain Bridge Road and the Hunter Mill Road area are useful local references, with residential streets extending away from the commercial corridor.",
+    "roads": "Chain Bridge Road (VA 123) links Oakton with nearby I-66. Hunter Mill Road and Jermantown Road provide other local connections.",
+    "advice": "For a home reached by a smaller side road, send driveway and turning-space details. For a condominium, identify the approved loading area and stairs or elevator. The community includes different property layouts, so a bedroom count alone is not enough for access planning.",
+    "census_name": "Oakton census-designated place",
+    "population": 36732,
+    "land_sq_miles": 9.763647137638564,
+    "density": 3762,
+    "latitude": 38.8887915,
+    "longitude": -77.3016487,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Occoquan",
+    "name": "Occoquan",
+    "state": "VA",
+    "areas": "The incorporated Town of Occoquan centers on Mill Street and Commerce Street beside the Occoquan River. It is distinct from nearby Lake Ridge and the broader Woodbridge mailing area.",
+    "roads": "VA 123 (Gordon Boulevard) provides the nearby regional connection, with I-95 farther east. Mill Street and Commerce Street serve the compact town center.",
+    "advice": "Confirm a loading position that leaves pedestrian and vehicle access clear. For an older building, measure entryways and stair turns before the move. A compact street network can make the final loading arrangement more important than the short distance to the highway.",
+    "census_name": "Occoquan town",
+    "population": 1035,
+    "land_sq_miles": 0.17300388299538205,
+    "density": 5983,
+    "latitude": 38.6825019,
+    "longitude": -77.2605403,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/76_PrinceWilliam_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.occoquanva.gov/visitors/mill-house-museum/"
+      ]
+    ]
+  },
+  {
+    "stem": "Oxon_Hill",
+    "name": "Oxon Hill",
+    "state": "MD",
+    "areas": "Oxon Hill is a Prince George's County community centered around the Oxon Hill Road area. National Harbor and Forest Heights are separate places, even where postal addresses use Oxon Hill.",
+    "roads": "Indian Head Highway (MD 210) and I-95/I-495 provide regional connections; Oxon Hill Road and nearby St. Barnabas Road serve local travel.",
+    "advice": "Share the building or neighborhood name and the actual loading entrance. Apartment moves need elevator and parking details; residential side streets need driveway and entry-step information. Do not assume a National Harbor loading plan applies to an address elsewhere in Oxon Hill.",
+    "census_name": "Oxon Hill census-designated place",
+    "population": 18791,
+    "land_sq_miles": 6.438893264971989,
+    "density": 2918,
+    "latitude": 38.7884172,
+    "longitude": -76.9726963,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.pgplanning.org/communities/"
+      ]
+    ]
+  },
+  {
+    "stem": "Purcellville",
+    "name": "Purcellville",
+    "state": "VA",
+    "areas": "Purcellville's Main Street and 21st Street area forms its older town center. Residential areas around Hirst Road and Hatcher Avenue offer other reference points within the town; postal addresses can extend into rural Loudoun.",
+    "roads": "VA 7 bypasses the town, with VA 7 Business on Main Street and VA 287 providing connections.",
+    "advice": "For a Main Street property, confirm loading access and doorway dimensions. For a house farther from the center, list garage, basement and patio contents. If the address lies outside town, describe the access lane instead of assuming standard neighborhood driveway conditions.",
+    "census_name": "Purcellville town",
+    "population": 8929,
+    "land_sq_miles": 3.3848321407400963,
+    "density": 2638,
+    "latitude": 39.1377291,
+    "longitude": -77.7109581,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.purcellvilleva.gov/765/Maps-and-Location"
+      ]
+    ]
+  },
+  {
+    "stem": "Reston",
+    "name": "Reston",
+    "state": "VA",
+    "areas": "Lake Anne, Reston Town Center and the Hunters Woods and South Lakes village-center areas are distinct local settings. Reston is an unincorporated Fairfax County community, not an incorporated city.",
+    "roads": "The Dulles Toll Road (VA 267), Reston Parkway, Wiehle Avenue and Fairfax County Parkway connect different parts of Reston.",
+    "advice": "A Town Center tower may require a dock and elevator reservation; a residential cluster may use shared parking with a walk to the entrance. Identify the cluster or building and confirm the truck-to-door route, including steps, before requesting a final estimate.",
+    "census_name": "Reston census-designated place",
+    "population": 63226,
+    "land_sq_miles": 15.342632208008428,
+    "density": 4121,
+    "latitude": 38.9496832,
+    "longitude": -77.3460457,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/huntermill/reston-comprehensive-plan-amendment"
+      ]
+    ]
+  },
+  {
+    "stem": "Rockville",
+    "name": "Rockville",
+    "state": "MD",
+    "areas": "Rockville Town Center, Twinbrook, King Farm and Fallsgrove have different housing and street layouts. Rockville mailing addresses can also describe properties outside the incorporated city.",
+    "roads": "I-270, Rockville Pike (MD 355) and Veirs Mill Road (MD 586) are major connections; neighborhood streets complete the approach.",
+    "advice": "For a Town Center building, obtain loading and elevator instructions. For a King Farm or Twinbrook home, confirm front-versus-rear access and curb availability. The exact neighborhood and entrance help establish the carrying distance and appropriate crew plan.",
+    "census_name": "Rockville city",
+    "population": 67117,
+    "land_sq_miles": 13.601158962629373,
+    "density": 4935,
+    "latitude": -77.1553095,
+    "longitude": 39.0836661,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.rockvillemd.gov/projects/rockville-2040-comprehensive-plan/"
+      ]
+    ]
+  },
+  {
+    "stem": "Round_Hill",
+    "name": "Round Hill",
+    "state": "VA",
+    "areas": "Round Hill's Main Street and Loudoun Street area forms the incorporated town core. Larger residential and rural areas with Round Hill mailing addresses extend beyond the small town boundary.",
+    "roads": "VA 7 bypasses the town; VA 7 Business and local roads connect with it.",
+    "advice": "For a town-core move, confirm loading space near the entrance. For an outlying house, provide driveway length, slope and turning room. Tell us whether the address is inside the town or in the broader postal area so the small town population is not mistaken for the entire service area.",
+    "census_name": "Round Hill town",
+    "population": 693,
+    "land_sq_miles": 0.3666067022511621,
+    "density": 1890,
+    "latitude": 39.1319323,
+    "longitude": -77.7680277,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.roundhillva.gov/1349/Residents"
+      ]
+    ]
+  },
+  {
+    "stem": "Silver_Spring",
+    "name": "Silver Spring",
+    "state": "MD",
+    "areas": "Downtown Silver Spring around Georgia Avenue and Colesville Road is distinct from the much wider Silver Spring mailing area. Woodside and the downtown-adjacent residential blocks are useful local reference points; this location is in Maryland.",
+    "roads": "Georgia Avenue (MD 97), Colesville Road (US 29) and East-West Highway (MD 410) are key corridors. I-495 provides regional access to the north.",
+    "advice": "For a downtown high-rise, arrange the elevator and service entrance before the appointment. For a residential block, check curb availability and entry steps. Include the neighborhood because the Silver Spring postal name covers properties beyond the census-designated center.",
+    "census_name": "Silver Spring census-designated place",
+    "population": 81015,
+    "land_sq_miles": 7.8823747948987775,
+    "density": 10278,
+    "latitude": 39.0028677,
+    "longitude": -77.0205758,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://montgomeryplanning.org/planning/communities/east-county/silver-spring/silver-spring-downtown-plan/"
+      ]
+    ]
+  },
+  {
+    "stem": "South_Riding",
+    "name": "South Riding",
+    "state": "VA",
+    "areas": "South Riding is a Loudoun planned community along the US 50 area. Residential streets around South Riding Boulevard and Tall Cedars Parkway are useful references. Stone Ridge is a separate neighboring community.",
+    "roads": "US 50 runs along the north side; Loudoun County Parkway and Tall Cedars Parkway serve the wider local network.",
+    "advice": "For a townhouse, confirm front or garage-side loading and which shared spaces are available. For a house, include basement and outdoor items. A Chantilly mailing address may identify a South Riding property, so provide the community name as well as the street.",
+    "census_name": "South Riding census-designated place",
+    "population": 33877,
+    "land_sq_miles": 6.844547250720866,
+    "density": 4949,
+    "latitude": 38.9119983,
+    "longitude": -77.513221,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/DocumentCenter/View/123117/Dulles-Community-Outreach-Final-Report?bidId="
+      ]
+    ]
+  },
+  {
+    "stem": "Springfield",
+    "name": "Springfield",
+    "state": "VA",
+    "areas": "Central Springfield includes the Commerce Street area and the nearby commercial corridors. North Springfield and West Springfield are separate census communities, even though many addresses share a Springfield postal label.",
+    "roads": "I-95, I-395 and I-495 converge nearby. Backlick Road and Old Keene Mill Road connect local destinations.",
+    "advice": "Give the neighborhood or building name to clarify which part of the postal area is involved. Apartment loading, townhouse parking and detached-home driveways require different plans. Allow the mover to choose a truck-suitable approach rather than relying only on a passenger-car navigation route.",
+    "census_name": "Springfield census-designated place",
+    "population": 31339,
+    "land_sq_miles": 7.845292385285885,
+    "density": 3995,
+    "latitude": 38.7809623,
+    "longitude": -77.1838742,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Sterling",
+    "name": "Sterling",
+    "state": "VA",
+    "areas": "Sterling Park and the Sterling Boulevard/Church Road area are useful references for the Sterling community. Cascades and Countryside are separate communities that can also use Sterling mailing addresses.",
+    "roads": "Sterling Boulevard and Church Road connect local streets with nearby VA 28 and VA 7.",
+    "advice": "Confirm whether the move is in Sterling Park or another community using the postal name. For a residential street, identify driveway space and steps; for a commercial property, supply the loading-door location. Include garage and storage items in the inventory before crew sizing.",
+    "census_name": "Sterling census-designated place",
+    "population": 30337,
+    "land_sq_miles": 5.453511135295374,
+    "density": 5563,
+    "latitude": 39.0052377,
+    "longitude": -77.4050439,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/roads"
+      ]
+    ]
+  },
+  {
+    "stem": "Stone_Ridge",
+    "name": "Stone Ridge",
+    "state": "VA",
+    "areas": "Stone Ridge is a Loudoun planned community south of US 50. Stone Springs Boulevard and Millstream Drive are useful local references. Its Aldie mailing addresses should not be confused with the small historic village of Aldie.",
+    "roads": "US 50, Stone Springs Boulevard and nearby Gum Spring Road serve local and regional connections.",
+    "advice": "For a townhouse or condominium, confirm shared parking and the carrying route to the entrance. For a detached home, list basement and garage contents. Give Stone Ridge as the community name so the crew plans for the correct part of the broader Aldie postal area.",
+    "census_name": "Stone Ridge census-designated place",
+    "population": 15039,
+    "land_sq_miles": 2.584572482509035,
+    "density": 5819,
+    "latitude": 38.9294642,
+    "longitude": -77.5556998,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/53_Loudoun_acc052323_PM2.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.loudoun.gov/bids.aspx?bidID=309"
+      ]
+    ]
+  },
+  {
+    "stem": "Triangle",
+    "name": "Triangle",
+    "state": "VA",
+    "areas": "Triangle is a Prince William County community near Quantico. The Fuller Road and Triangle Street area provides local context; Triangle is distinct from the Town of Dumfries and from Marine Corps Base Quantico.",
+    "roads": "US 1 and nearby I-95 provide regional access, while Fuller Road serves the local area.",
+    "advice": "For a civilian residence, confirm driveway or apartment loading access. If the destination is on a military installation, arrange entry requirements with the installation separately; a Triangle address does not by itself establish base access. Include stairs and any storage pickup in the plan.",
+    "census_name": "Triangle census-designated place",
+    "population": 9589,
+    "land_sq_miles": 2.815138019708559,
+    "density": 3406,
+    "latitude": 38.5483067,
+    "longitude": -77.3195227,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/76_PrinceWilliam_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.pwcva.gov/gis"
+      ]
+    ]
+  },
+  {
+    "stem": "Tysons",
+    "name": "Tysons",
+    "state": "VA",
+    "areas": "Tysons is a Fairfax County urban center with the Tysons Corner, Greensboro, Spring Hill and McLean station areas as useful reference points. A McLean or Vienna postal address does not necessarily describe the property's local setting.",
+    "roads": "I-495, VA 7, VA 123 and the Dulles Toll Road (VA 267) surround or cross the area.",
+    "advice": "For a tower or office relocation, confirm the service entrance, loading-dock booking and freight elevator. Garage clearance and the walk from dock to unit can matter more than the map distance. Provide written building instructions when requesting the estimate.",
+    "census_name": "Tysons census-designated place",
+    "population": 26374,
+    "land_sq_miles": 4.26590336685625,
+    "density": 6183,
+    "latitude": 38.9214921,
+    "longitude": -77.2272408,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/tysons/transportation/"
+      ]
+    ]
+  },
+  {
+    "stem": "Upper_Marlboro",
+    "name": "Upper Marlboro",
+    "state": "MD",
+    "areas": "The incorporated Town of Upper Marlboro centers on Main Street and the courthouse area. The much larger Upper Marlboro mailing area includes properties outside town limits; the town's population should not be used for that entire postal area.",
+    "roads": "Main Street (MD 725) serves the center. MD 4 and nearby US 301 provide regional connections.",
+    "advice": "For a town-center property, confirm loading space and any entrance separate from the public door. For an address outside town, include the subdivision and driveway details. This distinction helps avoid estimating a suburban house move as a small downtown delivery.",
+    "census_name": "Upper Marlboro town",
+    "population": 652,
+    "land_sq_miles": 0.6888603051419193,
+    "density": 946,
+    "latitude": -76.7513965,
+    "longitude": 38.8144573,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.mdcourts.gov/district/directories/princegeorgesUPPERMARLBORO"
+      ]
+    ]
+  },
+  {
+    "stem": "Vienna",
+    "name": "Vienna",
+    "state": "VA",
+    "areas": "The Town of Vienna includes the Church Street historic area and Maple Avenue corridor. Vienna postal addresses extend beyond the town, including properties nearer other Fairfax County communities.",
+    "roads": "Maple Avenue is VA 123; Nutley Street and nearby I-66 connect the wider area.",
+    "advice": "For a Church Street or Maple Avenue property, confirm where the truck may load. For a residential side street, describe driveway access and stairs. Identify whether the home is inside the town or simply uses a Vienna mailing address when sending property instructions.",
+    "census_name": "Vienna town",
+    "population": 16473,
+    "land_sq_miles": 4.403353804786568,
+    "density": 3741,
+    "latitude": 38.8996459,
+    "longitude": -77.2596258,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs25/tigerweb_acs25_incplace_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "Waldorf",
+    "name": "Waldorf",
+    "state": "MD",
+    "areas": "Waldorf is an unincorporated Charles County community. The US 301 commercial corridor and the wider St. Charles residential area create different local moving settings; a Waldorf address is not an incorporated-city designation.",
+    "roads": "US 301 (Crain Highway), MD 5 and MD 228 (Berry Road) serve regional connections. St. Charles Parkway is an important local route.",
+    "advice": "A residential subdivision needs a driveway or shared-parking plan, while a commercial corridor address may have a separate delivery entrance. Include the neighborhood, stairs and walking distance; a large community population does not describe access at an individual home.",
+    "census_name": "Waldorf census-designated place",
+    "population": 81410,
+    "land_sq_miles": 36.236387968524134,
+    "density": 2247,
+    "latitude": 38.6085063,
+    "longitude": -76.9194019,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_md.html"
+      ],
+      [
+        "Official road map",
+        "https://www.roads.maryland.gov/OPPEN/Highway_Front.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.labor.maryland.gov/county/smd/chardir.shtml"
+      ]
+    ]
+  },
+  {
+    "stem": "Washington_DC",
+    "name": "Washington, D.C.",
+    "state": "DC",
+    "areas": "Georgetown, Capitol Hill, Dupont Circle, Brookland and Anacostia are distinct Washington neighborhoods. Include the street quadrant—NW, NE, SW or SE—because it is part of the address, not an optional detail.",
+    "roads": "I-395, I-695 and DC 295 serve different regional approaches. Local streets include a grid, diagonal avenues and neighborhood streets; the correct truck route depends on the destination.",
+    "advice": "Confirm the quadrant, loading location and any building reservation before arrival. Rowhouse steps, basement entrances and apartment elevators require different handling plans. Check the applicable curb-use arrangements instead of assuming the space outside the door will be available.",
+    "census_name": "Washington city",
+    "population": 689545,
+    "land_sq_miles": 61.12729759962536,
+    "density": 11280,
+    "latitude": -77.016286,
+    "longitude": 38.9042429,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_incplace_2020_tab20_dc.html"
+      ],
+      [
+        "Official road map",
+        "https://planning.dc.gov/sites/default/files/dc/sites/op/publication/attachments/Policy_62821.pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://planning.dc.gov/node/623272"
+      ]
+    ]
+  },
+  {
+    "stem": "West_Springfield",
+    "name": "West Springfield",
+    "state": "VA",
+    "areas": "West Springfield is a separate Fairfax County community. The Rolling Road and Old Keene Mill Road areas are local reference points; central Springfield and North Springfield are separate census places.",
+    "roads": "Old Keene Mill Road, Rolling Road and Fairfax County Parkway provide local connections, with the interstate network farther east.",
+    "advice": "For a house with several levels, list entry steps separately from interior stair flights. For a townhouse, confirm the parking court and truck-to-door distance. Include West Springfield as well as the postal address so the crew can identify the correct community.",
+    "census_name": "West Springfield census-designated place",
+    "population": 23369,
+    "land_sq_miles": 4.810378067096112,
+    "density": 4858,
+    "latitude": 38.7771681,
+    "longitude": -77.2267914,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/29_Fairfax_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://www.fairfaxcounty.gov/gisapps/DMV/"
+      ]
+    ]
+  },
+  {
+    "stem": "woodbridge-movers",
+    "name": "Woodbridge",
+    "state": "VA",
+    "areas": "Woodbridge's Belmont Bay and Rippon areas lie on the eastern side of Prince William County. Dale City and Lake Ridge are separate census communities that also use Woodbridge mailing addresses.",
+    "roads": "US 1 and I-95 provide regional connections; VA 123, Prince William Parkway and Rippon Boulevard serve different local approaches.",
+    "advice": "A Belmont Bay condominium needs different access planning from a Rippon-area house. Give the neighborhood and building entrance, confirm parking or elevator requirements, and include the walking distance from the truck. The Woodbridge postal name alone covers too broad an area to determine those details.",
+    "census_name": "Woodbridge census-designated place",
+    "population": 44668,
+    "land_sq_miles": 9.021728673869742,
+    "density": 4951,
+    "latitude": 38.6408782,
+    "longitude": -77.2565433,
+    "sources": [
+      [
+        "2020 Census population and land area",
+        "https://tigerweb.geo.census.gov/tigerwebmain/Files/acs26/tigerweb_acs26_cdp_2020_tab20_va.html"
+      ],
+      [
+        "Official road map",
+        "https://www.vdot.virginia.gov/media/vdotvirginiagov/travel-and-traffic/maps/counties/76_PrinceWilliam_acc052323_PM..pdf"
+      ],
+      [
+        "Local planning and area reference",
+        "https://pwcaws.pwcva.gov/department/historic-preservation/kings-highway-historic-site"
+      ]
+    ]
+  }
+]
