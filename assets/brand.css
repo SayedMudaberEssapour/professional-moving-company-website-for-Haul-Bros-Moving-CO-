@@ -44,7 +44,7 @@ header .moving-locations-options {
 }
 header .moving-locations-options a { display:block; flex:none; padding:.65rem .75rem; color:#fff; white-space:normal; min-height:44px; }
 header .moving-locations-options a:hover { background:#382a12; }
-header .moving-locations-menu:not([open]) > .moving-locations-options { display:none; }
+header .moving-locations-menu:not([open]) > .moving-locations-options { display:none !important; }
 @media (max-width:1023px) {
  header .moving-locations-menu[open] > .moving-locations-options {
   position:fixed !important; top:8rem !important; left:1rem !important; right:1rem !important;

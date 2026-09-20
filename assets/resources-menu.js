@@ -18,6 +18,16 @@
       panel.append(link);
     });
     menu.append(summary, panel);
+    let pinned = false;
+    const hover = () => window.matchMedia('(hover: hover) and (min-width: 1024px)').matches;
+    menu.addEventListener('mouseenter', () => { if (hover()) menu.open = true; });
+    menu.addEventListener('mouseleave', () => { if (hover() && !pinned) menu.open = false; });
+    summary.addEventListener('click', event => {
+      event.preventDefault();
+      pinned = !pinned;
+      menu.open = pinned;
+    });
+    menu.addEventListener('toggle', () => { if (!menu.open) pinned = false; });
     return menu;
   }
   // Replace legacy dropdowns and quick-menu triggers with the same full list.
