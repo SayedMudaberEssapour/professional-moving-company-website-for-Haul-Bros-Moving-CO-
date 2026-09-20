@@ -34,6 +34,23 @@ footer { background-color: #090909 !important; border-color: #584725 !important;
 footer h2, footer p.uppercase, footer summary { color: var(--brand-gold) !important; }
 .text-amber-500 { color: #b88622 !important; }
 :focus-visible { outline-color: #ad7d20; }
+header .moving-locations-menu { position:relative; color:inherit; }
+header .moving-locations-menu > summary { cursor:pointer; white-space:nowrap; }
+header .moving-locations-options {
+ display:flex; flex-direction:column; position:absolute; right:0; left:auto;
+ width:min(22rem, calc(100vw - 2rem)); max-height:60vh; max-height:60dvh;
+ overflow-y:auto; overscroll-behavior:contain; background:#19150d;
+ border:1px solid #806631; border-radius:.75rem; padding:.5rem; z-index:100;
+}
+header .moving-locations-options a { display:block; flex:none; padding:.65rem .75rem; color:#fff; white-space:normal; min-height:44px; }
+header .moving-locations-options a:hover { background:#382a12; }
+header .moving-locations-menu:not([open]) > .moving-locations-options { display:none; }
+@media (max-width:1023px) {
+ header .moving-locations-menu[open] > .moving-locations-options {
+  position:fixed !important; top:8rem !important; left:1rem !important; right:1rem !important;
+  width:auto !important; max-width:none !important; max-height:calc(100dvh - 10rem) !important;
+ }
+}
 /* Keep long service names and expanded navigation inside phone screens. */
 @media (max-width:1023px) {
  .header-quick-nav, .location-header-quick-nav { position:relative; overflow:visible !important; }
