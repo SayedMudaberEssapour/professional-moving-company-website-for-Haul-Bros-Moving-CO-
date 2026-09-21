@@ -276,6 +276,11 @@
                     <span class="bg-white border border-slate-200 text-slate-700 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider">Northern Virginia</span>
                     <span class="bg-white border border-slate-200 text-slate-700 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider">Washington, D.C.</span>
                 </div>
+                <nav id="blog-pagination" class="mt-12 flex flex-wrap items-center justify-center gap-3" aria-label="Blog pages">
+                    <button type="button" data-blog-page="prev" class="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-40">← Newer articles</button>
+                    <span id="blog-page-status" class="px-3 text-sm font-semibold text-slate-500" aria-live="polite"></span>
+                    <button type="button" data-blog-page="next" class="rounded-xl bg-zinc-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-40">More articles →</button>
+                </nav>
             </div>
         </section>
 
@@ -288,6 +293,7 @@
                 </div>
 
                 <div class="grid lg:grid-cols-2 gap-8">
+<article class="article-card bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300"><div class="bg-zinc-800 min-h-[230px] flex items-center justify-center"><img src="how-to-get-the-best-price-on-movers-in-virginia/assets/commercial-haulbros.png" alt="Haul Bros Moving Co truck and crew at a commercial move" class="w-full h-full object-cover" loading="lazy" decoding="async" width="1280" height="708"></div><div class="p-7 sm:p-9 flex flex-col grow"><div class="flex flex-wrap items-center gap-2 mb-4 text-[11px] font-bold uppercase tracking-wider"><span class="bg-zinc-100 text-zinc-700 px-3 py-1.5 rounded-full">Moving Costs</span><time class="text-slate-400" datetime="2026-09-22">September 22, 2026</time></div><h3 class="text-2xl font-black tracking-tight text-slate-900 leading-tight mb-4">How to Get the Best Price on Professional Movers in Virginia: 17 Money-Saving Tips</h3><p class="text-slate-600 leading-relaxed mb-5">Learn how to compare quotes, avoid hidden fees, choose the right crew, reduce packing costs, and plan an affordable Virginia move.</p><a href="how-to-get-the-best-price-on-movers-in-virginia/" class="mt-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-6 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-zinc-800 transition shadow-md">Read the Complete Guide <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div></article>
                     <article class="article-card bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
                         <div class="bg-zinc-800 min-h-[230px] flex items-center justify-center relative overflow-hidden"><img src="../assets/blog-fleet-trucks.png" alt="Haul Bros Moving Co. fleet of moving trucks ready for local moves" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" width="1280" height="708"></div>
                         <div class="p-7 sm:p-9 flex flex-col grow">
@@ -616,7 +622,7 @@
             </div>
         </section>
 
-        <article class="article-card bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300"><div class="bg-zinc-800 min-h-[230px] flex items-center justify-center"><img src="how-to-get-the-best-price-on-movers-in-virginia/assets/commercial-haulbros.png" alt="Haul Bros Moving Co truck and crew at a commercial move" class="w-full h-full object-cover" loading="lazy" decoding="async" width="1280" height="708"></div><div class="p-7 sm:p-9 flex flex-col grow"><div class="flex flex-wrap items-center gap-2 mb-4 text-[11px] font-bold uppercase tracking-wider"><span class="bg-zinc-100 text-zinc-700 px-3 py-1.5 rounded-full">Moving Costs</span><time class="text-slate-400" datetime="2026-09-22">September 22, 2026</time></div><h3 class="text-2xl font-black tracking-tight text-slate-900 leading-tight mb-4">How to Get the Best Price on Professional Movers in Virginia: 17 Money-Saving Tips</h3><p class="text-slate-600 leading-relaxed mb-5">Learn how to compare quotes, avoid hidden fees, choose the right crew, reduce packing costs, and plan an affordable Virginia move.</p><a href="how-to-get-the-best-price-on-movers-in-virginia/" class="mt-auto inline-flex items-center justify-center gap-2 bg-zinc-900 text-white px-6 py-3.5 rounded-xl font-bold text-sm uppercase tracking-wider hover:bg-zinc-800 transition shadow-md">Read the Complete Guide <i data-lucide="arrow-right" class="w-4 h-4"></i></a></div></article>
+
 <section class="py-16 bg-[#5A5E63] text-white">
             <div class="container mx-auto px-4 max-w-4xl text-center">
                 <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mb-4">Ready to Make Your Move Easier?</h2>
@@ -678,6 +684,26 @@
         document.querySelectorAll('.mobile-nav-link').forEach((link) => link.addEventListener('click', () => setMobileMenu(false)));
         document.addEventListener('keydown', (event) => { if (event.key === 'Escape') setMobileMenu(false); });
         window.addEventListener('resize', () => { if (window.innerWidth >= 1024) setMobileMenu(false); });
+
+        const articleGrid = document.querySelector('#latest-articles')?.closest('section')?.querySelector('.grid');
+        const articleCards = articleGrid ? Array.from(articleGrid.querySelectorAll('.article-card')) : [];
+        const pageSize = 8;
+        const pageCount = Math.max(1, Math.ceil(articleCards.length / pageSize));
+        let currentPage = 1;
+        const pageStatus = document.getElementById('blog-page-status');
+        const previousPage = document.querySelector('[data-blog-page="prev"]');
+        const nextPage = document.querySelector('[data-blog-page="next"]');
+        function renderBlogPage() {
+            articleCards.forEach((card, index) => {
+                card.hidden = Math.floor(index / pageSize) !== currentPage - 1;
+            });
+            if (pageStatus) pageStatus.textContent = `Page ${currentPage} of ${pageCount}`;
+            if (previousPage) previousPage.disabled = currentPage === 1;
+            if (nextPage) nextPage.disabled = currentPage === pageCount;
+        }
+        previousPage?.addEventListener('click', () => { if (currentPage > 1) { currentPage -= 1; renderBlogPage(); } });
+        nextPage?.addEventListener('click', () => { if (currentPage < pageCount) { currentPage += 1; renderBlogPage(); } });
+        renderBlogPage();
     </script>
 </body>
 </html>
