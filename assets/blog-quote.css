@@ -1,0 +1,42 @@
+.blog-quote-banner {
+  position: fixed !important;
+  inset: auto 24px 24px auto !important;
+  z-index: 45;
+  width: min(300px, calc(100vw - 32px));
+  margin: 0 !important;
+  padding: 16px !important;
+  background: #191b1e !important;
+  border: 1px solid #dfb65b !important;
+  border-radius: 18px !important;
+  box-shadow: 0 12px 35px #0004;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.blog-quote-banner::before {
+  content: 'Ready for an easier move?';
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+.blog-quote-banner a {
+  display: block;
+  padding: 14px 12px !important;
+  background: linear-gradient(120deg, #f5d889, #dca640) !important;
+  color: #17191c !important;
+  border-radius: 10px !important;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none !important;
+  transition: transform .15s, box-shadow .15s;
+}
+.blog-quote-banner a:hover { transform: translateY(-2px); box-shadow: 0 4px 14px #e6b84d55; }
+.blog-quote-banner a:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.article-layout { grid-template-columns: minmax(0, 1fr) !important; max-width: 50rem !important; }
+body { padding-bottom: 125px; }
+@media (max-width: 600px) {
+  .blog-quote-banner { right: 16px !important; bottom: 12px !important; padding: 10px !important; width: min(270px, calc(100vw - 32px)); }
+  .blog-quote-banner::before { font-size: 12px; margin-bottom: 7px; }
+}
+@media print { .blog-quote-banner { display: none !important; } }
