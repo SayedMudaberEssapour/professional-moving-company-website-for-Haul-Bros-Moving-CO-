@@ -75,6 +75,7 @@
 
     <script>if (location.protocol === 'http:' || location.protocol === 'https:') { if (location.pathname.endsWith('/index.html')) location.replace('/' + location.search + location.hash); }</script>
     <script src="assets/resources-menu.js" defer></script>
+<link rel="stylesheet" href="assets/moving-chat.css">
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
 
@@ -1455,5 +1456,15 @@
 
     </script>
 <script src="assets/persistent-header.js" defer></script>
+<button id="moving-chat-launcher" class="moving-chat-launcher" type="button" aria-expanded="false" aria-controls="moving-chat-panel">✦ CHAT WITH AN AGENT</button>
+<section id="moving-chat-panel" class="moving-chat-panel" role="dialog" aria-label="Haul Bros moving assistant" hidden>
+  <header class="moving-chat-head"><div><strong>Haul Bros Moving Assistant</strong><small>Automated answers · Need a person? Call below</small></div><button id="moving-chat-close" type="button" aria-label="Close chat">×</button></header>
+  <div id="moving-chat-messages" class="moving-chat-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+  <div class="moving-chat-options"><button type="button" data-chat-question="What are your moving rates?">Moving rates</button><button type="button" data-chat-question="Do you provide packing services?">Packing help</button><a href="#estimate" data-chat-quote>Get a free quote</a></div>
+  <form id="moving-chat-form" class="moving-chat-form"><label for="moving-chat-input" class="sr-only">Your moving question</label><input id="moving-chat-input" type="text" maxlength="600" placeholder="Ask a moving question…" required autocomplete="off"><button type="submit">Send</button></form>
+  <p class="moving-chat-contact">For personal assistance: <a href="tel:5718991919">571-899-1919</a></p>
+</section>
+<script src="assets/moving-chat-answers.js" defer></script>
+<script src="assets/moving-chat.js" defer></script>
 </body>
 </html>
