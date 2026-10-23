@@ -1,0 +1,13 @@
+/* Shared review platform strip for non-blog pages. */
+.platform-review-section{padding:40px 24px;background:#fff;border-top:1px solid #e5dcc7;border-bottom:1px solid #e5dcc7;font-family:Inter,Arial,sans-serif}.platform-review-inner{max-width:1200px;margin:0 auto}.platform-review-section .review-reputation-row{margin-bottom:0}
+
+.review-reputation-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:48px;align-items:center;margin-bottom:36px}
+.review-reputation-row h2{font-size:clamp(1.6rem,2.7vw,2.4rem);font-weight:900;line-height:1.2;letter-spacing:-.03em;color:#171717;margin:0;max-width:540px}
+.review-reputation-row h2>span{color:#99721f}
+.review-logo-links{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;align-items:center}
+.review-logo-links a{min-height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-decoration:none;border-radius:10px;padding:10px 3px;transition:background .2s}
+.review-logo-links a:hover{background:#faf5e8}.review-logo-links a:focus-visible{outline:3px solid #a57923;outline-offset:3px}
+.review-wordmark{display:block;font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-1.3px;white-space:nowrap}.wordmark-google{font-family:Arial,sans-serif;font-weight:600}.wordmark-yelp{color:#222;font-size:29px}.yelp-burst{color:#d32323;font-size:30px;vertical-align:middle;margin-left:2px}.wordmark-angi{color:#ed493b;font-size:34px;font-style:italic}.wordmark-thumbtack{color:#087bbd;font-size:20px;letter-spacing:-1px}
+.review-logo-count{font-size:13px;color:#5b5b5b;white-space:nowrap;font-weight:600}
+@media(max-width:900px){.review-reputation-row{grid-template-columns:1fr;gap:24px}.review-reputation-row h2{max-width:650px}.review-logo-links{max-width:650px}}
+@media(max-width:480px){.review-logo-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 18px}.review-reputation-row{gap:18px;margin-bottom:28px}}
