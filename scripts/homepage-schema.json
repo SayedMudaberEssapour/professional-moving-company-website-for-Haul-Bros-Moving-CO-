@@ -1,0 +1,586 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "MovingCompany",
+        "LocalBusiness"
+      ],
+      "@id": "https://www.haulbrosmoving.com/#organization",
+      "name": "Haul Bros Moving Co LLC",
+      "alternateName": "Haul Bros Moving",
+      "url": "https://www.haulbrosmoving.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.haulbrosmoving.com/assets/haul-bros-black-gold.webp"
+      },
+      "image": "https://www.haulbrosmoving.com/assets/haul-bros-moving-team.webp",
+      "description": "Professional local, apartment, commercial and long-distance movers based in Woodbridge, VA, serving Northern Virginia, Washington DC and Maryland. Packing, storage coordination and junk removal available.",
+      "telephone": "+1-571-899-1919",
+      "email": "relocating@haulbrosmoving.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2623 River Basin Ln",
+        "addressLocality": "Woodbridge",
+        "addressRegion": "VA",
+        "postalCode": "22191",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.5836222,
+        "longitude": -77.2920322
+      },
+      "hasMap": "https://www.google.com/maps/place/Haul+Bros+Moving+Co+LLC/@38.5836222,-77.2920322,623m/data=!3m2!1e3!4b1!4m6!3m5!1s0x49f54c9ee4500515:0xa505f7f8ab49f17f!8m2!3d38.5836222!4d-77.2920322!16s%2Fg%2F11xt4q1ch2",
+      "identifier": {
+        "@type": "PropertyValue",
+        "propertyID": "USDOT",
+        "value": "4497497"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-571-899-1919",
+        "email": "relocating@haulbrosmoving.com",
+        "contactType": "customer service",
+        "areaServed": "US",
+        "availableLanguage": "English"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Northern Virginia"
+        },
+        {
+          "@type": "State",
+          "name": "Virginia"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Washington, DC"
+        },
+        {
+          "@type": "State",
+          "name": "Maryland"
+        },
+        {
+          "@type": "City",
+          "name": "Aldie",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Alexandria",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Annandale",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Arlington",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Ashburn",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Bealeton",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Brambleton",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Broadlands",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Burke",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Cascades",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Centreville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Chantilly",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Clifton",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Countryside",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Culpeper",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Dale City",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Dumfries",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Dunn Loring",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Fairfax",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Fairfax Station",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Falls Church",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Fort Hunt",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Franconia",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Fredericksburg",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Gainesville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Great Falls",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Hamilton",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Haymarket",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Herndon",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Hillsboro",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Huntington",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Kingstowne",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Lake Ridge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Lansdowne",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Leesburg",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Lorton",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Lovettsville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Manassas",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "McLean",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Merrifield",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Middleburg",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Mount Vernon",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Newington",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "North Springfield",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Oakton",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Occoquan",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Purcellville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Reston",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Round Hill",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "South Riding",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Springfield",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Sterling",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Stone Ridge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Triangle",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Tysons",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Vienna",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "West Springfield",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Woodbridge",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Virginia"
+          }
+        }
+      ],
+      "knowsAbout": [
+        "Local moving",
+        "Apartment moving",
+        "Long-distance moving",
+        "Commercial moving",
+        "Military moving",
+        "Senior moving",
+        "Packing and unpacking",
+        "Furniture assembly and disassembly",
+        "Storage coordination",
+        "Junk removal"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61581927868435",
+        "https://www.instagram.com/haulbrosmovingco.llc/",
+        "https://www.linkedin.com/in/haul-bros-moving-co-llc-a11494352/",
+        "https://nextdoor.com/page/haul-bros-moving-co-llc",
+        "https://www.youtube.com/@HaulbrosmovingcoLLC",
+        "https://www.pinterest.com/Haulbrosmoving/",
+        "https://www.yelp.com/biz/haul-bros-moving-woodbridge-7",
+        "https://www.angi.com/companylist/us/va/arlington/haul-bros-moving-co-llc-reviews-151701802.htm",
+        "https://www.thumbtack.com/va/woodbridge/moving-companies/haul-bros-moving-co-llc/service/543872112000630818",
+        "https://www.bbb.org/us/va/woodbridge/profile/moving-services/haul-bros-moving-co-llc-0241-236102862",
+        "https://www.chamberofcommerce.com/business-directory/virginia/woodbridge/mover/2034463619-haul-bros-moving-co-llc",
+        "https://moveadvisor.com/movers/haul-bros-moving-co-llc-35892"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.haulbrosmoving.com/#website",
+      "url": "https://www.haulbrosmoving.com/",
+      "name": "Haul Bros Moving Co LLC",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": "https://www.haulbrosmoving.com/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.haulbrosmoving.com/#webpage",
+      "url": "https://www.haulbrosmoving.com/",
+      "name": "Professional Movers in Northern Virginia & DMV | Haul Bros",
+      "description": "Professional movers in Northern Virginia, Washington DC and Maryland. Reliable local, apartment and commercial moves, packing and free quotes.",
+      "isPartOf": {
+        "@id": "https://www.haulbrosmoving.com/#website"
+      },
+      "about": {
+        "@id": "https://www.haulbrosmoving.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.haulbrosmoving.com/assets/haul-bros-moving-team.webp"
+      },
+      "inLanguage": "en-US"
+    }
+  ]
+}
