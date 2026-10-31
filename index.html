@@ -661,6 +661,20 @@
   ]
 }
 </script>
+<style id="home-photo-hero-style">
+.home-photo-hero{position:relative;isolation:isolate;background:#101214;color:#fff;overflow:hidden;border-bottom:3px solid #c89b38}
+.home-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 54%;z-index:-3}
+.home-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(8,11,15,.97) 0%,rgba(8,11,15,.90) 24%,rgba(8,11,15,.66) 42%,rgba(8,11,15,.12) 67%,rgba(8,11,15,.03) 100%),linear-gradient(0deg,rgba(8,11,15,.55),transparent 40%)}
+.home-hero-inner{max-width:1440px;margin:0 auto;padding:76px 5%;min-height:670px;display:flex;align-items:center}
+.home-hero-copy{max-width:610px;width:48%}.home-hero-eyebrow{font-size:11px;font-weight:800;letter-spacing:.22em;color:#f2cd72;margin:0 0 22px;display:flex;align-items:center;gap:12px}.home-hero-eyebrow:before{content:"";height:1px;width:36px;background:#e4b74e}
+.home-hero-copy h1{font-family:Montserrat,Arial,sans-serif;font-size:clamp(34px,3.65vw,56px);font-weight:900;line-height:1.09;letter-spacing:-.035em;margin:0 0 22px;text-transform:uppercase;color:#fff;text-wrap:balance}
+.home-hero-copy h1 span{display:block;background:linear-gradient(115deg,#d9a43b 0%,#fff0b0 34%,#eec45c 55%,#c78c23 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.home-hero-tagline{font-size:19px;font-weight:800;margin:0 0 13px;color:#fff}.home-hero-description{font-size:15px;line-height:1.75;color:#d5d9de;max-width:470px;margin:0 0 26px}
+.home-hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.home-hero-primary,.home-hero-phone{display:inline-flex;justify-content:center;align-items:center;gap:24px;min-height:52px;border-radius:8px;padding:14px 22px;font-size:14px;font-weight:800;text-decoration:none;transition:transform .2s,background .2s}.home-hero-primary{background:linear-gradient(110deg,#f6d47d,#d4a13c);color:#11151a;box-shadow:0 6px 24px #0005;border:1px solid #f4d17c}.home-hero-primary:hover{transform:translateY(-2px);background:#ffe29b}.home-hero-phone{border:1px solid #ffffff50;color:#fff;background:#10121440}.home-hero-phone:hover{background:#ffffff1a}.home-hero-actions a:focus-visible{outline:3px solid #fff;outline-offset:4px}.home-hero-footnote{font-size:10px;letter-spacing:.06em;color:#c0c4ca;margin:20px 0 0}
+@media(min-width:1600px){.home-hero-inner{min-height:740px}.home-hero-photo{object-position:center 54%}}
+@media(max-width:900px){.home-hero-inner{padding:56px 5%;min-height:620px}.home-hero-copy{width:57%}.home-hero-copy h1{font-size:38px}.home-hero-shade{background:linear-gradient(90deg,#080b0ff5,#080b0fbd 45%,#080b0f10 100%)} }
+@media(max-width:900px){.home-hero-photo{position:relative;inset:auto;display:block;width:100%;height:auto;object-fit:contain;z-index:0}.home-hero-shade{display:none}.home-hero-inner{padding:30px 22px 38px;min-height:0;background:radial-gradient(ellipse at top right,#303024 0%,#101214 65%)}.home-hero-copy{width:100%;max-width:none}.home-hero-copy h1{font-size:clamp(29px,7.7vw,42px)}.home-hero-eyebrow{margin-bottom:16px;font-size:10px}.home-hero-description{font-size:14px}.home-hero-tagline{font-size:18px}.home-hero-actions{gap:10px}.home-hero-primary,.home-hero-phone{font-size:13px;padding:13px 17px;flex:1;white-space:nowrap;gap:12px}.home-hero-footnote{line-height:1.7;font-size:9px}}
+</style>
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
 
@@ -883,21 +897,19 @@
         </nav>
     </header>
 
-    <section class="relative pt-16 sm:pt-24 pb-24 sm:pb-32 bg-[#5A5E63] text-white overflow-hidden border-b border-zinc-700">
-        <div class="container mx-auto px-4 max-w-5xl text-center relative z-10">
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[1.1] mb-6">Professional Movers in Northern Virginia, Washington DC &amp; Maryland</h1>
-<p class="text-xl sm:text-2xl font-bold text-white mb-6">Relocating Made Easy!</p>
-            <div class="w-48 h-1 bg-white/60 mx-auto mb-6"></div>
-            <p class="text-zinc-200 text-lg sm:text-xl max-w-2xl mx-auto font-normal leading-relaxed mb-10">
-                Based in Woodbridge, VA, Haul Bros Moving Co LLC provides local and long-distance moving, packing, and storage solution across Northern Virginia, Washington, D.C., and Maryland.
-            </p>
-            <div class="flex justify-center">
-                <a href="#estimate" class="bg-black text-white font-bold px-10 py-5 rounded-full text-base shadow-2xl hover:bg-zinc-900 transition border border-zinc-700 flex items-center gap-3">
-                    Get Your Instant Quote
-                </a>
+    <section class="home-photo-hero" aria-labelledby="home-hero-title">
+        <img class="home-hero-photo" src="assets/haul-bros-mountain-highway-hero.jpg" alt="Haul Bros black-and-gold moving truck traveling along a mountain highway" width="1920" height="1263" fetchpriority="high" decoding="async">
+        <div class="home-hero-shade" aria-hidden="true"></div>
+        <div class="home-hero-inner">
+            <div class="home-hero-copy">
+                <p class="home-hero-eyebrow">HAUL BROS MOVING CO LLC</p>
+                <h1 id="home-hero-title">Professional Movers in <span>Northern Virginia, Washington DC &amp; Maryland</span></h1>
+                <p class="home-hero-tagline">Relocating Made Easy!</p>
+                <p class="home-hero-description">Based in Woodbridge, VA, Haul Bros Moving Co LLC provides local and long-distance moving, packing, and storage solutions across Northern Virginia, Washington, D.C., and Maryland.</p>
+                <div class="home-hero-actions"><a class="home-hero-primary" href="#estimate">Get Your Instant Quote <span aria-hidden="true">↗</span></a><a class="home-hero-phone" href="tel:5718991919">571-899-1919</a></div>
+                <p class="home-hero-footnote">Local &amp; long-distance moving · Packing · Storage solutions</p>
             </div>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-zinc-800/80 to-transparent pointer-events-none"></div>
     </section>
 
     <section id="why-us" class="py-16 sm:py-20 bg-white border-b border-slate-200">
