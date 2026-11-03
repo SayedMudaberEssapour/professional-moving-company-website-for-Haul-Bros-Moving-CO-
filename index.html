@@ -661,19 +661,13 @@
   ]
 }
 </script>
-<style id="home-photo-hero-style">
-.home-photo-hero{position:relative;isolation:isolate;background:#101214;color:#fff;overflow:hidden;border-bottom:3px solid #c89b38}
-.home-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 54%;z-index:-3}
-.home-hero-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(8,11,15,.97) 0%,rgba(8,11,15,.90) 24%,rgba(8,11,15,.66) 42%,rgba(8,11,15,.12) 67%,rgba(8,11,15,.03) 100%),linear-gradient(0deg,rgba(8,11,15,.55),transparent 40%)}
-.home-hero-inner{max-width:1440px;margin:0 auto;padding:76px 5%;min-height:670px;display:flex;align-items:center}
-.home-hero-copy{max-width:610px;width:48%}.home-hero-eyebrow{font-size:11px;font-weight:800;letter-spacing:.22em;color:#f2cd72;margin:0 0 22px;display:flex;align-items:center;gap:12px}.home-hero-eyebrow:before{content:"";height:1px;width:36px;background:#e4b74e}
-.home-hero-copy h1{font-family:Montserrat,Arial,sans-serif;font-size:clamp(34px,3.65vw,56px);font-weight:900;line-height:1.09;letter-spacing:-.035em;margin:0 0 22px;text-transform:uppercase;color:#fff;text-wrap:balance}
-.home-hero-copy h1 span{display:block;background:linear-gradient(115deg,#d9a43b 0%,#fff0b0 34%,#eec45c 55%,#c78c23 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.home-hero-tagline{font-size:19px;font-weight:800;margin:0 0 13px;color:#fff}.home-hero-description{font-size:15px;line-height:1.75;color:#d5d9de;max-width:470px;margin:0 0 26px}
-.home-hero-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.home-hero-primary,.home-hero-phone{display:inline-flex;justify-content:center;align-items:center;gap:24px;min-height:52px;border-radius:8px;padding:14px 22px;font-size:14px;font-weight:800;text-decoration:none;transition:transform .2s,background .2s}.home-hero-primary{background:linear-gradient(110deg,#f6d47d,#d4a13c);color:#11151a;box-shadow:0 6px 24px #0005;border:1px solid #f4d17c}.home-hero-primary:hover{transform:translateY(-2px);background:#ffe29b}.home-hero-phone{border:1px solid #ffffff50;color:#fff;background:#10121440}.home-hero-phone:hover{background:#ffffff1a}.home-hero-actions a:focus-visible{outline:3px solid #fff;outline-offset:4px}.home-hero-footnote{font-size:10px;letter-spacing:.06em;color:#c0c4ca;margin:20px 0 0}
-@media(min-width:1600px){.home-hero-inner{min-height:740px}.home-hero-photo{object-position:center 54%}}
-@media(max-width:900px){.home-hero-inner{padding:56px 5%;min-height:620px}.home-hero-copy{width:57%}.home-hero-copy h1{font-size:38px}.home-hero-shade{background:linear-gradient(90deg,#080b0ff5,#080b0fbd 45%,#080b0f10 100%)} }
-@media(max-width:900px){.home-hero-photo{position:relative;inset:auto;display:block;width:100%;height:auto;object-fit:contain;z-index:0}.home-hero-shade{display:none}.home-hero-inner{padding:30px 22px 38px;min-height:0;background:radial-gradient(ellipse at top right,#303024 0%,#101214 65%)}.home-hero-copy{width:100%;max-width:none}.home-hero-copy h1{font-size:clamp(29px,7.7vw,42px)}.home-hero-eyebrow{margin-bottom:16px;font-size:10px}.home-hero-description{font-size:14px}.home-hero-tagline{font-size:18px}.home-hero-actions{gap:10px}.home-hero-primary,.home-hero-phone{font-size:13px;padding:13px 17px;flex:1;white-space:nowrap;gap:12px}.home-hero-footnote{line-height:1.7;font-size:9px}}
+
+<link rel="stylesheet" href="assets/blog-photo-hero.css">
+<script src="assets/blog-quote-form.js" defer></script>
+<style id="homepage-quote-hero-style">
+.homepage-quote-hero .blog-hero-image{object-position:center 55%}.homepage-quote-hero .guide-category{margin-top:0}.homepage-quote-hero .homepage-hero-tagline{font:800 20px/1.5 Montserrat,Arial,sans-serif;margin:24px 0 0;color:#fff!important}.homepage-quote-hero .homepage-hero-services{font:500 11px/1.7 Inter,Arial,sans-serif;color:#d9d4c9;margin:24px 0 0;letter-spacing:.04em}.homepage-quote-hero h1{max-width:750px}.homepage-quote-hero .hero-description{max-width:580px}
+@media(max-width:760px){.homepage-quote-hero .homepage-hero-tagline{font-size:18px}.homepage-quote-hero .blog-hero-image{height:620px;object-position:60% center}.homepage-quote-hero .blog-hero-overlay{background:linear-gradient(180deg,#080b0f99 0,#080b0fbb 330px,#080b0ff2 620px,#080b0f 100%)}}
+body.blog-quote-in-view:has(.homepage-quote-hero) #moving-chat-launcher{display:none!important}
 </style>
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
@@ -897,20 +891,15 @@
         </nav>
     </header>
 
-    <section class="home-photo-hero" aria-labelledby="home-hero-title">
-        <img class="home-hero-photo" src="assets/haul-bros-mountain-highway-hero.jpg" alt="Haul Bros black-and-gold moving truck traveling along a mountain highway" width="1920" height="1263" fetchpriority="high" decoding="async">
-        <div class="home-hero-shade" aria-hidden="true"></div>
-        <div class="home-hero-inner">
-            <div class="home-hero-copy">
-                <p class="home-hero-eyebrow">HAUL BROS MOVING CO LLC</p>
-                <h1 id="home-hero-title">Professional Movers in <span>Northern Virginia, Washington DC &amp; Maryland</span></h1>
-                <p class="home-hero-tagline">Relocating Made Easy!</p>
-                <p class="home-hero-description">Based in Woodbridge, VA, Haul Bros Moving Co LLC provides local and long-distance moving, packing, and storage solutions across Northern Virginia, Washington, D.C., and Maryland.</p>
-                <div class="home-hero-actions"><a class="home-hero-primary" href="#estimate">Get Your Instant Quote <span aria-hidden="true">↗</span></a><a class="home-hero-phone" href="tel:5718991919">571-899-1919</a></div>
-                <p class="home-hero-footnote">Local &amp; long-distance moving · Packing · Storage solutions</p>
-            </div>
-        </div>
-    </section>
+    <section class="page-hero blog-photo-hero homepage-quote-hero has-editorial-photo" aria-labelledby="home-hero-title">
+<img class="blog-hero-image" src="assets/haul-bros-mountain-highway-hero.jpg" alt="Haul Bros moving truck traveling along a mountain highway" width="1920" height="1263" fetchpriority="high" decoding="async">
+<div class="blog-hero-overlay" aria-hidden="true"></div>
+<div class="blog-photo-hero-inner"><div class="blog-photo-hero-copy"><p class="guide-category">HAUL BROS MOVING CO LLC</p>
+<h1 id="home-hero-title">Professional Movers in Northern Virginia, Washington DC &amp; Maryland</h1>
+<p class="homepage-hero-tagline">Relocating Made Easy!</p>
+<p class="hero-description">Based in Woodbridge, VA, Haul Bros Moving Co LLC provides local and long-distance moving, packing, and storage solutions across Northern Virginia, Washington, D.C., and Maryland.</p>
+<a class="blog-hero-contact" href="tel:5718991919">Talk to our team · 571-899-1919</a>
+<p class="homepage-hero-services">Local &amp; long-distance moving · Packing · Storage solutions</p></div><aside class="blog-hero-quote" id="home-hero-quote" aria-labelledby="blog-quote-heading"><p class="blog-quote-eyebrow">LET’S PLAN YOUR MOVE</p><h2 id="blog-quote-heading">Get a Free Moving Quote</h2><p class="blog-quote-intro">Share a few details. Our team will follow up with a written estimate.</p><form class="blog-estimate-form" action="https://formspree.io/f/xovnvdvy" method="POST"><input type="hidden" name="_subject" value="Homepage moving estimate"><input type="hidden" name="source_page" value="https://www.haulbrosmoving.com/"><div class="blog-form-trap" aria-hidden="true"><label>Leave this blank<input name="_gotcha" tabindex="-1" autocomplete="off"></label></div><div class="blog-quote-fields"><div><label for="blog-name">Full name</label><input id="blog-name" name="name" type="text" autocomplete="name" required></div><div><label for="blog-phone">Phone number</label><input id="blog-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div><div><label for="blog-email">Email address</label><input id="blog-email" name="email" type="email" autocomplete="email" required></div><div><label for="blog-service_date">Moving date</label><input id="blog-service_date" name="service_date" type="date" required></div><div><label for="blog-moving_from">Moving from (city or ZIP)</label><input id="blog-moving_from" name="moving_from" type="text" required></div><div><label for="blog-moving_to">Moving to (city or ZIP)</label><input id="blog-moving_to" name="moving_to" type="text" required></div></div><label for="blog-details">Move details <span>(optional)</span></label><textarea id="blog-details" name="message" rows="2" placeholder="Home size, stairs, packing or access details"></textarea><button type="submit">Request My Free Quote <span aria-hidden="true">↗</span></button><p class="blog-form-status" role="status" aria-live="polite"></p><p class="blog-quote-call">Prefer to talk? <a href="tel:5718991919">571-899-1919</a></p></form></aside></div></section>
 
     <section id="why-us" class="py-16 sm:py-20 bg-white border-b border-slate-200">
         <div class="container mx-auto px-4 max-w-7xl">
