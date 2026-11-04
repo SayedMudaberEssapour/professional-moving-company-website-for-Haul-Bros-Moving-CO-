@@ -378,5 +378,30 @@
     "page": "professional-packing-services-northern-virginia/index.html",
     "photo": null,
     "first_figure_moved": false
+  },
+  {
+    "page": "blog/moving-large-fragile-items-northern-virginia/index.html",
+    "photo": "assets/large-item-floor-protection.jpg",
+    "first_figure_moved": true
+  },
+  {
+    "page": "blog/moving-during-home-renovation-northern-virginia/index.html",
+    "photo": "assets/renovation-moving-protected-furniture.jpg",
+    "first_figure_moved": true
+  },
+  {
+    "page": "blog/apartment-to-house-move-northern-virginia-2027/index.html",
+    "photo": "assets/apartment-to-house-moving-boxes.jpg",
+    "first_figure_moved": true
+  },
+  {
+    "page": "blog/moving-after-buying-home-northern-virginia-2027/index.html",
+    "photo": "assets/haul-bros-moving-truck.jpg",
+    "first_figure_moved": true
+  },
+  {
+    "page": "blog/moving-large-house-northern-virginia-2027/index.html",
+    "photo": "assets/haul-bros-moving-truck.jpg",
+    "first_figure_moved": true
   }
 ]
