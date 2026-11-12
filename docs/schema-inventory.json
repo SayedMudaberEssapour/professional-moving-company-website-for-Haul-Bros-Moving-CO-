@@ -658,16 +658,16 @@
       ]
     },
     {
-      "file": "about/index.html",
-      "url": "https://www.haulbrosmoving.com/about/",
+      "file": "about-us/index.html",
+      "url": "https://www.haulbrosmoving.com/about-us/",
       "types": [
         "WebPage",
         "BreadcrumbList"
       ]
     },
     {
-      "file": "about-us/index.html",
-      "url": "https://www.haulbrosmoving.com/about-us/",
+      "file": "about/index.html",
+      "url": "https://www.haulbrosmoving.com/about/",
       "types": [
         "WebPage",
         "BreadcrumbList"
@@ -1313,6 +1313,15 @@
       ]
     },
     {
+      "file": "blog/reserve-elevator-moving-day-northern-virginia/index.html",
+      "url": "https://www.haulbrosmoving.com/blog/reserve-elevator-moving-day-northern-virginia/",
+      "types": [
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList"
+      ]
+    },
+    {
       "file": "blog/senior-moving-services-northern-virginia/index.html",
       "url": "https://www.haulbrosmoving.com/blog/senior-moving-services-northern-virginia/",
       "types": [
@@ -1483,6 +1492,24 @@
       ]
     },
     {
+      "file": "long-distance-movers/index.html",
+      "url": "https://www.haulbrosmoving.com/long-distance-movers/",
+      "types": [
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "file": "long-distance-moving-from-northern-virginia/index.html",
+      "url": "https://www.haulbrosmoving.com/long-distance-moving-from-northern-virginia/",
+      "types": [
+        "WebPage",
+        "BlogPosting",
+        "BreadcrumbList"
+      ]
+    },
+    {
       "file": "long-distance/northern-virginia-to-boston-movers/index.html",
       "url": "https://www.haulbrosmoving.com/long-distance/northern-virginia-to-boston-movers/",
       "types": [
@@ -1569,24 +1596,6 @@
       "types": [
         "WebPage",
         "Service",
-        "BreadcrumbList"
-      ]
-    },
-    {
-      "file": "long-distance-movers/index.html",
-      "url": "https://www.haulbrosmoving.com/long-distance-movers/",
-      "types": [
-        "WebPage",
-        "Service",
-        "BreadcrumbList"
-      ]
-    },
-    {
-      "file": "long-distance-moving-from-northern-virginia/index.html",
-      "url": "https://www.haulbrosmoving.com/long-distance-moving-from-northern-virginia/",
-      "types": [
-        "WebPage",
-        "BlogPosting",
         "BreadcrumbList"
       ]
     },
