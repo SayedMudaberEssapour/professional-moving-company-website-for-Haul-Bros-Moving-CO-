@@ -53,12 +53,36 @@
 .service-final-cta p { color: #d4d4d8; margin-top: 1rem; }
 .service-cta-links { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; font-weight: 700; }
 .service-primary-button { padding: 1rem 1.4rem; background: var(--service-gold); color: #141414; border-radius: 10px; }
+.service-detail .service-intro { max-width: 950px; }
+.service-detail .blog-hero-quote h2 { font-size: 1.5rem; line-height: 1.2; }
+.service-detail .service-intro p { text-align: left; }
+.service-scope-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+.service-scope-list li { padding: 1.2rem; border: 1px solid #ded9cc; border-radius: 12px; background: #faf9f6; line-height: 1.65; font-size: .95rem; }
+.service-planning { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+.service-planning h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
+.service-planning p, .service-section-copy { margin-top: 1rem; color: var(--service-muted); line-height: 1.8; }
+.service-prep { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; background: #faf9f6; border-radius: 20px; max-width: 1152px; }
+.service-prep p { margin: 1rem 0; color: var(--service-muted); }
+.service-prep ul { list-style: disc; padding-left: 1.25rem; color: var(--service-muted); }
+.service-prep li { margin: .65rem 0; line-height: 1.65; }
+.service-prep aside { padding: 1.5rem; border-radius: 14px; background: white; border: 1px solid #ded9cc; align-self: start; }
+.service-prep aside a { display: block; margin-top: 1rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; font-size: .9rem; }
+.service-booking-note { max-width: 900px; margin-top: 1.75rem; color: var(--service-muted); font-size: .9rem; }
+.service-booking-note a { text-decoration: underline; font-weight: 700; }
+.service-related-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.service-related-links a { padding: 1.4rem; border: 1px solid #ded9cc; border-radius: 12px; font-weight: 800; line-height: 1.5; }
+.service-related-links a:hover { background: #faf3df; }
+.service-all-link { display: inline-block; margin-top: 1.5rem; font-weight: 700; text-decoration: underline; }
+.service-detail .service-area-links { margin-top: 1.5rem; }
 
 @media (max-width: 1050px) {
     .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 639px) {
     .service-grid, .service-final-cta { grid-template-columns: minmax(0, 1fr); }
+    .service-scope-list, .service-planning, .service-prep, .service-related-links { grid-template-columns: minmax(0, 1fr); }
+    .service-planning, .service-prep { gap: 1.75rem; }
+    .service-prep { margin: 0 .75rem; }
     .service-section { padding: 2.5rem 1.25rem; }
     .service-intro { padding-top: 3rem; }
     .service-card { padding: 1.35rem; }

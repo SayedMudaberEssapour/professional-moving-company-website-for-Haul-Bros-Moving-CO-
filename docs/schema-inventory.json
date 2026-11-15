@@ -1756,6 +1756,15 @@
       ]
     },
     {
+      "file": "services/furniture-assembly/index.html",
+      "url": "https://www.haulbrosmoving.com/services/furniture-assembly/",
+      "types": [
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
       "file": "services/index.html",
       "url": "https://www.haulbrosmoving.com/services/",
       "types": [
@@ -1765,8 +1774,35 @@
       ]
     },
     {
+      "file": "services/labor-only-movers/index.html",
+      "url": "https://www.haulbrosmoving.com/services/labor-only-movers/",
+      "types": [
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
       "file": "services/last-minute-movers/index.html",
       "url": "https://www.haulbrosmoving.com/services/last-minute-movers/",
+      "types": [
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "file": "services/specialty-item-movers/index.html",
+      "url": "https://www.haulbrosmoving.com/services/specialty-item-movers/",
+      "types": [
+        "WebPage",
+        "Service",
+        "BreadcrumbList"
+      ]
+    },
+    {
+      "file": "services/unpacking-services/index.html",
+      "url": "https://www.haulbrosmoving.com/services/unpacking-services/",
       "types": [
         "WebPage",
         "Service",
