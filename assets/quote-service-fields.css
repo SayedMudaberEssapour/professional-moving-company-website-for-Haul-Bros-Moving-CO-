@@ -1,0 +1,10 @@
+/* Shared questions inherit the surrounding light or dark quote form. */
+.quote-service-fields { display:grid; gap:12px; margin-top:12px; min-width:0; }
+.quote-service-fields > div { min-width:0; }
+.quote-service-fields [hidden] { display:none!important; }
+.quote-service-fields [data-quote-group]:not([hidden]) { display:grid; gap:12px; }
+.quote-service-hint { margin:0; font:400 12px/1.5 Inter,Arial,sans-serif; }
+.quote-service-hint:empty { display:none; }
+.blog-estimate-form .quote-service-hint { color:#58616c; }
+.blog-estimate-form select { box-sizing:border-box; display:block; width:100%; max-width:100%; min-width:0; min-height:41px; border:1px solid #d6d9dc; background:#fff; border-radius:7px; padding:10px 9px; font:400 13px/1.4 Inter,Arial,sans-serif; color:#18202b; color-scheme:light; }
+.blog-estimate-form select:focus { outline:2px solid #c19745; outline-offset:2px; border-color:#b38b37; }

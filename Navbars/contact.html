@@ -68,6 +68,8 @@
     <script>if (location.protocol === 'http:' || location.protocol === 'https:') { location.replace('/contact/' + location.search + location.hash); }</script>
     <script src="../assets/resources-menu.js" defer></script>
 <link rel="stylesheet" href="../assets/review-platforms.css">
+<link rel="stylesheet" href="../assets/quote-service-fields.css">
+<script src="../assets/quote-service-fields.js" defer></script>
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-zinc-700 selection:text-white">
 
@@ -304,37 +306,7 @@
             <input type="text" name="moving_to" required class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" id="quote-moving_to">
         </div>
     </div>
-    <div class="grid md:grid-cols-2 gap-6">
-        <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-service_type">Service Type</label>
-            <select name="service_type" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" id="quote-service_type">
-                <option value="" selected disabled>Choose Service Type</option>
-                <option value="Local Moving">Local Moving</option>
-                <option value="Long-Distance Moving">Long-Distance Moving</option>
-                <option value="Packing Services">Packing Services</option>
-                <option value="Commercial Moving">Commercial Moving</option>
-                <option value="Junk Removal">Junk Removal</option>
-                <option value="Student Moving">Student Moving</option>
-                <option value="Senior Moving">Senior Moving</option>
-                <option value="Storage Solutions">Storage Solutions</option>
-                <option value="Specialty-Item Moving">Specialty-Item Moving</option>
-            </select>
-        </div>
-        <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="dwelling-type">Home Size</label>
-            <select name="home_size" id="dwelling-type" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500">
-                <option value="" selected disabled>Choose the Size of Your Move</option>
-                <option value="House">House</option>
-                <option value="Townhome">Townhome</option>
-                <option value="Condo">Condo</option>
-                <option value="Apartment">Apartment</option>
-            </select>
-        </div>
-    </div>
-    <div>
-        <div id="service-specific-questions" class="space-y-4" aria-live="polite"></div>
-    </div>
-
+<div class="quote-service-fields" data-quote-service-fields><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-service_type">Service type</label><select id="quote-service_type" name="service_type" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" required><option value="">Choose an option</option><option>Local Moving</option><option>House &amp; Townhouse Moving</option><option>Apartment &amp; Condo Moving</option><option>Long-Distance Moving</option><option>Packing Services</option><option>Unpacking Services</option><option>Storage Solutions</option><option>Commercial Moving</option><option>Junk Removal</option><option>Senior Moving</option><option>Military Moving</option><option>Student Moving</option><option>Last-Minute Moving</option><option>Labor-Only Moving</option><option>Furniture Disassembly &amp; Reassembly</option><option>Specialty-Item Moving</option><option>Multiple Services</option></select></div><div data-quote-group="home"><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-home_size">Home size</label><select id="quote-home_size" name="home_size" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" required><option value="">Choose an option</option><option>Studio</option><option>1 bedroom</option><option>2 bedrooms</option><option>3 bedrooms</option><option>4 bedrooms</option><option>5+ bedrooms</option><option>A few items / not a full home</option><option>Not sure yet</option></select></div></div><div data-quote-group="business" hidden><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-commercial_square_feet">Approximate business size (sq. ft.)</label><input disabled type="number" id="quote-commercial_square_feet" name="commercial_square_feet" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" required placeholder="Example: 2500" min="1" step="1" inputmode="numeric"></div><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-business_type">Business type (optional)</label><select disabled id="quote-business_type" name="business_type" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500"><option value="">Choose an option</option><option>Office</option><option>Retail</option><option>Warehouse</option><option>Other</option></select></div></div><div data-quote-group="junk" hidden><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-junk_amount">How much needs to go?</label><select disabled id="quote-junk_amount" name="junk_amount" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" required><option value="">Choose an option</option><option>A single item</option><option>A few items</option><option>One room</option><option>Multiple rooms / full cleanout</option><option>Not sure yet</option></select></div><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-junk_items">What items need removal?</label><input disabled type="text" id="quote-junk_items" name="junk_items" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" required placeholder="Example: sofa, mattress and 10 boxes"></div></div><div data-quote-group="storage" hidden><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-storage_space">How much will you store?</label><select disabled id="quote-storage_space" name="storage_space" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" required><option value="">Choose an option</option><option>A few boxes or items</option><option>Studio / 1-bedroom contents</option><option>2-bedroom contents</option><option>3-bedroom contents</option><option>4-bedroom contents</option><option>5+ bedroom contents</option><option>Business inventory / equipment</option><option>Not sure yet</option></select></div><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-storage_duration">How long do you need storage?</label><select disabled id="quote-storage_duration" name="storage_duration" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" required><option value="">Choose an option</option><option>Less than 1 month</option><option>1–3 months</option><option>3–6 months</option><option>6–12 months</option><option>More than 1 year</option><option>Not sure yet</option></select></div></div><div data-quote-group="items" hidden><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-service_items">What items need service?</label><input disabled type="text" id="quote-service_items" name="service_items" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" required placeholder="List items, sizes and any special handling"></div></div><p class="quote-service-hint" aria-live="polite"></p></div>
     <div>
         <label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-message">Additional Details or Discount Notes (Military/Senior)</label>
         <textarea name="message" rows="4" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" id="quote-message"></textarea>
@@ -516,42 +488,7 @@
 
     </script>
 <script>
-        const serviceType = document.querySelector('select[name="service_type"]');
-        const dwellingType = document.getElementById('dwelling-type');
-        const specificQuestions = document.getElementById('service-specific-questions');
-        function updateHomeSizeOptions() {
-            if (!dwellingType || !serviceType) return;
-            const choices = serviceType.value === 'Commercial Moving'
-                ? [['House', 'House'], ['Apartment', 'Apartment'], ['Office', 'Office'], ['Warehouse', 'Warehouse']]
-                : [['House', 'House'], ['Townhome', 'Townhome'], ['Condo', 'Condo'], ['Apartment', 'Apartment']];
-            const current = dwellingType.value;
-            dwellingType.innerHTML = '<option value="" disabled>Choose the Size of Your Move</option>' + choices.map(([value, label]) => `<option value="${value}">${label}</option>`).join('');
-            dwellingType.value = choices.some(([value]) => value === current) ? current : '';
-        }
-        function updateServiceQuestions() {
-            if (!serviceType || !specificQuestions) return;
-            const service = serviceType.value;
-            const field = (label, name, placeholder, type = 'text') => `<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-${name}">${label}</label><input type="${type}" name="${name}" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-zinc-500" id="quote-${name}"></div>`;
-            let html = '';
-            if (service === 'Local Moving') {
-                const apartment = dwellingType?.value === 'Condo' || dwellingType?.value === 'Apartment';
-                const accessOptions = apartment ? '<option value="">Choose access</option><option>Walk up</option><option>Elevator</option><option>Ground floor</option>' : '<option value="">Choose access</option><option>Ground floor</option><option>1 flight</option><option>2 flights</option><option>3 flights</option>';
-                const floorField = apartment ? '<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-apartment_floor">What floor?</label><select name="apartment_floor" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white" id="quote-apartment_floor"><option value="">Choose floor</option><option>Ground floor</option><option>First floor</option><option>Second floor</option><option>Third floor</option><option>Fourth floor</option><option>4+ floors</option></select></div>' : '<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-stairs_access">Flight of Stairs</label><select name="stairs_access" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white" id="quote-stairs_access">'+accessOptions+'</select></div>';
-                html = `<div class="grid md:grid-cols-2 gap-4"><div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-number_of_rooms">Number of Rooms</label><select name="number_of_rooms" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white" id="quote-number_of_rooms"><option value="">Choose bedrooms</option><option>1 bedroom</option><option>2 bedrooms</option><option>3 bedrooms</option><option>4 bedrooms</option><option>5+ bedrooms</option></select></div>${floorField}</div>`;
-            }
-            if (service === 'Student Moving') html = '<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-number_of_rooms">Number of Rooms</label><select name="number_of_rooms" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white" id="quote-number_of_rooms"><option value="">Choose bedrooms</option><option>1 bedroom</option><option>2 bedrooms</option><option>3 bedrooms</option><option>4 bedrooms</option><option>5+ bedrooms</option></select></div>';
-            if (service === 'Senior Moving') html = '<div><label class="block text-xs font-bold uppercase tracking-wider text-zinc-300 mb-2" for="quote-number_of_rooms">Number of Rooms</label><select name="number_of_rooms" class="w-full bg-zinc-900 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-white" id="quote-number_of_rooms"><option value="">Choose bedrooms</option><option>1 bedroom</option><option>2 bedrooms</option><option>3 bedrooms</option><option>4 bedrooms</option><option>5+ bedrooms</option></select></div>';
-            if (service === 'Long-Distance Moving') html = field('Number of Rooms', 'number_of_rooms', 'Example: 3 rooms');
-            if (service === 'Commercial Moving') html = field('Approximate Square Footage', 'commercial_square_feet', 'Example: 2,500 sq. ft.');
-            if (service === 'Junk Removal') html = field('Estimated Pickup-Truck Loads', 'junk_truck_loads', 'Example: 2 pickup-truck loads');
-            if (service === 'Storage Solutions') html = `<div class="grid md:grid-cols-2 gap-4">${field('How Long Will You Need Storage?', 'storage_duration', 'Example: 3 months')}${field('How Much Storage Space?', 'storage_space', 'Example: 10 boxes and a sofa')}</div>`;
-            specificQuestions.innerHTML = html;
-        }
-        serviceType?.addEventListener('change', updateServiceQuestions);
-        serviceType?.addEventListener('change', updateHomeSizeOptions);
-        dwellingType?.addEventListener('change', updateServiceQuestions);
-        updateHomeSizeOptions();
-        updateServiceQuestions();
+
 </script>
 <script src="../assets/persistent-header.js" defer></script>
 </body>
