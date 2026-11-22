@@ -113,7 +113,7 @@
     },
     async update(id,updatedAt,changes) {
       // Backend RLS enforces owner access even if someone bypasses this UI.
-      const allowed=['customer_details','inventory','planning_estimate','move_status','confirmed_price_cents','deposit_due_cents','deposit_paid_cents','deposit_instructions','moving_instructions','customer_notes'];
+      const allowed=['estimate_details','customer_details','inventory','planning_estimate','move_status','confirmed_price_cents','deposit_due_cents','deposit_paid_cents','deposit_instructions','moving_instructions','customer_notes'];
       const payload=Object.fromEntries(Object.entries(changes).filter(([key]) => allowed.includes(key)));
       const rows=await request('/rest/v1/customer_moves?id=eq.'+encodeURIComponent(id)+'&updated_at=eq.'+encodeURIComponent(updatedAt),{method:'PATCH',headers:{Prefer:'return=representation'},body:JSON.stringify(payload)},true);
       if (!rows?.length) throw new Error('This record changed or could not be saved. Refresh before editing again.');

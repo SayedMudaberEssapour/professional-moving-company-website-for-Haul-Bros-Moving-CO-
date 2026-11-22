@@ -1,0 +1,12 @@
+const assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
+const context={window:{}};vm.runInNewContext(fs.readFileSync('customer-portal/estimate.js','utf8'),context);const calc=context.window.HaulBrosEstimate;
+const base={movers:3,hours_low:3,hours_high:4,hourly_rate_cents:18900,package_cents:49500,package_hours:2,services:[{name:'Packing materials',quantity:10,unit_price_cents:500},{name:'Storage solutions',quantity:2,unit_price_cents:25000}]};
+let t=calc.totals(base);assert.equal(t.total_low,123400);assert.equal(t.total_high,142300);
+t=calc.totals({...base,hours_low:1,hours_high:2,services:[]});assert.equal(t.total_low,49500);assert.equal(t.total_high,49500);
+t=calc.totals({...base,package_cents:null,hours_low:2.5,hours_high:3,services:[]});assert.equal(t.total_low,47250);assert.equal(t.total_high,56700);
+t=calc.totals({...base,services:[{name:'Junk removal',quantity:1,unit_price_cents:null}]});assert.equal(t.total_low,null);
+t=calc.totals({...base,hourly_rate_cents:null});assert.equal(t.total_low,null);
+t=calc.totals({...base,services:[{name:'Included supplies',quantity:1,unit_price_cents:0}]});assert.equal(t.total_low,68400);
+assert.equal(calc.details({planning_estimate:{suggested_movers:2,estimated_hours:[2,3],trucks:1}}).hourly_rate_cents,15900);
+assert.equal(calc.details({planning_estimate:{suggested_movers:2,custom_quote_required:true}}).hourly_rate_cents,null);
+console.log('PASS: crew packages, hourly-only estimates, fractional hours, materials/storage quantities, unpriced services, zero charges, custom moves.');

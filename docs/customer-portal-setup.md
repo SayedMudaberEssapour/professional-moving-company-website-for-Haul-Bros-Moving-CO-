@@ -25,3 +25,9 @@ Supabase production Site URL is `https://www.haulbrosmoving.com`; OAuth callback
 The portal records agreed pricing and deposit amounts; it does not process payments. Inventory/estimates remain pending on simple quote forms. The owner adds confirmed amounts and instructions after review.
 
 Migration `202611220005_restore_business_owner.sql` revokes the previous Gmail owner and registers only the verified business email, immediately if already present or on its next verified sign-in. Customer records are preserved.
+
+## Itemized hourly estimates
+
+Migration `202611220006_itemized_estimates.sql` adds owner-only `estimate_details`: crew/truck counts, estimated hours, hourly rate, optional first-hours package, and quantity/unit-price service lines. Existing fixed-price values are retained in the database for history but no longer shown or edited. The display and editor calculate an estimated range, add service lines, and subtract the deposit received to show estimated balance. Unpriced items keep the total incomplete. Calculator-derived local crew defaults match the existing calculator packages; custom/long-distance moves require owner-entered rates. Guest creation ignores submitted `estimate_details`; only the owner can save it.
+
+`node tests/estimate-pricing.cjs` checks package minimums, hourly-only estimates, fractional hours, material/storage quantities and missing/zero prices.
