@@ -2,12 +2,16 @@
 (() => {
   const config = window.HaulBrosPortalConfig || {};
   let session = null;
+  let guest = null;
+  let guestRequest=null;
   let profileTransfer = null;
   // Claim a single-use session only from the exact calculator tab that opened us.
   try {
     const moveId=new URLSearchParams(location.search).get('move');
-    if(location.pathname==='/customer-portal/'&&moveId&&window.opener&&window.opener.location.origin===location.origin&&window.opener.location.pathname==='/moving-inventory/') {
-      session=window.opener.HaulBrosPortal?.claimProfileSession(window,moveId)||null;
+    if(location.pathname==='/customer-portal/'&&moveId&&window.opener&&window.opener.location.origin===location.origin&&true) {
+      const transfer=window.opener.HaulBrosPortal?.claimProfileSession(window,moveId);
+      session=transfer?.ownerSession||transfer||null;
+      if(transfer?.guest){guest=transfer.guest;session=null;}
     }
   } catch (_) { /* Direct visits use normal Google sign-in. */ }
 
@@ -35,10 +39,27 @@
   }
   function setSession(data) {
     if (!data?.access_token || !data?.user?.email) throw new Error('Sign-in could not be verified.');
+    guest=null;
     session = {...data,expires_at:Date.now() + Number(data.expires_in || 3600)*1000};
   }
   window.HaulBrosPortal = Object.freeze({
     enabled,
+    hasIdentity:()=>!!session||!!guest,
+    guestCode:()=>guest?.code||'',
+    guestPhone:()=>guest?.phone||'',
+    async signInWithCode(phone,code){
+      code=code.replace(/[^a-f0-9]/gi,'').toLowerCase();
+      const rows=await request('/rest/v1/rpc/read_guest_move',{method:'POST',body:JSON.stringify({p_phone:phone,p_code:code})});
+      if(!rows?.length)throw new Error('Phone number or access code was not recognized. Check both and try again.');
+      guest={phone,code};session=null;return rows[0];
+    },
+    async createGuest(id,formData){
+      if(!guest||guestRequest!==id)guest={phone:formData.get('phone'),code:[...crypto.getRandomValues(new Uint8Array(16))].map(n=>n.toString(16).padStart(2,'0')).join('')};
+      guestRequest=id;
+      const submission=Object.fromEntries(formData);
+      submission.inventory=JSON.parse(submission.inventory||'[]');submission.planning_estimate=JSON.parse(submission.planning_estimate||'{}');
+      return request('/rest/v1/rpc/create_guest_move',{method:'POST',body:JSON.stringify({p_request_id:id,p_submission:submission,p_code:guest.code})});
+    },
     email:() => session?.user?.email || '',
     async signInWithGoogle({keepOpen=false}={}) {
       if(!enabled)throw new Error('The private portal is not connected yet.');
@@ -69,8 +90,8 @@
       });
     },
     prepareProfileSession(target,moveId) {
-      if(!session||!target||target.closed)return false;
-      profileTransfer={target,moveId,session:structuredClone(session)};
+      if((!session&&!guest)||!target||target.closed)return false;
+      profileTransfer={target,moveId,session:guest?{guest:structuredClone(guest)}:{ownerSession:structuredClone(session)}};
       return true;
     },
     claimProfileSession(requester,moveId) {
@@ -78,10 +99,10 @@
       try{if(requester.location.origin!==location.origin)return null;}catch(_){return null;}
       const result=profileTransfer.session;profileTransfer=null;return result;
     },
-    async signOut() { try { if (session) await request('/auth/v1/logout',{method:'POST'},true); } finally { session=null; } },
-    async isOwner() { return request('/rest/v1/rpc/portal_is_owner',{method:'POST',body:'{}'},true); },
-    async getMove(id) { if(!/^[a-f0-9-]{36}$/i.test(id))return null;const rows=await request('/rest/v1/customer_moves?select=*&id=eq.'+encodeURIComponent(id)+'&limit=1',{},true);return rows?.[0]||null; },
-    async list(offset=0) { return request('/rest/v1/customer_moves?select=*&order=created_at.desc&limit=50&offset='+offset,{},true); },
+    async signOut() { try { if (session) await request('/auth/v1/logout',{method:'POST'},true); } finally { session=null;guest=null; } },
+    async isOwner() { if(guest)return false;return request('/rest/v1/rpc/portal_is_owner',{method:'POST',body:'{}'},true); },
+    async getMove(id) { if(guest){const rows=await this.list();return rows.find(r=>r.id===id)||null;}if(!/^[a-f0-9-]{36}$/i.test(id))return null;const rows=await request('/rest/v1/customer_moves?select=*&id=eq.'+encodeURIComponent(id)+'&limit=1',{},true);return rows?.[0]||null; },
+    async list(offset=0) { if(guest)return offset?[]:request('/rest/v1/rpc/read_guest_move',{method:'POST',body:JSON.stringify({p_phone:guest.phone,p_code:guest.code})});return request('/rest/v1/customer_moves?select=*&order=created_at.desc&limit=50&offset='+offset,{},true); },
     async create(id,formData) {
       if (formData.get('email')?.trim().toLowerCase() !== session?.user?.email?.toLowerCase()) throw new Error('Sign in with the email on your moving plan.');
       const submission = Object.fromEntries(formData);

@@ -19,7 +19,8 @@ const base=process.env.PORTAL_TEST_URL||'http://127.0.0.1:8765';
    assert.equal(url.searchParams.get('grant_type'),'pkce');assert.equal(data.auth_code,'test-code');assert.ok(data.code_verifier.length>=43);exchanges++;email=nextIdentity;body={access_token:'test-session',refresh_token:'test-refresh',expires_in:3600,user:{email}};
   }
   else if(url.pathname.endsWith('/portal_is_owner')){owner=email==='sayedmusawer0797@gmail.com';body=owner;}
-  else if(url.pathname.endsWith('/create_customer_move')){created=data;body=sample.id;assert.equal(request.headers().authorization,'Bearer test-session');}
+  else if(url.pathname.endsWith('/read_guest_move')){body=data.p_code===created?.p_code&&data.p_phone.replace(/\D/g,'').endsWith('5715550100')?[sample]:[];}
+  else if(url.pathname.endsWith('/create_guest_move')){created=data;body=sample.id;assert.match(data.p_code,/^[a-f0-9]{32}$/);assert.ok(!request.headers().authorization);}
   else if(url.pathname==='/rest/v1/customer_moves'&&request.method()==='PATCH'){
    assert.equal(owner,true);assert.equal(url.searchParams.get('updated_at'),'eq.'+sample.updated_at);patch=data;Object.assign(sample,data);body=conflict?[]:[sample];
   }else if(url.pathname==='/rest/v1/customer_moves')body=[sample];
@@ -38,20 +39,26 @@ const base=process.env.PORTAL_TEST_URL||'http://127.0.0.1:8765';
  await p.goto(base+'/moving-inventory/',{waitUntil:'networkidle'});
  for(const [id,value] of Object.entries({name:'Sample Customer',email:'customer@example.com',phone:'5715550100',date:'2026-12-01',pickup:'Woodbridge'}))await p.locator('#'+id).fill(value);
  await p.locator('#rooms summary').first().click();await p.getByLabel('Living room: Sofa quantity',{exact:true}).fill('1');
- nextIdentity='customer@example.com';const profilePopup=p.waitForEvent('popup');await p.locator('#sendPlan').click();const profilePage=await profilePopup;await p.getByText('Your private move profile is ready.',{exact:false}).waitFor();assert.ok(created.p_request_id);assert.equal(created.p_submission.inventory[0].items[0].item,'Sofa');assert.equal(notifications,1);assert.equal(exchanges,3);
+ nextIdentity='customer@example.com';const profilePopup=p.waitForEvent('popup');await p.locator('#sendPlan').click();const profilePage=await profilePopup;await p.getByText('Your private move profile is ready.',{exact:false}).waitFor();assert.ok(created.p_request_id);assert.equal(created.p_submission.inventory[0].items[0].item,'Sofa');assert.equal(notifications,1);assert.equal(exchanges,2);
  await profilePage.waitForURL('**/customer-portal/?move=*');await profilePage.locator('#workspace').waitFor({state:'visible'});
  assert.equal(await profilePage.locator('#googleSignIn').isVisible(),false);
  assert.equal(await profilePage.getByRole('button',{name:'Edit Customer Record',exact:true}).count(),0);
  assert.ok((await profilePage.locator('#moveDetail').innerText()).includes('26-foot trucks'));
+ assert.ok((await profilePage.locator('#moveDetail').innerText()).includes(created.p_code.match(/.{1,4}/g).join('-')));
  const headings=await profilePage.locator('#moveDetail h3').allTextContents();assert.ok(headings.indexOf('Your inventory')<headings.indexOf('Estimated crew, truck & moving time'));assert.ok(headings.indexOf('Estimated crew, truck & moving time')<headings.indexOf('Pricing & deposit'));
  assert.equal(new URL(profilePage.url()).searchParams.get('move'),sample.id);
  await profilePage.setViewportSize({width:390,height:1000});assert.ok(await profilePage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await profilePage.screenshot({path:'/tmp/customer-profile-mobile.png',fullPage:true});
 
  await p.locator('#sendPlan').click();assert.equal(notifications,1);
- await p.locator('#email').fill('different@example.com');await p.locator('#sendPlan').click();await p.getByText('You signed in as customer@example.com.',{exact:false}).waitFor();assert.equal(notifications,1);
  await p.setViewportSize({width:390,height:1000});assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
  await profilePage.evaluate(()=>{if(window.opener.HaulBrosPortal.claimProfileSession(window,new URLSearchParams(location.search).get('move'))!==null)throw new Error('Session transfer was reusable');});
  await p.close();assert.ok(await profilePage.evaluate(async()=>!!await window.HaulBrosPortal.getMove(new URLSearchParams(location.search).get('move'))));
- console.log('PASS: customer read-only view, owner pricing/deposit/instruction edits, stale-save handling, responsive layout, Google PKCE sign-in, forged callback rejection, email matching and profile creation and notification idempotency, automatic new-tab profile, one-use session handoff and requested section order. All services mocked; no real emails sent.');
+ const returning=await context.newPage();await returning.goto(base+'/customer-portal/');
+ await returning.locator('#customerCodeLogin [name="phone"]').fill('5715550100');await returning.locator('#customerCodeLogin [name="code"]').fill('wrong-code');await returning.locator('#customerCodeLogin button').click();await returning.getByText('Phone number or access code was not recognized.',{exact:false}).waitFor();
+ await returning.locator('#customerCodeLogin [name="code"]').fill(created.p_code.match(/.{1,4}/g).join('-'));await returning.locator('#customerCodeLogin button').click();await returning.locator('#workspace').waitFor({state:'visible'});assert.equal(await returning.locator('#ownerEdit').count(),0);
+ const quote=await context.newPage();await quote.route('https://formspree.io/**',route=>{notifications++;return route.fulfill({status:200,contentType:'application/json',body:'{"ok":true}'});});await quote.goto(base+'/');
+ await quote.locator('#blog-name').fill('Sample Customer');await quote.locator('#blog-phone').fill('5715550100');await quote.locator('#blog-email').fill('customer@example.com');await quote.locator('#blog-service_date').fill('2026-12-01');await quote.locator('#blog-moving_from').fill('Woodbridge');await quote.locator('#blog-moving_to').fill('Fairfax');await quote.locator('#hero-service_type').selectOption({label:'Local Moving'});await quote.locator('#hero-home_size').selectOption({label:'2 bedrooms'});
+ const quotePopup=quote.waitForEvent('popup');await quote.locator('.blog-estimate-form button[type="submit"]').click();const quoteProfile=await quotePopup;await quoteProfile.waitForURL('**/customer-portal/?move=*');await quoteProfile.locator('#workspace').waitFor({state:'visible'});await quote.locator('.blog-form-status').filter({hasText:'Your profile is saved.'}).waitFor();assert.equal(created.p_submission.inventory.length,0);assert.equal(await quoteProfile.getByRole('button',{name:'Edit Customer Record',exact:true}).count(),0);
+ console.log('PASS: customer read-only view, owner pricing/deposit/instruction edits, stale-save handling, responsive layout, Google PKCE sign-in, forged callback rejection, phone/code login, invalid-code rejection, quote-form and calculator profile creation and notification idempotency, automatic new-tab profile, one-use session handoff and requested section order. All services mocked; no real emails sent.');
  await b.close();
 })().catch(error=>{console.error(error);process.exit(1)});

@@ -1,71 +1,25 @@
-# Private customer portal — Google sign-in
+# Customer portal — phone and private access code
 
-## Current status (November 22, 2026)
+## Current implementation (November 22, 2026)
 
-The database is deployed to Supabase project `pslyefpxaeqwggsxnbnl`. Three migrations are recorded as applied. Customer records have row-level security and owner-only editing. Anonymous REST access to records and creation is denied. The sole approved owner is now **sayedmusawer0797@gmail.com**, replacing relocating@haulbrosmoving.com.
+Customers no longer need Google or SMS. Public quote forms and the Moving Calculator create a private profile, open it automatically in a new tab, and display a unique 128-bit random access code. Returning customers enter their phone number and code at `/customer-portal/`. Save the code; it is not sent through Formspree or placed in a URL. Codes are credentials, not proof that a customer owns a phone number.
 
-The owner-account change is applied in the hosted database. The owner is registered only after Supabase verifies the approved account; entering its email into a public form never grants privileges. The former email no longer qualifies for ownership.
+The owner signs in with Google as `sayedmusawer0797@gmail.com`. A button at the bottom of the homepage links to owner login. Only this verified owner can list all profiles and edit records. Customer access remains read-only. Earlier email/Formspree leads are not imported automatically. Existing Google-linked test records remain visible to the owner.
 
-Google sign-in is configured and the owner completed a real sign-in and saved move submission. Read-only hosted checks confirmed the verified owner registration, enabled RLS, and a saved move. Public activation is enabled for publication at the user’s request. Existing Formspree lead notifications remain part of the submission flow.
+## Database and deployment
 
-The Supabase Site URL is `https://www.haulbrosmoving.com`. The callback allowlist contains the production callback and a temporary local callback for testing. These two routing settings were applied without changing MFA, email confirmations, credentials or other services.
+Project: `pslyefpxaeqwggsxnbnl`. Apply migrations 001–003 only to fresh projects; they are already deployed. Migration `202611220004_customer_access_codes.sql` adds guest records and private hashed access codes. It preserves existing records and owner-only update policies. Do not rerun the fresh-project SQL bundle on production.
 
-The earlier Gmail SMTP/email-code approach is retired. No Gmail app password or custom SMTP is needed for the Google-only sign-in flow. Existing Formspree email notifications remain in use for new move requests.
+Anonymous clients cannot read or update `customer_moves` directly. The limited creation RPC ignores submitted prices, deposits, status and customer IDs. The read RPC requires the exact phone and cryptographically random code. Only hashes are stored in `private.move_access`; that table is inaccessible to public roles. Code collisions are rejected by a unique constraint. Each request has a distinct code; retries in the same page reuse it and are idempotent. Submission limit: five per phone per day.
 
-## One-time Google Cloud setup (account holder)
+Auth sessions and customer access credentials remain in memory. A one-use capability restricted to the exact same-origin window transfers access to the new profile tab. Direct visits require login. Closing/reloading the tab ends its session. Customer codes are shown in the profile and original submission page for saving; they are never query parameters or notification payloads.
 
-1. Open [Google Auth Platform](https://console.cloud.google.com/auth/overview) using the approved owner account and select or create a project for Haul Bros.
-2. Configure branding: app name `Haul Bros Moving Co LLC`, support/developer email `sayedmusawer0797@gmail.com`, homepage `https://www.haulbrosmoving.com`, privacy page `/privacy-policy/`, and terms page `/terms-of-service/` on that domain. Select an **External** audience so customers outside the organization can sign in. Use only basic OpenID/profile/email scopes. Google allows customers outside the test-user list when only basic identity scopes are requested, even in Testing mode. Production is recommended for launch branding; complete any requirements shown by Google. See [Google audience rules](https://support.google.com/cloud/answer/15549945).
-3. In [Clients](https://console.cloud.google.com/auth/clients), create a **Web application** OAuth client. Use authorized JavaScript origin `https://www.haulbrosmoving.com`; for local testing add `http://127.0.0.1:8765` temporarily. Set this exact authorized redirect URI:
-   `https://pslyefpxaeqwggsxnbnl.supabase.co/auth/v1/callback`
-4. In the Supabase dashboard, Authentication → Sign In / Providers → Google, enable Google and enter the client ID and client secret directly there. Keep nonce checks enabled. Never put the Google client secret in Git, the website, or chat.
-5. Tell the agent once the provider is saved. The public settings endpoint can confirm Google is enabled without exposing the secret.
+Supabase production Site URL is `https://www.haulbrosmoving.com`; OAuth callback is `/customer-portal/auth-callback.html`. Google owner sign-in is configured and has passed a real user test. Google basic identity scopes are exempt from Testing audience allowlisting. Keep provider secrets in Supabase. No SMTP or SMS provider is needed.
 
-## Finish activation (agent)
+## Validation
 
-1. Do not rerun the initial SQL bundle on the existing project. `supabase/setup-customer-portal.sql` is only for a fresh project and now applies all three migrations atomically. The live migration history is already repaired through `202611220003`.
-2. Confirm Google is enabled using `/auth/v1/settings`. Confirm the exact production callback is allowlisted. If reviewing remote config again, pull a fresh snapshot and inspect the diff; never push stale disabled provider settings over newly configured Google credentials.
-3. Enable the feature locally and test a real Google sign-in with the approved Gmail account. The user completes Google authentication/consent. Confirm `private.portal_owner` contains only that verified account. Do not assume that being a Supabase project owner also creates a website Auth user.
-4. Test one labeled move submission and check the database record, owner view, customer read-only behavior, pricing/deposit instructions, and existing Formspree notification. Customers must sign in with the Google account matching the email on their moving plan. Profiles are created only after authenticated submission, not merely on a button click or attempted sign-in.
-5. Before launch, verify audience settings allow intended customers. Remove temporary local origins/callbacks when local testing is complete. Publish the tested website configuration and confirm the live page and callback files match.
-6. Google sign-in must be tested against the real provider before deployment. Mocked tests cover protocol handling and permissions but cannot prove production Google consent/pop-up behavior.
+`NODE_PATH=/tmp/haulbros-portal-tests/node_modules node tests/portal-security.cjs` executes all migrations with simulated identities: anonymous denial, code/phone pairing, hashed code privacy, guest read-only access, owner editing, idempotency, verified owner registration and price-forgery protection.
 
-## How the portal works
+`node tests/portal-browser.cjs` uses fictional records and mocked network services: owner Google PKCE, returning phone/code login, incorrect code rejection, homepage quotes, calculator submissions, new-tab handoff, responsive layout and notification behavior. No real emails are sent by these tests.
 
-The calculator keeps the filled form in its original tab while a Google sign-in window opens. The callback uses PKCE; the verifier stays in memory, the one-time code is exchanged with Supabase, and no tokens or moving inventory are placed in browser storage. The callback removes the code from its URL immediately. Messages are accepted only from that exact popup and the website's own origin. Closing/reloading the tab ends the in-memory session.
-
-After sign-in, the customer submits an authenticated inventory snapshot through `create_customer_move`. A request UUID makes retries idempotent. The server assigns the customer ID and verified email; client-supplied confirmed pricing, deposit receipts or booking status are ignored. The existing Formspree notification follows database creation. If notification fails, the saved record remains available and the customer sees an accurate saved-record message.
-
-Customers can read their own records only. The owner can read all moves and update contact details, inventory, status, confirmed price, deposit requested/received, payment instructions and moving instructions. All customer-facing updates are visible to the corresponding customer. The original planning estimate is distinct from the confirmed quote. Owner edits do not silently recalculate it.
-
-The portal records amounts; it does not process card payments or automatically verify receipt of money. Deposits and final quotes start unconfirmed. Audit records are private and visible through the administrative database console, not the customer portal. Owner edits use an `updated_at` precondition to reject stale overwrites. Immutable record ownership cannot be reassigned through the portal.
-
-The private pages use `noindex` and no analytics scripts. Database access controls provide privacy; hidden URLs and robots tags do not. The calculator's existing optional “Save on this device” is separate from portal authentication and does not grant access.
-
-## Tests
-
-```sh
-npm install --prefix /tmp/haulbros-portal-tests @electric-sql/pglite@0.3.14 --ignore-scripts --no-audit --no-fund
-NODE_PATH=/tmp/haulbros-portal-tests/node_modules node tests/portal-security.cjs
-node tests/portal-browser.cjs
-```
-
-Run a local HTTP server at port 8765 for browser tests. Override `PLAYWRIGHT_MODULE`, `CHROME_PATH`, or `PORTAL_TEST_URL` as needed. Tests use fictional data and mocked Google/Supabase/Formspree services; they send no emails.
-
-Security tests execute the real SQL migrations with simulated identities and cover owner replacement, verified owner registration, customer isolation, owner-only editing, immutable ownership, forged prices, audit privacy, idempotency and daily submission limits. Browser tests cover Google PKCE challenge/code exchange, rejecting forged callback messages, email matching, customer read-only views, owner edits, stale-save handling, profile creation and responsive layout.
-
-## References
-
-- [Google sign-in setup](https://supabase.com/docs/guides/auth/social-sign-in/auth-google)
-- [PKCE](https://supabase.com/docs/guides/auth/sessions/pkce-flow)
-- [Row-level security](https://supabase.com/docs/guides/database/postgres/row-level-security)
-
-## Automatic profile tab
-
-After authenticated calculator submission saves the record, the same Google sign-in tab becomes the customer's profile tab and selects that exact record. For customers already signed in, a new tab is reserved in the submit click handler. This avoids async popup blocking. If the window is closed or blocked, a clickable Open My Move fallback opens it from a fresh user gesture.
-
-A single-use, exact-window, exact-move capability transfers a copy of the verified session directly between same-origin tabs. No authentication tokens appear in URLs, storage or postMessage payloads. The new tab keeps its own in-memory session, so the calculator can be closed afterward. Direct/unrelated visits still require Google sign-in, and RLS remains authoritative.
-
-Customer profile order: contact and move details → item inventory → estimated movers/trucks/hours/volume and price range → confirmed pricing/deposits → instructions. The customer's record list appears below their profile; the owner retains the management list beside it.
-
-The public `enabled` flag is true and the local-only preview override is disabled. Google is enabled and the owner’s real sign-in and submission passed. Google Audience was reported as Testing; the basic identity scope exception permits sign-in without adding every customer as a test user. Post-deployment testing should confirm the production callback and profile flow.
+The portal records agreed pricing and deposit amounts; it does not process payments. Inventory/estimates remain pending on simple quote forms. The owner adds confirmed amounts and instructions after review.

@@ -2,3 +2,5 @@
 .workspace-heading>div{min-width:0}#signedInAs{overflow-wrap:anywhere}.workspace-heading>button{flex-shrink:0}
 
 .workspace-grid.customer-profile-layout{display:flex;flex-direction:column;max-width:960px;margin:auto}.customer-profile-layout>#moveDetail{order:0;width:100%}.customer-profile-layout>aside{order:1;width:100%}
+
+#moveDetail code{display:block;overflow-wrap:anywhere;user-select:all;font-size:1rem;line-height:1.8;color:#facc15}

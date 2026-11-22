@@ -68,12 +68,13 @@ $('inventory').addEventListener('submit', async event => {
     lastSentReport = summary;
     feedback.textContent = profileId ? 'Your private move profile is ready. Haul Bros will review your plan and add pricing, deposit details and instructions.' : 'Thank you! Your moving plan has been sent to Haul Bros. Our team will contact you to review the details and prepare a written estimate.';
     if (profileId) {
+      feedback.append(document.createTextNode(' Save your private access code: '+window.HaulBrosPortal.guestCode().match(/.{1,4}/g).join('-')+'. '));
       const link = document.createElement('a'); link.href='../customer-portal/?move='+encodeURIComponent(profileId); link.textContent=' Open My Move in a New Tab'; link.target='_blank';link.rel='noopener';link.onclick=event=>{if(window.HaulBrosCalculatorPortal.openFromClick(profileId))event.preventDefault();}; feedback.append(link);
     }
   } catch (error) {
     if (profileId) {
       lastSentReport = summary;
-      feedback.textContent = 'Your private move profile was saved, but the email notification could not be sent. Haul Bros can see your record in the owner portal. Call 571-899-1919 if you need an immediate response.';
+      feedback.textContent = 'Save your access code: '+window.HaulBrosPortal.guestCode().match(/.{1,4}/g).join('-')+'. Your private move profile was saved, but the email notification could not be sent. Haul Bros can see your record in the owner portal. Call 571-899-1919 if you need an immediate response.';
       const link=document.createElement('a');link.href='../customer-portal/?move='+encodeURIComponent(profileId);link.textContent=' Open My Move in a New Tab';link.target='_blank';link.rel='noopener';link.onclick=event=>{if(window.HaulBrosCalculatorPortal.openFromClick(profileId))event.preventDefault();};feedback.append(link);
       return;
     }
