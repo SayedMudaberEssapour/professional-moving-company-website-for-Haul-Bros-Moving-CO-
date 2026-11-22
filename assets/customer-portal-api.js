@@ -1,4 +1,4 @@
-/* Verified email sessions live only in this tab's memory, never in browser storage. */
+/* Google sign-in uses PKCE. Sessions and the verifier stay in tab memory. */
 (() => {
   const config = window.HaulBrosPortalConfig || {};
   let session = null;
@@ -31,8 +31,34 @@
   window.HaulBrosPortal = Object.freeze({
     enabled,
     email:() => session?.user?.email || '',
-    async sendCode(email) { return request('/auth/v1/otp',{method:'POST',body:JSON.stringify({email,create_user:true})}); },
-    async verify(email,token) { setSession(await request('/auth/v1/verify',{method:'POST',body:JSON.stringify({email,token,type:'email'})})); },
+    async signInWithGoogle() {
+      if(!enabled)throw new Error('The private portal is not connected yet.');
+      // Open synchronously in the user click handler so browsers allow the sign-in window.
+      const popup=window.open('about:blank','haulbros-google-signin','popup,width=520,height=700');
+      if(!popup)throw new Error('Allow the Google sign-in window for this site, then try again. Your entries are still here.');
+      popup.document.title='Connecting to Google';popup.document.body.textContent='Connecting to Google sign-in…';
+      const encode=bytes=>btoa(String.fromCharCode(...bytes)).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'');
+      const verifier=encode(crypto.getRandomValues(new Uint8Array(32)));
+      const challenge=encode(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(verifier))));
+      const callback=new URL('/customer-portal/auth-callback.html',location.origin).href;
+      const url=new URL(config.url+'/auth/v1/authorize');
+      url.search=new URLSearchParams({provider:'google',redirect_to:callback,code_challenge:challenge,code_challenge_method:'s256',prompt:'select_account'});
+      return new Promise((resolve,reject)=>{
+        let complete=false,poll,timeout;
+        function finish(error){if(complete)return;complete=true;clearInterval(poll);clearTimeout(timeout);window.removeEventListener('message',receive);try{popup.close();}catch(_){}error?reject(error):resolve();}
+        async function receive(event){
+          if(event.origin!==location.origin||event.source!==popup||event.data?.type!=='haulbros-google-auth'||complete)return;
+          if(event.data.error||typeof event.data.code!=='string')return finish(new Error('Google sign-in was not completed. Please try again.'));
+          // Stop accepting callback messages before exchanging the one-time code.
+          window.removeEventListener('message',receive);clearInterval(poll);
+          try{setSession(await request('/auth/v1/token?grant_type=pkce',{method:'POST',body:JSON.stringify({auth_code:event.data.code,code_verifier:verifier})}));finish();}catch(error){finish(error);}
+        }
+        window.addEventListener('message',receive);
+        poll=setInterval(()=>{try{if(popup.closed)finish(new Error('Google sign-in was closed. Your entries are still here.'));}catch(_){}},500);
+        timeout=setTimeout(()=>finish(new Error('Google sign-in timed out. Please try again.')),300000);
+        popup.location.href=url.href;
+      });
+    },
     async signOut() { try { if (session) await request('/auth/v1/logout',{method:'POST'},true); } finally { session=null; } },
     async isOwner() { return request('/rest/v1/rpc/portal_is_owner',{method:'POST',body:'{}'},true); },
     async list(offset=0) { return request('/rest/v1/customer_moves?select=*&order=created_at.desc&limit=50&offset='+offset,{},true); },

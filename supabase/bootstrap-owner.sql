@@ -4,9 +4,9 @@ do $$
 declare owner_id uuid;
 begin
   select id into owner_id from auth.users
-    where lower(email)='relocating@haulbrosmoving.com' and email_confirmed_at is not null;
+    where lower(email)='sayedmusawer0797@gmail.com' and email_confirmed_at is not null;
   if owner_id is null then
-    raise exception 'relocating@haulbrosmoving.com must sign in and verify its email first';
+    raise exception 'sayedmusawer0797@gmail.com must sign in and verify its email first';
   end if;
   if exists(select 1 from private.portal_owner where user_id<>owner_id) then
     raise exception 'A different owner is already registered';

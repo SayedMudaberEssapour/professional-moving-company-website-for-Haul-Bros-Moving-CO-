@@ -69,7 +69,7 @@ $('inventory').addEventListener('submit', async event => {
     if (profileId) {
       const link = document.createElement('a'); link.href='../customer-portal/'; link.textContent=' Open My Move'; feedback.append(link);
     }
-  } catch (_) {
+  } catch (error) {
     if (profileId) {
       lastSentReport = summary;
       feedback.textContent = 'Your private move profile was saved, but the email notification could not be sent. Haul Bros can see your record in the owner portal. Call 571-899-1919 if you need an immediate response.';
@@ -77,9 +77,9 @@ $('inventory').addEventListener('submit', async event => {
       return;
     }
     feedback.dataset.error = 'true';
-    feedback.textContent = 'Your plan could not be sent. Your entries are still here. Please try again, open an email draft below, or call 571-899-1919.';
+    feedback.textContent = window.HaulBrosCalculatorPortal && error instanceof Error ? error.message : 'Your plan could not be sent. Your entries are still here. Please try again, open an email draft below, or call 571-899-1919.';
   } finally {
-    sending = false; button.disabled = false; button.textContent = window.HaulBrosCalculatorPortal ? 'Create My Private Move Profile →' : 'Send My Moving Plan →';
+    sending = false; button.disabled = false; button.textContent = window.HaulBrosCalculatorPortal ? 'Sign in with Google & Send My Plan →' : 'Send My Moving Plan →';
     feedback.focus();
   }
 });

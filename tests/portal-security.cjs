@@ -12,7 +12,14 @@ const {PGlite}=require('@electric-sql/pglite');
  await db.exec(readFileSync(path.join(__dirname,'../supabase/migrations/202611220001_private_move_portal.sql'),'utf8'));
  await db.exec(readFileSync(path.join(__dirname,'../supabase/migrations/202611220002_verified_owner_registration.sql'),'utf8'));
  const owner='00000000-0000-0000-0000-000000000001',alice='00000000-0000-0000-0000-000000000002',bob='00000000-0000-0000-0000-000000000003',unverified='00000000-0000-0000-0000-000000000004';
- for(const [id,email,confirmed] of [[owner,'relocating@haulbrosmoving.com',true],[alice,'alice@example.com',true],[bob,'bob@example.com',true],[unverified,'unverified@example.com',false]])await db.query('insert into auth.users values($1,$2,$3)',[id,email,confirmed?'2026-11-22':null]);
+ for(const [id,email,confirmed] of [[owner,'sayedmusawer0797@gmail.com',false],[alice,'alice@example.com',true],[bob,'bob@example.com',true],[unverified,'unverified@example.com',false]])await db.query('insert into auth.users values($1,$2,$3)',[id,email,confirmed?'2026-11-22':null]);
+ const oldOwner='00000000-0000-0000-0000-000000000005';
+ await db.query('insert into auth.users values($1,$2,$3)',[oldOwner,'relocating@haulbrosmoving.com','2026-11-22']);
+ assert.equal((await db.query('select user_id from private.portal_owner')).rows[0].user_id,oldOwner);
+ await db.exec(readFileSync(path.join(__dirname,'../supabase/migrations/202611220003_change_portal_owner.sql'),'utf8'));
+ assert.equal((await db.query('select count(*)::int as count from private.portal_owner')).rows[0].count,0);
+ await db.query('update auth.users set email_confirmed_at=$1 where id=$2',['2026-11-22',owner]);
+ assert.equal((await db.query('select user_id from private.portal_owner')).rows[0].user_id,owner);
  await db.exec(readFileSync(path.join(__dirname,'../supabase/bootstrap-owner.sql'),'utf8'));
  async function as(id,role='authenticated'){await db.exec('reset role');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[id||'']);await db.exec('set role '+role);}
  const submission={name:'Alice',email:'someone-else@example.com',phone:'5715550100',moving_from:'Woodbridge',inventory:[{room:'Living room',items:[{item:'Sofa',quantity:1}]}],planning_estimate:{item_count:1},confirmed_price_cents:1,deposit_paid_cents:100000,customer_id:owner,move_status:'Completed'};
