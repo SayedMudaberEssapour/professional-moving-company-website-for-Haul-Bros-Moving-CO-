@@ -4,6 +4,17 @@ The portal is built locally and the supplied project URL/public key have been ve
 
 Project: `pslyefpxaeqwggsxnbnl`. The live project currently has email signup enabled and email verification required; the portal tables/functions were not present when checked. The supplied key is a public browser key, not administrative SQL access. The live calculator continues to use its existing Formspree workflow. Do not enable the portal merely by changing the feature flag: first deploy the database, configure email delivery, register the owner, and test access using separate accounts.
 
+## Current deployment status — November 22, 2026
+
+- Supabase CLI authorization completed for project `pslyefpxaeqwggsxnbnl`.
+- Both portal SQL migrations have been applied to the hosted database. Row-level security is enabled, the owner-only UPDATE policy is present, and anonymous REST requests to read profiles or invoke profile creation return HTTP 401 / permission denied.
+- No real customer move records have been created. The owner account will register automatically only after `relocating@haulbrosmoving.com` verifies its email.
+- Custom SMTP is not configured. The user confirmed Google Workspace/Gmail is the sender provider and has not yet saved SMTP settings.
+- Branded email-template configuration was reviewed with only four intended property changes and no other settings changes. Supabase rejected the template update because custom SMTP is not configured on this free-tier project. Reapply after SMTP is saved; do not assume the template update succeeded.
+- The reviewed temporary CLI configuration is `/tmp/haulbros-supabase-auth`, and its email template includes `{{ .Token }}` for new and returning users. It preserves existing MFA and email confirmation settings. Pull/diff again before applying if remote settings changed.
+- Frontend portal remains disabled and unpublished. The existing live calculator continues to submit through Formspree.
+- Next: user creates a Google app password and enters it directly into Supabase SMTP settings (host `smtp.gmail.com`, port `465`, sender/username `relocating@haulbrosmoving.com`). Never request this password in chat or commit it. Then verify sender configuration, apply/review the code-email templates, test owner sign-in, verify owner registration and the hosted customer access flow, and only then activate/publish the portal.
+
 ## Customer and owner behavior
 
 A customer uses the calculator, verifies their email with a one-time code, and submits their inventory. The database creates an immutable customer submission identified by that authenticated user. The website sends the existing Formspree notification after the private record is saved. If notification fails, the record remains available to the owner and the customer sees an accurate saved-record message.
