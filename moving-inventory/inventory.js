@@ -5,17 +5,72 @@ let rooms=Object.entries(presets).map(([name,ids])=>({name,items:ids.map(id=>({i
 const $=id=>document.getElementById(id), fields=['name','email','phone','date','pickup','delivery','type','drive','fromAccess','toAccess','carry','packing','notes'];
 function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function render(){ $('rooms').innerHTML=rooms.map((r,i)=>`<details><summary>${escapeHTML(r.name)}</summary><div class="items">${r.items.map((it,j)=>`<label class="item">${escapeHTML(it.custom||catalog[it.id][0])}<input aria-label="${escapeHTML(r.name)}: ${escapeHTML(it.custom||catalog[it.id][0])} quantity" data-room="${i}" data-item="${j}" type="number" min="0" max="999" step="1" value="${it.qty}"></label>`).join('')}</div><button type="button" data-custom="${i}">Add another item</button></details>`).join(''); update(); }
-function calculate(){let volume=0,count=0,boxes=0,assembly=0,special=false;rooms.forEach(r=>r.items.forEach(it=>{const c=catalog[it.id];volume+=it.qty*(it.volume||c[1]);count+=it.qty;if(!it.custom&&it.id<4)boxes+=it.qty;assembly+=it.qty*(c[2]||0);if(it.qty&&c[3])special=true;}));const trucks=count?Math.ceil(volume*1.15/1400):0;const movers=count?(volume<=400?2:volume<=850?3:4):0;const labor=$('type').value==='labor';const crew=labor&&count?2:movers;const access=Number($('fromAccess').value)+Number($('toAccess').value)+Number($('carry').value);const hours=count?(volume/(75*crew)*(1+access)+assembly+boxes*Number($('packing').value)/crew+0.5+(labor?0:Number($('drive').value)/60)):0;const low=count?Math.max(2,Math.ceil(hours*0.8*2)/2):0,high=count?Math.max(low+0.5,Math.ceil(hours*1.3*2)/2):0;const custom=$('type').value==='long'||trucks>1||special;const rates=labor?[295,115]:crew===2?[395,159]:crew===3?[495,189]:[695,249];const cost=h=>rates[0]+Math.max(0,h-2)*rates[1];return {count,volume:Math.round(volume),trucks,crew,low,high,custom,labor,costLow:count?cost(low):0,costHigh:count?cost(high):0};}
+function calculate(){let volume=0,count=0,boxes=0,assembly=0,special=false;rooms.forEach(r=>r.items.forEach(it=>{const c=catalog[it.id];volume+=it.qty*(it.volume||c[1]);count+=it.qty;if(!it.custom&&it.id<4)boxes+=it.qty;assembly+=it.qty*(c[2]||0);if(it.qty&&c[3])special=true;}));const trucks=count?Math.ceil(volume*1.15/1400):0;const movers=count?(volume<=400?2:volume<=850?3:4):0;const labor=$('type').value==='labor';const crew=labor&&count?2:movers;const access=Number($('fromAccess').value)+Number($('toAccess').value)+Number($('carry').value);const hours=count?(volume/(75*crew)*(1+access)+assembly+boxes*Number($('packing').value)/crew+0.5+(labor?0:Number($('drive').value)/60)):0;const low=count?Math.max(2,Math.ceil(hours*0.8*2)/2):0,high=count?Math.max(low+0.5,Math.ceil(hours*1.3*2)/2):0;const custom=$('type').value==='long'||labor||trucks>1||special;const rates=labor?[295,115]:crew===2?[395,159]:crew===3?[495,189]:[695,249];const cost=h=>rates[0]+Math.max(0,h-2)*rates[1];return {count,volume:Math.round(volume),trucks,crew,low,high,custom,labor,costLow:count?cost(low):0,costHigh:count?cost(high):0};}
 function update(){const e=calculate();$('estimate').innerHTML=`<div class="metrics"><div class="metric"><strong>${e.count}</strong>items · approx. ${e.volume} cu ft</div><div class="metric"><strong>${e.crew||'—'}</strong>suggested movers${e.trucks>1?' per crew; review required':''}</div><div class="metric"><strong>${e.labor?'Customer truck':e.trucks||'—'}</strong>${e.labor?'Capacity to confirm':'26-foot truck(s)'}</div><div class="metric"><strong>${e.count?`${e.low}–${e.high}`:'—'}</strong>estimated hours${e.trucks>1?' per sequential crew':''}</div></div><p><strong>${!e.count?'Add inventory to see your estimate.':e.custom?'Custom written quote required.':`Estimated labor / move total: $${e.costLow.toFixed(0)}–$${e.costHigh.toFixed(0)}`}</strong></p>${$('type').value==='long'?'<p>Long-distance hours are handling time plus the driving time you entered, not a delivery window. Route, transit days, shipment weight, and operating requirements need review.</p>':''}`;}
-$('inventory').addEventListener('submit',e=>e.preventDefault());
-$('inventory').addEventListener('input',e=>{if(e.target.dataset.room!==undefined){const n=Number(e.target.value);rooms[+e.target.dataset.room].items[+e.target.dataset.item].qty=Math.min(999,Math.max(0,Math.floor(n)||0));}update();});
+let sending = false;
+let lastSentReport = '';
+$('inventory').addEventListener('submit', async event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const feedback = $('submitStatus');
+  const button = $('sendPlan');
+  if (sending || !form.reportValidity()) return;
+  if (!calculate().count) {
+    feedback.dataset.error = 'true';
+    feedback.textContent = 'Add at least one item or box to your inventory before sending your plan.';
+    feedback.focus();
+    return;
+  }
+  const summary = report();
+  if (summary === lastSentReport) {
+    feedback.textContent = 'Your plan has already been sent. Our team will follow up with you.';
+    return;
+  }
+  const payload = new FormData(form);
+  // Send readable choice labels, not the numeric multipliers used by the calculator.
+  ['type','fromAccess','toAccess','carry','packing'].forEach(id => {
+    payload.set($(id).name, $(id).selectedOptions[0].text);
+  });
+  payload.set('message', summary);
+  payload.set('inventory', JSON.stringify(rooms.map(room => ({
+    room: room.name,
+    items: room.items.filter(item => item.qty > 0).map(item => ({
+      item: item.custom || catalog[item.id][0], quantity: item.qty,
+      cubic_feet_each: item.volume || catalog[item.id][1]
+    }))
+  })).filter(room => room.items.length)));
+  const estimate = calculate();
+  payload.set('planning_estimate', JSON.stringify({
+    item_count: estimate.count, approximate_cubic_feet: estimate.volume,
+    suggested_movers: estimate.crew, estimated_hours: [estimate.low, estimate.high],
+    trucks: estimate.labor ? 'Customer supplied' : estimate.trucks,
+    custom_quote_required: estimate.custom,
+    planning_cost: estimate.custom ? 'Custom written quote required' : [estimate.costLow, estimate.costHigh]
+  }));
+  sending = true; button.disabled = true; button.textContent = 'Sending your plan…';
+  feedback.removeAttribute('data-error'); feedback.textContent = 'Sending your moving plan…';
+  try {
+    const response = await fetch(form.action, {method:'POST',body:payload,headers:{Accept:'application/json'}});
+    if (!response.ok) throw new Error('Request not accepted');
+    lastSentReport = summary;
+    feedback.textContent = 'Thank you! Your moving plan has been sent to Haul Bros. Our team will contact you to review the details and prepare a written estimate.';
+  } catch (_) {
+    feedback.dataset.error = 'true';
+    feedback.textContent = 'Your plan could not be sent. Your entries are still here. Please try again, open an email draft below, or call 571-899-1919.';
+  } finally {
+    sending = false; button.disabled = false; button.textContent = 'Send My Moving Plan →';
+    feedback.focus();
+  }
+});
+$('inventory').addEventListener('input',e=>{$('submitStatus').textContent='';if(e.target.dataset.room!==undefined){const n=Number(e.target.value);rooms[+e.target.dataset.room].items[+e.target.dataset.item].qty=Math.min(999,Math.max(0,Math.floor(n)||0));}update();});
 $('rooms').addEventListener('click',e=>{if(e.target.dataset.custom===undefined)return;const name=prompt('Item name');if(!name?.trim())return;const volume=Number(prompt('Approximate cubic feet per item (length × width × height in feet). Use 20 if unsure.','20'));if(!Number.isFinite(volume)||volume<=0||volume>2000)return;rooms[+e.target.dataset.custom].items.push({id:0,custom:name.slice(0,100),volume,qty:1});render();$('rooms').children[+e.target.dataset.custom].open=true;});
+$('newRoom').addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();$('addRoom').click();}});
 $('addRoom').onclick=()=>{const name=$('newRoom').value.trim();if(!name)return;rooms.push({name,items:catalog.map((_,id)=>({id,qty:0}))});$('newRoom').value='';render();$('rooms').lastElementChild.open=true;};
-function report(){const e=calculate();return ['HAUL BROS MOVING INVENTORY',...fields.map(k=>`${$(k).closest('label')?.childNodes[0]?.textContent.trim()||k}: ${$(k).tagName==='SELECT'?$(k).selectedOptions[0].text:$(k).value}`),'',...rooms.flatMap(r=>[r.name,...r.items.filter(it=>it.qty).map(it=>`  ${it.qty} × ${it.custom||catalog[it.id][0]}`)]),'',`Approximate volume: ${e.volume} cu ft`, `Suggested movers: ${e.crew}`,`26-foot trucks: ${e.labor?'Customer supplied':e.trucks}`,`Estimated hours: ${e.low}–${e.high}`,e.custom?'Custom written quote required.':`Planning cost: $${e.costLow.toFixed(0)}–$${e.costHigh.toFixed(0)}`,'Planning only; rates, capacity, access, packing materials, and specialty work require confirmation in a written estimate.'].join('\n');}
+function report(){const e=calculate();return ['HAUL BROS MOVING CALCULATOR — ESTIMATE REQUEST',...fields.map(k=>`${$(k).closest('label')?.childNodes[0]?.textContent.trim()||k}: ${$(k).tagName==='SELECT'?$(k).selectedOptions[0].text:$(k).value}`),'',...rooms.flatMap(r=>[r.name,...r.items.filter(it=>it.qty).map(it=>`  ${it.qty} × ${it.custom||catalog[it.id][0]}`)]),'',`Approximate volume: ${e.volume} cu ft`, `Suggested movers: ${e.crew}`,`26-foot trucks: ${e.labor?'Customer supplied':e.trucks}`,`Estimated hours: ${e.low}–${e.high}`,e.custom?'Custom written quote required.':`Planning cost: $${e.costLow.toFixed(0)}–$${e.costHigh.toFixed(0)}`,'Planning only; rates, capacity, access, packing materials, and specialty work require confirmation in a written estimate.'].join('\n');}
 function status(s){$('status').textContent=s;}
 $('download').onclick=()=>{const url=URL.createObjectURL(new Blob([report()],{type:'text/plain'}));const a=document.createElement('a');a.href=url;a.download='haul-bros-moving-inventory.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);status('Inventory downloaded. You can attach it to an email.');};
 $('emailDraft').onclick=()=>{const body=report();if(body.length>6000){status('Your inventory is long. Download it and attach it to your email draft.');location.href='mailto:relocating@haulbrosmoving.com?subject=Moving%20inventory';}else location.href='mailto:relocating@haulbrosmoving.com?subject=Moving%20inventory&body='+encodeURIComponent(body);};
-$('share').onclick=async()=>{const url='https://www.haulbrosmoving.com/moving-inventory/';try{await navigator.clipboard.writeText(url);status('Blank form link copied. This link will work publicly after the website is published.');}catch{prompt('Copy this form link (available after publishing):',url);}};
+$('share').onclick=async()=>{const url='https://www.haulbrosmoving.com/moving-inventory/';try{await navigator.clipboard.writeText(url);status('Moving calculator link copied. Your personal details are not included in this link.');}catch{prompt('Copy this calculator link:',url);}};
 $('save').onclick=()=>{try{localStorage.setItem('haulbros-inventory-v1',JSON.stringify({rooms,fields:Object.fromEntries(fields.map(k=>[k,$(k).value]))}));status('Saved on this device.');}catch{status('Device saving is unavailable. Download your inventory instead.');}};
 $('load').onclick=()=>{try{const s=JSON.parse(localStorage.getItem('haulbros-inventory-v1'));if(!s){status('No saved inventory found.');return;}if(!Array.isArray(s.rooms)||!s.fields)throw Error();rooms=s.rooms;fields.forEach(k=>{if(s.fields[k]!==undefined)$(k).value=s.fields[k];});render();status('Saved inventory loaded.');}catch{status('Could not load the saved inventory.');}};
 $('clear').onclick=()=>{if(!confirm('Clear this inventory and its saved copy on this device?'))return;try{localStorage.removeItem('haulbros-inventory-v1');}catch{}location.reload();};
