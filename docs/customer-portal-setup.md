@@ -31,3 +31,9 @@ Migration `202611220005_restore_business_owner.sql` revokes the previous Gmail o
 Migration `202611220006_itemized_estimates.sql` adds owner-only `estimate_details`: crew/truck counts, estimated hours, hourly rate, optional first-hours package, and quantity/unit-price service lines. Existing fixed-price values are retained in the database for history but no longer shown or edited. The display and editor calculate an estimated range, add service lines, and subtract the deposit received to show estimated balance. Unpriced items keep the total incomplete. Calculator-derived local crew defaults match the existing calculator packages; custom/long-distance moves require owner-entered rates. Guest creation ignores submitted `estimate_details`; only the owner can save it.
 
 `node tests/estimate-pricing.cjs` checks package minimums, hourly-only estimates, fractional hours, material/storage quantities and missing/zero prices.
+
+## Owner room drafts and lost access codes
+
+The inventory editor uses room and item presets matching the Moving Calculator, plus additional bedrooms, kitchens, other areas and custom items. Its values remain in the owner tab until Save Changes. Cancel discards them; the customer reads only the last database snapshot. Owner estimates remain independently editable.
+
+Migration `202611220007_owner_code_replacement.sql` adds an owner-only, stale-record-protected code replacement RPC. Existing hashed codes cannot be retrieved. The owner can generate/copy a replacement to share privately; it invalidates the previous code and uses the customer’s saved phone number. The replacement plaintext is shown once and never stored or logged. Existing Google-created profiles can also receive phone/code access through this action. Owner edits are audited.

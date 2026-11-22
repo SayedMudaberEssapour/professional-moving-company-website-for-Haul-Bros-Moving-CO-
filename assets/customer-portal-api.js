@@ -111,6 +111,12 @@
       if(typeof result!=='string'||!/^[-a-f0-9]{36}$/i.test(result))throw new Error('Your profile could not be confirmed. Try submitting again.');
       return result;
     },
+    async replaceCode(id,updatedAt){
+      const code=[...crypto.getRandomValues(new Uint8Array(16))].map(n=>n.toString(16).padStart(2,'0')).join('');
+      const rows=await request('/rest/v1/rpc/replace_customer_access_code',{method:'POST',body:JSON.stringify({p_move_id:id,p_updated_at:updatedAt,p_code:code})},true);
+      if(!rows?.length)throw new Error('This record changed. Refresh before replacing the code.');
+      return {code,record:rows[0]};
+    },
     async update(id,updatedAt,changes) {
       // Backend RLS enforces owner access even if someone bypasses this UI.
       const allowed=['estimate_details','customer_details','inventory','planning_estimate','move_status','confirmed_price_cents','deposit_due_cents','deposit_paid_cents','deposit_instructions','moving_instructions','customer_notes'];
