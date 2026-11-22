@@ -37,3 +37,7 @@ Migration `202611220006_itemized_estimates.sql` adds owner-only `estimate_detail
 The inventory editor uses room and item presets matching the Moving Calculator, plus additional bedrooms, kitchens, other areas and custom items. Its values remain in the owner tab until Save Changes. Cancel discards them; the customer reads only the last database snapshot. Owner estimates remain independently editable.
 
 Migration `202611220007_owner_code_replacement.sql` adds an owner-only, stale-record-protected code replacement RPC. Existing hashed codes cannot be retrieved. The owner can generate/copy a replacement to share privately; it invalidates the previous code and uses the customer’s saved phone number. The replacement plaintext is shown once and never stored or logged. Existing Google-created profiles can also receive phone/code access through this action. Owner edits are audited.
+
+## Inventory volume
+
+Approximate volume is calculated from the current saved inventory, not the original calculator snapshot. The owner editor shows a private live draft total and editable cubic feet per item. Save updates the item count and volume in planning_estimate; hourly estimates are unchanged. Known items use the calculator catalog when a legacy record lacks per-item volume. Unknown sizes remain marked as unmeasured; new selected custom items require a positive volume before saving. Totals retain one decimal place. `node tests/inventory-volume.cjs` covers quantities across rooms, fractional volumes, catalog fallback and missing sizes.
