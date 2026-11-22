@@ -3,10 +3,11 @@ const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'/Users/azizullahessapou
 const base=process.env.PORTAL_TEST_URL||'http://127.0.0.1:8765';
 (async()=>{
  const b=await chromium.launch({headless:true,executablePath:process.env.CHROME_PATH||'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'});
- const p=await b.newPage({viewport:{width:1440,height:1000}});
+ const context=await b.newContext({viewport:{width:1440,height:1000}});
+ const p=await context.newPage();
  let email='',nextIdentity='customer@example.com',owner=false,patch=null,created=null,notifications=0,conflict=false,exchanges=0;
- const sample={id:'10000000-0000-0000-0000-000000000001',customer_id:'20000000-0000-0000-0000-000000000002',created_at:'2026-11-22T10:00:00Z',updated_at:'2026-11-22T10:00:00Z',customer_details:{name:'Sample Customer',email:'customer@example.com',phone:'5715550100',service_date:'2026-12-01',moving_from:'Woodbridge',moving_to:'Fairfax',service_type:'Local Moving',notes:'Fragile items'},inventory:[{room:'Living room',items:[{item:'Sofa',quantity:1,cubic_feet_each:65}]}],planning_estimate:{item_count:1,approximate_cubic_feet:65,suggested_movers:2,estimated_hours:[2,3],planning_cost:[395,554],custom_quote_required:false},move_status:'Review pending',confirmed_price_cents:100000,deposit_due_cents:10000,deposit_paid_cents:10000,deposit_instructions:'Use the agreed deposit method.',moving_instructions:'Reserve the loading dock.',customer_notes:''};
- await p.route('**/assets/customer-portal-config.js',route=>route.fulfill({contentType:'application/javascript',body:'window.HaulBrosPortalConfig={enabled:true,url:"https://test-project.supabase.co",publishableKey:"public-test-key"};'}));
+ const sample={id:'10000000-0000-0000-0000-000000000001',customer_id:'20000000-0000-0000-0000-000000000002',created_at:'2026-11-22T10:00:00Z',updated_at:'2026-11-22T10:00:00Z',customer_details:{name:'Sample Customer',email:'customer@example.com',phone:'5715550100',service_date:'2026-12-01',moving_from:'Woodbridge',moving_to:'Fairfax',service_type:'Local Moving',notes:'Fragile items'},inventory:[{room:'Living room',items:[{item:'Sofa',quantity:1,cubic_feet_each:65}]}],planning_estimate:{item_count:1,approximate_cubic_feet:65,suggested_movers:2,trucks:1,estimated_hours:[2,3],planning_cost:[395,554],custom_quote_required:false},move_status:'Review pending',confirmed_price_cents:100000,deposit_due_cents:10000,deposit_paid_cents:10000,deposit_instructions:'Use the agreed deposit method.',moving_instructions:'Reserve the loading dock.',customer_notes:''};
+ await p.context().route('**/assets/customer-portal-config.js',route=>route.fulfill({contentType:'application/javascript',body:'window.HaulBrosPortalConfig={enabled:true,url:"https://test-project.supabase.co",publishableKey:"public-test-key"};'}));
  await p.context().route('https://test-project.supabase.co/**',async route=>{
   const request=route.request(),url=new URL(request.url()),data=request.postDataJSON();let body={};
   if(url.pathname.endsWith('/authorize')){
@@ -37,10 +38,20 @@ const base=process.env.PORTAL_TEST_URL||'http://127.0.0.1:8765';
  await p.goto(base+'/moving-inventory/',{waitUntil:'networkidle'});
  for(const [id,value] of Object.entries({name:'Sample Customer',email:'customer@example.com',phone:'5715550100',date:'2026-12-01',pickup:'Woodbridge'}))await p.locator('#'+id).fill(value);
  await p.locator('#rooms summary').first().click();await p.getByLabel('Living room: Sofa quantity',{exact:true}).fill('1');
- nextIdentity='customer@example.com';await p.locator('#sendPlan').click();await p.getByText('Your private move profile is ready.',{exact:false}).waitFor();assert.ok(created.p_request_id);assert.equal(created.p_submission.inventory[0].items[0].item,'Sofa');assert.equal(notifications,1);assert.equal(exchanges,3);
+ nextIdentity='customer@example.com';const profilePopup=p.waitForEvent('popup');await p.locator('#sendPlan').click();const profilePage=await profilePopup;await p.getByText('Your private move profile is ready.',{exact:false}).waitFor();assert.ok(created.p_request_id);assert.equal(created.p_submission.inventory[0].items[0].item,'Sofa');assert.equal(notifications,1);assert.equal(exchanges,3);
+ await profilePage.waitForURL('**/customer-portal/?move=*');await profilePage.locator('#workspace').waitFor({state:'visible'});
+ assert.equal(await profilePage.locator('#googleSignIn').isVisible(),false);
+ assert.equal(await profilePage.getByRole('button',{name:'Edit Customer Record',exact:true}).count(),0);
+ assert.ok((await profilePage.locator('#moveDetail').innerText()).includes('26-foot trucks'));
+ const headings=await profilePage.locator('#moveDetail h3').allTextContents();assert.ok(headings.indexOf('Your inventory')<headings.indexOf('Estimated crew, truck & moving time'));assert.ok(headings.indexOf('Estimated crew, truck & moving time')<headings.indexOf('Pricing & deposit'));
+ assert.equal(new URL(profilePage.url()).searchParams.get('move'),sample.id);
+ await profilePage.setViewportSize({width:390,height:1000});assert.ok(await profilePage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await profilePage.screenshot({path:'/tmp/customer-profile-mobile.png',fullPage:true});
+
  await p.locator('#sendPlan').click();assert.equal(notifications,1);
  await p.locator('#email').fill('different@example.com');await p.locator('#sendPlan').click();await p.getByText('You signed in as customer@example.com.',{exact:false}).waitFor();assert.equal(notifications,1);
  await p.setViewportSize({width:390,height:1000});assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
- console.log('PASS: customer read-only view, owner pricing/deposit/instruction edits, stale-save handling, responsive layout, Google PKCE sign-in, forged callback rejection, email matching and profile creation and notification idempotency. All services mocked; no real emails sent.');
+ await profilePage.evaluate(()=>{if(window.opener.HaulBrosPortal.claimProfileSession(window,new URLSearchParams(location.search).get('move'))!==null)throw new Error('Session transfer was reusable');});
+ await p.close();assert.ok(await profilePage.evaluate(async()=>!!await window.HaulBrosPortal.getMove(new URLSearchParams(location.search).get('move'))));
+ console.log('PASS: customer read-only view, owner pricing/deposit/instruction edits, stale-save handling, responsive layout, Google PKCE sign-in, forged callback rejection, email matching and profile creation and notification idempotency, automatic new-tab profile, one-use session handoff and requested section order. All services mocked; no real emails sent.');
  await b.close();
 })().catch(error=>{console.error(error);process.exit(1)});

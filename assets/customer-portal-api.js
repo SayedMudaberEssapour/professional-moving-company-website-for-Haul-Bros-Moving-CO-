@@ -2,7 +2,16 @@
 (() => {
   const config = window.HaulBrosPortalConfig || {};
   let session = null;
-  const enabled = config.enabled === true && /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(config.url || '') && !!config.publishableKey;
+  let profileTransfer = null;
+  // Claim a single-use session only from the exact calculator tab that opened us.
+  try {
+    const moveId=new URLSearchParams(location.search).get('move');
+    if(location.pathname==='/customer-portal/'&&moveId&&window.opener&&window.opener.location.origin===location.origin&&window.opener.location.pathname==='/moving-inventory/') {
+      session=window.opener.HaulBrosPortal?.claimProfileSession(window,moveId)||null;
+    }
+  } catch (_) { /* Direct visits use normal Google sign-in. */ }
+
+  const enabled = (config.enabled === true || (config.previewEnabled === true && location.origin === 'http://127.0.0.1:8765')) && /^https:\/\/[a-z0-9-]+\.supabase\.co$/.test(config.url || '') && !!config.publishableKey;
   async function request(path, options = {}, authenticated = false) {
     if (!enabled) throw new Error('The private portal is not connected yet. Please call 571-899-1919.');
     if (authenticated && !session) throw new Error('Please sign in again.');
@@ -31,10 +40,10 @@
   window.HaulBrosPortal = Object.freeze({
     enabled,
     email:() => session?.user?.email || '',
-    async signInWithGoogle() {
+    async signInWithGoogle({keepOpen=false}={}) {
       if(!enabled)throw new Error('The private portal is not connected yet.');
       // Open synchronously in the user click handler so browsers allow the sign-in window.
-      const popup=window.open('about:blank','haulbros-google-signin','popup,width=520,height=700');
+      const popup=window.open('about:blank',keepOpen?'_blank':'haulbros-google-signin',keepOpen?undefined:'popup,width=520,height=700');
       if(!popup)throw new Error('Allow the Google sign-in window for this site, then try again. Your entries are still here.');
       popup.document.title='Connecting to Google';popup.document.body.textContent='Connecting to Google sign-in…';
       const encode=bytes=>btoa(String.fromCharCode(...bytes)).replaceAll('+','-').replaceAll('/','_').replace(/=+$/,'');
@@ -45,7 +54,7 @@
       url.search=new URLSearchParams({provider:'google',redirect_to:callback,code_challenge:challenge,code_challenge_method:'s256',prompt:'select_account'});
       return new Promise((resolve,reject)=>{
         let complete=false,poll,timeout;
-        function finish(error){if(complete)return;complete=true;clearInterval(poll);clearTimeout(timeout);window.removeEventListener('message',receive);try{popup.close();}catch(_){}error?reject(error):resolve();}
+        function finish(error){if(complete)return;complete=true;clearInterval(poll);clearTimeout(timeout);window.removeEventListener('message',receive);if(error||!keepOpen){try{popup.close();}catch(_){}}error?reject(error):resolve(keepOpen?popup:null);}
         async function receive(event){
           if(event.origin!==location.origin||event.source!==popup||event.data?.type!=='haulbros-google-auth'||complete)return;
           if(event.data.error||typeof event.data.code!=='string')return finish(new Error('Google sign-in was not completed. Please try again.'));
@@ -59,8 +68,19 @@
         popup.location.href=url.href;
       });
     },
+    prepareProfileSession(target,moveId) {
+      if(!session||!target||target.closed)return false;
+      profileTransfer={target,moveId,session:structuredClone(session)};
+      return true;
+    },
+    claimProfileSession(requester,moveId) {
+      if(!profileTransfer||requester!==profileTransfer.target||moveId!==profileTransfer.moveId)return null;
+      try{if(requester.location.origin!==location.origin)return null;}catch(_){return null;}
+      const result=profileTransfer.session;profileTransfer=null;return result;
+    },
     async signOut() { try { if (session) await request('/auth/v1/logout',{method:'POST'},true); } finally { session=null; } },
     async isOwner() { return request('/rest/v1/rpc/portal_is_owner',{method:'POST',body:'{}'},true); },
+    async getMove(id) { if(!/^[a-f0-9-]{36}$/i.test(id))return null;const rows=await request('/rest/v1/customer_moves?select=*&id=eq.'+encodeURIComponent(id)+'&limit=1',{},true);return rows?.[0]||null; },
     async list(offset=0) { return request('/rest/v1/customer_moves?select=*&order=created_at.desc&limit=50&offset='+offset,{},true); },
     async create(id,formData) {
       if (formData.get('email')?.trim().toLowerCase() !== session?.user?.email?.toLowerCase()) throw new Error('Sign in with the email on your moving plan.');

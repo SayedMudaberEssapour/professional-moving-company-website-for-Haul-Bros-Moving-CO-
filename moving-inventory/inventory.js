@@ -59,6 +59,7 @@ $('inventory').addEventListener('submit', async event => {
       }
       if (portalRequest.summary !== summary) portalRequest = {summary,id:crypto.randomUUID()};
       profileId = await window.HaulBrosCalculatorPortal.save(portalRequest.id,payload);
+      window.HaulBrosCalculatorPortal.openProfile(profileId);
       payload.set('private_profile_reference',profileId);
       payload.set('owner_portal','https://www.haulbrosmoving.com/customer-portal/');
     }
@@ -67,15 +68,16 @@ $('inventory').addEventListener('submit', async event => {
     lastSentReport = summary;
     feedback.textContent = profileId ? 'Your private move profile is ready. Haul Bros will review your plan and add pricing, deposit details and instructions.' : 'Thank you! Your moving plan has been sent to Haul Bros. Our team will contact you to review the details and prepare a written estimate.';
     if (profileId) {
-      const link = document.createElement('a'); link.href='../customer-portal/'; link.textContent=' Open My Move'; feedback.append(link);
+      const link = document.createElement('a'); link.href='../customer-portal/?move='+encodeURIComponent(profileId); link.textContent=' Open My Move in a New Tab'; link.target='_blank';link.rel='noopener';link.onclick=event=>{if(window.HaulBrosCalculatorPortal.openFromClick(profileId))event.preventDefault();}; feedback.append(link);
     }
   } catch (error) {
     if (profileId) {
       lastSentReport = summary;
       feedback.textContent = 'Your private move profile was saved, but the email notification could not be sent. Haul Bros can see your record in the owner portal. Call 571-899-1919 if you need an immediate response.';
-      const link=document.createElement('a');link.href='../customer-portal/';link.textContent=' Open My Move';feedback.append(link);
+      const link=document.createElement('a');link.href='../customer-portal/?move='+encodeURIComponent(profileId);link.textContent=' Open My Move in a New Tab';link.target='_blank';link.rel='noopener';link.onclick=event=>{if(window.HaulBrosCalculatorPortal.openFromClick(profileId))event.preventDefault();};feedback.append(link);
       return;
     }
+    window.HaulBrosCalculatorPortal?.cancelProfile();
     feedback.dataset.error = 'true';
     feedback.textContent = window.HaulBrosCalculatorPortal && error instanceof Error ? error.message : 'Your plan could not be sent. Your entries are still here. Please try again, open an email draft below, or call 571-899-1919.';
   } finally {

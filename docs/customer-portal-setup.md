@@ -59,3 +59,13 @@ Security tests execute the real SQL migrations with simulated identities and cov
 - [Google sign-in setup](https://supabase.com/docs/guides/auth/social-sign-in/auth-google)
 - [PKCE](https://supabase.com/docs/guides/auth/sessions/pkce-flow)
 - [Row-level security](https://supabase.com/docs/guides/database/postgres/row-level-security)
+
+## Automatic profile tab (local implementation)
+
+After authenticated calculator submission saves the record, the same Google sign-in tab becomes the customer's profile tab and selects that exact record. For customers already signed in, a new tab is reserved in the submit click handler. This avoids async popup blocking. If the window is closed or blocked, a clickable Open My Move fallback opens it from a fresh user gesture.
+
+A single-use, exact-window, exact-move capability transfers a copy of the verified session directly between same-origin tabs. No authentication tokens appear in URLs, storage or postMessage payloads. The new tab keeps its own in-memory session, so the calculator can be closed afterward. Direct/unrelated visits still require Google sign-in, and RLS remains authoritative.
+
+Customer profile order: contact and move details → item inventory → estimated movers/trucks/hours/volume and price range → confirmed pricing/deposits → instructions. The customer's record list appears below their profile; the owner retains the management list beside it.
+
+Local preview is enabled only for the exact origin `http://127.0.0.1:8765` using `previewEnabled`; the public `enabled` flag remains false. Google is confirmed enabled at the provider. Real owner Google sign-in and live submission checks remain required before public activation.
