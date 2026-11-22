@@ -1,6 +1,8 @@
 # Private move portal setup
 
-The portal is built locally but disabled until a Supabase project is connected and tested. The live calculator continues to use its existing Formspree workflow. Do not enable the portal merely by changing the feature flag: first deploy the database, configure email delivery, register the owner, and test access using separate accounts.
+The portal is built locally and the supplied project URL/public key have been verified, but it stays disabled until the database and email delivery are configured and tested.
+
+Project: `pslyefpxaeqwggsxnbnl`. The live project currently has email signup enabled and email verification required; the portal tables/functions were not present when checked. The supplied key is a public browser key, not administrative SQL access. The live calculator continues to use its existing Formspree workflow. Do not enable the portal merely by changing the feature flag: first deploy the database, configure email delivery, register the owner, and test access using separate accounts.
 
 ## Customer and owner behavior
 
@@ -13,10 +15,10 @@ Quoted prices and deposit amounts start unconfirmed. The customer's calculator o
 ## Connect and deploy
 
 1. Install/connect the Supabase integration in this chat and sign in to the account that owns the project. Select or create the project for Haul Bros. Do not paste database passwords or service-role keys into chat or website source.
-2. Apply `supabase/migrations/202611220001_private_move_portal.sql` using the project SQL editor or Supabase migrations. It creates `public.customer_moves`, the submission RPC, database row-level security policies, and private owner/audit tables. Migration assumes a fresh project without these objects.
+2. Run `supabase/setup-customer-portal.sql` once in the project SQL editor, or apply both files in `supabase/migrations/` in order. It creates `public.customer_moves`, the submission RPC, database row-level security policies, and private owner/audit tables. Migration assumes a fresh project without these objects.
 3. Enable email sign-in and verified email signup. Configure a production email provider/custom SMTP for sending customer codes. Supabase's default mail service is limited and should not be relied on to send codes to arbitrary customers. Set the email template to include `{{ .Token }}` rather than require a magic link. Choose a short OTP expiry and appropriate Auth rate limits. Configure signup/email CAPTCHA if needed; wire the matching client CAPTCHA before requiring it. This implementation uses email codes, not URL tokens.
 4. In the local `assets/customer-portal-config.js`, set the project URL and **publishable/anon client key**, then enable the feature for a local/staging verification. Never use a secret or service-role key. The URL must be the HTTPS `PROJECT.supabase.co` URL. Neither the owner email nor any privileged role is used for authorization in the browser.
-5. Sign in at the local portal as `relocating@haulbrosmoving.com`, then run `supabase/bootstrap-owner.sql` in the SQL editor. This requires that exact account's verified auth user. The table allows one owner; the bootstrap fails if an owner is already registered. Do not automatically grant ownership by matching editable customer metadata.
+5. Sign in at the local portal as `relocating@haulbrosmoving.com`, The second migration automatically registers this exact account as the sole owner after its email is verified. If necessary, `supabase/bootstrap-owner.sql` is an idempotent manual check; it refuses to replace a different owner. Do not automatically grant ownership by matching editable customer metadata.
 6. Test with two separate customer accounts and the owner through the real Supabase API. Confirm that each customer sees only their own records, cannot PATCH any record (including their own), and cannot create records directly through the table API. Confirm that only the owner can update records. Confirm owner updates appear when the customer signs in again.
 7. Submit one labeled test move, verify the email code arrives, confirm the database record, verify the existing Formspree notification reaches Haul Bros, and check the customer view. Delete test users/records only through an explicit administrative cleanup plan; customers have no DELETE access.
 8. Configure project backups, access protection for the Supabase account, and operational monitoring. Publish only after the real checks pass. Until then, leave the checked-in configuration disabled and empty.

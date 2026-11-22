@@ -8,6 +8,10 @@ begin
   if owner_id is null then
     raise exception 'relocating@haulbrosmoving.com must sign in and verify its email first';
   end if;
-  insert into private.portal_owner(singleton,user_id) values(true,owner_id);
+  if exists(select 1 from private.portal_owner where user_id<>owner_id) then
+    raise exception 'A different owner is already registered';
+  end if;
+  insert into private.portal_owner(singleton,user_id) values(true,owner_id)
+    on conflict(singleton) do nothing;
 end;
 $$;

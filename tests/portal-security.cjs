@@ -10,6 +10,7 @@ const {PGlite}=require('@electric-sql/pglite');
  create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
  grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;`);
  await db.exec(readFileSync(path.join(__dirname,'../supabase/migrations/202611220001_private_move_portal.sql'),'utf8'));
+ await db.exec(readFileSync(path.join(__dirname,'../supabase/migrations/202611220002_verified_owner_registration.sql'),'utf8'));
  const owner='00000000-0000-0000-0000-000000000001',alice='00000000-0000-0000-0000-000000000002',bob='00000000-0000-0000-0000-000000000003',unverified='00000000-0000-0000-0000-000000000004';
  for(const [id,email,confirmed] of [[owner,'relocating@haulbrosmoving.com',true],[alice,'alice@example.com',true],[bob,'bob@example.com',true],[unverified,'unverified@example.com',false]])await db.query('insert into auth.users values($1,$2,$3)',[id,email,confirmed?'2026-11-22':null]);
  await db.exec(readFileSync(path.join(__dirname,'../supabase/bootstrap-owner.sql'),'utf8'));
