@@ -6,7 +6,7 @@ The database is deployed to Supabase project `pslyefpxaeqwggsxnbnl`. Three migra
 
 The owner-account change is applied in the hosted database. The owner is registered only after Supabase verifies the approved account; entering its email into a public form never grants privileges. The former email no longer qualifies for ownership.
 
-Google sign-in is implemented locally, but the Google provider is still disabled because its OAuth web client has not been configured. The public website remains on the existing Formspree calculator flow. `assets/customer-portal-config.js` stays disabled. Do not activate or publish the portal until the real Google sign-in test succeeds.
+Google sign-in is configured and the owner completed a real sign-in and saved move submission. Read-only hosted checks confirmed the verified owner registration, enabled RLS, and a saved move. Public activation is enabled for publication at the user’s request. Existing Formspree lead notifications remain part of the submission flow.
 
 The Supabase Site URL is `https://www.haulbrosmoving.com`. The callback allowlist contains the production callback and a temporary local callback for testing. These two routing settings were applied without changing MFA, email confirmations, credentials or other services.
 
@@ -15,7 +15,7 @@ The earlier Gmail SMTP/email-code approach is retired. No Gmail app password or 
 ## One-time Google Cloud setup (account holder)
 
 1. Open [Google Auth Platform](https://console.cloud.google.com/auth/overview) using the approved owner account and select or create a project for Haul Bros.
-2. Configure branding: app name `Haul Bros Moving Co LLC`, support/developer email `sayedmusawer0797@gmail.com`, homepage `https://www.haulbrosmoving.com`, privacy page `/privacy-policy/`, and terms page `/terms-of-service/` on that domain. Select an **External** audience so customers outside the organization can sign in. Use only basic OpenID/profile/email scopes. Add the owner account as a test user while the app is in Testing. Move the audience to Production before opening sign-in to all customers, completing any Google requirements shown for the app.
+2. Configure branding: app name `Haul Bros Moving Co LLC`, support/developer email `sayedmusawer0797@gmail.com`, homepage `https://www.haulbrosmoving.com`, privacy page `/privacy-policy/`, and terms page `/terms-of-service/` on that domain. Select an **External** audience so customers outside the organization can sign in. Use only basic OpenID/profile/email scopes. Google allows customers outside the test-user list when only basic identity scopes are requested, even in Testing mode. Production is recommended for launch branding; complete any requirements shown by Google. See [Google audience rules](https://support.google.com/cloud/answer/15549945).
 3. In [Clients](https://console.cloud.google.com/auth/clients), create a **Web application** OAuth client. Use authorized JavaScript origin `https://www.haulbrosmoving.com`; for local testing add `http://127.0.0.1:8765` temporarily. Set this exact authorized redirect URI:
    `https://pslyefpxaeqwggsxnbnl.supabase.co/auth/v1/callback`
 4. In the Supabase dashboard, Authentication → Sign In / Providers → Google, enable Google and enter the client ID and client secret directly there. Keep nonce checks enabled. Never put the Google client secret in Git, the website, or chat.
@@ -60,7 +60,7 @@ Security tests execute the real SQL migrations with simulated identities and cov
 - [PKCE](https://supabase.com/docs/guides/auth/sessions/pkce-flow)
 - [Row-level security](https://supabase.com/docs/guides/database/postgres/row-level-security)
 
-## Automatic profile tab (local implementation)
+## Automatic profile tab
 
 After authenticated calculator submission saves the record, the same Google sign-in tab becomes the customer's profile tab and selects that exact record. For customers already signed in, a new tab is reserved in the submit click handler. This avoids async popup blocking. If the window is closed or blocked, a clickable Open My Move fallback opens it from a fresh user gesture.
 
@@ -68,4 +68,4 @@ A single-use, exact-window, exact-move capability transfers a copy of the verifi
 
 Customer profile order: contact and move details → item inventory → estimated movers/trucks/hours/volume and price range → confirmed pricing/deposits → instructions. The customer's record list appears below their profile; the owner retains the management list beside it.
 
-Local preview is enabled only for the exact origin `http://127.0.0.1:8765` using `previewEnabled`; the public `enabled` flag remains false. Google is confirmed enabled at the provider. Real owner Google sign-in and live submission checks remain required before public activation.
+The public `enabled` flag is true and the local-only preview override is disabled. Google is enabled and the owner’s real sign-in and submission passed. Google Audience was reported as Testing; the basic identity scope exception permits sign-in without adding every customer as a test user. Post-deployment testing should confirm the production callback and profile flow.
