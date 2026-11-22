@@ -9,6 +9,7 @@ function calculate(){let volume=0,count=0,boxes=0,assembly=0,special=false;rooms
 function update(){const e=calculate();$('estimate').innerHTML=`<div class="metrics"><div class="metric"><strong>${e.count}</strong>items · approx. ${e.volume} cu ft</div><div class="metric"><strong>${e.crew||'—'}</strong>suggested movers${e.trucks>1?' per crew; review required':''}</div><div class="metric"><strong>${e.labor?'Customer truck':e.trucks||'—'}</strong>${e.labor?'Capacity to confirm':'26-foot truck(s)'}</div><div class="metric"><strong>${e.count?`${e.low}–${e.high}`:'—'}</strong>estimated hours${e.trucks>1?' per sequential crew':''}</div></div><p><strong>${!e.count?'Add inventory to see your estimate.':e.custom?'Custom written quote required.':`Estimated labor / move total: $${e.costLow.toFixed(0)}–$${e.costHigh.toFixed(0)}`}</strong></p>${$('type').value==='long'?'<p>Long-distance hours are handling time plus the driving time you entered, not a delivery window. Route, transit days, shipment weight, and operating requirements need review.</p>':''}`;}
 let sending = false;
 let lastSentReport = '';
+let portalRequest = {summary:'',id:null};
 $('inventory').addEventListener('submit', async event => {
   event.preventDefault();
   const form = event.currentTarget;
@@ -49,16 +50,36 @@ $('inventory').addEventListener('submit', async event => {
   }));
   sending = true; button.disabled = true; button.textContent = 'Sending your plan…';
   feedback.removeAttribute('data-error'); feedback.textContent = 'Sending your moving plan…';
+  let profileId = null;
   try {
+    if (window.HaulBrosCalculatorPortal) {
+      if (!await window.HaulBrosCalculatorPortal.ensureIdentity(payload.get('email'))) {
+        feedback.textContent = 'Check your email and verify the code below, then send your moving plan again.';
+        return;
+      }
+      if (portalRequest.summary !== summary) portalRequest = {summary,id:crypto.randomUUID()};
+      profileId = await window.HaulBrosCalculatorPortal.save(portalRequest.id,payload);
+      payload.set('private_profile_reference',profileId);
+      payload.set('owner_portal','https://www.haulbrosmoving.com/customer-portal/');
+    }
     const response = await fetch(form.action, {method:'POST',body:payload,headers:{Accept:'application/json'}});
     if (!response.ok) throw new Error('Request not accepted');
     lastSentReport = summary;
-    feedback.textContent = 'Thank you! Your moving plan has been sent to Haul Bros. Our team will contact you to review the details and prepare a written estimate.';
+    feedback.textContent = profileId ? 'Your private move profile is ready. Haul Bros will review your plan and add pricing, deposit details and instructions.' : 'Thank you! Your moving plan has been sent to Haul Bros. Our team will contact you to review the details and prepare a written estimate.';
+    if (profileId) {
+      const link = document.createElement('a'); link.href='../customer-portal/'; link.textContent=' Open My Move'; feedback.append(link);
+    }
   } catch (_) {
+    if (profileId) {
+      lastSentReport = summary;
+      feedback.textContent = 'Your private move profile was saved, but the email notification could not be sent. Haul Bros can see your record in the owner portal. Call 571-899-1919 if you need an immediate response.';
+      const link=document.createElement('a');link.href='../customer-portal/';link.textContent=' Open My Move';feedback.append(link);
+      return;
+    }
     feedback.dataset.error = 'true';
     feedback.textContent = 'Your plan could not be sent. Your entries are still here. Please try again, open an email draft below, or call 571-899-1919.';
   } finally {
-    sending = false; button.disabled = false; button.textContent = 'Send My Moving Plan →';
+    sending = false; button.disabled = false; button.textContent = window.HaulBrosCalculatorPortal ? 'Create My Private Move Profile →' : 'Send My Moving Plan →';
     feedback.focus();
   }
 });
