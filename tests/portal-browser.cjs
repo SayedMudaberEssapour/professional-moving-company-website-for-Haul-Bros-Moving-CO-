@@ -18,7 +18,7 @@ const base=process.env.PORTAL_TEST_URL||'http://127.0.0.1:8765';
   }else if(url.pathname.endsWith('/token')){
    assert.equal(url.searchParams.get('grant_type'),'pkce');assert.equal(data.auth_code,'test-code');assert.ok(data.code_verifier.length>=43);exchanges++;email=nextIdentity;body={access_token:'test-session',refresh_token:'test-refresh',expires_in:3600,user:{email}};
   }
-  else if(url.pathname.endsWith('/portal_is_owner')){owner=email==='sayedmusawer0797@gmail.com';body=owner;}
+  else if(url.pathname.endsWith('/portal_is_owner')){owner=email==='relocating@haulbrosmoving.com';body=owner;}
   else if(url.pathname.endsWith('/read_guest_move')){body=data.p_code===created?.p_code&&data.p_phone.replace(/\D/g,'').endsWith('5715550100')?[sample]:[];}
   else if(url.pathname.endsWith('/create_guest_move')){created=data;body=sample.id;assert.match(data.p_code,/^[a-f0-9]{32}$/);assert.ok(!request.headers().authorization);}
   else if(url.pathname==='/rest/v1/customer_moves'&&request.method()==='PATCH'){
@@ -30,7 +30,7 @@ const base=process.env.PORTAL_TEST_URL||'http://127.0.0.1:8765';
  async function login(value){nextIdentity=value;await p.locator('#googleSignIn').click();await p.locator('#workspace').waitFor({state:'visible'});await p.getByText('Reserve the loading dock.',{exact:true}).waitFor();}
  await p.goto(base+'/customer-portal/',{waitUntil:'networkidle'});await login('customer@example.com');
  assert.equal(await p.getByRole('button',{name:'Edit Customer Record',exact:true}).count(),0);assert.equal(await p.locator('#ownerEdit').count(),0);assert.ok((await p.locator('#moveDetail').innerText()).includes('$1,000.00'));
- await p.locator('#signOut').click();await p.locator('#signIn').waitFor({state:'visible'});await login('sayedmusawer0797@gmail.com');
+ await p.locator('#signOut').click();await p.locator('#signIn').waitFor({state:'visible'});await login('relocating@haulbrosmoving.com');
  await p.getByRole('button',{name:'Edit Customer Record',exact:true}).click();await p.locator('[name=confirmed_price_cents]').fill('1200');await p.locator('[name=deposit_paid_cents]').fill('150');await p.locator('[name=moving_instructions]').fill('Owner updated instructions');await p.getByRole('button',{name:'Save Changes',exact:true}).click();await p.getByText('Changes saved.',{exact:false}).waitFor();assert.equal(patch.confirmed_price_cents,120000);assert.equal(patch.deposit_paid_cents,15000);assert.equal(patch.moving_instructions,'Owner updated instructions');
  for(const width of [1440,390,320]){await p.setViewportSize({width,height:1000});assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'portal overflow '+width);}
  await p.setViewportSize({width:1440,height:1000});assert.equal(await p.locator('header').count(),1);await p.getByText('Pricing & deposit',{exact:true}).scrollIntoViewIfNeeded();await p.waitForTimeout(100);await p.screenshot({path:'/tmp/portal-owner-pricing.png',fullPage:false});

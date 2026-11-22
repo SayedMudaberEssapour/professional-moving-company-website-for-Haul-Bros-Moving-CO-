@@ -20,7 +20,7 @@ const {PGlite}=require('@electric-sql/pglite');
  assert.equal((await db.query('select count(*)::int as count from private.portal_owner')).rows[0].count,0);
  await db.query('update auth.users set email_confirmed_at=$1 where id=$2',['2026-11-22',owner]);
  assert.equal((await db.query('select user_id from private.portal_owner')).rows[0].user_id,owner);
- await db.exec(readFileSync(path.join(__dirname,'../supabase/bootstrap-owner.sql'),'utf8'));
+
  async function as(id,role='authenticated'){await db.exec('reset role');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[id||'']);await db.exec('set role '+role);}
  const submission={name:'Alice',email:'someone-else@example.com',phone:'5715550100',moving_from:'Woodbridge',inventory:[{room:'Living room',items:[{item:'Sofa',quantity:1}]}],planning_estimate:{item_count:1},confirmed_price_cents:1,deposit_paid_cents:100000,customer_id:owner,move_status:'Completed'};
  async function create(requestId='10000000-0000-0000-0000-000000000001'){return (await db.query('select public.create_customer_move($1,$2) as id',[requestId,submission])).rows[0].id;}
@@ -56,6 +56,14 @@ const {PGlite}=require('@electric-sql/pglite');
  await as(owner);assert.equal((await db.query('select * from public.customer_moves')).rows.length,7);
  await db.query("update public.customer_moves set moving_instructions='Owner update' where id=$1",[guest]);
  await as(null,'anon');assert.equal((await db.query('select * from public.read_guest_move($1,$2)',['5715550100',code])).rows[0].moving_instructions,'Owner update');
+ await db.exec('reset role');
+ await db.exec(readFileSync(path.join(__dirname,'../supabase/migrations/202611220005_restore_business_owner.sql'),'utf8'));
+ await db.exec(readFileSync(path.join(__dirname,'../supabase/bootstrap-owner.sql'),'utf8'));
+ await as(owner);assert.equal((await db.query('select public.portal_is_owner() as owner')).rows[0].owner,false);
+ assert.equal((await db.query('update public.customer_moves set confirmed_price_cents=99 where id=$1 returning id',[guest])).rows.length,0);
+ await as(oldOwner);assert.equal((await db.query('select public.portal_is_owner() as owner')).rows[0].owner,true);
+ assert.equal((await db.query('select * from public.customer_moves')).rows.length,7);
+ await db.query("update public.customer_moves set moving_instructions='Business owner update' where id=$1",[guest]);
  console.log('PASS: anonymous denial, verified identity, customer A/B isolation, owner-only edits, immutable ownership, forged-price protection, audit privacy, idempotency and daily limit.');
  await db.close();
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -4,7 +4,7 @@
 
 Customers no longer need Google or SMS. Public quote forms and the Moving Calculator create a private profile, open it automatically in a new tab, and display a unique 128-bit random access code. Returning customers enter their phone number and code at `/customer-portal/`. Save the code; it is not sent through Formspree or placed in a URL. Codes are credentials, not proof that a customer owns a phone number.
 
-The owner signs in with Google as `sayedmusawer0797@gmail.com`. A button at the bottom of the homepage links to owner login. Only this verified owner can list all profiles and edit records. Customer access remains read-only. Earlier email/Formspree leads are not imported automatically. Existing Google-linked test records remain visible to the owner.
+The owner signs in with Google as `relocating@haulbrosmoving.com`. A button at the bottom of the homepage links to owner login. Only this verified owner can list all profiles and edit records. Customer access remains read-only. Earlier email/Formspree leads are not imported automatically. Existing Google-linked test records remain visible to the owner.
 
 ## Database and deployment
 
@@ -23,3 +23,5 @@ Supabase production Site URL is `https://www.haulbrosmoving.com`; OAuth callback
 `node tests/portal-browser.cjs` uses fictional records and mocked network services: owner Google PKCE, returning phone/code login, incorrect code rejection, homepage quotes, calculator submissions, new-tab handoff, responsive layout and notification behavior. No real emails are sent by these tests.
 
 The portal records agreed pricing and deposit amounts; it does not process payments. Inventory/estimates remain pending on simple quote forms. The owner adds confirmed amounts and instructions after review.
+
+Migration `202611220005_restore_business_owner.sql` revokes the previous Gmail owner and registers only the verified business email, immediately if already present or on its next verified sign-in. Customer records are preserved.
