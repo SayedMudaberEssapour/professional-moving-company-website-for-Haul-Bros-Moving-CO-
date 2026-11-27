@@ -1358,8 +1358,8 @@
       ]
     },
     {
-      "file": "blog/new-home-not-ready-moving-day-storage-options/index.html",
-      "url": "https://www.haulbrosmoving.com/blog/new-home-not-ready-moving-day-storage-options/",
+      "file": "blog/new-home-not-ready-on-moving-day/index.html",
+      "url": "https://www.haulbrosmoving.com/blog/new-home-not-ready-on-moving-day/",
       "types": [
         "WebPage",
         "BlogPosting",
@@ -2030,6 +2030,7 @@
     "Navbars/pricing.html",
     "Navbars/review.html",
     "Navbars/service.html",
+    "blog/new-home-not-ready-moving-day-storage-options/index.html",
     "moving-services/index.html"
   ],
   "alt_added": [],
