@@ -1,0 +1,47 @@
+[
+  {
+    "old_path": "/movers-lake-ridge-va/",
+    "canonical_target": "/Locations/Lake_ridge/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  },
+  {
+    "old_path": "/movers-leesburg-va/",
+    "canonical_target": "/Locations/Leesburg/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  },
+  {
+    "old_path": "/movers-south-riding-va/",
+    "canonical_target": "/Locations/South_Riding/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  },
+  {
+    "old_path": "/movers-burke-va/",
+    "canonical_target": "/Locations/Burke/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  },
+  {
+    "old_path": "/movers-lovettsville-va/",
+    "canonical_target": "/Locations/Lovettsville/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  },
+  {
+    "old_path": "/movers-annandale-va/",
+    "canonical_target": "/Locations/Annandale/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  },
+  {
+    "old_path": "/movers-haymarket-va/",
+    "canonical_target": "/Locations/Haymarket/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  },
+  {
+    "old_path": "/movers-mount-vernon-va/",
+    "canonical_target": "/Locations/Mount_Vernon/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  },
+  {
+    "old_path": "/movers-fairfax-station-va/",
+    "canonical_target": "/Locations/Fairfax_Station/",
+    "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+  }
+]

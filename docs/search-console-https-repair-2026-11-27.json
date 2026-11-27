@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-27",
+  "cname": "www.haulbrosmoving.com",
+  "previous_https_enforced": false,
+  "https_enforced": true,
+  "certificate_state": "approved",
+  "changed_fields": [
+    "https_enforced"
+  ]
+}

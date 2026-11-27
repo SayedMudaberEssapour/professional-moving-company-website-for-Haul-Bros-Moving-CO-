@@ -1,0 +1,955 @@
+{
+  "date": "2026-11-27",
+  "source": "User-supplied Google Search Console coverage exports; duplicate export removed",
+  "export_counts": {
+    "Not found (404)": 9,
+    "Discovered - currently not indexed": 1,
+    "Alternate page with proper canonical tag": 3,
+    "Page with redirect": 39
+  },
+  "reported_urls": [
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-lake-ridge-va/",
+      "last_crawled": "2026-09-14",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-lake-ridge-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-leesburg-va/",
+      "last_crawled": "2026-09-14",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-leesburg-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-south-riding-va/",
+      "last_crawled": "2026-09-13",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-south-riding-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-burke-va/",
+      "last_crawled": "2026-09-13",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-burke-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-lovettsville-va/",
+      "last_crawled": "2026-09-13",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-lovettsville-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-annandale-va/",
+      "last_crawled": "2026-09-13",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-annandale-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-haymarket-va/",
+      "last_crawled": "2026-09-13",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-haymarket-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-mount-vernon-va/",
+      "last_crawled": "2026-09-13",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-mount-vernon-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Not found (404)",
+      "url": "https://www.haulbrosmoving.com/movers-fairfax-station-va/",
+      "last_crawled": "2026-09-13",
+      "status": 404,
+      "effective_url": "https://www.haulbrosmoving.com/movers-fairfax-station-va/",
+      "http_redirects": 0,
+      "canonical": null,
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Discovered - currently not indexed",
+      "url": "https://www.haulbrosmoving.com/blog/moving-to-arlington-va-2027/",
+      "last_crawled": "1969-12-31",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/blog/moving-to-arlington-va-2027/",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/blog/moving-to-arlington-va-2027/",
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Alternate page with proper canonical tag",
+      "url": "http://www.haulbrosmoving.com/",
+      "last_crawled": "2026-11-22",
+      "status": 200,
+      "effective_url": "http://www.haulbrosmoving.com/",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Alternate page with proper canonical tag",
+      "url": "http://www.haulbrosmoving.com/blog/how-to-pack-electronics-for-moving/",
+      "last_crawled": "2026-11-19",
+      "status": 200,
+      "effective_url": "http://www.haulbrosmoving.com/blog/how-to-pack-electronics-for-moving/",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/blog/how-to-pack-electronics-for-moving/",
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Alternate page with proper canonical tag",
+      "url": "https://www.haulbrosmoving.com/blog/index.html",
+      "last_crawled": "2026-11-15",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/blog/index.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/blog/",
+      "html_redirect": false,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://haulbrosmoving.com/",
+      "last_crawled": "2026-11-22",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/",
+      "http_redirects": 1,
+      "canonical": "https://www.haulbrosmoving.com/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "http://www.haulbrosmoving.com/index.html",
+      "last_crawled": "2026-11-21",
+      "status": 200,
+      "effective_url": "http://www.haulbrosmoving.com/index.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "http://haulbrosmoving.com/",
+      "last_crawled": "2026-11-20",
+      "status": 200,
+      "effective_url": "http://www.haulbrosmoving.com/",
+      "http_redirects": 1,
+      "canonical": "https://www.haulbrosmoving.com/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Broadlands.html",
+      "last_crawled": "2026-11-19",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Broadlands.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Broadlands/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Chantilly.html",
+      "last_crawled": "2026-11-18",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Chantilly.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Chantilly/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Herndon.html",
+      "last_crawled": "2026-11-18",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Herndon.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Herndon/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Annandale.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Annandale.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Annandale/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Lake_ridge.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Lake_ridge.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Lake_ridge/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Springfield.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Springfield.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Springfield/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Mount_Vernon.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Mount_Vernon.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Mount_Vernon/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Washington_DC.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Washington_DC.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Washington_DC/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/McLean.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/McLean.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/McLean/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Cascades.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Cascades.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Cascades/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Hillsboro.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Hillsboro.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Hillsboro/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Reston.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Reston.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Reston/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/South_Riding.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/South_Riding.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/South_Riding/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Middleburg.html",
+      "last_crawled": "2026-11-17",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Middleburg.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Middleburg/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Gaithersburg.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Gaithersburg.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Gaithersburg/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Leesburg.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Leesburg.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Leesburg/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Tysons.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Tysons.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Tysons/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Triangle.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Triangle.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Triangle/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Manassas.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Manassas.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Manassas/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Gainesville.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Gainesville.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Gainesville/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Dumfries_VA.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Dumfries_VA.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Dumfries_VA/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Bethesda.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Bethesda.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Bethesda/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Silver_Spring.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Silver_Spring.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Silver_Spring/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Lansdowne.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Lansdowne.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Lansdowne/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Fairfax_Station.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Fairfax_Station.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Fairfax_Station/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Burke.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Burke.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Burke/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Sterling.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Sterling.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Sterling/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Alexandria.html",
+      "last_crawled": "2026-11-16",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Alexandria.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Alexandria/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "http://www.haulbrosmoving.com/Locations/Culpeper.html",
+      "last_crawled": "2026-11-15",
+      "status": 200,
+      "effective_url": "http://www.haulbrosmoving.com/Locations/Culpeper.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Culpeper/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Kingstowne.html",
+      "last_crawled": "2026-11-15",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Kingstowne.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Kingstowne/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Brambleton.html",
+      "last_crawled": "2026-11-15",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Brambleton.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Brambleton/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Upper_Marlboro.html",
+      "last_crawled": "2026-11-15",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Upper_Marlboro.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Upper_Marlboro/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Ashburn.html",
+      "last_crawled": "2026-11-15",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Ashburn.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Ashburn/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Aldie.html",
+      "last_crawled": "2026-11-15",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Aldie.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Aldie/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "https://www.haulbrosmoving.com/Locations/Fairfax.html",
+      "last_crawled": "2026-11-15",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Fairfax.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Fairfax/",
+      "html_redirect": true,
+      "noindex": false
+    },
+    {
+      "issue": "Page with redirect",
+      "url": "http://www.haulbrosmoving.com/Locations/Fredericksburg.html",
+      "last_crawled": "2026-10-15",
+      "status": 200,
+      "effective_url": "http://www.haulbrosmoving.com/Locations/Fredericksburg.html",
+      "http_redirects": 0,
+      "canonical": "https://www.haulbrosmoving.com/Locations/Fredericksburg/",
+      "html_redirect": true,
+      "noindex": false
+    }
+  ],
+  "canonical_target_checks": [
+    {
+      "url": "https://www.haulbrosmoving.com/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/",
+      "canonical": "https://www.haulbrosmoving.com/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Aldie/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Aldie/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Aldie/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Alexandria/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Alexandria/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Alexandria/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Annandale/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Annandale/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Annandale/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Ashburn/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Ashburn/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Ashburn/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Bethesda/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Bethesda/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Bethesda/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Brambleton/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Brambleton/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Brambleton/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Broadlands/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Broadlands/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Broadlands/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Burke/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Burke/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Burke/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Cascades/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Cascades/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Cascades/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Chantilly/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Chantilly/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Chantilly/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Culpeper/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Culpeper/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Culpeper/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Dumfries_VA/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Dumfries_VA/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Dumfries_VA/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Fairfax/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Fairfax/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Fairfax/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Fairfax_Station/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Fairfax_Station/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Fairfax_Station/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Fredericksburg/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Fredericksburg/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Fredericksburg/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Gainesville/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Gainesville/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Gainesville/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Gaithersburg/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Gaithersburg/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Gaithersburg/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Haymarket/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Haymarket/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Haymarket/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Herndon/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Herndon/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Herndon/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Hillsboro/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Hillsboro/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Hillsboro/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Kingstowne/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Kingstowne/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Kingstowne/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Lake_ridge/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Lake_ridge/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Lake_ridge/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Lansdowne/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Lansdowne/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Lansdowne/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Leesburg/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Leesburg/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Leesburg/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Lovettsville/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Lovettsville/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Lovettsville/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Manassas/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Manassas/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Manassas/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/McLean/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/McLean/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/McLean/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Middleburg/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Middleburg/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Middleburg/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Mount_Vernon/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Mount_Vernon/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Mount_Vernon/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Reston/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Reston/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Reston/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Silver_Spring/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Silver_Spring/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Silver_Spring/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/South_Riding/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/South_Riding/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/South_Riding/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Springfield/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Springfield/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Springfield/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Sterling/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Sterling/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Sterling/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Triangle/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Triangle/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Triangle/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Tysons/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Tysons/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Tysons/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Upper_Marlboro/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Upper_Marlboro/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Upper_Marlboro/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/Locations/Washington_DC/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/Locations/Washington_DC/",
+      "canonical": "https://www.haulbrosmoving.com/Locations/Washington_DC/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/blog/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/blog/",
+      "canonical": "https://www.haulbrosmoving.com/blog/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/blog/how-to-pack-electronics-for-moving/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/blog/how-to-pack-electronics-for-moving/",
+      "canonical": "https://www.haulbrosmoving.com/blog/how-to-pack-electronics-for-moving/",
+      "noindex": false
+    },
+    {
+      "url": "https://www.haulbrosmoving.com/blog/moving-to-arlington-va-2027/",
+      "status": 200,
+      "effective_url": "https://www.haulbrosmoving.com/blog/moving-to-arlington-va-2027/",
+      "canonical": "https://www.haulbrosmoving.com/blog/moving-to-arlington-va-2027/",
+      "noindex": false
+    }
+  ],
+  "repairs": [
+    {
+      "old_path": "/movers-lake-ridge-va/",
+      "canonical_target": "/Locations/Lake_ridge/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    },
+    {
+      "old_path": "/movers-leesburg-va/",
+      "canonical_target": "/Locations/Leesburg/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    },
+    {
+      "old_path": "/movers-south-riding-va/",
+      "canonical_target": "/Locations/South_Riding/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    },
+    {
+      "old_path": "/movers-burke-va/",
+      "canonical_target": "/Locations/Burke/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    },
+    {
+      "old_path": "/movers-lovettsville-va/",
+      "canonical_target": "/Locations/Lovettsville/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    },
+    {
+      "old_path": "/movers-annandale-va/",
+      "canonical_target": "/Locations/Annandale/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    },
+    {
+      "old_path": "/movers-haymarket-va/",
+      "canonical_target": "/Locations/Haymarket/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    },
+    {
+      "old_path": "/movers-mount-vernon-va/",
+      "canonical_target": "/Locations/Mount_Vernon/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    },
+    {
+      "old_path": "/movers-fairfax-station-va/",
+      "canonical_target": "/Locations/Fairfax_Station/",
+      "implementation": "instant meta refresh and canonical; JavaScript preserves query and fragment"
+    }
+  ],
+  "https_enforced": true,
+  "arlington_article": {
+    "url": "https://www.haulbrosmoving.com/blog/moving-to-arlington-va-2027/",
+    "http_status": 200,
+    "self_canonical": true,
+    "indexable": true,
+    "in_xml_sitemap": true,
+    "in_blog_listing": true,
+    "in_html_sitemap": true,
+    "new_incoming_link": "https://www.haulbrosmoving.com/Locations/Arlington/",
+    "note": "No technical block found. Search Console reports discovery without a recorded crawl; indexing remains a Google decision."
+  },
+  "implementation_notes": [
+    "GitHub Pages serves static HTML; the nine legacy paths use instant meta-refresh redirects with matching canonical tags, not server-side 301s. Google documents instant meta refresh as a permanent redirect signal.",
+    "The nine redirect aliases are excluded from the XML sitemap and indexable schema inventory. Their canonical location pages remain in the sitemap.",
+    "Existing Page with redirect and Alternate page with proper canonical tag exclusions are expected when the destinations are correct; do not make duplicate URLs indexable to clear the report."
+  ],
+  "search_console_follow_up": [
+    "After deployment, use Validate fix for the Not found (404) issue.",
+    "Inspect https://www.haulbrosmoving.com/blog/moving-to-arlington-va-2027/ and request indexing.",
+    "Resubmit https://www.haulbrosmoving.com/sitemap.xml if needed.",
+    "Allow Google to recrawl; reported counts do not update immediately."
+  ],
+  "references": [
+    "https://support.google.com/webmasters/answer/7440203",
+    "https://developers.google.com/search/docs/crawling-indexing/301-redirects",
+    "https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https"
+  ]
+}
