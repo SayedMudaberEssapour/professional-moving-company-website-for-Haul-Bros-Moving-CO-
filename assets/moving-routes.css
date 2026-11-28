@@ -1,0 +1,16 @@
+/* Route details extend the established service-page layout. */
+.route-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.75rem}
+.route-facts>div{padding:1.2rem;border:1px solid #ded9cc;background:#faf9f6;border-radius:14px;min-width:0}
+.route-facts span{display:block;color:#68572c;font-size:.8rem;font-weight:700;margin-bottom:.4rem}
+.route-facts strong{font-size:1.1rem;line-height:1.45;display:block}
+.route-planning-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.5rem}
+.route-resource-links{margin-top:1.5rem;padding:1.5rem;background:#faf9f6;border:1px solid #ded9cc;border-radius:14px}
+.route-resource-links a{display:inline-block;margin:.7rem 1.5rem .5rem 0;text-decoration:underline;font-weight:700;text-underline-offset:3px}
+.route-resource-links p{font-size:.9rem;color:#526071;margin-top:.5rem}
+.route-pricing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem;margin:1.5rem 0}
+.route-pricing-grid p{color:#526071;margin-top:1rem}
+.route-list{padding-left:1.25rem;margin-top:1rem;list-style:disc;color:#526071}
+ol.route-list{list-style:decimal}
+.route-list li{padding-left:.25rem;margin:.65rem 0;line-height:1.7}
+@media(max-width:900px){.route-facts,.route-planning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:639px){.route-facts,.route-planning-grid,.route-pricing-grid{grid-template-columns:minmax(0,1fr)}.route-pricing-grid{gap:1.5rem}}
